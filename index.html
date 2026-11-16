@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0f766e" />
+    <meta name="description" content="Hangeul Road: a personal Korean-learning home base." />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <title>Hangeul Road</title>
+    <script>
+      // Applies the last used theme immediately. See src/app/useTheme.ts.
+      try {
+        if (localStorage.getItem('hangeul-road:dark') === '1') {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
