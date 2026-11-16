@@ -30,7 +30,9 @@ src/
   features/     one folder per section: daily, learn, library, korea-guide, settings
   content/      learning data only (JSON), one folder per content type
   lib/          date.ts, hangul.ts (compose/decompose, romanize, keyboard),
-                hangulProgress.ts (letter stats), speech.ts, storage/
+                hangulProgress.ts (letter stats), speech.ts, storage/,
+                srs.ts (spaced repetition), numbers.ts (Korean number readings),
+                vocabProgress.ts
   components/   shared UI (Page, Card, ComingSoon), ui.ts (button classes)
 scripts/        validate-content.ts (+ its test)
 ```
@@ -65,7 +67,7 @@ scripts/        validate-content.ts (+ its test)
 - IndexedDB database `hangeul-road`, one table `kv` (`key` -> `value`), wrapped by
   `src/lib/storage/db.ts`. Nothing else imports Dexie.
 - Each feature owns one key, listed in `STORAGE_KEYS` in `schema.ts`
-  (`settings`, `hangul`). A new feature adds a key, a type, a `sanitize…` function,
+  (`settings`, `hangul`, `vocab`). A new feature adds a key, a type, a `sanitize…` function,
   and state + actions in `store.ts`.
 - `SCHEMA_VERSION` (now 1) describes the shape of saved data. When a saved shape
   changes: bump it and add a step to `migrate()` in `schema.ts`. It runs at startup
@@ -106,6 +108,27 @@ add a line there for every new content file. TypeScript types live in
 - `strokes.ts`: stroke order as SVG paths on a 100 x 100 grid, in writing order.
 - Saved progress (`hangul` key): `{ letters: { [letter]: { seen, correct, recent[] } },
 readingSpeed[], lessonsDone[] }`. See `src/lib/hangulProgress.ts`.
+
+### vocab/
+
+- `decks.json` (15): `id` (`deck-food`), `title`, `description`. Order = study order.
+- `deck-NN-<slug>.json`: words. `id` (`vocab-<slug>-<korean>`), `korean`, `meaning`,
+  `pos`, `deck` (deck id), `example` (polite style), `exampleMeaning`, optional `note`.
+  New deck files are loaded automatically (`import.meta.glob` in `index.ts`).
+- **Never change a word id** once released: saved review progress is keyed by it.
+- A word may appear only once across all decks (a test enforces this), and every
+  example must end in a polite ending (요 / 니다).
+- Saved progress (`vocab` key): `{ cards: { [wordId]: Card }, myWords[], focusDeck }`.
+  `Card` is defined in `src/lib/srs.ts`.
+
+## Spaced repetition (src/lib/srs.ts)
+
+- Stages: new (no card), learning, review, mature (interval of 21+ days).
+- `review(card, grade, today)` returns the next card. Good from new: 1 day, then
+  roughly x2.5 (1, 3, 8, 20, 50). Again: back to learning today, ease -0.2.
+- `buildQueue` caps reviews per day by daily goal (20 / 50 / 100) and new words
+  (5 / 10 / 15). While the backlog is above the cap, no new words are added.
+- All dates are passed in; nothing in `srs.ts` reads the clock.
 
 ## Korean and link accuracy (from PROMPT.md, critical)
 

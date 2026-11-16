@@ -47,9 +47,30 @@ Acceptance:
 - [x] Romanization toggle works in drills, the builder and the reading list.
       Single-letter sound labels (`g / k`) always show, because they are the answer.
 
+### Phase 2 — Vocabulary with spaced repetition (2026-11-16)
+
+- SRS engine (`src/lib/srs.ts`), SM-2 style, with Again / Hard / Good / Easy.
+- 697 words in 15 themed decks, each with part of speech, a polite example
+  sentence, a translation and, where useful, a note.
+- Review session with rotating card types: Korean to meaning, meaning to Korean,
+  listening (only when a Korean voice exists) and typing (can be switched off in Me).
+- Daily limits by goal: 5 / 10 / 15 new words, at most 20 / 50 / 100 reviews.
+- Deck browser, search over all words, "learn this deck next", and a My words deck.
+- Number trainer: Sino-Korean, native Korean, prices, clock times, phone numbers.
+- 122 unit tests in total.
+
+Acceptance:
+
+- [x] 697 words pass `validate:content`. No word is marked `needsReview`, and none
+      are hidden.
+- [x] SRS tests cover scheduling, lapses and the review cap (a missed week of 300 due
+      cards gives 50 reviews and no new words).
+- [x] One-handed review: every action is a single tap on a large button in the lower
+      half of a phone screen. Checked at iPhone 13 size.
+
 ## Next
 
-Phase 2 — Vocabulary with spaced repetition (see PROMPT.md).
+Phase 3 — Daily tasks, roadmap and progress (see PROMPT.md).
 
 ## Decisions
 
@@ -70,6 +91,12 @@ Phase 2 — Vocabulary with spaced repetition (see PROMPT.md).
 - **Typing is checked key by key** against the target word instead of using the
   device keyboard, so it works on a phone without a Korean keyboard installed.
 - **Stroke order** is drawn from simple line data in `strokes.ts`, not a font.
+- **Learning steps are day-based:** a new word rated Good returns tomorrow; Again
+  repeats it at the end of the same session.
+- **Typing cards use the phone's own Korean keyboard** (a plain text field), unlike
+  the Hangul typing drill. They can be switched off in Me.
+- **Card type is chosen by review count**, so it rotates predictably and needs no
+  extra saved data.
 - **A letter is solid** after 6+ recent answers with 85% correct (last 10 count).
 
 ## Known issues
@@ -83,7 +110,12 @@ Phase 2 — Vocabulary with spaced repetition (see PROMPT.md).
 
 ## Korean items needing review
 
-No items are marked `needsReview`. Worth a native speaker's glance anyway:
+No items are marked `needsReview`. I only used common textbook words and simple
+polite sentences, but none of it has been checked by a native speaker. Worth a glance:
+
+- All 697 vocabulary example sentences (`src/content/vocab/deck-*.json`).
+- Word choices where two forms are common: 현금인출기 (people often say ATM),
+  출입국사무소 (the official name has changed over the years), 휴대폰 / 핸드폰.
 
 - Sound descriptions and Russian comparisons in `letters.json` (approximations by nature).
 - Stroke order follows the standard school order (e.g. ㅂ 4 strokes, ㅌ 3, ㅈ 2).
