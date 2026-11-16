@@ -1,18 +1,30 @@
 import type { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 
 /** Standard page frame: title, optional subtitle, then content. */
 export function Page({
   title,
   subtitle,
+  back,
   children,
 }: {
   title: string;
   subtitle?: string;
+  /** Optional "back" link shown above the title. */
+  back?: { to: string; label: string };
   children: ReactNode;
 }) {
   return (
     <div className="space-y-5">
       <header>
+        {back && (
+          <Link
+            to={back.to}
+            className="-ml-1 mb-1 inline-flex min-h-10 items-center text-sm font-medium text-teal-700 dark:text-teal-400"
+          >
+            ‹ {back.label}
+          </Link>
+        )}
         <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
         {subtitle && <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">{subtitle}</p>}
       </header>

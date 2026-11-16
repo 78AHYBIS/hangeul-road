@@ -1,7 +1,15 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { useEffect } from 'react';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { NAV_ITEMS } from './nav';
 
 export function Layout() {
+  const { pathname } = useLocation();
+  // Each new screen starts at the top. The braces matter: an effect must not return
+  // scrollTo's result (a Promise in new browsers), or React treats it as a cleanup function.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   return (
     <div className="mx-auto flex min-h-dvh max-w-xl flex-col">
       <main className="flex-1 px-4 pt-6 pb-24">

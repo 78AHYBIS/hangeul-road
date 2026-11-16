@@ -1,4 +1,5 @@
 import { beforeEach, describe, expect, it } from 'vitest';
+import { EMPTY_HANGUL_PROGRESS } from '../hangulProgress';
 import { createBackup, restoreBackup } from './backup';
 import { readAll, replaceAll, setValue } from './db';
 import {
@@ -20,7 +21,11 @@ const custom: Settings = {
 
 /** Simulates closing and reopening the app: memory is wiped, IndexedDB is kept. */
 function forgetInMemoryState() {
-  useAppStore.setState({ hydrated: false, settings: DEFAULT_SETTINGS });
+  useAppStore.setState({
+    hydrated: false,
+    settings: DEFAULT_SETTINGS,
+    hangul: EMPTY_HANGUL_PROGRESS,
+  });
 }
 
 beforeEach(async () => {
@@ -123,5 +128,28 @@ describe('export / import', () => {
     );
     await useAppStore.getState().hydrate();
     expect(useAppStore.getState().settings).toEqual({ ...DEFAULT_SETTINGS, theme: 'dark' });
+  });
+});
+
+describe('hangul progress persistence', () => {
+  it('survives a reload and a backup round trip', async () => {
+    await useAppStore.getState().hydrate();
+    await useAppStore.getState().recordLetters(['ㄱ', 'ㅏ'], true);
+    await useAppStore.getState().recordLetters(['ㄱ'], false);
+    await useAppStore.getState().markLessonDone('lesson-a');
+    await useAppStore.getState().markLessonDone('lesson-a');
+    await useAppStore
+      .getState()
+      .addReadingSpeed({ date: '2026-11-16', perMinute: 40, items: 20, seconds: 30 });
+    const saved = useAppStore.getState().hangul;
+    expect(saved.letters['ㄱ']).toEqual({ seen: 2, correct: 1, recent: [true, false] });
+    expect(saved.lessonsDone).toEqual(['lesson-a']);
+
+    const fileText = JSON.stringify(await createBackup());
+    await replaceAll({});
+    forgetInMemoryState();
+    await restoreBackup(fileText);
+    await useAppStore.getState().hydrate();
+    expect(useAppStore.getState().hangul).toEqual(saved);
   });
 });

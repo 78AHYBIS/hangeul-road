@@ -6,12 +6,14 @@
  * to `migrate()` below.
  */
 import { isValidISODate, type ISODate } from '../date';
+import { sanitizeHangulProgress } from '../hangulProgress';
 
 export const APP_ID = 'hangeul-road';
 export const SCHEMA_VERSION = 1;
 
 export const STORAGE_KEYS = {
   settings: 'settings',
+  hangul: 'hangul',
 } as const;
 
 export type Theme = 'system' | 'light' | 'dark';
@@ -108,5 +110,8 @@ export function parseBackup(raw: unknown): StoredData {
   const data = migrate({ ...raw.data }, version);
   // Settings are validated here; later phases validate their own keys the same way.
   data[STORAGE_KEYS.settings] = sanitizeSettings(data[STORAGE_KEYS.settings]);
+  if (STORAGE_KEYS.hangul in data) {
+    data[STORAGE_KEYS.hangul] = sanitizeHangulProgress(data[STORAGE_KEYS.hangul]);
+  }
   return data;
 }

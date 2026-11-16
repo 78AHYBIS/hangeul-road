@@ -1,0 +1,32 @@
+[
+  {
+    "id": "hangul-lesson-basic-vowels",
+    "group": "basic-vowels",
+    "title": "Basic vowels",
+    "intro": "Korean vowels are built from one long line plus short marks. A vowel is never written alone: when a syllable starts with a vowel sound, the silent letter ㅇ fills the first position (아, 오)."
+  },
+  {
+    "id": "hangul-lesson-basic-consonants",
+    "group": "basic-consonants",
+    "title": "Basic consonants",
+    "intro": "Ten plain consonants. ㄱ, ㄷ, ㅂ and ㅈ are soft: they sit between English g/k, d/t, b/p and j/ch, with almost no puff of air. Each one is spoken here with the vowel ㅏ (가, 나, 다)."
+  },
+  {
+    "id": "hangul-lesson-aspirated-consonants",
+    "group": "aspirated-consonants",
+    "title": "Aspirated consonants",
+    "intro": "Four consonants with a strong puff of air. Hold your palm in front of your mouth: you should feel air on ㅋ, ㅌ, ㅍ and ㅊ, and almost none on ㄱ, ㄷ, ㅂ and ㅈ."
+  },
+  {
+    "id": "hangul-lesson-double-consonants",
+    "group": "double-consonants",
+    "title": "Double (tense) consonants",
+    "intro": "Five tense consonants, written as doubled letters. Tighten your throat and release the sound sharply, with no air. Russian к, т and п have no puff of air, so they are a good starting point for ㄲ, ㄸ and ㅃ."
+  },
+  {
+    "id": "hangul-lesson-compound-vowels",
+    "group": "compound-vowels",
+    "title": "Compound vowels",
+    "intro": "Eleven vowels made by combining basic ones. Several sound the same in everyday speech: ㅐ and ㅔ, and the trio ㅙ, ㅚ and ㅞ. Learn to read them all; the spelling comes with vocabulary."
+  }
+]

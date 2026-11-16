@@ -29,8 +29,9 @@ src/
   app/          App.tsx (routes), Layout.tsx (bottom nav), nav.ts, useTheme.ts
   features/     one folder per section: daily, learn, library, korea-guide, settings
   content/      learning data only (JSON), one folder per content type
-  lib/          date.ts, storage/ (schema, db, store, backup)
-  components/   shared UI (Page, Card, ComingSoon)
+  lib/          date.ts, hangul.ts (compose/decompose, romanize, keyboard),
+                hangulProgress.ts (letter stats), speech.ts, storage/
+  components/   shared UI (Page, Card, ComingSoon), ui.ts (button classes)
 scripts/        validate-content.ts (+ its test)
 ```
 
@@ -48,6 +49,15 @@ scripts/        validate-content.ts (+ its test)
   Tests run in Node with `fake-indexeddb` (see `src/test-setup.ts`).
 - **UI text:** English, calm, no guilt or shame messages (see PROMPT.md section 2).
 - **Touch targets:** at least 40px high.
+- **Effects:** always use braces in `useEffect(() => { ... })`. Returning a value by
+  accident (e.g. `window.scrollTo`, which returns a Promise) crashes React on cleanup.
+- **Randomness and `Date.now()`:** only in event handlers or timers, never during render
+  (the React lint rules reject it). Drill builders take an `rng` argument for tests.
+- **Audio:** only through `SpeakButton` / `speak()` in `src/lib/speech.ts`. Show
+  `<VoiceNotice />` on any screen with audio, so a missing Korean voice is explained.
+- **Romanization:** render it with `<Romanization text=… />`, which obeys the setting.
+  Exception: single-letter sound labels (`g / k`) in letter lessons and letter drills,
+  because there they are the answer.
 - Do not put model names or AI attribution text in code comments.
 
 ## Storage
@@ -55,7 +65,7 @@ scripts/        validate-content.ts (+ its test)
 - IndexedDB database `hangeul-road`, one table `kv` (`key` -> `value`), wrapped by
   `src/lib/storage/db.ts`. Nothing else imports Dexie.
 - Each feature owns one key, listed in `STORAGE_KEYS` in `schema.ts`
-  (currently only `settings`). A new feature adds a key, a type, a `sanitize…` function,
+  (`settings`, `hangul`). A new feature adds a key, a type, a `sanitize…` function,
   and state + actions in `store.ts`.
 - `SCHEMA_VERSION` (now 1) describes the shape of saved data. When a saved shape
   changes: bump it and add a step to `migrate()` in `schema.ts`. It runs at startup
@@ -80,8 +90,22 @@ Rules every item follows now (checked by `npm run validate:content`):
 - `lastVerified`: when present, `YYYY-MM-DD`
 - `refs`: optional array of other item ids; each must exist
 
-Per-type schemas (TypeScript types + extra validator rules) are added by the phase
-that introduces the type. Document them here when added.
+Required fields per file are listed in `REQUIRED_FIELDS` in `scripts/validate-content.ts`;
+add a line there for every new content file. TypeScript types live in
+`src/content/<type>/index.ts`.
+
+### hangul/
+
+- `letters.json` (40): `id` (`letter-ㄱ`), `korean`, `group`, `name`, `sound`, `soundEn`,
+  `soundRu`, `hint`, `confusedWith` (letters), `speak` (syllable to play).
+- `lessons.json` (5): `id`, `group`, `title`, `intro`. One lesson per letter group.
+- `rules.json` (6): `id`, `title`, `summary`, `explanation[]`,
+  `examples[]` of `{ korean, pronounced, meaning }`. Batchim plus five sound-change rules.
+- `reading-words.json`: `id` (`read-001`), `korean`, `romanization` (Revised
+  Romanization, lowercase), `meaning`, `category` (loanword, place, brand, sign, food).
+- `strokes.ts`: stroke order as SVG paths on a 100 x 100 grid, in writing order.
+- Saved progress (`hangul` key): `{ letters: { [letter]: { seen, correct, recent[] } },
+readingSpeed[], lessonsDone[] }`. See `src/lib/hangulProgress.ts`.
 
 ## Korean and link accuracy (from PROMPT.md, critical)
 

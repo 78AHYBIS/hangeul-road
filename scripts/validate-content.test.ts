@@ -49,4 +49,16 @@ describe('validateContent', () => {
     expect(result.errors).toEqual([]);
     expect(result.needsReview).toHaveLength(1);
   });
+
+  it('checks required fields and example sentences for known files', () => {
+    const { errors } = validateContent([
+      file([{ id: 'w1', korean: '물', meaning: '' }], 'src/content/hangul/reading-words.json'),
+      file(
+        [{ id: 'r1', title: 't', summary: 's', explanation: ['e'], examples: [{ korean: 'x' }] }],
+        'src/content/hangul/rules.json',
+      ),
+    ]);
+    // w1: meaning, romanization, category missing; r1: one bad example.
+    expect(errors).toHaveLength(4);
+  });
 });

@@ -1,0 +1,618 @@
+[
+  {
+    "id": "read-001",
+    "korean": "커피",
+    "romanization": "keopi",
+    "meaning": "coffee",
+    "category": "loanword"
+  },
+  {
+    "id": "read-002",
+    "korean": "버스",
+    "romanization": "beoseu",
+    "meaning": "bus",
+    "category": "loanword"
+  },
+  {
+    "id": "read-003",
+    "korean": "택시",
+    "romanization": "taeksi",
+    "meaning": "taxi",
+    "category": "loanword"
+  },
+  {
+    "id": "read-004",
+    "korean": "인터넷",
+    "romanization": "inteonet",
+    "meaning": "internet",
+    "category": "loanword"
+  },
+  {
+    "id": "read-005",
+    "korean": "컴퓨터",
+    "romanization": "keompyuteo",
+    "meaning": "computer",
+    "category": "loanword"
+  },
+  {
+    "id": "read-006",
+    "korean": "카페",
+    "romanization": "kape",
+    "meaning": "cafe",
+    "category": "loanword"
+  },
+  {
+    "id": "read-007",
+    "korean": "메뉴",
+    "romanization": "menyu",
+    "meaning": "menu",
+    "category": "loanword"
+  },
+  {
+    "id": "read-008",
+    "korean": "피자",
+    "romanization": "pija",
+    "meaning": "pizza",
+    "category": "loanword"
+  },
+  {
+    "id": "read-009",
+    "korean": "햄버거",
+    "romanization": "haembeogeo",
+    "meaning": "hamburger",
+    "category": "loanword"
+  },
+  {
+    "id": "read-010",
+    "korean": "호텔",
+    "romanization": "hotel",
+    "meaning": "hotel",
+    "category": "loanword"
+  },
+  {
+    "id": "read-011",
+    "korean": "카드",
+    "romanization": "kadeu",
+    "meaning": "card",
+    "category": "loanword"
+  },
+  {
+    "id": "read-012",
+    "korean": "와이파이",
+    "romanization": "waipai",
+    "meaning": "Wi-Fi",
+    "category": "loanword"
+  },
+  {
+    "id": "read-013",
+    "korean": "아메리카노",
+    "romanization": "amerikano",
+    "meaning": "americano",
+    "category": "loanword"
+  },
+  {
+    "id": "read-014",
+    "korean": "주스",
+    "romanization": "juseu",
+    "meaning": "juice",
+    "category": "loanword"
+  },
+  {
+    "id": "read-015",
+    "korean": "케이크",
+    "romanization": "keikeu",
+    "meaning": "cake",
+    "category": "loanword"
+  },
+  {
+    "id": "read-016",
+    "korean": "초콜릿",
+    "romanization": "chokollit",
+    "meaning": "chocolate",
+    "category": "loanword"
+  },
+  {
+    "id": "read-017",
+    "korean": "바나나",
+    "romanization": "banana",
+    "meaning": "banana",
+    "category": "loanword"
+  },
+  {
+    "id": "read-018",
+    "korean": "쇼핑",
+    "romanization": "syoping",
+    "meaning": "shopping",
+    "category": "loanword"
+  },
+  {
+    "id": "read-019",
+    "korean": "마트",
+    "romanization": "mateu",
+    "meaning": "supermarket",
+    "category": "loanword"
+  },
+  {
+    "id": "read-020",
+    "korean": "샌드위치",
+    "romanization": "saendeuwichi",
+    "meaning": "sandwich",
+    "category": "loanword"
+  },
+  {
+    "id": "read-021",
+    "korean": "노트북",
+    "romanization": "noteubuk",
+    "meaning": "laptop",
+    "category": "loanword"
+  },
+  {
+    "id": "read-022",
+    "korean": "핸드폰",
+    "romanization": "haendeupon",
+    "meaning": "mobile phone",
+    "category": "loanword"
+  },
+  {
+    "id": "read-023",
+    "korean": "에어컨",
+    "romanization": "eeokeon",
+    "meaning": "air conditioner",
+    "category": "loanword"
+  },
+  {
+    "id": "read-024",
+    "korean": "엘리베이터",
+    "romanization": "ellibeiteo",
+    "meaning": "elevator",
+    "category": "loanword"
+  },
+  {
+    "id": "read-025",
+    "korean": "아이스크림",
+    "romanization": "aiseukeurim",
+    "meaning": "ice cream",
+    "category": "loanword"
+  },
+  {
+    "id": "read-026",
+    "korean": "티셔츠",
+    "romanization": "tisyeocheu",
+    "meaning": "T-shirt",
+    "category": "loanword"
+  },
+  {
+    "id": "read-027",
+    "korean": "텔레비전",
+    "romanization": "tellebijeon",
+    "meaning": "television",
+    "category": "loanword"
+  },
+  {
+    "id": "read-028",
+    "korean": "카메라",
+    "romanization": "kamera",
+    "meaning": "camera",
+    "category": "loanword"
+  },
+  {
+    "id": "read-029",
+    "korean": "라디오",
+    "romanization": "radio",
+    "meaning": "radio",
+    "category": "loanword"
+  },
+  {
+    "id": "read-030",
+    "korean": "토마토",
+    "romanization": "tomato",
+    "meaning": "tomato",
+    "category": "loanword"
+  },
+  {
+    "id": "read-031",
+    "korean": "한국",
+    "romanization": "hanguk",
+    "meaning": "Korea",
+    "category": "place"
+  },
+  {
+    "id": "read-032",
+    "korean": "서울",
+    "romanization": "seoul",
+    "meaning": "Seoul",
+    "category": "place"
+  },
+  {
+    "id": "read-033",
+    "korean": "울산",
+    "romanization": "ulsan",
+    "meaning": "Ulsan",
+    "category": "place"
+  },
+  {
+    "id": "read-034",
+    "korean": "부산",
+    "romanization": "busan",
+    "meaning": "Busan",
+    "category": "place"
+  },
+  {
+    "id": "read-035",
+    "korean": "경주",
+    "romanization": "gyeongju",
+    "meaning": "Gyeongju",
+    "category": "place"
+  },
+  {
+    "id": "read-036",
+    "korean": "대구",
+    "romanization": "daegu",
+    "meaning": "Daegu",
+    "category": "place"
+  },
+  {
+    "id": "read-037",
+    "korean": "인천",
+    "romanization": "incheon",
+    "meaning": "Incheon",
+    "category": "place"
+  },
+  {
+    "id": "read-038",
+    "korean": "제주",
+    "romanization": "jeju",
+    "meaning": "Jeju",
+    "category": "place"
+  },
+  {
+    "id": "read-039",
+    "korean": "유니스트",
+    "romanization": "yuniseuteu",
+    "meaning": "UNIST",
+    "category": "place"
+  },
+  {
+    "id": "read-040",
+    "korean": "카자흐스탄",
+    "romanization": "kajaheuseutan",
+    "meaning": "Kazakhstan",
+    "category": "place"
+  },
+  {
+    "id": "read-041",
+    "korean": "대학교",
+    "romanization": "daehakgyo",
+    "meaning": "university",
+    "category": "place"
+  },
+  {
+    "id": "read-042",
+    "korean": "기숙사",
+    "romanization": "gisuksa",
+    "meaning": "dormitory",
+    "category": "place"
+  },
+  {
+    "id": "read-043",
+    "korean": "도서관",
+    "romanization": "doseogwan",
+    "meaning": "library",
+    "category": "place"
+  },
+  {
+    "id": "read-044",
+    "korean": "공항",
+    "romanization": "gonghang",
+    "meaning": "airport",
+    "category": "place"
+  },
+  {
+    "id": "read-045",
+    "korean": "삼성",
+    "romanization": "samseong",
+    "meaning": "Samsung",
+    "category": "brand"
+  },
+  {
+    "id": "read-046",
+    "korean": "현대",
+    "romanization": "hyeondae",
+    "meaning": "Hyundai",
+    "category": "brand"
+  },
+  {
+    "id": "read-047",
+    "korean": "네이버",
+    "romanization": "neibeo",
+    "meaning": "Naver",
+    "category": "brand"
+  },
+  {
+    "id": "read-048",
+    "korean": "카카오",
+    "romanization": "kakao",
+    "meaning": "Kakao",
+    "category": "brand"
+  },
+  {
+    "id": "read-049",
+    "korean": "롯데",
+    "romanization": "rotde",
+    "meaning": "Lotte",
+    "category": "brand"
+  },
+  {
+    "id": "read-050",
+    "korean": "스타벅스",
+    "romanization": "seutabeokseu",
+    "meaning": "Starbucks",
+    "category": "brand"
+  },
+  {
+    "id": "read-051",
+    "korean": "맥도날드",
+    "romanization": "maekdonaldeu",
+    "meaning": "McDonald's",
+    "category": "brand"
+  },
+  {
+    "id": "read-052",
+    "korean": "쿠팡",
+    "romanization": "kupang",
+    "meaning": "Coupang",
+    "category": "brand"
+  },
+  {
+    "id": "read-053",
+    "korean": "엘지",
+    "romanization": "elji",
+    "meaning": "LG",
+    "category": "brand"
+  },
+  {
+    "id": "read-054",
+    "korean": "입구",
+    "romanization": "ipgu",
+    "meaning": "entrance",
+    "category": "sign"
+  },
+  {
+    "id": "read-055",
+    "korean": "출구",
+    "romanization": "chulgu",
+    "meaning": "exit",
+    "category": "sign"
+  },
+  {
+    "id": "read-056",
+    "korean": "화장실",
+    "romanization": "hwajangsil",
+    "meaning": "restroom",
+    "category": "sign"
+  },
+  {
+    "id": "read-057",
+    "korean": "남자",
+    "romanization": "namja",
+    "meaning": "man",
+    "category": "sign"
+  },
+  {
+    "id": "read-058",
+    "korean": "여자",
+    "romanization": "yeoja",
+    "meaning": "woman",
+    "category": "sign"
+  },
+  {
+    "id": "read-059",
+    "korean": "약국",
+    "romanization": "yakguk",
+    "meaning": "pharmacy",
+    "category": "sign"
+  },
+  {
+    "id": "read-060",
+    "korean": "병원",
+    "romanization": "byeongwon",
+    "meaning": "hospital",
+    "category": "sign"
+  },
+  {
+    "id": "read-061",
+    "korean": "은행",
+    "romanization": "eunhaeng",
+    "meaning": "bank",
+    "category": "sign"
+  },
+  {
+    "id": "read-062",
+    "korean": "편의점",
+    "romanization": "pyeonuijeom",
+    "meaning": "convenience store",
+    "category": "sign"
+  },
+  {
+    "id": "read-063",
+    "korean": "식당",
+    "romanization": "sikdang",
+    "meaning": "restaurant",
+    "category": "sign"
+  },
+  {
+    "id": "read-064",
+    "korean": "지하철",
+    "romanization": "jihacheol",
+    "meaning": "subway",
+    "category": "sign"
+  },
+  {
+    "id": "read-065",
+    "korean": "역",
+    "romanization": "yeok",
+    "meaning": "station",
+    "category": "sign"
+  },
+  {
+    "id": "read-066",
+    "korean": "금연",
+    "romanization": "geumyeon",
+    "meaning": "no smoking",
+    "category": "sign"
+  },
+  {
+    "id": "read-067",
+    "korean": "주차",
+    "romanization": "jucha",
+    "meaning": "parking",
+    "category": "sign"
+  },
+  {
+    "id": "read-068",
+    "korean": "당기세요",
+    "romanization": "danggiseyo",
+    "meaning": "pull",
+    "category": "sign"
+  },
+  {
+    "id": "read-069",
+    "korean": "미세요",
+    "romanization": "miseyo",
+    "meaning": "push",
+    "category": "sign"
+  },
+  {
+    "id": "read-070",
+    "korean": "계산",
+    "romanization": "gyesan",
+    "meaning": "payment",
+    "category": "sign"
+  },
+  {
+    "id": "read-071",
+    "korean": "포장",
+    "romanization": "pojang",
+    "meaning": "takeout",
+    "category": "sign"
+  },
+  {
+    "id": "read-072",
+    "korean": "매표소",
+    "romanization": "maepyoso",
+    "meaning": "ticket office",
+    "category": "sign"
+  },
+  {
+    "id": "read-073",
+    "korean": "안내",
+    "romanization": "annae",
+    "meaning": "information",
+    "category": "sign"
+  },
+  {
+    "id": "read-074",
+    "korean": "물",
+    "romanization": "mul",
+    "meaning": "water",
+    "category": "food"
+  },
+  {
+    "id": "read-075",
+    "korean": "밥",
+    "romanization": "bap",
+    "meaning": "cooked rice",
+    "category": "food"
+  },
+  {
+    "id": "read-076",
+    "korean": "김치",
+    "romanization": "gimchi",
+    "meaning": "kimchi",
+    "category": "food"
+  },
+  {
+    "id": "read-077",
+    "korean": "비빔밥",
+    "romanization": "bibimbap",
+    "meaning": "bibimbap (mixed rice)",
+    "category": "food"
+  },
+  {
+    "id": "read-078",
+    "korean": "불고기",
+    "romanization": "bulgogi",
+    "meaning": "bulgogi (marinated beef)",
+    "category": "food"
+  },
+  {
+    "id": "read-079",
+    "korean": "김밥",
+    "romanization": "gimbap",
+    "meaning": "gimbap (seaweed rice roll)",
+    "category": "food"
+  },
+  {
+    "id": "read-080",
+    "korean": "라면",
+    "romanization": "ramyeon",
+    "meaning": "instant noodles",
+    "category": "food"
+  },
+  {
+    "id": "read-081",
+    "korean": "떡볶이",
+    "romanization": "tteokbokki",
+    "meaning": "tteokbokki (spicy rice cakes)",
+    "category": "food"
+  },
+  {
+    "id": "read-082",
+    "korean": "삼겹살",
+    "romanization": "samgyeopsal",
+    "meaning": "grilled pork belly",
+    "category": "food"
+  },
+  {
+    "id": "read-083",
+    "korean": "치킨",
+    "romanization": "chikin",
+    "meaning": "fried chicken",
+    "category": "food"
+  },
+  {
+    "id": "read-084",
+    "korean": "냉면",
+    "romanization": "naengmyeon",
+    "meaning": "cold noodles",
+    "category": "food"
+  },
+  {
+    "id": "read-085",
+    "korean": "만두",
+    "romanization": "mandu",
+    "meaning": "dumplings",
+    "category": "food"
+  },
+  {
+    "id": "read-086",
+    "korean": "우유",
+    "romanization": "uyu",
+    "meaning": "milk",
+    "category": "food"
+  },
+  {
+    "id": "read-087",
+    "korean": "맥주",
+    "romanization": "maekju",
+    "meaning": "beer",
+    "category": "food"
+  },
+  {
+    "id": "read-088",
+    "korean": "차",
+    "romanization": "cha",
+    "meaning": "tea",
+    "category": "food"
+  }
+]

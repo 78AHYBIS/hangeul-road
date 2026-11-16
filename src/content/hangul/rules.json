@@ -1,0 +1,307 @@
+[
+  {
+    "id": "hangul-rule-batchim",
+    "title": "Final consonants (batchim)",
+    "summary": "A consonant written under the vowel closes the syllable.",
+    "explanation": [
+      "A syllable block can end in a consonant, written at the bottom of the block. This final consonant is called batchim (받침).",
+      "Read a block in this order: first consonant, vowel, then the batchim. 한 is ㅎ + ㅏ + ㄴ.",
+      "A final consonant is not released: your mouth closes on the sound and stops. Final ㄱ, ㄷ and ㅂ are cut short, with no burst of air.",
+      "Some blocks have two consonants at the bottom. Before a pause or another consonant only one of them is pronounced."
+    ],
+    "examples": [
+      {
+        "korean": "산",
+        "pronounced": "산",
+        "meaning": "mountain"
+      },
+      {
+        "korean": "물",
+        "pronounced": "물",
+        "meaning": "water"
+      },
+      {
+        "korean": "밥",
+        "pronounced": "밥",
+        "meaning": "cooked rice"
+      },
+      {
+        "korean": "강",
+        "pronounced": "강",
+        "meaning": "river"
+      },
+      {
+        "korean": "집",
+        "pronounced": "집",
+        "meaning": "house"
+      },
+      {
+        "korean": "책",
+        "pronounced": "책",
+        "meaning": "book"
+      },
+      {
+        "korean": "한국",
+        "pronounced": "한국",
+        "meaning": "Korea"
+      },
+      {
+        "korean": "닭",
+        "pronounced": "닥",
+        "meaning": "chicken"
+      },
+      {
+        "korean": "값",
+        "pronounced": "갑",
+        "meaning": "price"
+      },
+      {
+        "korean": "여덟",
+        "pronounced": "여덜",
+        "meaning": "eight"
+      }
+    ]
+  },
+  {
+    "id": "hangul-rule-seven-finals",
+    "title": "The seven final sounds",
+    "summary": "Many letters can be written as batchim, but only seven sounds are heard.",
+    "explanation": [
+      "At the end of a syllable only seven sounds exist: ㄱ, ㄴ, ㄷ, ㄹ, ㅁ, ㅂ and ㅇ.",
+      "ㄱ, ㅋ and ㄲ all sound like ㄱ. ㅂ and ㅍ both sound like ㅂ.",
+      "ㄷ, ㅌ, ㅅ, ㅆ, ㅈ, ㅊ and ㅎ all sound like ㄷ.",
+      "This applies when the syllable is followed by a pause or by a consonant. Before a vowel, the linking rule applies instead."
+    ],
+    "examples": [
+      {
+        "korean": "부엌",
+        "pronounced": "부억",
+        "meaning": "kitchen"
+      },
+      {
+        "korean": "밖",
+        "pronounced": "박",
+        "meaning": "outside"
+      },
+      {
+        "korean": "옷",
+        "pronounced": "옫",
+        "meaning": "clothes"
+      },
+      {
+        "korean": "낮",
+        "pronounced": "낟",
+        "meaning": "daytime"
+      },
+      {
+        "korean": "꽃",
+        "pronounced": "꼳",
+        "meaning": "flower"
+      },
+      {
+        "korean": "끝",
+        "pronounced": "끋",
+        "meaning": "end"
+      },
+      {
+        "korean": "앞",
+        "pronounced": "압",
+        "meaning": "front"
+      },
+      {
+        "korean": "잎",
+        "pronounced": "입",
+        "meaning": "leaf"
+      }
+    ]
+  },
+  {
+    "id": "hangul-rule-linking",
+    "title": "Linking",
+    "summary": "A final consonant moves over to a following vowel.",
+    "explanation": [
+      "When a syllable ends in a consonant and the next syllable starts with the silent ㅇ, the consonant is pronounced as the start of the next syllable.",
+      "The spelling does not change. Only the pronunciation moves.",
+      "With a double batchim, the first consonant stays and the second one moves over.",
+      "Final ㅇ (ng) does not move, and final ㅎ is silent before a vowel."
+    ],
+    "examples": [
+      {
+        "korean": "음악",
+        "pronounced": "으막",
+        "meaning": "music"
+      },
+      {
+        "korean": "한국어",
+        "pronounced": "한구거",
+        "meaning": "Korean language"
+      },
+      {
+        "korean": "일요일",
+        "pronounced": "이료일",
+        "meaning": "Sunday"
+      },
+      {
+        "korean": "먹어요",
+        "pronounced": "머거요",
+        "meaning": "eat (polite)"
+      },
+      {
+        "korean": "있어요",
+        "pronounced": "이써요",
+        "meaning": "there is, have (polite)"
+      },
+      {
+        "korean": "읽어요",
+        "pronounced": "일거요",
+        "meaning": "read (polite)"
+      },
+      {
+        "korean": "좋아요",
+        "pronounced": "조아요",
+        "meaning": "it is good (polite)"
+      }
+    ]
+  },
+  {
+    "id": "hangul-rule-nasalization",
+    "title": "Nasalization",
+    "summary": "ㄱ, ㄷ and ㅂ sounds become nasal before ㄴ or ㅁ.",
+    "explanation": [
+      "When a final ㄱ, ㄷ or ㅂ sound is followed by ㄴ or ㅁ, it changes into the matching nasal sound.",
+      "ㄱ becomes ㅇ (ng), ㄷ becomes ㄴ, and ㅂ becomes ㅁ.",
+      "This is why the very common ending 입니다 is pronounced 임니다."
+    ],
+    "examples": [
+      {
+        "korean": "입니다",
+        "pronounced": "임니다",
+        "meaning": "is (formal)"
+      },
+      {
+        "korean": "감사합니다",
+        "pronounced": "감사함니다",
+        "meaning": "thank you"
+      },
+      {
+        "korean": "한국말",
+        "pronounced": "한궁말",
+        "meaning": "Korean (spoken language)"
+      },
+      {
+        "korean": "작년",
+        "pronounced": "장년",
+        "meaning": "last year"
+      },
+      {
+        "korean": "박물관",
+        "pronounced": "방물관",
+        "meaning": "museum"
+      },
+      {
+        "korean": "국물",
+        "pronounced": "궁물",
+        "meaning": "broth"
+      },
+      {
+        "korean": "십만",
+        "pronounced": "심만",
+        "meaning": "one hundred thousand"
+      }
+    ]
+  },
+  {
+    "id": "hangul-rule-tensing",
+    "title": "Tensing",
+    "summary": "A soft consonant becomes tense after a final ㄱ, ㄷ or ㅂ sound.",
+    "explanation": [
+      "After a final ㄱ, ㄷ or ㅂ sound, the next ㄱ, ㄷ, ㅂ, ㅅ or ㅈ is pronounced as its tense partner.",
+      "ㄱ becomes ㄲ, ㄷ becomes ㄸ, ㅂ becomes ㅃ, ㅅ becomes ㅆ, and ㅈ becomes ㅉ.",
+      "The spelling stays the same."
+    ],
+    "examples": [
+      {
+        "korean": "학교",
+        "pronounced": "학꾜",
+        "meaning": "school"
+      },
+      {
+        "korean": "식당",
+        "pronounced": "식땅",
+        "meaning": "restaurant"
+      },
+      {
+        "korean": "학생",
+        "pronounced": "학쌩",
+        "meaning": "student"
+      },
+      {
+        "korean": "숙제",
+        "pronounced": "숙쩨",
+        "meaning": "homework"
+      },
+      {
+        "korean": "국밥",
+        "pronounced": "국빱",
+        "meaning": "rice soup"
+      },
+      {
+        "korean": "입구",
+        "pronounced": "입꾸",
+        "meaning": "entrance"
+      },
+      {
+        "korean": "약국",
+        "pronounced": "약꾹",
+        "meaning": "pharmacy"
+      }
+    ]
+  },
+  {
+    "id": "hangul-rule-aspiration",
+    "title": "Aspiration with ㅎ",
+    "summary": "ㅎ merges with ㄱ, ㄷ, ㅂ or ㅈ into ㅋ, ㅌ, ㅍ or ㅊ.",
+    "explanation": [
+      "When ㅎ meets ㄱ, ㄷ, ㅂ or ㅈ, in either order, the two merge into one aspirated sound.",
+      "ㄱ becomes ㅋ, ㄷ becomes ㅌ, ㅂ becomes ㅍ, and ㅈ becomes ㅊ.",
+      "Before a vowel, final ㅎ is simply silent: 좋아요 is pronounced 조아요."
+    ],
+    "examples": [
+      {
+        "korean": "좋다",
+        "pronounced": "조타",
+        "meaning": "to be good"
+      },
+      {
+        "korean": "좋고",
+        "pronounced": "조코",
+        "meaning": "good, and"
+      },
+      {
+        "korean": "많다",
+        "pronounced": "만타",
+        "meaning": "to be many"
+      },
+      {
+        "korean": "축하",
+        "pronounced": "추카",
+        "meaning": "congratulations"
+      },
+      {
+        "korean": "입학",
+        "pronounced": "이팍",
+        "meaning": "entering a school"
+      },
+      {
+        "korean": "백화점",
+        "pronounced": "배콰점",
+        "meaning": "department store"
+      },
+      {
+        "korean": "어떻게",
+        "pronounced": "어떠케",
+        "meaning": "how"
+      }
+    ]
+  }
+]

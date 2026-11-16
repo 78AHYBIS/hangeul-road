@@ -32,10 +32,16 @@ export function TodayPage() {
       </Card>
 
       <Card>
-        <h2 className="font-semibold">No tasks yet</h2>
+        <h2 className="font-semibold">Start with Hangul</h2>
         <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
-          Daily tasks arrive in Phase 3. Hangul lessons come first, in Phase 1.
+          Daily tasks arrive in Phase 3. Until then, do one Hangul lesson or drill a day.
         </p>
+        <Link
+          to="/learn/hangul"
+          className="mt-3 flex min-h-12 items-center justify-center rounded-xl bg-teal-700 font-medium text-white"
+        >
+          Open Hangul
+        </Link>
       </Card>
     </Page>
   );

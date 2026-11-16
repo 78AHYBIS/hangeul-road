@@ -1,6 +1,14 @@
 import { useEffect } from 'react';
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import { TodayPage } from '../features/daily/TodayPage';
+import { BuilderPage } from '../features/hangul/BuilderPage';
+import { DrillPage } from '../features/hangul/DrillPage';
+import { HangulHome } from '../features/hangul/HangulHome';
+import { LessonPage } from '../features/hangul/LessonPage';
+import { ReadingPage } from '../features/hangul/ReadingPage';
+import { RulePage } from '../features/hangul/RulePage';
+import { TimedPage } from '../features/hangul/TimedPage';
+import { TypingPage } from '../features/hangul/TypingPage';
 import { KoreaPage } from '../features/korea-guide/KoreaPage';
 import { LearnPage } from '../features/learn/LearnPage';
 import { LibraryPage } from '../features/library/LibraryPage';
@@ -28,6 +36,14 @@ export function App() {
         <Route element={<Layout />}>
           <Route index element={<TodayPage />} />
           <Route path="learn" element={<LearnPage />} />
+          <Route path="learn/hangul" element={<HangulHome />} />
+          <Route path="learn/hangul/lesson/:id" element={<LessonPage />} />
+          <Route path="learn/hangul/rule/:id" element={<RulePage />} />
+          <Route path="learn/hangul/builder" element={<BuilderPage />} />
+          <Route path="learn/hangul/reading" element={<ReadingPage />} />
+          <Route path="learn/hangul/drill/:type" element={<DrillPage />} />
+          <Route path="learn/hangul/timed" element={<TimedPage />} />
+          <Route path="learn/hangul/typing" element={<TypingPage />} />
           <Route path="library" element={<LibraryPage />} />
           <Route path="korea" element={<KoreaPage />} />
           <Route path="me" element={<MePage />} />

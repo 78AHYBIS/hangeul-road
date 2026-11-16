@@ -8,7 +8,8 @@
  *   - `needsReview` items are counted and listed, never hidden
  *   - `lastVerified`, when present, is a YYYY-MM-DD date
  *   - `refs` (ids of other items), when present, all exist
- * Later phases add per-type rules in `validateContent`.
+ *   - items in the files listed in REQUIRED_FIELDS have those fields, non-empty
+ *   - every `examples[]` entry has Hangul in `korean`
  */
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
@@ -23,6 +24,30 @@ export const CONTENT_TYPES = [
   'resources',
   'korea-apps',
 ] as const;
+
+/** Fields each item must have, by file path ending. Add a line when you add a file. */
+export const REQUIRED_FIELDS: Record<string, string[]> = {
+  'hangul/letters.json': [
+    'korean',
+    'group',
+    'name',
+    'sound',
+    'soundEn',
+    'soundRu',
+    'hint',
+    'confusedWith',
+    'speak',
+  ],
+  'hangul/lessons.json': ['group', 'title', 'intro'],
+  'hangul/rules.json': ['title', 'summary', 'explanation', 'examples'],
+  'hangul/reading-words.json': ['korean', 'romanization', 'meaning', 'category'],
+};
+
+const isEmpty = (value: unknown) =>
+  value === undefined ||
+  value === null ||
+  (typeof value === 'string' && value.trim() === '') ||
+  (Array.isArray(value) && value.length === 0);
 
 const HANGUL = /[ᄀ-ᇿ㄰-㆏가-힣]/;
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
@@ -50,6 +75,10 @@ export function validateContent(files: ContentFile[]): ValidationResult {
       errors.push(`${file.path}: file must contain a JSON array of items`);
       continue;
     }
+    const normalizedPath = file.path.replaceAll('\\', '/');
+    const required =
+      Object.entries(REQUIRED_FIELDS).find(([ending]) => normalizedPath.endsWith(ending))?.[1] ??
+      [];
     file.json.forEach((item: unknown, index: number) => {
       const where = `${file.path}[${index}]`;
       if (typeof item !== 'object' || item === null) {
@@ -65,6 +94,17 @@ export function validateContent(files: ContentFile[]): ValidationResult {
         errors.push(`${where}: duplicate id "${id}" (also in ${seenIds.get(id)})`);
       } else {
         seenIds.set(id, where);
+      }
+      for (const field of required) {
+        if (isEmpty(record[field])) errors.push(`${where}: missing "${field}"`);
+      }
+      if (Array.isArray(record.examples)) {
+        record.examples.forEach((example: unknown, i: number) => {
+          const korean = (example as Record<string, unknown> | null)?.korean;
+          if (typeof korean !== 'string' || !HANGUL.test(korean)) {
+            errors.push(`${where}.examples[${i}]: "korean" is missing or has no Hangul`);
+          }
+        });
       }
       if ('korean' in record) {
         const korean = record.korean;
