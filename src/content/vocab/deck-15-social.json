@@ -1,0 +1,425 @@
+[
+  {
+    "id": "vocab-social-기분",
+    "korean": "기분",
+    "meaning": "mood, feeling",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "오늘 기분이 좋아요.",
+    "exampleMeaning": "I am in a good mood today."
+  },
+  {
+    "id": "vocab-social-행복하다",
+    "korean": "행복하다",
+    "meaning": "to be happy",
+    "pos": "adjective",
+    "deck": "deck-social",
+    "example": "한국에 와서 행복해요.",
+    "exampleMeaning": "I am happy to be in Korea."
+  },
+  {
+    "id": "vocab-social-기쁘다",
+    "korean": "기쁘다",
+    "meaning": "to be glad",
+    "pos": "adjective",
+    "deck": "deck-social",
+    "example": "다시 만나서 기뻐요.",
+    "exampleMeaning": "I am glad to see you again."
+  },
+  {
+    "id": "vocab-social-슬프다",
+    "korean": "슬프다",
+    "meaning": "to be sad",
+    "pos": "adjective",
+    "deck": "deck-social",
+    "example": "영화가 너무 슬퍼요.",
+    "exampleMeaning": "The movie is so sad."
+  },
+  {
+    "id": "vocab-social-화나다",
+    "korean": "화나다",
+    "meaning": "to be angry",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "친구가 화났어요.",
+    "exampleMeaning": "My friend is angry."
+  },
+  {
+    "id": "vocab-social-무섭다",
+    "korean": "무섭다",
+    "meaning": "to be scary; to be scared",
+    "pos": "adjective",
+    "deck": "deck-social",
+    "example": "그 영화는 무서워요.",
+    "exampleMeaning": "That movie is scary."
+  },
+  {
+    "id": "vocab-social-걱정하다",
+    "korean": "걱정하다",
+    "meaning": "to worry",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "너무 걱정하지 마세요.",
+    "exampleMeaning": "Do not worry too much."
+  },
+  {
+    "id": "vocab-social-심심하다",
+    "korean": "심심하다",
+    "meaning": "to be bored",
+    "pos": "adjective",
+    "deck": "deck-social",
+    "example": "주말에 심심했어요.",
+    "exampleMeaning": "I was bored on the weekend."
+  },
+  {
+    "id": "vocab-social-외롭다",
+    "korean": "외롭다",
+    "meaning": "to be lonely",
+    "pos": "adjective",
+    "deck": "deck-social",
+    "example": "가끔 외로워요.",
+    "exampleMeaning": "I sometimes feel lonely."
+  },
+  {
+    "id": "vocab-social-보고-싶다",
+    "korean": "보고 싶다",
+    "meaning": "to miss (someone)",
+    "pos": "expression",
+    "deck": "deck-social",
+    "example": "가족이 보고 싶어요.",
+    "exampleMeaning": "I miss my family."
+  },
+  {
+    "id": "vocab-social-놀라다",
+    "korean": "놀라다",
+    "meaning": "to be surprised",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "깜짝 놀랐어요.",
+    "exampleMeaning": "I was really surprised."
+  },
+  {
+    "id": "vocab-social-신나다",
+    "korean": "신나다",
+    "meaning": "to be excited",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "여행을 가서 신나요.",
+    "exampleMeaning": "I am excited to go on a trip."
+  },
+  {
+    "id": "vocab-social-긴장하다",
+    "korean": "긴장하다",
+    "meaning": "to be nervous",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "발표 때문에 긴장했어요.",
+    "exampleMeaning": "I was nervous because of the presentation."
+  },
+  {
+    "id": "vocab-social-부끄럽다",
+    "korean": "부끄럽다",
+    "meaning": "to be shy, embarrassed",
+    "pos": "adjective",
+    "deck": "deck-social",
+    "example": "한국어로 말하기가 부끄러워요.",
+    "exampleMeaning": "I feel shy speaking Korean."
+  },
+  {
+    "id": "vocab-social-사랑하다",
+    "korean": "사랑하다",
+    "meaning": "to love",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "가족을 사랑해요.",
+    "exampleMeaning": "I love my family."
+  },
+  {
+    "id": "vocab-social-영화",
+    "korean": "영화",
+    "meaning": "movie",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "한국 영화를 자주 봐요.",
+    "exampleMeaning": "I often watch Korean movies."
+  },
+  {
+    "id": "vocab-social-음악",
+    "korean": "음악",
+    "meaning": "music",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "어떤 음악을 좋아해요?",
+    "exampleMeaning": "What kind of music do you like?"
+  },
+  {
+    "id": "vocab-social-노래",
+    "korean": "노래",
+    "meaning": "song",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "이 노래를 알아요?",
+    "exampleMeaning": "Do you know this song?"
+  },
+  {
+    "id": "vocab-social-드라마",
+    "korean": "드라마",
+    "meaning": "TV drama",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "한국 드라마로 한국어를 공부해요.",
+    "exampleMeaning": "I study Korean with Korean dramas."
+  },
+  {
+    "id": "vocab-social-운동",
+    "korean": "운동",
+    "meaning": "exercise, sports",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "운동을 좋아해요?",
+    "exampleMeaning": "Do you like sports?"
+  },
+  {
+    "id": "vocab-social-축구",
+    "korean": "축구",
+    "meaning": "football (soccer)",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "주말에 친구들과 축구를 해요.",
+    "exampleMeaning": "I play football with friends on weekends."
+  },
+  {
+    "id": "vocab-social-농구",
+    "korean": "농구",
+    "meaning": "basketball",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "농구를 잘해요.",
+    "exampleMeaning": "I am good at basketball."
+  },
+  {
+    "id": "vocab-social-수영",
+    "korean": "수영",
+    "meaning": "swimming",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "수영을 배우고 있어요.",
+    "exampleMeaning": "I am learning to swim."
+  },
+  {
+    "id": "vocab-social-등산",
+    "korean": "등산",
+    "meaning": "hiking",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "주말에 등산을 가요.",
+    "exampleMeaning": "I go hiking on the weekend."
+  },
+  {
+    "id": "vocab-social-여행",
+    "korean": "여행",
+    "meaning": "travel, trip",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "제주도로 여행을 가고 싶어요.",
+    "exampleMeaning": "I want to travel to Jeju Island."
+  },
+  {
+    "id": "vocab-social-그림",
+    "korean": "그림",
+    "meaning": "picture, drawing",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "그림을 잘 그려요.",
+    "exampleMeaning": "You draw well."
+  },
+  {
+    "id": "vocab-social-요리",
+    "korean": "요리",
+    "meaning": "cooking",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "요리를 잘 못해요.",
+    "exampleMeaning": "I am not good at cooking."
+  },
+  {
+    "id": "vocab-social-독서",
+    "korean": "독서",
+    "meaning": "reading (as a hobby)",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "제 취미는 독서예요.",
+    "exampleMeaning": "My hobby is reading."
+  },
+  {
+    "id": "vocab-social-춤",
+    "korean": "춤",
+    "meaning": "dance",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "춤을 잘 춰요.",
+    "exampleMeaning": "You dance well."
+  },
+  {
+    "id": "vocab-social-쇼핑",
+    "korean": "쇼핑",
+    "meaning": "shopping",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "주말에 쇼핑하러 가요.",
+    "exampleMeaning": "I am going shopping on the weekend."
+  },
+  {
+    "id": "vocab-social-산책",
+    "korean": "산책",
+    "meaning": "walk, stroll",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "저녁에 산책을 해요.",
+    "exampleMeaning": "I take a walk in the evening."
+  },
+  {
+    "id": "vocab-social-약속",
+    "korean": "약속",
+    "meaning": "appointment, plans; promise",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "오늘 저녁에 약속이 있어요.",
+    "exampleMeaning": "I have plans this evening."
+  },
+  {
+    "id": "vocab-social-파티",
+    "korean": "파티",
+    "meaning": "party",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "생일 파티에 초대받았어요.",
+    "exampleMeaning": "I was invited to a birthday party."
+  },
+  {
+    "id": "vocab-social-선물",
+    "korean": "선물",
+    "meaning": "present, gift",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "친구 생일 선물을 샀어요.",
+    "exampleMeaning": "I bought a birthday present for my friend."
+  },
+  {
+    "id": "vocab-social-초대하다",
+    "korean": "초대하다",
+    "meaning": "to invite",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "친구를 집에 초대했어요.",
+    "exampleMeaning": "I invited a friend to my home."
+  },
+  {
+    "id": "vocab-social-소개하다",
+    "korean": "소개하다",
+    "meaning": "to introduce",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "제 친구를 소개할게요.",
+    "exampleMeaning": "Let me introduce my friend."
+  },
+  {
+    "id": "vocab-social-사귀다",
+    "korean": "사귀다",
+    "meaning": "to make friends with; to date",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "새 친구를 많이 사귀었어요.",
+    "exampleMeaning": "I made many new friends."
+  },
+  {
+    "id": "vocab-social-연락하다",
+    "korean": "연락하다",
+    "meaning": "to contact",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "나중에 연락할게요.",
+    "exampleMeaning": "I will contact you later."
+  },
+  {
+    "id": "vocab-social-이야기하다",
+    "korean": "이야기하다",
+    "meaning": "to talk",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "친구와 오래 이야기했어요.",
+    "exampleMeaning": "I talked with my friend for a long time."
+  },
+  {
+    "id": "vocab-social-웃다",
+    "korean": "웃다",
+    "meaning": "to laugh, to smile",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "친구가 크게 웃었어요.",
+    "exampleMeaning": "My friend laughed out loud."
+  },
+  {
+    "id": "vocab-social-울다",
+    "korean": "울다",
+    "meaning": "to cry",
+    "pos": "verb",
+    "deck": "deck-social",
+    "example": "아이가 울어요.",
+    "exampleMeaning": "The child is crying."
+  },
+  {
+    "id": "vocab-social-혼자",
+    "korean": "혼자",
+    "meaning": "alone",
+    "pos": "adverb",
+    "deck": "deck-social",
+    "example": "혼자 밥을 먹었어요.",
+    "exampleMeaning": "I ate alone."
+  },
+  {
+    "id": "vocab-social-함께",
+    "korean": "함께",
+    "meaning": "together",
+    "pos": "adverb",
+    "deck": "deck-social",
+    "example": "함께 공부해요.",
+    "exampleMeaning": "Let us study together."
+  },
+  {
+    "id": "vocab-social-관심",
+    "korean": "관심",
+    "meaning": "interest",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "한국 문화에 관심이 많아요.",
+    "exampleMeaning": "I am very interested in Korean culture."
+  },
+  {
+    "id": "vocab-social-문화",
+    "korean": "문화",
+    "meaning": "culture",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "한국 문화를 배우고 싶어요.",
+    "exampleMeaning": "I want to learn about Korean culture."
+  },
+  {
+    "id": "vocab-social-연락처",
+    "korean": "연락처",
+    "meaning": "contact information",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "연락처를 알려 주세요.",
+    "exampleMeaning": "Please give me your contact information."
+  },
+  {
+    "id": "vocab-social-카카오톡",
+    "korean": "카카오톡",
+    "meaning": "KakaoTalk",
+    "pos": "noun",
+    "deck": "deck-social",
+    "example": "카카오톡 아이디가 뭐예요?",
+    "exampleMeaning": "What is your KakaoTalk ID?"
+  }
+]

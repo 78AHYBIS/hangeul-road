@@ -13,6 +13,11 @@ import { KoreaPage } from '../features/korea-guide/KoreaPage';
 import { LearnPage } from '../features/learn/LearnPage';
 import { LibraryPage } from '../features/library/LibraryPage';
 import { MePage } from '../features/settings/MePage';
+import { DeckPage } from '../features/vocab/DeckPage';
+import { MyWordsPage } from '../features/vocab/MyWordsPage';
+import { NumbersPage } from '../features/vocab/NumbersPage';
+import { ReviewPage } from '../features/vocab/ReviewPage';
+import { VocabHome } from '../features/vocab/VocabHome';
 import { useAppStore } from '../lib/storage/store';
 import { Layout } from './Layout';
 import { useTheme } from './useTheme';
@@ -44,6 +49,11 @@ export function App() {
           <Route path="learn/hangul/drill/:type" element={<DrillPage />} />
           <Route path="learn/hangul/timed" element={<TimedPage />} />
           <Route path="learn/hangul/typing" element={<TypingPage />} />
+          <Route path="learn/vocab" element={<VocabHome />} />
+          <Route path="learn/vocab/review" element={<ReviewPage />} />
+          <Route path="learn/vocab/deck/:id" element={<DeckPage />} />
+          <Route path="learn/vocab/my-words" element={<MyWordsPage />} />
+          <Route path="learn/vocab/numbers" element={<NumbersPage />} />
           <Route path="library" element={<LibraryPage />} />
           <Route path="korea" element={<KoreaPage />} />
           <Route path="me" element={<MePage />} />

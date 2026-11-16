@@ -49,3 +49,16 @@ export function formatLongDate(value: ISODate): string {
   if (!date) return value;
   return date.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
 }
+
+/** Moves a date by a number of days (negative goes back). */
+export function addDays(value: ISODate, days: number): ISODate {
+  const date = parseISODate(value);
+  if (!date) return value;
+  date.setDate(date.getDate() + days);
+  return toISODate(date);
+}
+
+/** Today as a local calendar day. */
+export function todayISO(): ISODate {
+  return toISODate(new Date());
+}

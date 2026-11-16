@@ -1,0 +1,442 @@
+[
+  {
+    "id": "vocab-numbers-일",
+    "korean": "일",
+    "meaning": "one (Sino-Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "일 층에 편의점이 있어요.",
+    "exampleMeaning": "There is a convenience store on the first floor.",
+    "note": "Sino-Korean numbers are used for dates, money, minutes, floors and phone numbers."
+  },
+  {
+    "id": "vocab-numbers-이",
+    "korean": "이",
+    "meaning": "two (Sino-Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "이 층에 식당이 있어요.",
+    "exampleMeaning": "There is a restaurant on the second floor."
+  },
+  {
+    "id": "vocab-numbers-삼",
+    "korean": "삼",
+    "meaning": "three (Sino-Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "삼 일 동안 여행했어요.",
+    "exampleMeaning": "I travelled for three days."
+  },
+  {
+    "id": "vocab-numbers-사",
+    "korean": "사",
+    "meaning": "four (Sino-Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "사월에 벚꽃이 피어요.",
+    "exampleMeaning": "Cherry blossoms bloom in April."
+  },
+  {
+    "id": "vocab-numbers-오",
+    "korean": "오",
+    "meaning": "five (Sino-Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "오 분만 기다려 주세요.",
+    "exampleMeaning": "Please wait just five minutes."
+  },
+  {
+    "id": "vocab-numbers-육",
+    "korean": "육",
+    "meaning": "six (Sino-Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "육 층에서 내려요.",
+    "exampleMeaning": "I get off on the sixth floor."
+  },
+  {
+    "id": "vocab-numbers-칠",
+    "korean": "칠",
+    "meaning": "seven (Sino-Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "칠 번 출구로 나오세요.",
+    "exampleMeaning": "Come out of exit 7."
+  },
+  {
+    "id": "vocab-numbers-팔",
+    "korean": "팔",
+    "meaning": "eight (Sino-Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "팔월은 아주 더워요.",
+    "exampleMeaning": "August is very hot."
+  },
+  {
+    "id": "vocab-numbers-구",
+    "korean": "구",
+    "meaning": "nine (Sino-Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "구 번 버스가 학교에 가요.",
+    "exampleMeaning": "Bus number 9 goes to the school."
+  },
+  {
+    "id": "vocab-numbers-십",
+    "korean": "십",
+    "meaning": "ten (Sino-Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "십 분 후에 만나요.",
+    "exampleMeaning": "Let us meet in ten minutes."
+  },
+  {
+    "id": "vocab-numbers-백",
+    "korean": "백",
+    "meaning": "hundred",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "백 원짜리 동전이 있어요?",
+    "exampleMeaning": "Do you have a 100-won coin?"
+  },
+  {
+    "id": "vocab-numbers-천",
+    "korean": "천",
+    "meaning": "thousand",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "이 과자는 천 원이에요.",
+    "exampleMeaning": "This snack is 1,000 won."
+  },
+  {
+    "id": "vocab-numbers-만",
+    "korean": "만",
+    "meaning": "ten thousand",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "만 원만 빌려주세요.",
+    "exampleMeaning": "Please lend me just 10,000 won.",
+    "note": "Korean counts large numbers in units of 만 (10,000), not thousands."
+  },
+  {
+    "id": "vocab-numbers-영",
+    "korean": "영",
+    "meaning": "zero",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "오늘 기온은 영 도예요.",
+    "exampleMeaning": "The temperature today is zero degrees."
+  },
+  {
+    "id": "vocab-numbers-공",
+    "korean": "공",
+    "meaning": "zero (in phone numbers)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "제 전화번호는 공일공으로 시작해요.",
+    "exampleMeaning": "My phone number starts with 010."
+  },
+  {
+    "id": "vocab-numbers-하나",
+    "korean": "하나",
+    "meaning": "one (native Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "사과 하나 주세요.",
+    "exampleMeaning": "Please give me one apple.",
+    "note": "Native numbers are used for counting things, people, hours and age."
+  },
+  {
+    "id": "vocab-numbers-둘",
+    "korean": "둘",
+    "meaning": "two (native Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "우리 둘이 같이 가요.",
+    "exampleMeaning": "The two of us are going together."
+  },
+  {
+    "id": "vocab-numbers-셋",
+    "korean": "셋",
+    "meaning": "three (native Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "동생이 셋 있어요.",
+    "exampleMeaning": "I have three younger siblings."
+  },
+  {
+    "id": "vocab-numbers-넷",
+    "korean": "넷",
+    "meaning": "four (native Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "모두 넷이에요.",
+    "exampleMeaning": "There are four in total."
+  },
+  {
+    "id": "vocab-numbers-다섯",
+    "korean": "다섯",
+    "meaning": "five (native Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "다섯 시에 수업이 끝나요.",
+    "exampleMeaning": "Class ends at five o'clock."
+  },
+  {
+    "id": "vocab-numbers-여섯",
+    "korean": "여섯",
+    "meaning": "six (native Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "여섯 명이 같이 살아요.",
+    "exampleMeaning": "Six people live together."
+  },
+  {
+    "id": "vocab-numbers-일곱",
+    "korean": "일곱",
+    "meaning": "seven (native Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "일곱 시에 일어나요.",
+    "exampleMeaning": "I get up at seven o'clock."
+  },
+  {
+    "id": "vocab-numbers-여덟",
+    "korean": "여덟",
+    "meaning": "eight (native Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "여덟 시에 아침을 먹어요.",
+    "exampleMeaning": "I eat breakfast at eight o'clock."
+  },
+  {
+    "id": "vocab-numbers-아홉",
+    "korean": "아홉",
+    "meaning": "nine (native Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "아홉 시에 수업이 시작해요.",
+    "exampleMeaning": "Class starts at nine o'clock."
+  },
+  {
+    "id": "vocab-numbers-열",
+    "korean": "열",
+    "meaning": "ten (native Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "열 시에 자요.",
+    "exampleMeaning": "I go to sleep at ten o'clock."
+  },
+  {
+    "id": "vocab-numbers-스물",
+    "korean": "스물",
+    "meaning": "twenty (native Korean)",
+    "pos": "number",
+    "deck": "deck-numbers",
+    "example": "저는 스물두 살이에요.",
+    "exampleMeaning": "I am twenty-two years old.",
+    "note": "Alone before a counter it becomes 스무: 스무 살."
+  },
+  {
+    "id": "vocab-numbers-개",
+    "korean": "개",
+    "meaning": "counter for things",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "사과 세 개 주세요.",
+    "exampleMeaning": "Please give me three apples.",
+    "note": "Before a counter, 하나 둘 셋 넷 become 한 두 세 네."
+  },
+  {
+    "id": "vocab-numbers-명",
+    "korean": "명",
+    "meaning": "counter for people",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "학생이 열 명 있어요.",
+    "exampleMeaning": "There are ten students."
+  },
+  {
+    "id": "vocab-numbers-분",
+    "korean": "분",
+    "meaning": "minute",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "삼십 분 걸려요.",
+    "exampleMeaning": "It takes thirty minutes."
+  },
+  {
+    "id": "vocab-numbers-시",
+    "korean": "시",
+    "meaning": "o'clock",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "지금 몇 시예요?",
+    "exampleMeaning": "What time is it now?",
+    "note": "Hours use native numbers; minutes use Sino-Korean numbers."
+  },
+  {
+    "id": "vocab-numbers-시간",
+    "korean": "시간",
+    "meaning": "hour, time",
+    "pos": "noun",
+    "deck": "deck-numbers",
+    "example": "두 시간 동안 공부했어요.",
+    "exampleMeaning": "I studied for two hours."
+  },
+  {
+    "id": "vocab-numbers-살",
+    "korean": "살",
+    "meaning": "years old",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "몇 살이에요?",
+    "exampleMeaning": "How old are you?",
+    "note": "To someone older, ask 나이가 어떻게 되세요?"
+  },
+  {
+    "id": "vocab-numbers-번",
+    "korean": "번",
+    "meaning": "number; time (occurrence)",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "한 번 더 말해 주세요.",
+    "exampleMeaning": "Please say it one more time."
+  },
+  {
+    "id": "vocab-numbers-잔",
+    "korean": "잔",
+    "meaning": "counter for cups and glasses",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "커피 한 잔 주세요.",
+    "exampleMeaning": "One cup of coffee, please."
+  },
+  {
+    "id": "vocab-numbers-병",
+    "korean": "병",
+    "meaning": "counter for bottles",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "물 두 병 주세요.",
+    "exampleMeaning": "Two bottles of water, please."
+  },
+  {
+    "id": "vocab-numbers-장",
+    "korean": "장",
+    "meaning": "counter for sheets and tickets",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "표 한 장 주세요.",
+    "exampleMeaning": "One ticket, please."
+  },
+  {
+    "id": "vocab-numbers-권",
+    "korean": "권",
+    "meaning": "counter for books",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "책 세 권을 샀어요.",
+    "exampleMeaning": "I bought three books."
+  },
+  {
+    "id": "vocab-numbers-마리",
+    "korean": "마리",
+    "meaning": "counter for animals",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "고양이 한 마리가 있어요.",
+    "exampleMeaning": "There is one cat."
+  },
+  {
+    "id": "vocab-numbers-층",
+    "korean": "층",
+    "meaning": "floor (of a building)",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "사무실은 삼 층에 있어요.",
+    "exampleMeaning": "The office is on the third floor."
+  },
+  {
+    "id": "vocab-numbers-원",
+    "korean": "원",
+    "meaning": "won (Korean currency)",
+    "pos": "noun",
+    "deck": "deck-numbers",
+    "example": "오천 원이에요.",
+    "exampleMeaning": "It is 5,000 won."
+  },
+  {
+    "id": "vocab-numbers-몇",
+    "korean": "몇",
+    "meaning": "how many, what (number)",
+    "pos": "determiner",
+    "deck": "deck-numbers",
+    "example": "몇 명이에요?",
+    "exampleMeaning": "How many people?"
+  },
+  {
+    "id": "vocab-numbers-반",
+    "korean": "반",
+    "meaning": "half",
+    "pos": "noun",
+    "deck": "deck-numbers",
+    "example": "한 시 반에 만나요.",
+    "exampleMeaning": "Let us meet at half past one."
+  },
+  {
+    "id": "vocab-numbers-월",
+    "korean": "월",
+    "meaning": "month (in dates)",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "삼월에 학기가 시작해요.",
+    "exampleMeaning": "The semester starts in March.",
+    "note": "June and October are irregular: 유월, 시월."
+  },
+  {
+    "id": "vocab-numbers-며칠",
+    "korean": "며칠",
+    "meaning": "what date; how many days",
+    "pos": "noun",
+    "deck": "deck-numbers",
+    "example": "오늘이 며칠이에요?",
+    "exampleMeaning": "What is the date today?"
+  },
+  {
+    "id": "vocab-numbers-년",
+    "korean": "년",
+    "meaning": "year",
+    "pos": "counter",
+    "deck": "deck-numbers",
+    "example": "이천이십칠 년에 한국에 가요.",
+    "exampleMeaning": "I am going to Korea in 2027."
+  },
+  {
+    "id": "vocab-numbers-오전",
+    "korean": "오전",
+    "meaning": "a.m., morning",
+    "pos": "noun",
+    "deck": "deck-numbers",
+    "example": "오전 아홉 시에 수업이 있어요.",
+    "exampleMeaning": "I have a class at 9 a.m."
+  },
+  {
+    "id": "vocab-numbers-오후",
+    "korean": "오후",
+    "meaning": "p.m., afternoon",
+    "pos": "noun",
+    "deck": "deck-numbers",
+    "example": "오후 두 시에 만나요.",
+    "exampleMeaning": "Let us meet at 2 p.m."
+  },
+  {
+    "id": "vocab-numbers-첫-번째",
+    "korean": "첫 번째",
+    "meaning": "first",
+    "pos": "determiner",
+    "deck": "deck-numbers",
+    "example": "첫 번째 수업은 한국어예요.",
+    "exampleMeaning": "The first class is Korean."
+  }
+]

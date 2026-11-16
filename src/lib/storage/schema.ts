@@ -7,6 +7,7 @@
  */
 import { isValidISODate, type ISODate } from '../date';
 import { sanitizeHangulProgress } from '../hangulProgress';
+import { sanitizeVocabProgress } from '../vocabProgress';
 
 export const APP_ID = 'hangeul-road';
 export const SCHEMA_VERSION = 1;
@@ -14,6 +15,7 @@ export const SCHEMA_VERSION = 1;
 export const STORAGE_KEYS = {
   settings: 'settings',
   hangul: 'hangul',
+  vocab: 'vocab',
 } as const;
 
 export type Theme = 'system' | 'light' | 'dark';
@@ -31,6 +33,8 @@ export interface Settings {
   /** Web Speech API rate; 1 is normal speed. */
   speechRate: number;
   departureDate: ISODate;
+  /** Include cards where the word must be typed in Hangul (needs a Korean keyboard). */
+  typingCards: boolean;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -39,6 +43,7 @@ export const DEFAULT_SETTINGS: Settings = {
   showRomanization: true,
   speechRate: 0.9,
   departureDate: '2027-02-25',
+  typingCards: true,
 };
 
 /** All saved data, keyed by storage key. */
@@ -68,6 +73,7 @@ export function sanitizeSettings(raw: unknown): Settings {
         ? Math.min(SPEECH_RATE_MAX, Math.max(SPEECH_RATE_MIN, rate))
         : d.speechRate,
     departureDate: isValidISODate(input.departureDate) ? input.departureDate : d.departureDate,
+    typingCards: typeof input.typingCards === 'boolean' ? input.typingCards : d.typingCards,
   };
 }
 
@@ -112,6 +118,9 @@ export function parseBackup(raw: unknown): StoredData {
   data[STORAGE_KEYS.settings] = sanitizeSettings(data[STORAGE_KEYS.settings]);
   if (STORAGE_KEYS.hangul in data) {
     data[STORAGE_KEYS.hangul] = sanitizeHangulProgress(data[STORAGE_KEYS.hangul]);
+  }
+  if (STORAGE_KEYS.vocab in data) {
+    data[STORAGE_KEYS.vocab] = sanitizeVocabProgress(data[STORAGE_KEYS.vocab]);
   }
   return data;
 }

@@ -61,4 +61,21 @@ describe('validateContent', () => {
     // w1: meaning, romanization, category missing; r1: one bad example.
     expect(errors).toHaveLength(4);
   });
+
+  it('checks vocabulary words: fields, Korean example and deck reference', () => {
+    const word = { id: 'v1', korean: '물', meaning: 'water', pos: 'noun', exampleMeaning: 'x' };
+    const { errors } = validateContent([
+      file([{ id: 'deck-a', title: 't', description: 'd' }], 'src/content/vocab/decks.json'),
+      file(
+        [
+          { ...word, deck: 'deck-a', example: '물 주세요.' },
+          { ...word, id: 'v2', deck: 'deck-missing', example: 'water please' },
+        ],
+        'src/content/vocab/deck-01-a.json',
+      ),
+    ]);
+    expect(errors).toHaveLength(2);
+    expect(errors.join()).toMatch(/no Hangul/);
+    expect(errors.join()).toMatch(/broken reference "deck-missing"/);
+  });
 });

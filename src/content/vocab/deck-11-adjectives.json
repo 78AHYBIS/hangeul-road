@@ -1,0 +1,411 @@
+[
+  {
+    "id": "vocab-adjectives-좋다",
+    "korean": "좋다",
+    "meaning": "to be good",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 카페는 분위기가 좋아요.",
+    "exampleMeaning": "This cafe has a nice atmosphere."
+  },
+  {
+    "id": "vocab-adjectives-나쁘다",
+    "korean": "나쁘다",
+    "meaning": "to be bad",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "오늘은 날씨가 나빠요.",
+    "exampleMeaning": "The weather is bad today."
+  },
+  {
+    "id": "vocab-adjectives-크다",
+    "korean": "크다",
+    "meaning": "to be big",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 옷은 저한테 커요.",
+    "exampleMeaning": "These clothes are big on me."
+  },
+  {
+    "id": "vocab-adjectives-작다",
+    "korean": "작다",
+    "meaning": "to be small",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "방이 조금 작아요.",
+    "exampleMeaning": "The room is a bit small."
+  },
+  {
+    "id": "vocab-adjectives-많다",
+    "korean": "많다",
+    "meaning": "to be many, much",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "오늘은 숙제가 많아요.",
+    "exampleMeaning": "I have a lot of homework today."
+  },
+  {
+    "id": "vocab-adjectives-적다",
+    "korean": "적다",
+    "meaning": "to be few, little",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 식당은 양이 적어요.",
+    "exampleMeaning": "The portions are small at this restaurant."
+  },
+  {
+    "id": "vocab-adjectives-길다",
+    "korean": "길다",
+    "meaning": "to be long",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "수업이 너무 길어요.",
+    "exampleMeaning": "The class is too long."
+  },
+  {
+    "id": "vocab-adjectives-짧다",
+    "korean": "짧다",
+    "meaning": "to be short",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "머리가 짧아요.",
+    "exampleMeaning": "My hair is short."
+  },
+  {
+    "id": "vocab-adjectives-높다",
+    "korean": "높다",
+    "meaning": "to be high",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "저 건물은 아주 높아요.",
+    "exampleMeaning": "That building is very tall."
+  },
+  {
+    "id": "vocab-adjectives-낮다",
+    "korean": "낮다",
+    "meaning": "to be low",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 의자는 낮아요.",
+    "exampleMeaning": "This chair is low."
+  },
+  {
+    "id": "vocab-adjectives-빠르다",
+    "korean": "빠르다",
+    "meaning": "to be fast",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "기차가 버스보다 빨라요.",
+    "exampleMeaning": "The train is faster than the bus.",
+    "note": "Irregular: 빠르다 becomes 빨라요."
+  },
+  {
+    "id": "vocab-adjectives-느리다",
+    "korean": "느리다",
+    "meaning": "to be slow",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "인터넷이 느려요.",
+    "exampleMeaning": "The internet is slow."
+  },
+  {
+    "id": "vocab-adjectives-새롭다",
+    "korean": "새롭다",
+    "meaning": "to be new",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "새로운 친구를 만났어요.",
+    "exampleMeaning": "I met a new friend."
+  },
+  {
+    "id": "vocab-adjectives-오래되다",
+    "korean": "오래되다",
+    "meaning": "to be old (of things)",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 건물은 오래됐어요.",
+    "exampleMeaning": "This building is old."
+  },
+  {
+    "id": "vocab-adjectives-쉽다",
+    "korean": "쉽다",
+    "meaning": "to be easy",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 문제는 쉬워요.",
+    "exampleMeaning": "This problem is easy.",
+    "note": "Irregular: 쉽다 becomes 쉬워요."
+  },
+  {
+    "id": "vocab-adjectives-어렵다",
+    "korean": "어렵다",
+    "meaning": "to be difficult",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "한국어 발음이 어려워요.",
+    "exampleMeaning": "Korean pronunciation is difficult.",
+    "note": "Irregular: 어렵다 becomes 어려워요."
+  },
+  {
+    "id": "vocab-adjectives-재미있다",
+    "korean": "재미있다",
+    "meaning": "to be fun, interesting",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "한국어 수업이 재미있어요.",
+    "exampleMeaning": "Korean class is fun."
+  },
+  {
+    "id": "vocab-adjectives-재미없다",
+    "korean": "재미없다",
+    "meaning": "to be boring",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "그 영화는 재미없었어요.",
+    "exampleMeaning": "That movie was boring."
+  },
+  {
+    "id": "vocab-adjectives-바쁘다",
+    "korean": "바쁘다",
+    "meaning": "to be busy",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "요즘 시험 때문에 바빠요.",
+    "exampleMeaning": "I am busy these days because of exams."
+  },
+  {
+    "id": "vocab-adjectives-피곤하다",
+    "korean": "피곤하다",
+    "meaning": "to be tired",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "오늘은 너무 피곤해요.",
+    "exampleMeaning": "I am too tired today."
+  },
+  {
+    "id": "vocab-adjectives-아프다",
+    "korean": "아프다",
+    "meaning": "to be sick; to hurt",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "머리가 아파요.",
+    "exampleMeaning": "My head hurts."
+  },
+  {
+    "id": "vocab-adjectives-괜찮다",
+    "korean": "괜찮다",
+    "meaning": "to be okay",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "저는 괜찮아요.",
+    "exampleMeaning": "I am okay."
+  },
+  {
+    "id": "vocab-adjectives-예쁘다",
+    "korean": "예쁘다",
+    "meaning": "to be pretty",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 꽃이 예뻐요.",
+    "exampleMeaning": "This flower is pretty."
+  },
+  {
+    "id": "vocab-adjectives-멋있다",
+    "korean": "멋있다",
+    "meaning": "to be cool, stylish",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "그 옷이 멋있어요.",
+    "exampleMeaning": "Those clothes look cool."
+  },
+  {
+    "id": "vocab-adjectives-깨끗하다",
+    "korean": "깨끗하다",
+    "meaning": "to be clean",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "방이 깨끗해요.",
+    "exampleMeaning": "The room is clean."
+  },
+  {
+    "id": "vocab-adjectives-더럽다",
+    "korean": "더럽다",
+    "meaning": "to be dirty",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "신발이 더러워요.",
+    "exampleMeaning": "My shoes are dirty."
+  },
+  {
+    "id": "vocab-adjectives-조용하다",
+    "korean": "조용하다",
+    "meaning": "to be quiet",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "도서관은 조용해요.",
+    "exampleMeaning": "The library is quiet."
+  },
+  {
+    "id": "vocab-adjectives-시끄럽다",
+    "korean": "시끄럽다",
+    "meaning": "to be noisy",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "밖이 시끄러워요.",
+    "exampleMeaning": "It is noisy outside."
+  },
+  {
+    "id": "vocab-adjectives-뜨겁다",
+    "korean": "뜨겁다",
+    "meaning": "to be hot (to the touch)",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "커피가 뜨거워요. 조심하세요.",
+    "exampleMeaning": "The coffee is hot. Be careful."
+  },
+  {
+    "id": "vocab-adjectives-차갑다",
+    "korean": "차갑다",
+    "meaning": "to be cold (to the touch)",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "물이 차가워요.",
+    "exampleMeaning": "The water is cold."
+  },
+  {
+    "id": "vocab-adjectives-무겁다",
+    "korean": "무겁다",
+    "meaning": "to be heavy",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 상자는 무거워요.",
+    "exampleMeaning": "This box is heavy."
+  },
+  {
+    "id": "vocab-adjectives-가볍다",
+    "korean": "가볍다",
+    "meaning": "to be light (in weight)",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 노트북은 가벼워요.",
+    "exampleMeaning": "This laptop is light."
+  },
+  {
+    "id": "vocab-adjectives-같다",
+    "korean": "같다",
+    "meaning": "to be the same",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "우리는 나이가 같아요.",
+    "exampleMeaning": "We are the same age."
+  },
+  {
+    "id": "vocab-adjectives-다르다",
+    "korean": "다르다",
+    "meaning": "to be different",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "한국 문화는 우리 문화와 달라요.",
+    "exampleMeaning": "Korean culture is different from ours.",
+    "note": "Irregular: 다르다 becomes 달라요."
+  },
+  {
+    "id": "vocab-adjectives-중요하다",
+    "korean": "중요하다",
+    "meaning": "to be important",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 시험은 중요해요.",
+    "exampleMeaning": "This exam is important."
+  },
+  {
+    "id": "vocab-adjectives-유명하다",
+    "korean": "유명하다",
+    "meaning": "to be famous",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "경주는 유명한 도시예요.",
+    "exampleMeaning": "Gyeongju is a famous city."
+  },
+  {
+    "id": "vocab-adjectives-친절하다",
+    "korean": "친절하다",
+    "meaning": "to be kind",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "직원이 아주 친절해요.",
+    "exampleMeaning": "The staff are very kind."
+  },
+  {
+    "id": "vocab-adjectives-편하다",
+    "korean": "편하다",
+    "meaning": "to be comfortable, convenient",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 신발은 편해요.",
+    "exampleMeaning": "These shoes are comfortable."
+  },
+  {
+    "id": "vocab-adjectives-불편하다",
+    "korean": "불편하다",
+    "meaning": "to be uncomfortable, inconvenient",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "침대가 조금 불편해요.",
+    "exampleMeaning": "The bed is a little uncomfortable."
+  },
+  {
+    "id": "vocab-adjectives-위험하다",
+    "korean": "위험하다",
+    "meaning": "to be dangerous",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "밤에 혼자 가면 위험해요.",
+    "exampleMeaning": "It is dangerous to go alone at night."
+  },
+  {
+    "id": "vocab-adjectives-안전하다",
+    "korean": "안전하다",
+    "meaning": "to be safe",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 동네는 안전해요.",
+    "exampleMeaning": "This neighborhood is safe."
+  },
+  {
+    "id": "vocab-adjectives-넓다",
+    "korean": "넓다",
+    "meaning": "to be wide, spacious",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "도서관이 아주 넓어요.",
+    "exampleMeaning": "The library is very spacious."
+  },
+  {
+    "id": "vocab-adjectives-좁다",
+    "korean": "좁다",
+    "meaning": "to be narrow, cramped",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "길이 좁아요.",
+    "exampleMeaning": "The road is narrow."
+  },
+  {
+    "id": "vocab-adjectives-어둡다",
+    "korean": "어둡다",
+    "meaning": "to be dark",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "방이 어두워요.",
+    "exampleMeaning": "The room is dark."
+  },
+  {
+    "id": "vocab-adjectives-밝다",
+    "korean": "밝다",
+    "meaning": "to be bright",
+    "pos": "adjective",
+    "deck": "deck-adjectives",
+    "example": "이 방은 밝아요.",
+    "exampleMeaning": "This room is bright."
+  }
+]

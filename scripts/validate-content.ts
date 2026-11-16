@@ -9,6 +9,7 @@
  *   - `lastVerified`, when present, is a YYYY-MM-DD date
  *   - `refs` (ids of other items), when present, all exist
  *   - items in the files listed in REQUIRED_FIELDS have those fields, non-empty
+ *   - `example` contains Hangul, and `deck` points to an existing deck id
  *   - every `examples[]` entry has Hangul in `korean`
  */
 import { readdirSync, readFileSync } from 'node:fs';
@@ -25,23 +26,18 @@ export const CONTENT_TYPES = [
   'korea-apps',
 ] as const;
 
-/** Fields each item must have, by file path ending. Add a line when you add a file. */
-export const REQUIRED_FIELDS: Record<string, string[]> = {
-  'hangul/letters.json': [
-    'korean',
-    'group',
-    'name',
-    'sound',
-    'soundEn',
-    'soundRu',
-    'hint',
-    'confusedWith',
-    'speak',
+/** Fields each item must have, by file path. Add a line when you add a kind of file. */
+export const REQUIRED_FIELDS: [RegExp, string[]][] = [
+  [
+    /hangul\/letters\.json$/,
+    ['korean', 'group', 'name', 'sound', 'soundEn', 'soundRu', 'hint', 'confusedWith', 'speak'],
   ],
-  'hangul/lessons.json': ['group', 'title', 'intro'],
-  'hangul/rules.json': ['title', 'summary', 'explanation', 'examples'],
-  'hangul/reading-words.json': ['korean', 'romanization', 'meaning', 'category'],
-};
+  [/hangul\/lessons\.json$/, ['group', 'title', 'intro']],
+  [/hangul\/rules\.json$/, ['title', 'summary', 'explanation', 'examples']],
+  [/hangul\/reading-words\.json$/, ['korean', 'romanization', 'meaning', 'category']],
+  [/vocab\/decks\.json$/, ['title', 'description']],
+  [/vocab\/deck-[^/]+\.json$/, ['korean', 'meaning', 'pos', 'deck', 'example', 'exampleMeaning']],
+];
 
 const isEmpty = (value: unknown) =>
   value === undefined ||
@@ -76,9 +72,7 @@ export function validateContent(files: ContentFile[]): ValidationResult {
       continue;
     }
     const normalizedPath = file.path.replaceAll('\\', '/');
-    const required =
-      Object.entries(REQUIRED_FIELDS).find(([ending]) => normalizedPath.endsWith(ending))?.[1] ??
-      [];
+    const required = REQUIRED_FIELDS.find(([pattern]) => pattern.test(normalizedPath))?.[1] ?? [];
     file.json.forEach((item: unknown, index: number) => {
       const where = `${file.path}[${index}]`;
       if (typeof item !== 'object' || item === null) {
@@ -106,6 +100,11 @@ export function validateContent(files: ContentFile[]): ValidationResult {
           }
         });
       }
+      // An example sentence must be Korean, and a word's deck must exist.
+      if (typeof record.example === 'string' && !HANGUL.test(record.example)) {
+        errors.push(`${where}: "example" has no Hangul`);
+      }
+      if (typeof record.deck === 'string') refs.push({ from: where, to: record.deck });
       if ('korean' in record) {
         const korean = record.korean;
         if (typeof korean !== 'string' || korean.trim() === '') {

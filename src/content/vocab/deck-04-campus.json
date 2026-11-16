@@ -1,0 +1,398 @@
+[
+  {
+    "id": "vocab-campus-학교",
+    "korean": "학교",
+    "meaning": "school",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "학교에 걸어서 가요.",
+    "exampleMeaning": "I walk to school."
+  },
+  {
+    "id": "vocab-campus-대학교",
+    "korean": "대학교",
+    "meaning": "university",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "대학교에서 컴퓨터를 공부해요.",
+    "exampleMeaning": "I study computers at university."
+  },
+  {
+    "id": "vocab-campus-캠퍼스",
+    "korean": "캠퍼스",
+    "meaning": "campus",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "캠퍼스가 아주 넓어요.",
+    "exampleMeaning": "The campus is very large."
+  },
+  {
+    "id": "vocab-campus-수업",
+    "korean": "수업",
+    "meaning": "class, lesson",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "오늘 수업이 세 개 있어요.",
+    "exampleMeaning": "I have three classes today."
+  },
+  {
+    "id": "vocab-campus-강의실",
+    "korean": "강의실",
+    "meaning": "lecture room",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "강의실이 어디예요?",
+    "exampleMeaning": "Where is the lecture room?"
+  },
+  {
+    "id": "vocab-campus-교실",
+    "korean": "교실",
+    "meaning": "classroom",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "교실에 학생이 많아요.",
+    "exampleMeaning": "There are many students in the classroom."
+  },
+  {
+    "id": "vocab-campus-도서관",
+    "korean": "도서관",
+    "meaning": "library",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "도서관에서 공부해요.",
+    "exampleMeaning": "I study at the library."
+  },
+  {
+    "id": "vocab-campus-기숙사",
+    "korean": "기숙사",
+    "meaning": "dormitory",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "기숙사는 캠퍼스 안에 있어요.",
+    "exampleMeaning": "The dormitory is on campus."
+  },
+  {
+    "id": "vocab-campus-방",
+    "korean": "방",
+    "meaning": "room",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "제 방은 사 층에 있어요.",
+    "exampleMeaning": "My room is on the fourth floor."
+  },
+  {
+    "id": "vocab-campus-학생증",
+    "korean": "학생증",
+    "meaning": "student ID card",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "학생증을 보여 주세요.",
+    "exampleMeaning": "Please show your student ID."
+  },
+  {
+    "id": "vocab-campus-학기",
+    "korean": "학기",
+    "meaning": "semester",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "이번 학기는 유월에 끝나요.",
+    "exampleMeaning": "This semester ends in June."
+  },
+  {
+    "id": "vocab-campus-시험",
+    "korean": "시험",
+    "meaning": "exam",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "다음 주에 시험이 있어요.",
+    "exampleMeaning": "I have an exam next week."
+  },
+  {
+    "id": "vocab-campus-숙제",
+    "korean": "숙제",
+    "meaning": "homework",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "숙제를 다 했어요.",
+    "exampleMeaning": "I finished all my homework."
+  },
+  {
+    "id": "vocab-campus-과제",
+    "korean": "과제",
+    "meaning": "assignment",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "과제를 내일까지 내야 해요.",
+    "exampleMeaning": "I have to submit the assignment by tomorrow."
+  },
+  {
+    "id": "vocab-campus-발표",
+    "korean": "발표",
+    "meaning": "presentation",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "내일 발표가 있어요.",
+    "exampleMeaning": "I have a presentation tomorrow."
+  },
+  {
+    "id": "vocab-campus-질문",
+    "korean": "질문",
+    "meaning": "question",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "질문이 있어요.",
+    "exampleMeaning": "I have a question."
+  },
+  {
+    "id": "vocab-campus-대답",
+    "korean": "대답",
+    "meaning": "answer, reply",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "대답을 잘 못했어요.",
+    "exampleMeaning": "I could not answer well."
+  },
+  {
+    "id": "vocab-campus-성적",
+    "korean": "성적",
+    "meaning": "grade, score",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "성적이 잘 나왔어요.",
+    "exampleMeaning": "I got good grades."
+  },
+  {
+    "id": "vocab-campus-출석",
+    "korean": "출석",
+    "meaning": "attendance",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "교수님이 출석을 불러요.",
+    "exampleMeaning": "The professor takes attendance."
+  },
+  {
+    "id": "vocab-campus-교과서",
+    "korean": "교과서",
+    "meaning": "textbook",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "교과서를 가져왔어요?",
+    "exampleMeaning": "Did you bring your textbook?"
+  },
+  {
+    "id": "vocab-campus-책",
+    "korean": "책",
+    "meaning": "book",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "이 책은 재미있어요.",
+    "exampleMeaning": "This book is interesting."
+  },
+  {
+    "id": "vocab-campus-공책",
+    "korean": "공책",
+    "meaning": "notebook",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "공책에 단어를 써요.",
+    "exampleMeaning": "I write words in my notebook."
+  },
+  {
+    "id": "vocab-campus-펜",
+    "korean": "펜",
+    "meaning": "pen",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "펜 좀 빌려주세요.",
+    "exampleMeaning": "Please lend me a pen."
+  },
+  {
+    "id": "vocab-campus-가방",
+    "korean": "가방",
+    "meaning": "bag",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "가방이 무거워요.",
+    "exampleMeaning": "My bag is heavy."
+  },
+  {
+    "id": "vocab-campus-책상",
+    "korean": "책상",
+    "meaning": "desk",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "책상 위에 노트북이 있어요.",
+    "exampleMeaning": "There is a laptop on the desk."
+  },
+  {
+    "id": "vocab-campus-의자",
+    "korean": "의자",
+    "meaning": "chair",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "의자에 앉으세요.",
+    "exampleMeaning": "Please sit on the chair."
+  },
+  {
+    "id": "vocab-campus-침대",
+    "korean": "침대",
+    "meaning": "bed",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "침대에서 쉬고 있어요.",
+    "exampleMeaning": "I am resting on the bed."
+  },
+  {
+    "id": "vocab-campus-열쇠",
+    "korean": "열쇠",
+    "meaning": "key",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "방 열쇠를 잃어버렸어요.",
+    "exampleMeaning": "I lost my room key."
+  },
+  {
+    "id": "vocab-campus-세탁기",
+    "korean": "세탁기",
+    "meaning": "washing machine",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "세탁기는 일 층에 있어요.",
+    "exampleMeaning": "The washing machines are on the first floor."
+  },
+  {
+    "id": "vocab-campus-빨래",
+    "korean": "빨래",
+    "meaning": "laundry",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "주말에 빨래를 해요.",
+    "exampleMeaning": "I do laundry on weekends."
+  },
+  {
+    "id": "vocab-campus-청소",
+    "korean": "청소",
+    "meaning": "cleaning",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "방 청소를 했어요.",
+    "exampleMeaning": "I cleaned my room."
+  },
+  {
+    "id": "vocab-campus-쓰레기",
+    "korean": "쓰레기",
+    "meaning": "trash",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "쓰레기는 어디에 버려요?",
+    "exampleMeaning": "Where do I throw away trash?"
+  },
+  {
+    "id": "vocab-campus-분리수거",
+    "korean": "분리수거",
+    "meaning": "sorting recyclables",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "한국에서는 분리수거를 꼭 해야 해요.",
+    "exampleMeaning": "In Korea you must sort your recycling."
+  },
+  {
+    "id": "vocab-campus-샤워",
+    "korean": "샤워",
+    "meaning": "shower",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "아침에 샤워를 해요.",
+    "exampleMeaning": "I take a shower in the morning."
+  },
+  {
+    "id": "vocab-campus-학생-식당",
+    "korean": "학생 식당",
+    "meaning": "student cafeteria",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "학생 식당에서 점심을 먹어요.",
+    "exampleMeaning": "I eat lunch at the student cafeteria."
+  },
+  {
+    "id": "vocab-campus-동아리",
+    "korean": "동아리",
+    "meaning": "student club",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "축구 동아리에 가입했어요.",
+    "exampleMeaning": "I joined the football club."
+  },
+  {
+    "id": "vocab-campus-축제",
+    "korean": "축제",
+    "meaning": "festival",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "오월에 학교 축제가 있어요.",
+    "exampleMeaning": "There is a school festival in May."
+  },
+  {
+    "id": "vocab-campus-등록",
+    "korean": "등록",
+    "meaning": "registration",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "외국인 등록을 해야 해요.",
+    "exampleMeaning": "I have to do foreigner registration."
+  },
+  {
+    "id": "vocab-campus-수강-신청",
+    "korean": "수강 신청",
+    "meaning": "course registration",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "수강 신청은 다음 주예요.",
+    "exampleMeaning": "Course registration is next week."
+  },
+  {
+    "id": "vocab-campus-사무실",
+    "korean": "사무실",
+    "meaning": "office",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "사무실은 이 층에 있어요.",
+    "exampleMeaning": "The office is on the second floor."
+  },
+  {
+    "id": "vocab-campus-연구실",
+    "korean": "연구실",
+    "meaning": "lab, professor's office",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "교수님 연구실에 갔어요.",
+    "exampleMeaning": "I went to the professor's office."
+  },
+  {
+    "id": "vocab-campus-공부하다",
+    "korean": "공부하다",
+    "meaning": "to study",
+    "pos": "verb",
+    "deck": "deck-campus",
+    "example": "매일 한국어를 공부해요.",
+    "exampleMeaning": "I study Korean every day."
+  },
+  {
+    "id": "vocab-campus-배우다",
+    "korean": "배우다",
+    "meaning": "to learn",
+    "pos": "verb",
+    "deck": "deck-campus",
+    "example": "한국어를 배우고 싶어요.",
+    "exampleMeaning": "I want to learn Korean."
+  },
+  {
+    "id": "vocab-campus-가르치다",
+    "korean": "가르치다",
+    "meaning": "to teach",
+    "pos": "verb",
+    "deck": "deck-campus",
+    "example": "김 선생님이 한국어를 가르쳐요.",
+    "exampleMeaning": "Teacher Kim teaches Korean."
+  }
+]

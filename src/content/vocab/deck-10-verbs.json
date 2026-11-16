@@ -1,0 +1,437 @@
+[
+  {
+    "id": "vocab-verbs-하다",
+    "korean": "하다",
+    "meaning": "to do",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "지금 숙제를 해요.",
+    "exampleMeaning": "I am doing homework now."
+  },
+  {
+    "id": "vocab-verbs-있다",
+    "korean": "있다",
+    "meaning": "to exist; to have",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "시간이 있어요?",
+    "exampleMeaning": "Do you have time?"
+  },
+  {
+    "id": "vocab-verbs-없다",
+    "korean": "없다",
+    "meaning": "to not exist; to not have",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "오늘은 시간이 없어요.",
+    "exampleMeaning": "I have no time today."
+  },
+  {
+    "id": "vocab-verbs-이다",
+    "korean": "이다",
+    "meaning": "to be",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "이것은 제 가방이에요.",
+    "exampleMeaning": "This is my bag.",
+    "note": "Attaches to a noun: 이에요 after a consonant, 예요 after a vowel."
+  },
+  {
+    "id": "vocab-verbs-아니다",
+    "korean": "아니다",
+    "meaning": "to not be",
+    "pos": "adjective",
+    "deck": "deck-verbs",
+    "example": "저는 한국 사람이 아니에요.",
+    "exampleMeaning": "I am not Korean."
+  },
+  {
+    "id": "vocab-verbs-되다",
+    "korean": "되다",
+    "meaning": "to become; to be allowed",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "여기에서 사진을 찍어도 돼요?",
+    "exampleMeaning": "May I take photos here?"
+  },
+  {
+    "id": "vocab-verbs-먹다",
+    "korean": "먹다",
+    "meaning": "to eat",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "점심에 비빔밥을 먹었어요.",
+    "exampleMeaning": "I ate bibimbap for lunch."
+  },
+  {
+    "id": "vocab-verbs-마시다",
+    "korean": "마시다",
+    "meaning": "to drink",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "물을 많이 마셔요.",
+    "exampleMeaning": "I drink a lot of water."
+  },
+  {
+    "id": "vocab-verbs-보다",
+    "korean": "보다",
+    "meaning": "to see, to watch",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "주말에 영화를 봤어요.",
+    "exampleMeaning": "I watched a movie on the weekend."
+  },
+  {
+    "id": "vocab-verbs-듣다",
+    "korean": "듣다",
+    "meaning": "to listen",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "음악을 들어요.",
+    "exampleMeaning": "I listen to music.",
+    "note": "Irregular: 듣다 becomes 들어요."
+  },
+  {
+    "id": "vocab-verbs-말하다",
+    "korean": "말하다",
+    "meaning": "to speak",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "한국어로 말해 주세요.",
+    "exampleMeaning": "Please speak in Korean."
+  },
+  {
+    "id": "vocab-verbs-읽다",
+    "korean": "읽다",
+    "meaning": "to read",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "한국어 책을 읽어요.",
+    "exampleMeaning": "I read Korean books."
+  },
+  {
+    "id": "vocab-verbs-쓰다",
+    "korean": "쓰다",
+    "meaning": "to write; to use",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "이름을 한글로 써요.",
+    "exampleMeaning": "I write my name in Hangul."
+  },
+  {
+    "id": "vocab-verbs-만나다",
+    "korean": "만나다",
+    "meaning": "to meet",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "내일 친구를 만나요.",
+    "exampleMeaning": "I am meeting a friend tomorrow."
+  },
+  {
+    "id": "vocab-verbs-주다",
+    "korean": "주다",
+    "meaning": "to give",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "친구에게 선물을 줬어요.",
+    "exampleMeaning": "I gave a present to my friend."
+  },
+  {
+    "id": "vocab-verbs-받다",
+    "korean": "받다",
+    "meaning": "to receive",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "이메일을 받았어요.",
+    "exampleMeaning": "I received the email."
+  },
+  {
+    "id": "vocab-verbs-알다",
+    "korean": "알다",
+    "meaning": "to know",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "그 사람을 알아요?",
+    "exampleMeaning": "Do you know that person?"
+  },
+  {
+    "id": "vocab-verbs-모르다",
+    "korean": "모르다",
+    "meaning": "to not know",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "저는 그 단어를 몰라요.",
+    "exampleMeaning": "I do not know that word.",
+    "note": "Irregular: 모르다 becomes 몰라요."
+  },
+  {
+    "id": "vocab-verbs-좋아하다",
+    "korean": "좋아하다",
+    "meaning": "to like",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "저는 한국 음악을 좋아해요.",
+    "exampleMeaning": "I like Korean music."
+  },
+  {
+    "id": "vocab-verbs-싫어하다",
+    "korean": "싫어하다",
+    "meaning": "to dislike",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "저는 매운 음식을 싫어해요.",
+    "exampleMeaning": "I dislike spicy food."
+  },
+  {
+    "id": "vocab-verbs-자다",
+    "korean": "자다",
+    "meaning": "to sleep",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "보통 열두 시에 자요.",
+    "exampleMeaning": "I usually go to sleep at twelve."
+  },
+  {
+    "id": "vocab-verbs-일어나다",
+    "korean": "일어나다",
+    "meaning": "to get up",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "아침 일곱 시에 일어나요.",
+    "exampleMeaning": "I get up at seven in the morning."
+  },
+  {
+    "id": "vocab-verbs-앉다",
+    "korean": "앉다",
+    "meaning": "to sit",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "여기에 앉아도 돼요?",
+    "exampleMeaning": "May I sit here?"
+  },
+  {
+    "id": "vocab-verbs-서다",
+    "korean": "서다",
+    "meaning": "to stand; to stop",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "줄을 서 주세요.",
+    "exampleMeaning": "Please stand in line."
+  },
+  {
+    "id": "vocab-verbs-기다리다",
+    "korean": "기다리다",
+    "meaning": "to wait",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "잠깐만 기다려 주세요.",
+    "exampleMeaning": "Please wait a moment."
+  },
+  {
+    "id": "vocab-verbs-찾다",
+    "korean": "찾다",
+    "meaning": "to look for, to find",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "화장실을 찾고 있어요.",
+    "exampleMeaning": "I am looking for the restroom."
+  },
+  {
+    "id": "vocab-verbs-물어보다",
+    "korean": "물어보다",
+    "meaning": "to ask",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "선생님께 물어보세요.",
+    "exampleMeaning": "Ask the teacher."
+  },
+  {
+    "id": "vocab-verbs-대답하다",
+    "korean": "대답하다",
+    "meaning": "to answer",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "질문에 대답해 주세요.",
+    "exampleMeaning": "Please answer the question."
+  },
+  {
+    "id": "vocab-verbs-이해하다",
+    "korean": "이해하다",
+    "meaning": "to understand",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "이제 이해했어요.",
+    "exampleMeaning": "Now I understand."
+  },
+  {
+    "id": "vocab-verbs-생각하다",
+    "korean": "생각하다",
+    "meaning": "to think",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "저도 그렇게 생각해요.",
+    "exampleMeaning": "I think so too."
+  },
+  {
+    "id": "vocab-verbs-일하다",
+    "korean": "일하다",
+    "meaning": "to work",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "주말에도 일해요.",
+    "exampleMeaning": "I work on weekends too."
+  },
+  {
+    "id": "vocab-verbs-쉬다",
+    "korean": "쉬다",
+    "meaning": "to rest",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "오늘은 집에서 쉬어요.",
+    "exampleMeaning": "I am resting at home today."
+  },
+  {
+    "id": "vocab-verbs-놀다",
+    "korean": "놀다",
+    "meaning": "to play, to hang out",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "주말에 친구와 놀아요.",
+    "exampleMeaning": "I hang out with friends on the weekend."
+  },
+  {
+    "id": "vocab-verbs-운동하다",
+    "korean": "운동하다",
+    "meaning": "to exercise",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "저녁에 운동해요.",
+    "exampleMeaning": "I exercise in the evening."
+  },
+  {
+    "id": "vocab-verbs-전화하다",
+    "korean": "전화하다",
+    "meaning": "to call (by phone)",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "나중에 전화할게요.",
+    "exampleMeaning": "I will call you later."
+  },
+  {
+    "id": "vocab-verbs-보내다",
+    "korean": "보내다",
+    "meaning": "to send",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "메시지를 보냈어요.",
+    "exampleMeaning": "I sent a message."
+  },
+  {
+    "id": "vocab-verbs-열다",
+    "korean": "열다",
+    "meaning": "to open",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "문을 열어 주세요.",
+    "exampleMeaning": "Please open the door."
+  },
+  {
+    "id": "vocab-verbs-닫다",
+    "korean": "닫다",
+    "meaning": "to close",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "창문을 닫았어요.",
+    "exampleMeaning": "I closed the window."
+  },
+  {
+    "id": "vocab-verbs-시작하다",
+    "korean": "시작하다",
+    "meaning": "to start",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "수업을 시작할게요.",
+    "exampleMeaning": "I will start the class."
+  },
+  {
+    "id": "vocab-verbs-끝나다",
+    "korean": "끝나다",
+    "meaning": "to end",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "수업이 몇 시에 끝나요?",
+    "exampleMeaning": "What time does class end?"
+  },
+  {
+    "id": "vocab-verbs-입다",
+    "korean": "입다",
+    "meaning": "to wear (clothes)",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "따뜻한 옷을 입으세요.",
+    "exampleMeaning": "Wear warm clothes."
+  },
+  {
+    "id": "vocab-verbs-씻다",
+    "korean": "씻다",
+    "meaning": "to wash",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "손을 씻으세요.",
+    "exampleMeaning": "Please wash your hands."
+  },
+  {
+    "id": "vocab-verbs-만들다",
+    "korean": "만들다",
+    "meaning": "to make",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "저녁을 만들었어요.",
+    "exampleMeaning": "I made dinner."
+  },
+  {
+    "id": "vocab-verbs-가져오다",
+    "korean": "가져오다",
+    "meaning": "to bring",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "여권을 가져오세요.",
+    "exampleMeaning": "Please bring your passport."
+  },
+  {
+    "id": "vocab-verbs-도와주다",
+    "korean": "도와주다",
+    "meaning": "to help",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "친구가 저를 도와줬어요.",
+    "exampleMeaning": "My friend helped me."
+  },
+  {
+    "id": "vocab-verbs-빌리다",
+    "korean": "빌리다",
+    "meaning": "to borrow",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "도서관에서 책을 빌렸어요.",
+    "exampleMeaning": "I borrowed a book from the library."
+  },
+  {
+    "id": "vocab-verbs-잊어버리다",
+    "korean": "잊어버리다",
+    "meaning": "to forget",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "비밀번호를 잊어버렸어요.",
+    "exampleMeaning": "I forgot my password."
+  },
+  {
+    "id": "vocab-verbs-잃어버리다",
+    "korean": "잃어버리다",
+    "meaning": "to lose (an item)",
+    "pos": "verb",
+    "deck": "deck-verbs",
+    "example": "지갑을 잃어버렸어요.",
+    "exampleMeaning": "I lost my wallet."
+  }
+]

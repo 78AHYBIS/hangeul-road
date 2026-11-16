@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { EMPTY_HANGUL_PROGRESS } from '../hangulProgress';
+import { EMPTY_VOCAB_PROGRESS } from '../vocabProgress';
 import { createBackup, restoreBackup } from './backup';
 import { readAll, replaceAll, setValue } from './db';
 import {
@@ -17,6 +18,7 @@ const custom: Settings = {
   showRomanization: false,
   speechRate: 0.7,
   departureDate: '2027-02-20',
+  typingCards: false,
 };
 
 /** Simulates closing and reopening the app: memory is wiped, IndexedDB is kept. */
@@ -25,6 +27,7 @@ function forgetInMemoryState() {
     hydrated: false,
     settings: DEFAULT_SETTINGS,
     hangul: EMPTY_HANGUL_PROGRESS,
+    vocab: EMPTY_VOCAB_PROGRESS,
   });
 }
 
@@ -151,5 +154,31 @@ describe('hangul progress persistence', () => {
     await restoreBackup(fileText);
     await useAppStore.getState().hydrate();
     expect(useAppStore.getState().hangul).toEqual(saved);
+  });
+});
+
+describe('vocabulary progress persistence', () => {
+  it('survives a reload and a backup round trip', async () => {
+    const store = () => useAppStore.getState();
+    await store().hydrate();
+    await store().gradeWord('vocab-greetings-네', 'good');
+    await store().addMyWord({ korean: ' 고양이 ', meaning: 'cat', note: '' });
+    await store().setFocusDeck('deck-food');
+    const myId = store().vocab.myWords[0]!.id;
+    await store().gradeWord(myId, 'again');
+    const saved = store().vocab;
+    expect(saved.cards['vocab-greetings-네']).toMatchObject({ state: 'review', interval: 1 });
+    expect(saved.myWords).toEqual([{ id: myId, korean: '고양이', meaning: 'cat' }]);
+
+    const fileText = JSON.stringify(await createBackup());
+    await replaceAll({});
+    forgetInMemoryState();
+    await restoreBackup(fileText);
+    await store().hydrate();
+    expect(store().vocab).toEqual(saved);
+
+    await store().deleteMyWord(myId);
+    expect(store().vocab.myWords).toEqual([]);
+    expect(store().vocab.cards[myId]).toBeUndefined();
   });
 });

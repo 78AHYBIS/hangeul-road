@@ -1,0 +1,399 @@
+[
+  {
+    "id": "vocab-shopping-편의점",
+    "korean": "편의점",
+    "meaning": "convenience store",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "편의점은 이십사 시간 열어요.",
+    "exampleMeaning": "The convenience store is open 24 hours."
+  },
+  {
+    "id": "vocab-shopping-가게",
+    "korean": "가게",
+    "meaning": "shop",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "이 가게는 싸요.",
+    "exampleMeaning": "This shop is cheap."
+  },
+  {
+    "id": "vocab-shopping-시장",
+    "korean": "시장",
+    "meaning": "market",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "시장에서 과일을 샀어요.",
+    "exampleMeaning": "I bought fruit at the market."
+  },
+  {
+    "id": "vocab-shopping-마트",
+    "korean": "마트",
+    "meaning": "supermarket",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "마트에 장 보러 가요.",
+    "exampleMeaning": "I am going grocery shopping at the supermarket."
+  },
+  {
+    "id": "vocab-shopping-백화점",
+    "korean": "백화점",
+    "meaning": "department store",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "백화점에서 옷을 샀어요.",
+    "exampleMeaning": "I bought clothes at the department store."
+  },
+  {
+    "id": "vocab-shopping-돈",
+    "korean": "돈",
+    "meaning": "money",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "돈이 없어요.",
+    "exampleMeaning": "I have no money."
+  },
+  {
+    "id": "vocab-shopping-현금",
+    "korean": "현금",
+    "meaning": "cash",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "현금으로 낼게요.",
+    "exampleMeaning": "I will pay in cash."
+  },
+  {
+    "id": "vocab-shopping-카드",
+    "korean": "카드",
+    "meaning": "card",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "카드로 계산할게요.",
+    "exampleMeaning": "I will pay by card."
+  },
+  {
+    "id": "vocab-shopping-가격",
+    "korean": "가격",
+    "meaning": "price",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "가격이 얼마예요?",
+    "exampleMeaning": "What is the price?"
+  },
+  {
+    "id": "vocab-shopping-영수증",
+    "korean": "영수증",
+    "meaning": "receipt",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "영수증 주세요.",
+    "exampleMeaning": "Please give me the receipt."
+  },
+  {
+    "id": "vocab-shopping-봉투",
+    "korean": "봉투",
+    "meaning": "bag (plastic or paper)",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "봉투 필요하세요?",
+    "exampleMeaning": "Do you need a bag?"
+  },
+  {
+    "id": "vocab-shopping-할인",
+    "korean": "할인",
+    "meaning": "discount",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "학생 할인이 있어요?",
+    "exampleMeaning": "Is there a student discount?"
+  },
+  {
+    "id": "vocab-shopping-무료",
+    "korean": "무료",
+    "meaning": "free of charge",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "와이파이는 무료예요.",
+    "exampleMeaning": "The Wi-Fi is free."
+  },
+  {
+    "id": "vocab-shopping-거스름돈",
+    "korean": "거스름돈",
+    "meaning": "change (money returned)",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "거스름돈 여기 있어요.",
+    "exampleMeaning": "Here is your change."
+  },
+  {
+    "id": "vocab-shopping-물건",
+    "korean": "물건",
+    "meaning": "thing, item",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "이 물건은 얼마예요?",
+    "exampleMeaning": "How much is this item?"
+  },
+  {
+    "id": "vocab-shopping-옷",
+    "korean": "옷",
+    "meaning": "clothes",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "옷을 사고 싶어요.",
+    "exampleMeaning": "I want to buy clothes."
+  },
+  {
+    "id": "vocab-shopping-바지",
+    "korean": "바지",
+    "meaning": "trousers",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "이 바지 입어 봐도 돼요?",
+    "exampleMeaning": "May I try on these trousers?"
+  },
+  {
+    "id": "vocab-shopping-치마",
+    "korean": "치마",
+    "meaning": "skirt",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "이 치마는 길어요.",
+    "exampleMeaning": "This skirt is long."
+  },
+  {
+    "id": "vocab-shopping-신발",
+    "korean": "신발",
+    "meaning": "shoes",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "신발을 벗어 주세요.",
+    "exampleMeaning": "Please take off your shoes."
+  },
+  {
+    "id": "vocab-shopping-모자",
+    "korean": "모자",
+    "meaning": "hat",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "모자를 썼어요.",
+    "exampleMeaning": "I am wearing a hat."
+  },
+  {
+    "id": "vocab-shopping-양말",
+    "korean": "양말",
+    "meaning": "socks",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "양말을 두 켤레 샀어요.",
+    "exampleMeaning": "I bought two pairs of socks."
+  },
+  {
+    "id": "vocab-shopping-우산",
+    "korean": "우산",
+    "meaning": "umbrella",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "우산을 가져가세요.",
+    "exampleMeaning": "Take an umbrella with you."
+  },
+  {
+    "id": "vocab-shopping-휴지",
+    "korean": "휴지",
+    "meaning": "tissue, toilet paper",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "휴지가 없어요.",
+    "exampleMeaning": "There is no toilet paper."
+  },
+  {
+    "id": "vocab-shopping-비누",
+    "korean": "비누",
+    "meaning": "soap",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "비누로 손을 씻어요.",
+    "exampleMeaning": "I wash my hands with soap."
+  },
+  {
+    "id": "vocab-shopping-샴푸",
+    "korean": "샴푸",
+    "meaning": "shampoo",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "샴푸를 사야 해요.",
+    "exampleMeaning": "I need to buy shampoo."
+  },
+  {
+    "id": "vocab-shopping-칫솔",
+    "korean": "칫솔",
+    "meaning": "toothbrush",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "칫솔을 안 가져왔어요.",
+    "exampleMeaning": "I did not bring a toothbrush."
+  },
+  {
+    "id": "vocab-shopping-치약",
+    "korean": "치약",
+    "meaning": "toothpaste",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "치약이 어디에 있어요?",
+    "exampleMeaning": "Where is the toothpaste?"
+  },
+  {
+    "id": "vocab-shopping-수건",
+    "korean": "수건",
+    "meaning": "towel",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "수건 한 장 주세요.",
+    "exampleMeaning": "One towel, please."
+  },
+  {
+    "id": "vocab-shopping-충전기",
+    "korean": "충전기",
+    "meaning": "charger",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "휴대폰 충전기 있어요?",
+    "exampleMeaning": "Do you have a phone charger?"
+  },
+  {
+    "id": "vocab-shopping-과자",
+    "korean": "과자",
+    "meaning": "snack, crackers",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "과자를 너무 많이 먹었어요.",
+    "exampleMeaning": "I ate too many snacks."
+  },
+  {
+    "id": "vocab-shopping-도시락",
+    "korean": "도시락",
+    "meaning": "boxed meal",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "편의점 도시락은 싸고 맛있어요.",
+    "exampleMeaning": "Convenience store boxed meals are cheap and tasty."
+  },
+  {
+    "id": "vocab-shopping-삼각김밥",
+    "korean": "삼각김밥",
+    "meaning": "triangle gimbap",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "삼각김밥 두 개 샀어요.",
+    "exampleMeaning": "I bought two triangle gimbap."
+  },
+  {
+    "id": "vocab-shopping-음료수",
+    "korean": "음료수",
+    "meaning": "beverage",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "음료수는 저쪽에 있어요.",
+    "exampleMeaning": "Drinks are over there."
+  },
+  {
+    "id": "vocab-shopping-사이즈",
+    "korean": "사이즈",
+    "meaning": "size",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "더 큰 사이즈 있어요?",
+    "exampleMeaning": "Do you have a bigger size?"
+  },
+  {
+    "id": "vocab-shopping-색",
+    "korean": "색",
+    "meaning": "color",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "다른 색도 있어요?",
+    "exampleMeaning": "Do you have other colors too?"
+  },
+  {
+    "id": "vocab-shopping-교환",
+    "korean": "교환",
+    "meaning": "exchange (of goods)",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "교환할 수 있어요?",
+    "exampleMeaning": "Can I exchange it?"
+  },
+  {
+    "id": "vocab-shopping-환불",
+    "korean": "환불",
+    "meaning": "refund",
+    "pos": "noun",
+    "deck": "deck-shopping",
+    "example": "환불해 주세요.",
+    "exampleMeaning": "Please give me a refund."
+  },
+  {
+    "id": "vocab-shopping-사다",
+    "korean": "사다",
+    "meaning": "to buy",
+    "pos": "verb",
+    "deck": "deck-shopping",
+    "example": "우유를 사러 가요.",
+    "exampleMeaning": "I am going to buy milk."
+  },
+  {
+    "id": "vocab-shopping-팔다",
+    "korean": "팔다",
+    "meaning": "to sell",
+    "pos": "verb",
+    "deck": "deck-shopping",
+    "example": "여기에서 우산을 팔아요?",
+    "exampleMeaning": "Do you sell umbrellas here?"
+  },
+  {
+    "id": "vocab-shopping-내다",
+    "korean": "내다",
+    "meaning": "to pay; to hand in",
+    "pos": "verb",
+    "deck": "deck-shopping",
+    "example": "제가 낼게요.",
+    "exampleMeaning": "I will pay."
+  },
+  {
+    "id": "vocab-shopping-비싸다",
+    "korean": "비싸다",
+    "meaning": "to be expensive",
+    "pos": "adjective",
+    "deck": "deck-shopping",
+    "example": "택시는 비싸요.",
+    "exampleMeaning": "Taxis are expensive."
+  },
+  {
+    "id": "vocab-shopping-싸다",
+    "korean": "싸다",
+    "meaning": "to be cheap",
+    "pos": "adjective",
+    "deck": "deck-shopping",
+    "example": "시장이 더 싸요.",
+    "exampleMeaning": "The market is cheaper."
+  },
+  {
+    "id": "vocab-shopping-필요하다",
+    "korean": "필요하다",
+    "meaning": "to be needed",
+    "pos": "adjective",
+    "deck": "deck-shopping",
+    "example": "여권이 필요해요.",
+    "exampleMeaning": "You need your passport."
+  },
+  {
+    "id": "vocab-shopping-데워-주세요",
+    "korean": "데워 주세요",
+    "meaning": "please heat it up",
+    "pos": "expression",
+    "deck": "deck-shopping",
+    "example": "도시락 좀 데워 주세요.",
+    "exampleMeaning": "Please heat up the boxed meal.",
+    "note": "Useful at a convenience store."
+  }
+]

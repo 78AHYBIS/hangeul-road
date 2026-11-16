@@ -1,0 +1,428 @@
+[
+  {
+    "id": "vocab-food-음식",
+    "korean": "음식",
+    "meaning": "food",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "한국 음식을 좋아해요.",
+    "exampleMeaning": "I like Korean food."
+  },
+  {
+    "id": "vocab-food-밥",
+    "korean": "밥",
+    "meaning": "cooked rice; meal",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "밥 먹었어요?",
+    "exampleMeaning": "Have you eaten?",
+    "note": "Also used as a friendly greeting."
+  },
+  {
+    "id": "vocab-food-물",
+    "korean": "물",
+    "meaning": "water",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "물 좀 더 주세요.",
+    "exampleMeaning": "Some more water, please."
+  },
+  {
+    "id": "vocab-food-김치",
+    "korean": "김치",
+    "meaning": "kimchi",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "김치는 조금 매워요.",
+    "exampleMeaning": "Kimchi is a little spicy."
+  },
+  {
+    "id": "vocab-food-고기",
+    "korean": "고기",
+    "meaning": "meat",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "저는 고기를 좋아해요.",
+    "exampleMeaning": "I like meat."
+  },
+  {
+    "id": "vocab-food-소고기",
+    "korean": "소고기",
+    "meaning": "beef",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "이 음식에 소고기가 들어 있어요?",
+    "exampleMeaning": "Is there beef in this dish?"
+  },
+  {
+    "id": "vocab-food-돼지고기",
+    "korean": "돼지고기",
+    "meaning": "pork",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "저는 돼지고기를 안 먹어요.",
+    "exampleMeaning": "I do not eat pork."
+  },
+  {
+    "id": "vocab-food-닭고기",
+    "korean": "닭고기",
+    "meaning": "chicken (meat)",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "닭고기로 주세요.",
+    "exampleMeaning": "Chicken, please."
+  },
+  {
+    "id": "vocab-food-생선",
+    "korean": "생선",
+    "meaning": "fish (as food)",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "생선을 구워서 먹어요.",
+    "exampleMeaning": "I grill fish and eat it."
+  },
+  {
+    "id": "vocab-food-계란",
+    "korean": "계란",
+    "meaning": "egg",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "아침에 계란을 먹어요.",
+    "exampleMeaning": "I eat eggs in the morning."
+  },
+  {
+    "id": "vocab-food-야채",
+    "korean": "야채",
+    "meaning": "vegetables",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "야채를 많이 먹어야 해요.",
+    "exampleMeaning": "You should eat a lot of vegetables."
+  },
+  {
+    "id": "vocab-food-과일",
+    "korean": "과일",
+    "meaning": "fruit",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "과일을 사러 가요.",
+    "exampleMeaning": "I am going to buy fruit."
+  },
+  {
+    "id": "vocab-food-사과",
+    "korean": "사과",
+    "meaning": "apple",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "사과가 달아요.",
+    "exampleMeaning": "The apples are sweet."
+  },
+  {
+    "id": "vocab-food-빵",
+    "korean": "빵",
+    "meaning": "bread",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "아침에 빵을 먹었어요.",
+    "exampleMeaning": "I ate bread this morning."
+  },
+  {
+    "id": "vocab-food-국",
+    "korean": "국",
+    "meaning": "soup",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "국이 뜨거워요.",
+    "exampleMeaning": "The soup is hot."
+  },
+  {
+    "id": "vocab-food-반찬",
+    "korean": "반찬",
+    "meaning": "side dishes",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "반찬은 무료예요.",
+    "exampleMeaning": "Side dishes are free."
+  },
+  {
+    "id": "vocab-food-라면",
+    "korean": "라면",
+    "meaning": "instant noodles",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "밤에 라면을 먹었어요.",
+    "exampleMeaning": "I ate instant noodles at night."
+  },
+  {
+    "id": "vocab-food-비빔밥",
+    "korean": "비빔밥",
+    "meaning": "bibimbap (mixed rice)",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "비빔밥 하나 주세요.",
+    "exampleMeaning": "One bibimbap, please."
+  },
+  {
+    "id": "vocab-food-불고기",
+    "korean": "불고기",
+    "meaning": "bulgogi (marinated beef)",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "불고기는 안 매워요.",
+    "exampleMeaning": "Bulgogi is not spicy."
+  },
+  {
+    "id": "vocab-food-김밥",
+    "korean": "김밥",
+    "meaning": "gimbap (seaweed rice roll)",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "편의점에서 김밥을 샀어요.",
+    "exampleMeaning": "I bought gimbap at the convenience store."
+  },
+  {
+    "id": "vocab-food-떡볶이",
+    "korean": "떡볶이",
+    "meaning": "tteokbokki (spicy rice cakes)",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "떡볶이는 매워요.",
+    "exampleMeaning": "Tteokbokki is spicy."
+  },
+  {
+    "id": "vocab-food-치킨",
+    "korean": "치킨",
+    "meaning": "fried chicken",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "친구와 치킨을 시켰어요.",
+    "exampleMeaning": "I ordered fried chicken with a friend."
+  },
+  {
+    "id": "vocab-food-커피",
+    "korean": "커피",
+    "meaning": "coffee",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "커피 한 잔 마실래요?",
+    "exampleMeaning": "Would you like a cup of coffee?"
+  },
+  {
+    "id": "vocab-food-차",
+    "korean": "차",
+    "meaning": "tea",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "따뜻한 차를 마셔요.",
+    "exampleMeaning": "I drink warm tea.",
+    "note": "차 also means \"car\"."
+  },
+  {
+    "id": "vocab-food-우유",
+    "korean": "우유",
+    "meaning": "milk",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "우유를 매일 마셔요.",
+    "exampleMeaning": "I drink milk every day."
+  },
+  {
+    "id": "vocab-food-주스",
+    "korean": "주스",
+    "meaning": "juice",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "오렌지 주스 주세요.",
+    "exampleMeaning": "Orange juice, please."
+  },
+  {
+    "id": "vocab-food-술",
+    "korean": "술",
+    "meaning": "alcohol",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "저는 술을 안 마셔요.",
+    "exampleMeaning": "I do not drink alcohol."
+  },
+  {
+    "id": "vocab-food-맥주",
+    "korean": "맥주",
+    "meaning": "beer",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "맥주 한 병 주세요.",
+    "exampleMeaning": "One bottle of beer, please."
+  },
+  {
+    "id": "vocab-food-아침",
+    "korean": "아침",
+    "meaning": "breakfast; morning",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "아침을 안 먹었어요.",
+    "exampleMeaning": "I did not eat breakfast."
+  },
+  {
+    "id": "vocab-food-점심",
+    "korean": "점심",
+    "meaning": "lunch",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "점심 같이 먹을래요?",
+    "exampleMeaning": "Shall we have lunch together?"
+  },
+  {
+    "id": "vocab-food-저녁",
+    "korean": "저녁",
+    "meaning": "dinner; evening",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "저녁에 뭐 먹어요?",
+    "exampleMeaning": "What are we eating this evening?"
+  },
+  {
+    "id": "vocab-food-메뉴",
+    "korean": "메뉴",
+    "meaning": "menu",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "메뉴 좀 보여 주세요.",
+    "exampleMeaning": "Please show me the menu."
+  },
+  {
+    "id": "vocab-food-주문",
+    "korean": "주문",
+    "meaning": "order",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "주문하시겠어요?",
+    "exampleMeaning": "Would you like to order?"
+  },
+  {
+    "id": "vocab-food-계산",
+    "korean": "계산",
+    "meaning": "payment, bill",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "계산은 어디에서 해요?",
+    "exampleMeaning": "Where do I pay?"
+  },
+  {
+    "id": "vocab-food-포장",
+    "korean": "포장",
+    "meaning": "takeout, packaging",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "포장해 주세요.",
+    "exampleMeaning": "Please pack it to go."
+  },
+  {
+    "id": "vocab-food-배달",
+    "korean": "배달",
+    "meaning": "delivery",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "배달 음식을 시켰어요.",
+    "exampleMeaning": "I ordered delivery food."
+  },
+  {
+    "id": "vocab-food-숟가락",
+    "korean": "숟가락",
+    "meaning": "spoon",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "숟가락 하나 더 주세요.",
+    "exampleMeaning": "One more spoon, please."
+  },
+  {
+    "id": "vocab-food-젓가락",
+    "korean": "젓가락",
+    "meaning": "chopsticks",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "젓가락을 잘 못 써요.",
+    "exampleMeaning": "I am not good at using chopsticks."
+  },
+  {
+    "id": "vocab-food-컵",
+    "korean": "컵",
+    "meaning": "cup",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "컵은 저기에 있어요.",
+    "exampleMeaning": "The cups are over there."
+  },
+  {
+    "id": "vocab-food-맛",
+    "korean": "맛",
+    "meaning": "taste",
+    "pos": "noun",
+    "deck": "deck-food",
+    "example": "이 음식은 맛이 어때요?",
+    "exampleMeaning": "How does this food taste?"
+  },
+  {
+    "id": "vocab-food-맛있다",
+    "korean": "맛있다",
+    "meaning": "to be delicious",
+    "pos": "adjective",
+    "deck": "deck-food",
+    "example": "이 식당은 정말 맛있어요.",
+    "exampleMeaning": "This restaurant is really good."
+  },
+  {
+    "id": "vocab-food-맛없다",
+    "korean": "맛없다",
+    "meaning": "to taste bad",
+    "pos": "adjective",
+    "deck": "deck-food",
+    "example": "이 빵은 맛없어요.",
+    "exampleMeaning": "This bread does not taste good."
+  },
+  {
+    "id": "vocab-food-맵다",
+    "korean": "맵다",
+    "meaning": "to be spicy",
+    "pos": "adjective",
+    "deck": "deck-food",
+    "example": "너무 매워요. 덜 맵게 해 주세요.",
+    "exampleMeaning": "It is too spicy. Please make it less spicy.",
+    "note": "Irregular: 맵다 becomes 매워요."
+  },
+  {
+    "id": "vocab-food-달다",
+    "korean": "달다",
+    "meaning": "to be sweet",
+    "pos": "adjective",
+    "deck": "deck-food",
+    "example": "이 케이크는 너무 달아요.",
+    "exampleMeaning": "This cake is too sweet."
+  },
+  {
+    "id": "vocab-food-짜다",
+    "korean": "짜다",
+    "meaning": "to be salty",
+    "pos": "adjective",
+    "deck": "deck-food",
+    "example": "국이 조금 짜요.",
+    "exampleMeaning": "The soup is a little salty."
+  },
+  {
+    "id": "vocab-food-배고프다",
+    "korean": "배고프다",
+    "meaning": "to be hungry",
+    "pos": "adjective",
+    "deck": "deck-food",
+    "example": "배고파요. 밥 먹으러 가요.",
+    "exampleMeaning": "I am hungry. Let us go and eat."
+  },
+  {
+    "id": "vocab-food-배부르다",
+    "korean": "배부르다",
+    "meaning": "to be full",
+    "pos": "adjective",
+    "deck": "deck-food",
+    "example": "배불러요. 더 못 먹어요.",
+    "exampleMeaning": "I am full. I cannot eat any more."
+  }
+]

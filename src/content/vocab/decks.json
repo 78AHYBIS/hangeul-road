@@ -1,0 +1,77 @@
+[
+  {
+    "id": "deck-greetings",
+    "title": "Greetings and essentials",
+    "description": "Polite basics, question words and everyday adverbs."
+  },
+  {
+    "id": "deck-numbers",
+    "title": "Numbers, counters, time and money",
+    "description": "Both number systems, the most common counters, dates and won."
+  },
+  {
+    "id": "deck-people",
+    "title": "People, family and self-introduction",
+    "description": "Talking about yourself, your family and the people around you."
+  },
+  {
+    "id": "deck-campus",
+    "title": "Campus, classes and dorm",
+    "description": "Words for lectures, coursework and dormitory life."
+  },
+  {
+    "id": "deck-food",
+    "title": "Food, cafeteria, restaurants and cafes",
+    "description": "Ordering, common dishes and describing taste."
+  },
+  {
+    "id": "deck-shopping",
+    "title": "Convenience store, shopping and prices",
+    "description": "Paying, asking prices and everyday items."
+  },
+  {
+    "id": "deck-transport",
+    "title": "Transport and directions",
+    "description": "Getting around by bus, subway and taxi, and following directions."
+  },
+  {
+    "id": "deck-places",
+    "title": "Places in a city",
+    "description": "Buildings, services and landscape words."
+  },
+  {
+    "id": "deck-time",
+    "title": "Time, days, weather and seasons",
+    "description": "When things happen and what the weather is like."
+  },
+  {
+    "id": "deck-verbs",
+    "title": "Essential verbs",
+    "description": "The verbs you need for almost every sentence."
+  },
+  {
+    "id": "deck-adjectives",
+    "title": "Essential adjectives",
+    "description": "Describing things, people and situations."
+  },
+  {
+    "id": "deck-health",
+    "title": "Health, pharmacy and emergencies",
+    "description": "Describing symptoms, buying medicine and getting help."
+  },
+  {
+    "id": "deck-documents",
+    "title": "Bank, phone and documents",
+    "description": "ARC, SIM card, bank account and paperwork."
+  },
+  {
+    "id": "deck-tech",
+    "title": "Tech and IT words",
+    "description": "Computers, apps and words from your major."
+  },
+  {
+    "id": "deck-social",
+    "title": "Feelings, hobbies and making friends",
+    "description": "Saying how you feel, what you like and making plans."
+  }
+]

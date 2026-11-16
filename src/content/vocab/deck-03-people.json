@@ -1,0 +1,413 @@
+[
+  {
+    "id": "vocab-people-저",
+    "korean": "저",
+    "meaning": "I (humble)",
+    "pos": "pronoun",
+    "deck": "deck-people",
+    "example": "저는 학생이에요.",
+    "exampleMeaning": "I am a student."
+  },
+  {
+    "id": "vocab-people-제",
+    "korean": "제",
+    "meaning": "my (humble)",
+    "pos": "determiner",
+    "deck": "deck-people",
+    "example": "제 이름은 아이다르예요.",
+    "exampleMeaning": "My name is Aidar."
+  },
+  {
+    "id": "vocab-people-우리",
+    "korean": "우리",
+    "meaning": "we, our",
+    "pos": "pronoun",
+    "deck": "deck-people",
+    "example": "우리 학교는 울산에 있어요.",
+    "exampleMeaning": "Our school is in Ulsan."
+  },
+  {
+    "id": "vocab-people-이름",
+    "korean": "이름",
+    "meaning": "name",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "이름을 여기에 써 주세요.",
+    "exampleMeaning": "Please write your name here."
+  },
+  {
+    "id": "vocab-people-사람",
+    "korean": "사람",
+    "meaning": "person",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "저는 카자흐스탄 사람이에요.",
+    "exampleMeaning": "I am from Kazakhstan."
+  },
+  {
+    "id": "vocab-people-나라",
+    "korean": "나라",
+    "meaning": "country",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "어느 나라에서 왔어요?",
+    "exampleMeaning": "Which country are you from?"
+  },
+  {
+    "id": "vocab-people-카자흐스탄",
+    "korean": "카자흐스탄",
+    "meaning": "Kazakhstan",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "저는 카자흐스탄에서 왔어요.",
+    "exampleMeaning": "I came from Kazakhstan."
+  },
+  {
+    "id": "vocab-people-한국",
+    "korean": "한국",
+    "meaning": "Korea",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "한국에 처음 왔어요.",
+    "exampleMeaning": "It is my first time in Korea."
+  },
+  {
+    "id": "vocab-people-외국인",
+    "korean": "외국인",
+    "meaning": "foreigner",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "저는 외국인이에요.",
+    "exampleMeaning": "I am a foreigner."
+  },
+  {
+    "id": "vocab-people-학생",
+    "korean": "학생",
+    "meaning": "student",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "저는 유니스트 학생이에요.",
+    "exampleMeaning": "I am a UNIST student."
+  },
+  {
+    "id": "vocab-people-교환학생",
+    "korean": "교환학생",
+    "meaning": "exchange student",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "저는 교환학생으로 왔어요.",
+    "exampleMeaning": "I came as an exchange student."
+  },
+  {
+    "id": "vocab-people-대학생",
+    "korean": "대학생",
+    "meaning": "university student",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "제 동생도 대학생이에요.",
+    "exampleMeaning": "My younger sibling is also a university student."
+  },
+  {
+    "id": "vocab-people-전공",
+    "korean": "전공",
+    "meaning": "major (field of study)",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "제 전공은 정보시스템이에요.",
+    "exampleMeaning": "My major is information systems."
+  },
+  {
+    "id": "vocab-people-나이",
+    "korean": "나이",
+    "meaning": "age",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "나이가 어떻게 되세요?",
+    "exampleMeaning": "How old are you?",
+    "note": "This is the polite way to ask."
+  },
+  {
+    "id": "vocab-people-생일",
+    "korean": "생일",
+    "meaning": "birthday",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "제 생일은 오월이에요.",
+    "exampleMeaning": "My birthday is in May."
+  },
+  {
+    "id": "vocab-people-직업",
+    "korean": "직업",
+    "meaning": "job, occupation",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "직업이 뭐예요?",
+    "exampleMeaning": "What is your job?"
+  },
+  {
+    "id": "vocab-people-가족",
+    "korean": "가족",
+    "meaning": "family",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "가족은 카자흐스탄에 있어요.",
+    "exampleMeaning": "My family is in Kazakhstan."
+  },
+  {
+    "id": "vocab-people-부모님",
+    "korean": "부모님",
+    "meaning": "parents",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "부모님께 전화했어요.",
+    "exampleMeaning": "I called my parents."
+  },
+  {
+    "id": "vocab-people-아버지",
+    "korean": "아버지",
+    "meaning": "father",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "아버지는 회사에서 일하세요.",
+    "exampleMeaning": "My father works at a company."
+  },
+  {
+    "id": "vocab-people-어머니",
+    "korean": "어머니",
+    "meaning": "mother",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "어머니는 선생님이에요.",
+    "exampleMeaning": "My mother is a teacher."
+  },
+  {
+    "id": "vocab-people-형",
+    "korean": "형",
+    "meaning": "older brother (of a male)",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "형은 서울에 살아요.",
+    "exampleMeaning": "My older brother lives in Seoul.",
+    "note": "Used by males."
+  },
+  {
+    "id": "vocab-people-누나",
+    "korean": "누나",
+    "meaning": "older sister (of a male)",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "누나는 의사예요.",
+    "exampleMeaning": "My older sister is a doctor.",
+    "note": "Used by males."
+  },
+  {
+    "id": "vocab-people-오빠",
+    "korean": "오빠",
+    "meaning": "older brother (of a female)",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "오빠는 회사에 다녀요.",
+    "exampleMeaning": "My older brother works at a company.",
+    "note": "Used by females."
+  },
+  {
+    "id": "vocab-people-언니",
+    "korean": "언니",
+    "meaning": "older sister (of a female)",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "언니는 대학원생이에요.",
+    "exampleMeaning": "My older sister is a graduate student.",
+    "note": "Used by females."
+  },
+  {
+    "id": "vocab-people-동생",
+    "korean": "동생",
+    "meaning": "younger sibling",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "동생이 한 명 있어요.",
+    "exampleMeaning": "I have one younger sibling."
+  },
+  {
+    "id": "vocab-people-친구",
+    "korean": "친구",
+    "meaning": "friend",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "한국 친구를 사귀고 싶어요.",
+    "exampleMeaning": "I want to make Korean friends."
+  },
+  {
+    "id": "vocab-people-선생님",
+    "korean": "선생님",
+    "meaning": "teacher",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "선생님, 질문이 있어요.",
+    "exampleMeaning": "Teacher, I have a question."
+  },
+  {
+    "id": "vocab-people-교수님",
+    "korean": "교수님",
+    "meaning": "professor",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "교수님께 이메일을 보냈어요.",
+    "exampleMeaning": "I sent an email to the professor."
+  },
+  {
+    "id": "vocab-people-선배",
+    "korean": "선배",
+    "meaning": "senior (at school or work)",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "선배가 많이 도와줬어요.",
+    "exampleMeaning": "My senior helped me a lot."
+  },
+  {
+    "id": "vocab-people-후배",
+    "korean": "후배",
+    "meaning": "junior (at school or work)",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "후배에게 밥을 사 줬어요.",
+    "exampleMeaning": "I bought a meal for my junior."
+  },
+  {
+    "id": "vocab-people-남자",
+    "korean": "남자",
+    "meaning": "man",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "저 남자는 제 친구예요.",
+    "exampleMeaning": "That man is my friend."
+  },
+  {
+    "id": "vocab-people-여자",
+    "korean": "여자",
+    "meaning": "woman",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "저 여자는 우리 선생님이에요.",
+    "exampleMeaning": "That woman is our teacher."
+  },
+  {
+    "id": "vocab-people-아이",
+    "korean": "아이",
+    "meaning": "child",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "아이가 공원에서 놀아요.",
+    "exampleMeaning": "A child is playing in the park."
+  },
+  {
+    "id": "vocab-people-어른",
+    "korean": "어른",
+    "meaning": "adult",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "어른 두 명이에요.",
+    "exampleMeaning": "Two adults."
+  },
+  {
+    "id": "vocab-people-남자-친구",
+    "korean": "남자 친구",
+    "meaning": "boyfriend",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "남자 친구가 있어요?",
+    "exampleMeaning": "Do you have a boyfriend?"
+  },
+  {
+    "id": "vocab-people-여자-친구",
+    "korean": "여자 친구",
+    "meaning": "girlfriend",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "여자 친구와 영화를 봤어요.",
+    "exampleMeaning": "I watched a movie with my girlfriend."
+  },
+  {
+    "id": "vocab-people-룸메이트",
+    "korean": "룸메이트",
+    "meaning": "roommate",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "제 룸메이트는 한국 사람이에요.",
+    "exampleMeaning": "My roommate is Korean."
+  },
+  {
+    "id": "vocab-people-씨",
+    "korean": "씨",
+    "meaning": "Mr., Ms. (after a name)",
+    "pos": "suffix",
+    "deck": "deck-people",
+    "example": "민수 씨, 안녕하세요.",
+    "exampleMeaning": "Hello, Minsu.",
+    "note": "Polite between equals. Never use it for yourself, a professor or a senior."
+  },
+  {
+    "id": "vocab-people-이분",
+    "korean": "이분",
+    "meaning": "this person (honorific)",
+    "pos": "pronoun",
+    "deck": "deck-people",
+    "example": "이분은 제 교수님이에요.",
+    "exampleMeaning": "This is my professor."
+  },
+  {
+    "id": "vocab-people-회사원",
+    "korean": "회사원",
+    "meaning": "office worker",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "형은 회사원이에요.",
+    "exampleMeaning": "My older brother is an office worker."
+  },
+  {
+    "id": "vocab-people-의사",
+    "korean": "의사",
+    "meaning": "doctor",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "의사 선생님을 만났어요.",
+    "exampleMeaning": "I saw the doctor."
+  },
+  {
+    "id": "vocab-people-취미",
+    "korean": "취미",
+    "meaning": "hobby",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "제 취미는 축구예요.",
+    "exampleMeaning": "My hobby is football."
+  },
+  {
+    "id": "vocab-people-고향",
+    "korean": "고향",
+    "meaning": "hometown",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "제 고향은 알마티예요.",
+    "exampleMeaning": "My hometown is Almaty."
+  },
+  {
+    "id": "vocab-people-살다",
+    "korean": "살다",
+    "meaning": "to live",
+    "pos": "verb",
+    "deck": "deck-people",
+    "example": "저는 기숙사에 살아요.",
+    "exampleMeaning": "I live in the dormitory."
+  },
+  {
+    "id": "vocab-people-오다",
+    "korean": "오다",
+    "meaning": "to come",
+    "pos": "verb",
+    "deck": "deck-people",
+    "example": "저는 이월에 한국에 왔어요.",
+    "exampleMeaning": "I came to Korea in February."
+  }
+]

@@ -1,0 +1,454 @@
+[
+  {
+    "id": "vocab-health-몸",
+    "korean": "몸",
+    "meaning": "body",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "몸이 안 좋아요.",
+    "exampleMeaning": "I do not feel well."
+  },
+  {
+    "id": "vocab-health-머리",
+    "korean": "머리",
+    "meaning": "head; hair",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "머리가 아파서 약을 먹었어요.",
+    "exampleMeaning": "My head hurt, so I took medicine."
+  },
+  {
+    "id": "vocab-health-코",
+    "korean": "코",
+    "meaning": "nose",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "코가 막혔어요.",
+    "exampleMeaning": "My nose is blocked."
+  },
+  {
+    "id": "vocab-health-입",
+    "korean": "입",
+    "meaning": "mouth",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "입을 크게 벌리세요.",
+    "exampleMeaning": "Open your mouth wide."
+  },
+  {
+    "id": "vocab-health-귀",
+    "korean": "귀",
+    "meaning": "ear",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "귀가 아파요.",
+    "exampleMeaning": "My ear hurts."
+  },
+  {
+    "id": "vocab-health-목",
+    "korean": "목",
+    "meaning": "neck, throat",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "목이 아파요.",
+    "exampleMeaning": "My throat hurts."
+  },
+  {
+    "id": "vocab-health-배",
+    "korean": "배",
+    "meaning": "stomach, belly",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "배가 아파요.",
+    "exampleMeaning": "My stomach hurts."
+  },
+  {
+    "id": "vocab-health-허리",
+    "korean": "허리",
+    "meaning": "lower back, waist",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "허리가 아파요.",
+    "exampleMeaning": "My back hurts."
+  },
+  {
+    "id": "vocab-health-손",
+    "korean": "손",
+    "meaning": "hand",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "손을 다쳤어요.",
+    "exampleMeaning": "I hurt my hand."
+  },
+  {
+    "id": "vocab-health-발",
+    "korean": "발",
+    "meaning": "foot",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "발이 아파서 못 걸어요.",
+    "exampleMeaning": "My foot hurts, so I cannot walk."
+  },
+  {
+    "id": "vocab-health-무릎",
+    "korean": "무릎",
+    "meaning": "knee",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "무릎을 다쳤어요.",
+    "exampleMeaning": "I hurt my knee."
+  },
+  {
+    "id": "vocab-health-어깨",
+    "korean": "어깨",
+    "meaning": "shoulder",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "어깨가 아파요.",
+    "exampleMeaning": "My shoulder hurts."
+  },
+  {
+    "id": "vocab-health-감기",
+    "korean": "감기",
+    "meaning": "a cold",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "감기에 걸렸어요.",
+    "exampleMeaning": "I caught a cold."
+  },
+  {
+    "id": "vocab-health-기침",
+    "korean": "기침",
+    "meaning": "cough",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "기침이 나요.",
+    "exampleMeaning": "I have a cough."
+  },
+  {
+    "id": "vocab-health-콧물",
+    "korean": "콧물",
+    "meaning": "runny nose",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "콧물이 나요.",
+    "exampleMeaning": "I have a runny nose."
+  },
+  {
+    "id": "vocab-health-두통",
+    "korean": "두통",
+    "meaning": "headache",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "두통이 심해요.",
+    "exampleMeaning": "I have a bad headache."
+  },
+  {
+    "id": "vocab-health-배탈",
+    "korean": "배탈",
+    "meaning": "upset stomach",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "배탈이 났어요.",
+    "exampleMeaning": "I have an upset stomach."
+  },
+  {
+    "id": "vocab-health-알레르기",
+    "korean": "알레르기",
+    "meaning": "allergy",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "땅콩 알레르기가 있어요.",
+    "exampleMeaning": "I have a peanut allergy."
+  },
+  {
+    "id": "vocab-health-약",
+    "korean": "약",
+    "meaning": "medicine",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "이 약은 하루에 세 번 드세요.",
+    "exampleMeaning": "Take this medicine three times a day."
+  },
+  {
+    "id": "vocab-health-감기약",
+    "korean": "감기약",
+    "meaning": "cold medicine",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "감기약 좀 주세요.",
+    "exampleMeaning": "Some cold medicine, please."
+  },
+  {
+    "id": "vocab-health-소화제",
+    "korean": "소화제",
+    "meaning": "digestive medicine",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "소화제 있어요?",
+    "exampleMeaning": "Do you have digestive medicine?"
+  },
+  {
+    "id": "vocab-health-진통제",
+    "korean": "진통제",
+    "meaning": "painkiller",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "진통제를 사고 싶어요.",
+    "exampleMeaning": "I want to buy a painkiller."
+  },
+  {
+    "id": "vocab-health-밴드",
+    "korean": "밴드",
+    "meaning": "adhesive bandage",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "밴드 좀 주세요.",
+    "exampleMeaning": "An adhesive bandage, please."
+  },
+  {
+    "id": "vocab-health-마스크",
+    "korean": "마스크",
+    "meaning": "mask",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "마스크를 쓰세요.",
+    "exampleMeaning": "Please wear a mask."
+  },
+  {
+    "id": "vocab-health-처방전",
+    "korean": "처방전",
+    "meaning": "prescription",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "처방전을 약국에 가져가세요.",
+    "exampleMeaning": "Take the prescription to the pharmacy."
+  },
+  {
+    "id": "vocab-health-주사",
+    "korean": "주사",
+    "meaning": "injection",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "주사를 맞았어요.",
+    "exampleMeaning": "I got an injection."
+  },
+  {
+    "id": "vocab-health-보험",
+    "korean": "보험",
+    "meaning": "insurance",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "건강 보험이 있어요?",
+    "exampleMeaning": "Do you have health insurance?"
+  },
+  {
+    "id": "vocab-health-건강",
+    "korean": "건강",
+    "meaning": "health",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "건강이 제일 중요해요.",
+    "exampleMeaning": "Health is the most important thing."
+  },
+  {
+    "id": "vocab-health-환자",
+    "korean": "환자",
+    "meaning": "patient",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "환자가 많아서 오래 기다렸어요.",
+    "exampleMeaning": "There were many patients, so I waited a long time."
+  },
+  {
+    "id": "vocab-health-간호사",
+    "korean": "간호사",
+    "meaning": "nurse",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "간호사가 이름을 불렀어요.",
+    "exampleMeaning": "The nurse called my name."
+  },
+  {
+    "id": "vocab-health-응급실",
+    "korean": "응급실",
+    "meaning": "emergency room",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "응급실은 일 층에 있어요.",
+    "exampleMeaning": "The emergency room is on the first floor."
+  },
+  {
+    "id": "vocab-health-구급차",
+    "korean": "구급차",
+    "meaning": "ambulance",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "구급차를 불러 주세요.",
+    "exampleMeaning": "Please call an ambulance."
+  },
+  {
+    "id": "vocab-health-경찰",
+    "korean": "경찰",
+    "meaning": "police",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "경찰을 불러 주세요.",
+    "exampleMeaning": "Please call the police."
+  },
+  {
+    "id": "vocab-health-사고",
+    "korean": "사고",
+    "meaning": "accident",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "교통사고가 났어요.",
+    "exampleMeaning": "There was a traffic accident."
+  },
+  {
+    "id": "vocab-health-불",
+    "korean": "불",
+    "meaning": "fire; light",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "불이 났어요!",
+    "exampleMeaning": "There is a fire!"
+  },
+  {
+    "id": "vocab-health-도둑",
+    "korean": "도둑",
+    "meaning": "thief",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "도둑이 제 가방을 가져갔어요.",
+    "exampleMeaning": "A thief took my bag."
+  },
+  {
+    "id": "vocab-health-비상구",
+    "korean": "비상구",
+    "meaning": "emergency exit",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "비상구는 저쪽이에요.",
+    "exampleMeaning": "The emergency exit is that way."
+  },
+  {
+    "id": "vocab-health-증상",
+    "korean": "증상",
+    "meaning": "symptom",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "증상이 어때요?",
+    "exampleMeaning": "What are your symptoms?"
+  },
+  {
+    "id": "vocab-health-진료",
+    "korean": "진료",
+    "meaning": "medical consultation",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "진료는 아홉 시에 시작해요.",
+    "exampleMeaning": "Consultations start at nine o'clock."
+  },
+  {
+    "id": "vocab-health-예약",
+    "korean": "예약",
+    "meaning": "reservation, appointment",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "병원 예약을 했어요.",
+    "exampleMeaning": "I made a hospital appointment."
+  },
+  {
+    "id": "vocab-health-피",
+    "korean": "피",
+    "meaning": "blood",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "피가 나요.",
+    "exampleMeaning": "It is bleeding."
+  },
+  {
+    "id": "vocab-health-상처",
+    "korean": "상처",
+    "meaning": "wound",
+    "pos": "noun",
+    "deck": "deck-health",
+    "example": "상처에 약을 발랐어요.",
+    "exampleMeaning": "I put medicine on the wound."
+  },
+  {
+    "id": "vocab-health-다치다",
+    "korean": "다치다",
+    "meaning": "to get hurt",
+    "pos": "verb",
+    "deck": "deck-health",
+    "example": "넘어져서 다리를 다쳤어요.",
+    "exampleMeaning": "I fell and hurt my leg."
+  },
+  {
+    "id": "vocab-health-토하다",
+    "korean": "토하다",
+    "meaning": "to vomit",
+    "pos": "verb",
+    "deck": "deck-health",
+    "example": "어젯밤에 토했어요.",
+    "exampleMeaning": "I vomited last night."
+  },
+  {
+    "id": "vocab-health-낫다",
+    "korean": "낫다",
+    "meaning": "to get better",
+    "pos": "verb",
+    "deck": "deck-health",
+    "example": "감기가 다 나았어요.",
+    "exampleMeaning": "My cold is completely better.",
+    "note": "Irregular: 낫다 becomes 나아요."
+  },
+  {
+    "id": "vocab-health-조심하다",
+    "korean": "조심하다",
+    "meaning": "to be careful",
+    "pos": "verb",
+    "deck": "deck-health",
+    "example": "길이 미끄러워요. 조심하세요.",
+    "exampleMeaning": "The road is slippery. Be careful."
+  },
+  {
+    "id": "vocab-health-어지럽다",
+    "korean": "어지럽다",
+    "meaning": "to be dizzy",
+    "pos": "adjective",
+    "deck": "deck-health",
+    "example": "머리가 어지러워요.",
+    "exampleMeaning": "I feel dizzy."
+  },
+  {
+    "id": "vocab-health-심하다",
+    "korean": "심하다",
+    "meaning": "to be severe",
+    "pos": "adjective",
+    "deck": "deck-health",
+    "example": "기침이 심해요.",
+    "exampleMeaning": "My cough is severe."
+  },
+  {
+    "id": "vocab-health-열이-나다",
+    "korean": "열이 나다",
+    "meaning": "to have a fever",
+    "pos": "expression",
+    "deck": "deck-health",
+    "example": "열이 나요.",
+    "exampleMeaning": "I have a fever."
+  },
+  {
+    "id": "vocab-health-살려-주세요",
+    "korean": "살려 주세요",
+    "meaning": "help! (save me)",
+    "pos": "expression",
+    "deck": "deck-health",
+    "example": "살려 주세요!",
+    "exampleMeaning": "Help!",
+    "note": "Only for real emergencies."
+  }
+]

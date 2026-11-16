@@ -1,0 +1,426 @@
+[
+  {
+    "id": "vocab-documents-여권",
+    "korean": "여권",
+    "meaning": "passport",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "여권을 보여 주세요.",
+    "exampleMeaning": "Please show your passport."
+  },
+  {
+    "id": "vocab-documents-비자",
+    "korean": "비자",
+    "meaning": "visa",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "학생 비자로 왔어요.",
+    "exampleMeaning": "I came on a student visa."
+  },
+  {
+    "id": "vocab-documents-외국인등록증",
+    "korean": "외국인등록증",
+    "meaning": "alien registration card (ARC)",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "외국인등록증을 신청했어요.",
+    "exampleMeaning": "I applied for my alien registration card."
+  },
+  {
+    "id": "vocab-documents-신분증",
+    "korean": "신분증",
+    "meaning": "ID card",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "신분증을 가져오세요.",
+    "exampleMeaning": "Please bring your ID."
+  },
+  {
+    "id": "vocab-documents-서류",
+    "korean": "서류",
+    "meaning": "documents",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "서류를 준비해 주세요.",
+    "exampleMeaning": "Please prepare the documents."
+  },
+  {
+    "id": "vocab-documents-신청서",
+    "korean": "신청서",
+    "meaning": "application form",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "신청서를 써 주세요.",
+    "exampleMeaning": "Please fill in the application form."
+  },
+  {
+    "id": "vocab-documents-서명",
+    "korean": "서명",
+    "meaning": "signature",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "여기에 서명해 주세요.",
+    "exampleMeaning": "Please sign here."
+  },
+  {
+    "id": "vocab-documents-통장",
+    "korean": "통장",
+    "meaning": "bankbook, bank account",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "통장을 만들고 싶어요.",
+    "exampleMeaning": "I would like to open a bank account."
+  },
+  {
+    "id": "vocab-documents-계좌",
+    "korean": "계좌",
+    "meaning": "account",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "계좌 번호를 알려 주세요.",
+    "exampleMeaning": "Please tell me your account number."
+  },
+  {
+    "id": "vocab-documents-비밀번호",
+    "korean": "비밀번호",
+    "meaning": "password, PIN",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "비밀번호를 입력하세요.",
+    "exampleMeaning": "Enter your password."
+  },
+  {
+    "id": "vocab-documents-체크카드",
+    "korean": "체크카드",
+    "meaning": "debit card",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "체크카드를 만들었어요.",
+    "exampleMeaning": "I got a debit card."
+  },
+  {
+    "id": "vocab-documents-신용카드",
+    "korean": "신용카드",
+    "meaning": "credit card",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "신용카드도 돼요?",
+    "exampleMeaning": "Do you accept credit cards?"
+  },
+  {
+    "id": "vocab-documents-현금인출기",
+    "korean": "현금인출기",
+    "meaning": "ATM",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "현금인출기는 어디에 있어요?",
+    "exampleMeaning": "Where is the ATM?",
+    "note": "People often just say ATM."
+  },
+  {
+    "id": "vocab-documents-송금",
+    "korean": "송금",
+    "meaning": "money transfer",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "해외 송금을 하고 싶어요.",
+    "exampleMeaning": "I would like to send money abroad."
+  },
+  {
+    "id": "vocab-documents-이체",
+    "korean": "이체",
+    "meaning": "bank transfer",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "계좌 이체로 보낼게요.",
+    "exampleMeaning": "I will send it by bank transfer."
+  },
+  {
+    "id": "vocab-documents-환전",
+    "korean": "환전",
+    "meaning": "currency exchange",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "달러를 원으로 환전하고 싶어요.",
+    "exampleMeaning": "I want to exchange dollars for won."
+  },
+  {
+    "id": "vocab-documents-수수료",
+    "korean": "수수료",
+    "meaning": "fee, commission",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "수수료가 얼마예요?",
+    "exampleMeaning": "How much is the fee?"
+  },
+  {
+    "id": "vocab-documents-잔액",
+    "korean": "잔액",
+    "meaning": "balance",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "잔액이 부족해요.",
+    "exampleMeaning": "The balance is insufficient."
+  },
+  {
+    "id": "vocab-documents-입금",
+    "korean": "입금",
+    "meaning": "deposit",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "통장에 돈을 입금했어요.",
+    "exampleMeaning": "I deposited money into my account."
+  },
+  {
+    "id": "vocab-documents-출금",
+    "korean": "출금",
+    "meaning": "withdrawal",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "현금을 출금했어요.",
+    "exampleMeaning": "I withdrew cash."
+  },
+  {
+    "id": "vocab-documents-휴대폰",
+    "korean": "휴대폰",
+    "meaning": "mobile phone",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "휴대폰을 새로 샀어요.",
+    "exampleMeaning": "I bought a new mobile phone."
+  },
+  {
+    "id": "vocab-documents-전화번호",
+    "korean": "전화번호",
+    "meaning": "phone number",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "전화번호가 뭐예요?",
+    "exampleMeaning": "What is your phone number?"
+  },
+  {
+    "id": "vocab-documents-유심",
+    "korean": "유심",
+    "meaning": "SIM card",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "유심을 사고 싶어요.",
+    "exampleMeaning": "I want to buy a SIM card."
+  },
+  {
+    "id": "vocab-documents-요금제",
+    "korean": "요금제",
+    "meaning": "phone plan",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "제일 싼 요금제가 뭐예요?",
+    "exampleMeaning": "What is the cheapest plan?"
+  },
+  {
+    "id": "vocab-documents-데이터",
+    "korean": "데이터",
+    "meaning": "data",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "데이터가 다 떨어졌어요.",
+    "exampleMeaning": "I have run out of data."
+  },
+  {
+    "id": "vocab-documents-와이파이",
+    "korean": "와이파이",
+    "meaning": "Wi-Fi",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "와이파이 비밀번호가 뭐예요?",
+    "exampleMeaning": "What is the Wi-Fi password?"
+  },
+  {
+    "id": "vocab-documents-인증",
+    "korean": "인증",
+    "meaning": "verification",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "본인 인증을 해야 해요.",
+    "exampleMeaning": "You need to verify your identity."
+  },
+  {
+    "id": "vocab-documents-인증번호",
+    "korean": "인증번호",
+    "meaning": "verification code",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "인증번호를 입력해 주세요.",
+    "exampleMeaning": "Please enter the verification code."
+  },
+  {
+    "id": "vocab-documents-문자",
+    "korean": "문자",
+    "meaning": "text message",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "문자를 보냈어요.",
+    "exampleMeaning": "I sent a text message."
+  },
+  {
+    "id": "vocab-documents-전화",
+    "korean": "전화",
+    "meaning": "phone call",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "전화가 왔어요.",
+    "exampleMeaning": "I got a phone call."
+  },
+  {
+    "id": "vocab-documents-이메일",
+    "korean": "이메일",
+    "meaning": "email",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "이메일 주소를 알려 주세요.",
+    "exampleMeaning": "Please tell me your email address."
+  },
+  {
+    "id": "vocab-documents-소포",
+    "korean": "소포",
+    "meaning": "parcel",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "소포를 받았어요.",
+    "exampleMeaning": "I received a parcel."
+  },
+  {
+    "id": "vocab-documents-택배",
+    "korean": "택배",
+    "meaning": "parcel delivery",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "택배가 도착했어요.",
+    "exampleMeaning": "The parcel has arrived."
+  },
+  {
+    "id": "vocab-documents-외국인등록번호",
+    "korean": "외국인등록번호",
+    "meaning": "alien registration number",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "외국인등록번호를 써 주세요.",
+    "exampleMeaning": "Please write your alien registration number."
+  },
+  {
+    "id": "vocab-documents-생년월일",
+    "korean": "생년월일",
+    "meaning": "date of birth",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "생년월일을 써 주세요.",
+    "exampleMeaning": "Please write your date of birth."
+  },
+  {
+    "id": "vocab-documents-국적",
+    "korean": "국적",
+    "meaning": "nationality",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "국적이 어디예요?",
+    "exampleMeaning": "What is your nationality?"
+  },
+  {
+    "id": "vocab-documents-성별",
+    "korean": "성별",
+    "meaning": "sex, gender",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "성별을 선택하세요.",
+    "exampleMeaning": "Select your gender."
+  },
+  {
+    "id": "vocab-documents-직원",
+    "korean": "직원",
+    "meaning": "staff, employee",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "직원에게 물어보세요.",
+    "exampleMeaning": "Ask a staff member."
+  },
+  {
+    "id": "vocab-documents-창구",
+    "korean": "창구",
+    "meaning": "counter, service window",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "삼 번 창구로 가세요.",
+    "exampleMeaning": "Please go to counter 3."
+  },
+  {
+    "id": "vocab-documents-번호표",
+    "korean": "번호표",
+    "meaning": "queue number ticket",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "번호표를 뽑고 기다리세요.",
+    "exampleMeaning": "Take a number and wait."
+  },
+  {
+    "id": "vocab-documents-도장",
+    "korean": "도장",
+    "meaning": "seal, stamp",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "도장이 없어요. 서명해도 돼요?",
+    "exampleMeaning": "I have no seal. May I sign instead?"
+  },
+  {
+    "id": "vocab-documents-복사",
+    "korean": "복사",
+    "meaning": "photocopy",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "여권을 복사해 주세요.",
+    "exampleMeaning": "Please photocopy my passport."
+  },
+  {
+    "id": "vocab-documents-사진",
+    "korean": "사진",
+    "meaning": "photo",
+    "pos": "noun",
+    "deck": "deck-documents",
+    "example": "여권 사진이 필요해요.",
+    "exampleMeaning": "You need a passport photo."
+  },
+  {
+    "id": "vocab-documents-신청하다",
+    "korean": "신청하다",
+    "meaning": "to apply",
+    "pos": "verb",
+    "deck": "deck-documents",
+    "example": "기숙사를 신청했어요.",
+    "exampleMeaning": "I applied for the dormitory."
+  },
+  {
+    "id": "vocab-documents-바꾸다",
+    "korean": "바꾸다",
+    "meaning": "to change, to exchange",
+    "pos": "verb",
+    "deck": "deck-documents",
+    "example": "돈을 바꾸고 싶어요.",
+    "exampleMeaning": "I want to change money."
+  },
+  {
+    "id": "vocab-documents-충전하다",
+    "korean": "충전하다",
+    "meaning": "to charge; to top up",
+    "pos": "verb",
+    "deck": "deck-documents",
+    "example": "휴대폰을 충전해야 해요.",
+    "exampleMeaning": "I need to charge my phone."
+  },
+  {
+    "id": "vocab-documents-확인하다",
+    "korean": "확인하다",
+    "meaning": "to check, to confirm",
+    "pos": "verb",
+    "deck": "deck-documents",
+    "example": "이메일을 확인해 주세요.",
+    "exampleMeaning": "Please check your email."
+  }
+]

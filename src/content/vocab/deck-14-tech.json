@@ -1,0 +1,425 @@
+[
+  {
+    "id": "vocab-tech-컴퓨터",
+    "korean": "컴퓨터",
+    "meaning": "computer",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "컴퓨터로 숙제를 해요.",
+    "exampleMeaning": "I do my homework on the computer."
+  },
+  {
+    "id": "vocab-tech-노트북",
+    "korean": "노트북",
+    "meaning": "laptop",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "노트북을 가져왔어요.",
+    "exampleMeaning": "I brought my laptop."
+  },
+  {
+    "id": "vocab-tech-인터넷",
+    "korean": "인터넷",
+    "meaning": "internet",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "인터넷이 안 돼요.",
+    "exampleMeaning": "The internet is not working."
+  },
+  {
+    "id": "vocab-tech-앱",
+    "korean": "앱",
+    "meaning": "app",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "이 앱을 설치하세요.",
+    "exampleMeaning": "Install this app."
+  },
+  {
+    "id": "vocab-tech-프로그램",
+    "korean": "프로그램",
+    "meaning": "program",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "이 프로그램은 무료예요.",
+    "exampleMeaning": "This program is free."
+  },
+  {
+    "id": "vocab-tech-소프트웨어",
+    "korean": "소프트웨어",
+    "meaning": "software",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "소프트웨어를 업데이트했어요.",
+    "exampleMeaning": "I updated the software."
+  },
+  {
+    "id": "vocab-tech-정보",
+    "korean": "정보",
+    "meaning": "information",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "더 많은 정보가 필요해요.",
+    "exampleMeaning": "I need more information."
+  },
+  {
+    "id": "vocab-tech-시스템",
+    "korean": "시스템",
+    "meaning": "system",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "시스템에 문제가 있어요.",
+    "exampleMeaning": "There is a problem with the system."
+  },
+  {
+    "id": "vocab-tech-데이터베이스",
+    "korean": "데이터베이스",
+    "meaning": "database",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "데이터베이스 수업을 들어요.",
+    "exampleMeaning": "I take a database class."
+  },
+  {
+    "id": "vocab-tech-프로그래밍",
+    "korean": "프로그래밍",
+    "meaning": "programming",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "프로그래밍을 좋아해요.",
+    "exampleMeaning": "I like programming."
+  },
+  {
+    "id": "vocab-tech-코드",
+    "korean": "코드",
+    "meaning": "code",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "코드를 다시 확인했어요.",
+    "exampleMeaning": "I checked the code again."
+  },
+  {
+    "id": "vocab-tech-개발자",
+    "korean": "개발자",
+    "meaning": "developer",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "저는 개발자가 되고 싶어요.",
+    "exampleMeaning": "I want to become a developer."
+  },
+  {
+    "id": "vocab-tech-웹사이트",
+    "korean": "웹사이트",
+    "meaning": "website",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "학교 웹사이트에서 신청하세요.",
+    "exampleMeaning": "Apply on the school website."
+  },
+  {
+    "id": "vocab-tech-홈페이지",
+    "korean": "홈페이지",
+    "meaning": "homepage, website",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "홈페이지에 공지가 있어요.",
+    "exampleMeaning": "There is a notice on the website."
+  },
+  {
+    "id": "vocab-tech-아이디",
+    "korean": "아이디",
+    "meaning": "user ID",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "아이디를 입력하세요.",
+    "exampleMeaning": "Enter your ID."
+  },
+  {
+    "id": "vocab-tech-로그인",
+    "korean": "로그인",
+    "meaning": "login",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "로그인이 안 돼요.",
+    "exampleMeaning": "I cannot log in."
+  },
+  {
+    "id": "vocab-tech-회원가입",
+    "korean": "회원가입",
+    "meaning": "sign-up",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "회원가입을 해야 해요.",
+    "exampleMeaning": "You have to sign up."
+  },
+  {
+    "id": "vocab-tech-검색",
+    "korean": "검색",
+    "meaning": "search",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "인터넷에서 검색해 보세요.",
+    "exampleMeaning": "Try searching on the internet."
+  },
+  {
+    "id": "vocab-tech-링크",
+    "korean": "링크",
+    "meaning": "link",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "링크를 보내 주세요.",
+    "exampleMeaning": "Please send me the link."
+  },
+  {
+    "id": "vocab-tech-파일",
+    "korean": "파일",
+    "meaning": "file",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "파일을 이메일로 보냈어요.",
+    "exampleMeaning": "I sent the file by email."
+  },
+  {
+    "id": "vocab-tech-폴더",
+    "korean": "폴더",
+    "meaning": "folder",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "새 폴더를 만들었어요.",
+    "exampleMeaning": "I made a new folder."
+  },
+  {
+    "id": "vocab-tech-다운로드",
+    "korean": "다운로드",
+    "meaning": "download",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "파일을 다운로드했어요.",
+    "exampleMeaning": "I downloaded the file."
+  },
+  {
+    "id": "vocab-tech-업로드",
+    "korean": "업로드",
+    "meaning": "upload",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "과제를 업로드했어요.",
+    "exampleMeaning": "I uploaded the assignment."
+  },
+  {
+    "id": "vocab-tech-설치",
+    "korean": "설치",
+    "meaning": "installation",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "설치가 끝났어요.",
+    "exampleMeaning": "The installation is finished."
+  },
+  {
+    "id": "vocab-tech-업데이트",
+    "korean": "업데이트",
+    "meaning": "update",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "업데이트가 필요해요.",
+    "exampleMeaning": "An update is needed."
+  },
+  {
+    "id": "vocab-tech-화면",
+    "korean": "화면",
+    "meaning": "screen",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "화면이 안 보여요.",
+    "exampleMeaning": "I cannot see the screen."
+  },
+  {
+    "id": "vocab-tech-키보드",
+    "korean": "키보드",
+    "meaning": "keyboard",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "한국어 키보드를 추가했어요.",
+    "exampleMeaning": "I added a Korean keyboard."
+  },
+  {
+    "id": "vocab-tech-마우스",
+    "korean": "마우스",
+    "meaning": "mouse",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "마우스가 고장 났어요.",
+    "exampleMeaning": "The mouse is broken."
+  },
+  {
+    "id": "vocab-tech-프린터",
+    "korean": "프린터",
+    "meaning": "printer",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "프린터는 도서관에 있어요.",
+    "exampleMeaning": "The printer is in the library."
+  },
+  {
+    "id": "vocab-tech-배터리",
+    "korean": "배터리",
+    "meaning": "battery",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "배터리가 없어요.",
+    "exampleMeaning": "My battery is dead."
+  },
+  {
+    "id": "vocab-tech-이어폰",
+    "korean": "이어폰",
+    "meaning": "earphones",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "이어폰을 잃어버렸어요.",
+    "exampleMeaning": "I lost my earphones."
+  },
+  {
+    "id": "vocab-tech-카메라",
+    "korean": "카메라",
+    "meaning": "camera",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "카메라를 켜 주세요.",
+    "exampleMeaning": "Please turn on your camera."
+  },
+  {
+    "id": "vocab-tech-게임",
+    "korean": "게임",
+    "meaning": "game",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "저는 컴퓨터 게임을 좋아해요.",
+    "exampleMeaning": "I like computer games."
+  },
+  {
+    "id": "vocab-tech-동영상",
+    "korean": "동영상",
+    "meaning": "video",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "한국어 동영상을 봐요.",
+    "exampleMeaning": "I watch Korean videos."
+  },
+  {
+    "id": "vocab-tech-메시지",
+    "korean": "메시지",
+    "meaning": "message",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "메시지를 확인했어요.",
+    "exampleMeaning": "I checked the message."
+  },
+  {
+    "id": "vocab-tech-알림",
+    "korean": "알림",
+    "meaning": "notification",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "알림을 껐어요.",
+    "exampleMeaning": "I turned off notifications."
+  },
+  {
+    "id": "vocab-tech-설정",
+    "korean": "설정",
+    "meaning": "settings",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "설정에서 언어를 바꾸세요.",
+    "exampleMeaning": "Change the language in settings."
+  },
+  {
+    "id": "vocab-tech-언어",
+    "korean": "언어",
+    "meaning": "language",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "몇 개 언어를 할 수 있어요?",
+    "exampleMeaning": "How many languages can you speak?"
+  },
+  {
+    "id": "vocab-tech-번역",
+    "korean": "번역",
+    "meaning": "translation",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "번역 앱을 써요.",
+    "exampleMeaning": "I use a translation app."
+  },
+  {
+    "id": "vocab-tech-오류",
+    "korean": "오류",
+    "meaning": "error",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "오류가 났어요.",
+    "exampleMeaning": "An error occurred."
+  },
+  {
+    "id": "vocab-tech-고장",
+    "korean": "고장",
+    "meaning": "breakdown",
+    "pos": "noun",
+    "deck": "deck-tech",
+    "example": "노트북이 고장 났어요.",
+    "exampleMeaning": "My laptop broke down."
+  },
+  {
+    "id": "vocab-tech-켜다",
+    "korean": "켜다",
+    "meaning": "to turn on",
+    "pos": "verb",
+    "deck": "deck-tech",
+    "example": "불을 켜 주세요.",
+    "exampleMeaning": "Please turn on the light."
+  },
+  {
+    "id": "vocab-tech-끄다",
+    "korean": "끄다",
+    "meaning": "to turn off",
+    "pos": "verb",
+    "deck": "deck-tech",
+    "example": "휴대폰을 꺼 주세요.",
+    "exampleMeaning": "Please turn off your phone."
+  },
+  {
+    "id": "vocab-tech-누르다",
+    "korean": "누르다",
+    "meaning": "to press",
+    "pos": "verb",
+    "deck": "deck-tech",
+    "example": "이 버튼을 누르세요.",
+    "exampleMeaning": "Press this button."
+  },
+  {
+    "id": "vocab-tech-저장하다",
+    "korean": "저장하다",
+    "meaning": "to save",
+    "pos": "verb",
+    "deck": "deck-tech",
+    "example": "파일을 저장했어요.",
+    "exampleMeaning": "I saved the file."
+  },
+  {
+    "id": "vocab-tech-삭제하다",
+    "korean": "삭제하다",
+    "meaning": "to delete",
+    "pos": "verb",
+    "deck": "deck-tech",
+    "example": "사진을 삭제했어요.",
+    "exampleMeaning": "I deleted the photo."
+  },
+  {
+    "id": "vocab-tech-연결하다",
+    "korean": "연결하다",
+    "meaning": "to connect",
+    "pos": "verb",
+    "deck": "deck-tech",
+    "example": "와이파이에 연결했어요.",
+    "exampleMeaning": "I connected to the Wi-Fi."
+  }
+]

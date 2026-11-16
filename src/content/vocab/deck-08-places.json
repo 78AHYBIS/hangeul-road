@@ -1,0 +1,390 @@
+[
+  {
+    "id": "vocab-places-집",
+    "korean": "집",
+    "meaning": "house, home",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "집에 가고 싶어요.",
+    "exampleMeaning": "I want to go home."
+  },
+  {
+    "id": "vocab-places-식당",
+    "korean": "식당",
+    "meaning": "restaurant",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "이 근처에 맛있는 식당이 있어요?",
+    "exampleMeaning": "Is there a good restaurant near here?"
+  },
+  {
+    "id": "vocab-places-카페",
+    "korean": "카페",
+    "meaning": "cafe",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "카페에서 친구를 만나요.",
+    "exampleMeaning": "I meet a friend at a cafe."
+  },
+  {
+    "id": "vocab-places-은행",
+    "korean": "은행",
+    "meaning": "bank",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "은행은 네 시에 닫아요.",
+    "exampleMeaning": "The bank closes at four o'clock."
+  },
+  {
+    "id": "vocab-places-병원",
+    "korean": "병원",
+    "meaning": "hospital, clinic",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "병원에 가야 해요.",
+    "exampleMeaning": "I have to go to the hospital."
+  },
+  {
+    "id": "vocab-places-약국",
+    "korean": "약국",
+    "meaning": "pharmacy",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "약국에서 약을 샀어요.",
+    "exampleMeaning": "I bought medicine at the pharmacy."
+  },
+  {
+    "id": "vocab-places-우체국",
+    "korean": "우체국",
+    "meaning": "post office",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "우체국에서 소포를 보내요.",
+    "exampleMeaning": "I send a parcel at the post office."
+  },
+  {
+    "id": "vocab-places-경찰서",
+    "korean": "경찰서",
+    "meaning": "police station",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "경찰서가 어디예요?",
+    "exampleMeaning": "Where is the police station?"
+  },
+  {
+    "id": "vocab-places-공원",
+    "korean": "공원",
+    "meaning": "park",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "공원에서 산책해요.",
+    "exampleMeaning": "I take a walk in the park."
+  },
+  {
+    "id": "vocab-places-영화관",
+    "korean": "영화관",
+    "meaning": "movie theater",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "영화관에서 영화를 봐요.",
+    "exampleMeaning": "I watch a movie at the movie theater."
+  },
+  {
+    "id": "vocab-places-서점",
+    "korean": "서점",
+    "meaning": "bookstore",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "서점에서 한국어 책을 샀어요.",
+    "exampleMeaning": "I bought a Korean book at the bookstore."
+  },
+  {
+    "id": "vocab-places-미용실",
+    "korean": "미용실",
+    "meaning": "hair salon",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "미용실에서 머리를 잘랐어요.",
+    "exampleMeaning": "I got my hair cut at the hair salon."
+  },
+  {
+    "id": "vocab-places-빨래방",
+    "korean": "빨래방",
+    "meaning": "laundromat",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "빨래방은 밤에도 열어요.",
+    "exampleMeaning": "The laundromat is open at night too."
+  },
+  {
+    "id": "vocab-places-노래방",
+    "korean": "노래방",
+    "meaning": "karaoke room",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "친구들과 노래방에 갔어요.",
+    "exampleMeaning": "I went to karaoke with friends."
+  },
+  {
+    "id": "vocab-places-피시방",
+    "korean": "피시방",
+    "meaning": "PC room (internet cafe)",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "피시방에서 게임을 해요.",
+    "exampleMeaning": "I play games at the PC room."
+  },
+  {
+    "id": "vocab-places-헬스장",
+    "korean": "헬스장",
+    "meaning": "gym",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "헬스장에서 운동해요.",
+    "exampleMeaning": "I work out at the gym."
+  },
+  {
+    "id": "vocab-places-수영장",
+    "korean": "수영장",
+    "meaning": "swimming pool",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "수영장은 학교 안에 있어요.",
+    "exampleMeaning": "The swimming pool is inside the school."
+  },
+  {
+    "id": "vocab-places-호텔",
+    "korean": "호텔",
+    "meaning": "hotel",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "호텔을 예약했어요.",
+    "exampleMeaning": "I booked a hotel."
+  },
+  {
+    "id": "vocab-places-박물관",
+    "korean": "박물관",
+    "meaning": "museum",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "박물관은 월요일에 쉬어요.",
+    "exampleMeaning": "The museum is closed on Mondays."
+  },
+  {
+    "id": "vocab-places-미술관",
+    "korean": "미술관",
+    "meaning": "art museum",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "주말에 미술관에 가요.",
+    "exampleMeaning": "I go to the art museum on the weekend."
+  },
+  {
+    "id": "vocab-places-교회",
+    "korean": "교회",
+    "meaning": "church",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "일요일에 교회에 가요.",
+    "exampleMeaning": "I go to church on Sunday."
+  },
+  {
+    "id": "vocab-places-절",
+    "korean": "절",
+    "meaning": "Buddhist temple",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "경주에 유명한 절이 있어요.",
+    "exampleMeaning": "There is a famous temple in Gyeongju."
+  },
+  {
+    "id": "vocab-places-대사관",
+    "korean": "대사관",
+    "meaning": "embassy",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "카자흐스탄 대사관은 서울에 있어요.",
+    "exampleMeaning": "The Kazakhstan embassy is in Seoul."
+  },
+  {
+    "id": "vocab-places-출입국사무소",
+    "korean": "출입국사무소",
+    "meaning": "immigration office",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "출입국사무소에서 외국인등록증을 신청해요.",
+    "exampleMeaning": "I apply for my alien registration card at the immigration office."
+  },
+  {
+    "id": "vocab-places-화장실",
+    "korean": "화장실",
+    "meaning": "restroom",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "화장실은 이 층에 있어요.",
+    "exampleMeaning": "The restroom is on the second floor."
+  },
+  {
+    "id": "vocab-places-주차장",
+    "korean": "주차장",
+    "meaning": "parking lot",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "주차장은 건물 뒤에 있어요.",
+    "exampleMeaning": "The parking lot is behind the building."
+  },
+  {
+    "id": "vocab-places-건물",
+    "korean": "건물",
+    "meaning": "building",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "저 건물이 도서관이에요.",
+    "exampleMeaning": "That building is the library."
+  },
+  {
+    "id": "vocab-places-엘리베이터",
+    "korean": "엘리베이터",
+    "meaning": "elevator",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "엘리베이터를 타고 올라가세요.",
+    "exampleMeaning": "Take the elevator up."
+  },
+  {
+    "id": "vocab-places-계단",
+    "korean": "계단",
+    "meaning": "stairs",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "계단으로 올라가요.",
+    "exampleMeaning": "I go up the stairs."
+  },
+  {
+    "id": "vocab-places-문",
+    "korean": "문",
+    "meaning": "door",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "문을 닫아 주세요.",
+    "exampleMeaning": "Please close the door."
+  },
+  {
+    "id": "vocab-places-창문",
+    "korean": "창문",
+    "meaning": "window",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "창문을 열어도 돼요?",
+    "exampleMeaning": "May I open the window?"
+  },
+  {
+    "id": "vocab-places-도시",
+    "korean": "도시",
+    "meaning": "city",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "울산은 큰 도시예요.",
+    "exampleMeaning": "Ulsan is a big city."
+  },
+  {
+    "id": "vocab-places-시내",
+    "korean": "시내",
+    "meaning": "downtown",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "주말에 시내에 나가요.",
+    "exampleMeaning": "I go downtown on the weekend."
+  },
+  {
+    "id": "vocab-places-시골",
+    "korean": "시골",
+    "meaning": "countryside",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "할머니는 시골에 사세요.",
+    "exampleMeaning": "My grandmother lives in the countryside."
+  },
+  {
+    "id": "vocab-places-바다",
+    "korean": "바다",
+    "meaning": "sea",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "울산은 바다가 가까워요.",
+    "exampleMeaning": "The sea is close to Ulsan."
+  },
+  {
+    "id": "vocab-places-산",
+    "korean": "산",
+    "meaning": "mountain",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "주말에 산에 가요.",
+    "exampleMeaning": "I go to the mountains on the weekend."
+  },
+  {
+    "id": "vocab-places-강",
+    "korean": "강",
+    "meaning": "river",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "강 옆에서 자전거를 타요.",
+    "exampleMeaning": "I ride a bike beside the river."
+  },
+  {
+    "id": "vocab-places-다리",
+    "korean": "다리",
+    "meaning": "bridge",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "다리를 건너면 시장이 있어요.",
+    "exampleMeaning": "If you cross the bridge, there is a market.",
+    "note": "다리 also means \"leg\"."
+  },
+  {
+    "id": "vocab-places-동네",
+    "korean": "동네",
+    "meaning": "neighborhood",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "이 동네는 조용해요.",
+    "exampleMeaning": "This neighborhood is quiet."
+  },
+  {
+    "id": "vocab-places-회사",
+    "korean": "회사",
+    "meaning": "company",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "형은 회사에 다녀요.",
+    "exampleMeaning": "My older brother works at a company."
+  },
+  {
+    "id": "vocab-places-공장",
+    "korean": "공장",
+    "meaning": "factory",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "울산에는 큰 공장이 많아요.",
+    "exampleMeaning": "There are many big factories in Ulsan."
+  },
+  {
+    "id": "vocab-places-시청",
+    "korean": "시청",
+    "meaning": "city hall",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "시청 앞에서 버스를 타요.",
+    "exampleMeaning": "I take the bus in front of city hall."
+  },
+  {
+    "id": "vocab-places-세탁소",
+    "korean": "세탁소",
+    "meaning": "dry cleaner's",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "세탁소에 옷을 맡겼어요.",
+    "exampleMeaning": "I left my clothes at the dry cleaner's."
+  }
+]

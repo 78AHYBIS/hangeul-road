@@ -34,13 +34,20 @@ export function TodayPage() {
       <Card>
         <h2 className="font-semibold">Start with Hangul</h2>
         <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
-          Daily tasks arrive in Phase 3. Until then, do one Hangul lesson or drill a day.
+          Daily tasks arrive in Phase 3. Until then, do one Hangul lesson or drill and your word
+          reviews each day.
         </p>
         <Link
           to="/learn/hangul"
           className="mt-3 flex min-h-12 items-center justify-center rounded-xl bg-teal-700 font-medium text-white"
         >
           Open Hangul
+        </Link>
+        <Link
+          to="/learn/vocab/review"
+          className="mt-2 flex min-h-12 items-center justify-center rounded-xl border border-stone-300 font-medium dark:border-stone-700"
+        >
+          Review vocabulary
         </Link>
       </Card>
     </Page>

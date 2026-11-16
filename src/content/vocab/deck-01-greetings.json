@@ -1,0 +1,441 @@
+[
+  {
+    "id": "vocab-greetings-안녕하세요",
+    "korean": "안녕하세요",
+    "meaning": "hello",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "안녕하세요, 저는 아이다르예요.",
+    "exampleMeaning": "Hello, I am Aidar."
+  },
+  {
+    "id": "vocab-greetings-안녕히-가세요",
+    "korean": "안녕히 가세요",
+    "meaning": "goodbye (to someone leaving)",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "안녕히 가세요. 내일 봐요.",
+    "exampleMeaning": "Goodbye. See you tomorrow.",
+    "note": "Said by the person who stays."
+  },
+  {
+    "id": "vocab-greetings-안녕히-계세요",
+    "korean": "안녕히 계세요",
+    "meaning": "goodbye (to someone staying)",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "안녕히 계세요. 다음에 또 올게요.",
+    "exampleMeaning": "Goodbye. I will come again next time.",
+    "note": "Said by the person who leaves."
+  },
+  {
+    "id": "vocab-greetings-감사합니다",
+    "korean": "감사합니다",
+    "meaning": "thank you",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "도와주셔서 감사합니다.",
+    "exampleMeaning": "Thank you for helping me.",
+    "note": "Formal and always safe."
+  },
+  {
+    "id": "vocab-greetings-고맙습니다",
+    "korean": "고맙습니다",
+    "meaning": "thank you",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "선물 고맙습니다.",
+    "exampleMeaning": "Thank you for the gift."
+  },
+  {
+    "id": "vocab-greetings-죄송합니다",
+    "korean": "죄송합니다",
+    "meaning": "I am sorry",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "늦어서 죄송합니다.",
+    "exampleMeaning": "I am sorry for being late."
+  },
+  {
+    "id": "vocab-greetings-미안해요",
+    "korean": "미안해요",
+    "meaning": "sorry",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "미안해요, 제가 잊어버렸어요.",
+    "exampleMeaning": "Sorry, I forgot.",
+    "note": "Softer than 죄송합니다. Use it with people you know."
+  },
+  {
+    "id": "vocab-greetings-괜찮아요",
+    "korean": "괜찮아요",
+    "meaning": "it is okay",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "괜찮아요, 걱정하지 마세요.",
+    "exampleMeaning": "It is okay, do not worry."
+  },
+  {
+    "id": "vocab-greetings-네",
+    "korean": "네",
+    "meaning": "yes",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "네, 맞아요.",
+    "exampleMeaning": "Yes, that is right."
+  },
+  {
+    "id": "vocab-greetings-아니요",
+    "korean": "아니요",
+    "meaning": "no",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "아니요, 괜찮아요.",
+    "exampleMeaning": "No, it is okay."
+  },
+  {
+    "id": "vocab-greetings-실례합니다",
+    "korean": "실례합니다",
+    "meaning": "excuse me",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "실례합니다, 길 좀 물어볼게요.",
+    "exampleMeaning": "Excuse me, let me ask for directions."
+  },
+  {
+    "id": "vocab-greetings-저기요",
+    "korean": "저기요",
+    "meaning": "excuse me (to get attention)",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "저기요, 주문할게요.",
+    "exampleMeaning": "Excuse me, I would like to order.",
+    "note": "Used to call staff in a restaurant or shop."
+  },
+  {
+    "id": "vocab-greetings-잠시만요",
+    "korean": "잠시만요",
+    "meaning": "just a moment",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "잠시만요, 금방 올게요.",
+    "exampleMeaning": "Just a moment, I will be right back."
+  },
+  {
+    "id": "vocab-greetings-반갑습니다",
+    "korean": "반갑습니다",
+    "meaning": "nice to meet you",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "만나서 반갑습니다.",
+    "exampleMeaning": "Nice to meet you."
+  },
+  {
+    "id": "vocab-greetings-처음-뵙겠습니다",
+    "korean": "처음 뵙겠습니다",
+    "meaning": "how do you do (first meeting)",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "처음 뵙겠습니다. 잘 부탁드립니다.",
+    "exampleMeaning": "How do you do. I look forward to working with you."
+  },
+  {
+    "id": "vocab-greetings-잘-부탁드립니다",
+    "korean": "잘 부탁드립니다",
+    "meaning": "I look forward to working with you",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "앞으로 잘 부탁드립니다.",
+    "exampleMeaning": "I look forward to working with you from now on.",
+    "note": "Said when you meet someone you will study or work with."
+  },
+  {
+    "id": "vocab-greetings-잘-먹겠습니다",
+    "korean": "잘 먹겠습니다",
+    "meaning": "thank you for the meal (before eating)",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "맛있겠어요. 잘 먹겠습니다.",
+    "exampleMeaning": "It looks delicious. Thank you for the meal."
+  },
+  {
+    "id": "vocab-greetings-잘-먹었습니다",
+    "korean": "잘 먹었습니다",
+    "meaning": "thank you for the meal (after eating)",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "잘 먹었습니다. 정말 맛있었어요.",
+    "exampleMeaning": "Thank you for the meal. It was really delicious."
+  },
+  {
+    "id": "vocab-greetings-수고하셨습니다",
+    "korean": "수고하셨습니다",
+    "meaning": "thank you for your hard work",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "오늘도 수고하셨습니다.",
+    "exampleMeaning": "Thank you for your hard work today too."
+  },
+  {
+    "id": "vocab-greetings-축하합니다",
+    "korean": "축하합니다",
+    "meaning": "congratulations",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "생일 축하합니다.",
+    "exampleMeaning": "Happy birthday."
+  },
+  {
+    "id": "vocab-greetings-알겠습니다",
+    "korean": "알겠습니다",
+    "meaning": "I understand, okay",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "네, 알겠습니다.",
+    "exampleMeaning": "Yes, I understand."
+  },
+  {
+    "id": "vocab-greetings-모르겠어요",
+    "korean": "모르겠어요",
+    "meaning": "I do not know",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "죄송하지만 잘 모르겠어요.",
+    "exampleMeaning": "I am sorry, but I am not sure."
+  },
+  {
+    "id": "vocab-greetings-맞아요",
+    "korean": "맞아요",
+    "meaning": "that is right",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "네, 그 말이 맞아요.",
+    "exampleMeaning": "Yes, that is right."
+  },
+  {
+    "id": "vocab-greetings-그래요",
+    "korean": "그래요",
+    "meaning": "is that so, okay",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "아, 그래요? 몰랐어요.",
+    "exampleMeaning": "Oh, is that so? I did not know."
+  },
+  {
+    "id": "vocab-greetings-정말",
+    "korean": "정말",
+    "meaning": "really",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "이 음식은 정말 맛있어요.",
+    "exampleMeaning": "This food is really delicious."
+  },
+  {
+    "id": "vocab-greetings-진짜",
+    "korean": "진짜",
+    "meaning": "really (casual)",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "진짜 재미있어요.",
+    "exampleMeaning": "It is really fun.",
+    "note": "More casual than 정말."
+  },
+  {
+    "id": "vocab-greetings-아주",
+    "korean": "아주",
+    "meaning": "very",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "오늘은 아주 추워요.",
+    "exampleMeaning": "It is very cold today."
+  },
+  {
+    "id": "vocab-greetings-너무",
+    "korean": "너무",
+    "meaning": "too, so much",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "이 가방은 너무 비싸요.",
+    "exampleMeaning": "This bag is too expensive."
+  },
+  {
+    "id": "vocab-greetings-조금",
+    "korean": "조금",
+    "meaning": "a little",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "한국어를 조금 할 수 있어요.",
+    "exampleMeaning": "I can speak a little Korean."
+  },
+  {
+    "id": "vocab-greetings-많이",
+    "korean": "많이",
+    "meaning": "a lot",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "많이 드세요.",
+    "exampleMeaning": "Please eat a lot."
+  },
+  {
+    "id": "vocab-greetings-다시",
+    "korean": "다시",
+    "meaning": "again",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "다시 한번 말해 주세요.",
+    "exampleMeaning": "Please say it one more time."
+  },
+  {
+    "id": "vocab-greetings-천천히",
+    "korean": "천천히",
+    "meaning": "slowly",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "천천히 말해 주세요.",
+    "exampleMeaning": "Please speak slowly."
+  },
+  {
+    "id": "vocab-greetings-빨리",
+    "korean": "빨리",
+    "meaning": "quickly",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "빨리 오세요.",
+    "exampleMeaning": "Please come quickly."
+  },
+  {
+    "id": "vocab-greetings-같이",
+    "korean": "같이",
+    "meaning": "together",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "같이 점심 먹어요.",
+    "exampleMeaning": "Let us have lunch together."
+  },
+  {
+    "id": "vocab-greetings-이것",
+    "korean": "이것",
+    "meaning": "this (thing)",
+    "pos": "pronoun",
+    "deck": "deck-greetings",
+    "example": "이것은 뭐예요?",
+    "exampleMeaning": "What is this?"
+  },
+  {
+    "id": "vocab-greetings-그것",
+    "korean": "그것",
+    "meaning": "that (thing near you)",
+    "pos": "pronoun",
+    "deck": "deck-greetings",
+    "example": "그것 좀 주세요.",
+    "exampleMeaning": "Please give me that."
+  },
+  {
+    "id": "vocab-greetings-저것",
+    "korean": "저것",
+    "meaning": "that (thing over there)",
+    "pos": "pronoun",
+    "deck": "deck-greetings",
+    "example": "저것은 얼마예요?",
+    "exampleMeaning": "How much is that over there?"
+  },
+  {
+    "id": "vocab-greetings-뭐",
+    "korean": "뭐",
+    "meaning": "what",
+    "pos": "pronoun",
+    "deck": "deck-greetings",
+    "example": "이름이 뭐예요?",
+    "exampleMeaning": "What is your name?"
+  },
+  {
+    "id": "vocab-greetings-누구",
+    "korean": "누구",
+    "meaning": "who",
+    "pos": "pronoun",
+    "deck": "deck-greetings",
+    "example": "저 사람은 누구예요?",
+    "exampleMeaning": "Who is that person?"
+  },
+  {
+    "id": "vocab-greetings-어디",
+    "korean": "어디",
+    "meaning": "where",
+    "pos": "pronoun",
+    "deck": "deck-greetings",
+    "example": "화장실이 어디예요?",
+    "exampleMeaning": "Where is the restroom?"
+  },
+  {
+    "id": "vocab-greetings-언제",
+    "korean": "언제",
+    "meaning": "when",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "언제 한국에 왔어요?",
+    "exampleMeaning": "When did you come to Korea?"
+  },
+  {
+    "id": "vocab-greetings-왜",
+    "korean": "왜",
+    "meaning": "why",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "왜 한국어를 공부해요?",
+    "exampleMeaning": "Why do you study Korean?"
+  },
+  {
+    "id": "vocab-greetings-어떻게",
+    "korean": "어떻게",
+    "meaning": "how",
+    "pos": "adverb",
+    "deck": "deck-greetings",
+    "example": "학교에 어떻게 가요?",
+    "exampleMeaning": "How do you get to school?"
+  },
+  {
+    "id": "vocab-greetings-얼마",
+    "korean": "얼마",
+    "meaning": "how much",
+    "pos": "noun",
+    "deck": "deck-greetings",
+    "example": "이거 얼마예요?",
+    "exampleMeaning": "How much is this?"
+  },
+  {
+    "id": "vocab-greetings-도와주세요",
+    "korean": "도와주세요",
+    "meaning": "please help me",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "저 좀 도와주세요.",
+    "exampleMeaning": "Please help me."
+  },
+  {
+    "id": "vocab-greetings-주세요",
+    "korean": "주세요",
+    "meaning": "please give me",
+    "pos": "expression",
+    "deck": "deck-greetings",
+    "example": "물 좀 주세요.",
+    "exampleMeaning": "Please give me some water."
+  },
+  {
+    "id": "vocab-greetings-영어",
+    "korean": "영어",
+    "meaning": "English (language)",
+    "pos": "noun",
+    "deck": "deck-greetings",
+    "example": "영어로 말해도 돼요?",
+    "exampleMeaning": "May I speak in English?"
+  },
+  {
+    "id": "vocab-greetings-한국어",
+    "korean": "한국어",
+    "meaning": "Korean (language)",
+    "pos": "noun",
+    "deck": "deck-greetings",
+    "example": "한국어를 배우고 있어요.",
+    "exampleMeaning": "I am learning Korean."
+  }
+]

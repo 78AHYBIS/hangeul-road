@@ -1,0 +1,436 @@
+[
+  {
+    "id": "vocab-transport-버스",
+    "korean": "버스",
+    "meaning": "bus",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "버스를 타고 학교에 가요.",
+    "exampleMeaning": "I take the bus to school."
+  },
+  {
+    "id": "vocab-transport-지하철",
+    "korean": "지하철",
+    "meaning": "subway",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "지하철이 빨라요.",
+    "exampleMeaning": "The subway is fast."
+  },
+  {
+    "id": "vocab-transport-택시",
+    "korean": "택시",
+    "meaning": "taxi",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "택시를 불러 주세요.",
+    "exampleMeaning": "Please call a taxi."
+  },
+  {
+    "id": "vocab-transport-기차",
+    "korean": "기차",
+    "meaning": "train",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "기차로 부산에 가요.",
+    "exampleMeaning": "I go to Busan by train."
+  },
+  {
+    "id": "vocab-transport-비행기",
+    "korean": "비행기",
+    "meaning": "airplane",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "비행기가 두 시에 도착해요.",
+    "exampleMeaning": "The plane arrives at two o'clock."
+  },
+  {
+    "id": "vocab-transport-자전거",
+    "korean": "자전거",
+    "meaning": "bicycle",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "자전거를 타고 가요.",
+    "exampleMeaning": "I go by bicycle."
+  },
+  {
+    "id": "vocab-transport-자동차",
+    "korean": "자동차",
+    "meaning": "car",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "길에 자동차가 많아요.",
+    "exampleMeaning": "There are many cars on the road."
+  },
+  {
+    "id": "vocab-transport-역",
+    "korean": "역",
+    "meaning": "station",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "울산역에서 내려요.",
+    "exampleMeaning": "I get off at Ulsan Station."
+  },
+  {
+    "id": "vocab-transport-정류장",
+    "korean": "정류장",
+    "meaning": "bus stop",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "버스 정류장이 어디예요?",
+    "exampleMeaning": "Where is the bus stop?"
+  },
+  {
+    "id": "vocab-transport-터미널",
+    "korean": "터미널",
+    "meaning": "terminal",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "버스 터미널에서 만나요.",
+    "exampleMeaning": "Let us meet at the bus terminal."
+  },
+  {
+    "id": "vocab-transport-공항",
+    "korean": "공항",
+    "meaning": "airport",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "공항까지 얼마나 걸려요?",
+    "exampleMeaning": "How long does it take to the airport?"
+  },
+  {
+    "id": "vocab-transport-표",
+    "korean": "표",
+    "meaning": "ticket",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "표를 두 장 샀어요.",
+    "exampleMeaning": "I bought two tickets."
+  },
+  {
+    "id": "vocab-transport-교통카드",
+    "korean": "교통카드",
+    "meaning": "transit card",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "교통카드를 충전해 주세요.",
+    "exampleMeaning": "Please top up my transit card."
+  },
+  {
+    "id": "vocab-transport-요금",
+    "korean": "요금",
+    "meaning": "fare, fee",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "버스 요금이 얼마예요?",
+    "exampleMeaning": "How much is the bus fare?"
+  },
+  {
+    "id": "vocab-transport-출구",
+    "korean": "출구",
+    "meaning": "exit",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "삼 번 출구에서 만나요.",
+    "exampleMeaning": "Let us meet at exit 3."
+  },
+  {
+    "id": "vocab-transport-입구",
+    "korean": "입구",
+    "meaning": "entrance",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "입구에서 기다릴게요.",
+    "exampleMeaning": "I will wait at the entrance."
+  },
+  {
+    "id": "vocab-transport-길",
+    "korean": "길",
+    "meaning": "road, way",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "길을 잃어버렸어요.",
+    "exampleMeaning": "I am lost."
+  },
+  {
+    "id": "vocab-transport-지도",
+    "korean": "지도",
+    "meaning": "map",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "지도 앱을 보고 왔어요.",
+    "exampleMeaning": "I came by following the map app."
+  },
+  {
+    "id": "vocab-transport-주소",
+    "korean": "주소",
+    "meaning": "address",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "주소를 알려 주세요.",
+    "exampleMeaning": "Please tell me the address."
+  },
+  {
+    "id": "vocab-transport-오른쪽",
+    "korean": "오른쪽",
+    "meaning": "right side",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "오른쪽으로 가세요.",
+    "exampleMeaning": "Go to the right."
+  },
+  {
+    "id": "vocab-transport-왼쪽",
+    "korean": "왼쪽",
+    "meaning": "left side",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "왼쪽에 은행이 있어요.",
+    "exampleMeaning": "There is a bank on the left."
+  },
+  {
+    "id": "vocab-transport-앞",
+    "korean": "앞",
+    "meaning": "front",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "학교 앞에서 만나요.",
+    "exampleMeaning": "Let us meet in front of the school."
+  },
+  {
+    "id": "vocab-transport-뒤",
+    "korean": "뒤",
+    "meaning": "back, behind",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "건물 뒤에 주차장이 있어요.",
+    "exampleMeaning": "There is a parking lot behind the building."
+  },
+  {
+    "id": "vocab-transport-옆",
+    "korean": "옆",
+    "meaning": "beside",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "편의점 옆에 카페가 있어요.",
+    "exampleMeaning": "There is a cafe next to the convenience store."
+  },
+  {
+    "id": "vocab-transport-위",
+    "korean": "위",
+    "meaning": "above, on top",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "책상 위에 있어요.",
+    "exampleMeaning": "It is on the desk."
+  },
+  {
+    "id": "vocab-transport-아래",
+    "korean": "아래",
+    "meaning": "below, under",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "의자 아래에 가방이 있어요.",
+    "exampleMeaning": "There is a bag under the chair."
+  },
+  {
+    "id": "vocab-transport-안",
+    "korean": "안",
+    "meaning": "inside",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "가방 안에 지갑이 있어요.",
+    "exampleMeaning": "My wallet is inside the bag."
+  },
+  {
+    "id": "vocab-transport-밖",
+    "korean": "밖",
+    "meaning": "outside",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "밖은 추워요.",
+    "exampleMeaning": "It is cold outside."
+  },
+  {
+    "id": "vocab-transport-여기",
+    "korean": "여기",
+    "meaning": "here",
+    "pos": "pronoun",
+    "deck": "deck-transport",
+    "example": "여기에서 내려 주세요.",
+    "exampleMeaning": "Please let me off here."
+  },
+  {
+    "id": "vocab-transport-거기",
+    "korean": "거기",
+    "meaning": "there",
+    "pos": "pronoun",
+    "deck": "deck-transport",
+    "example": "거기에서 기다려 주세요.",
+    "exampleMeaning": "Please wait there."
+  },
+  {
+    "id": "vocab-transport-저기",
+    "korean": "저기",
+    "meaning": "over there",
+    "pos": "pronoun",
+    "deck": "deck-transport",
+    "example": "저기 보이는 건물이에요.",
+    "exampleMeaning": "It is the building you can see over there."
+  },
+  {
+    "id": "vocab-transport-이쪽",
+    "korean": "이쪽",
+    "meaning": "this way",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "이쪽으로 오세요.",
+    "exampleMeaning": "Come this way, please."
+  },
+  {
+    "id": "vocab-transport-근처",
+    "korean": "근처",
+    "meaning": "nearby area",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "이 근처에 약국이 있어요?",
+    "exampleMeaning": "Is there a pharmacy near here?"
+  },
+  {
+    "id": "vocab-transport-건너편",
+    "korean": "건너편",
+    "meaning": "across the street",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "은행은 건너편에 있어요.",
+    "exampleMeaning": "The bank is across the street."
+  },
+  {
+    "id": "vocab-transport-사거리",
+    "korean": "사거리",
+    "meaning": "intersection",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "사거리에서 왼쪽으로 가세요.",
+    "exampleMeaning": "Turn left at the intersection."
+  },
+  {
+    "id": "vocab-transport-신호등",
+    "korean": "신호등",
+    "meaning": "traffic light",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "신호등 앞에서 세워 주세요.",
+    "exampleMeaning": "Please stop in front of the traffic light."
+  },
+  {
+    "id": "vocab-transport-횡단보도",
+    "korean": "횡단보도",
+    "meaning": "crosswalk",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "횡단보도를 건너세요.",
+    "exampleMeaning": "Cross at the crosswalk."
+  },
+  {
+    "id": "vocab-transport-직진",
+    "korean": "직진",
+    "meaning": "going straight",
+    "pos": "noun",
+    "deck": "deck-transport",
+    "example": "직진하세요.",
+    "exampleMeaning": "Go straight."
+  },
+  {
+    "id": "vocab-transport-가다",
+    "korean": "가다",
+    "meaning": "to go",
+    "pos": "verb",
+    "deck": "deck-transport",
+    "example": "내일 부산에 가요.",
+    "exampleMeaning": "I am going to Busan tomorrow."
+  },
+  {
+    "id": "vocab-transport-타다",
+    "korean": "타다",
+    "meaning": "to ride, to get on",
+    "pos": "verb",
+    "deck": "deck-transport",
+    "example": "몇 번 버스를 타요?",
+    "exampleMeaning": "Which bus number do I take?"
+  },
+  {
+    "id": "vocab-transport-내리다",
+    "korean": "내리다",
+    "meaning": "to get off",
+    "pos": "verb",
+    "deck": "deck-transport",
+    "example": "다음 역에서 내려요.",
+    "exampleMeaning": "I get off at the next station."
+  },
+  {
+    "id": "vocab-transport-갈아타다",
+    "korean": "갈아타다",
+    "meaning": "to transfer",
+    "pos": "verb",
+    "deck": "deck-transport",
+    "example": "서울역에서 갈아타세요.",
+    "exampleMeaning": "Transfer at Seoul Station."
+  },
+  {
+    "id": "vocab-transport-걷다",
+    "korean": "걷다",
+    "meaning": "to walk",
+    "pos": "verb",
+    "deck": "deck-transport",
+    "example": "매일 삼십 분 걸어요.",
+    "exampleMeaning": "I walk for thirty minutes every day.",
+    "note": "Irregular: 걷다 becomes 걸어요."
+  },
+  {
+    "id": "vocab-transport-도착하다",
+    "korean": "도착하다",
+    "meaning": "to arrive",
+    "pos": "verb",
+    "deck": "deck-transport",
+    "example": "언제 도착해요?",
+    "exampleMeaning": "When do we arrive?"
+  },
+  {
+    "id": "vocab-transport-출발하다",
+    "korean": "출발하다",
+    "meaning": "to depart",
+    "pos": "verb",
+    "deck": "deck-transport",
+    "example": "버스가 열 시에 출발해요.",
+    "exampleMeaning": "The bus departs at ten o'clock."
+  },
+  {
+    "id": "vocab-transport-걸리다",
+    "korean": "걸리다",
+    "meaning": "to take (time)",
+    "pos": "verb",
+    "deck": "deck-transport",
+    "example": "걸어서 십 분 걸려요.",
+    "exampleMeaning": "It takes ten minutes on foot."
+  },
+  {
+    "id": "vocab-transport-멀다",
+    "korean": "멀다",
+    "meaning": "to be far",
+    "pos": "adjective",
+    "deck": "deck-transport",
+    "example": "학교가 멀어요?",
+    "exampleMeaning": "Is the school far?"
+  },
+  {
+    "id": "vocab-transport-가깝다",
+    "korean": "가깝다",
+    "meaning": "to be near",
+    "pos": "adjective",
+    "deck": "deck-transport",
+    "example": "기숙사는 도서관에서 가까워요.",
+    "exampleMeaning": "The dormitory is close to the library.",
+    "note": "Irregular: 가깝다 becomes 가까워요."
+  }
+]
