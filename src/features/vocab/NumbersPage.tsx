@@ -16,6 +16,7 @@ const BACK = { to: '/learn/vocab', label: 'Vocabulary' };
 
 export function NumbersPage() {
   const rate = useAppStore((s) => s.settings.speechRate);
+  const logDrill = useAppStore((s) => s.logDrill);
   const [mode, setMode] = useState<NumberMode>('sino');
   const [session, setSession] = useState<NumberQuestion[] | null>(null);
   const [index, setIndex] = useState(0);
@@ -130,6 +131,7 @@ export function NumbersPage() {
               onClick={() => {
                 setPicked(option);
                 if (isAnswer) setScore(score + 1);
+                void logDrill(isAnswer);
                 speak(question.speak, rate);
               }}
               className={`min-h-14 rounded-2xl border-2 px-3 text-xl font-medium ${style}`}

@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it } from 'vitest';
 import { EMPTY_HANGUL_PROGRESS } from '../hangulProgress';
+import { EMPTY_ACTIVITY } from '../activity';
 import { EMPTY_VOCAB_PROGRESS } from '../vocabProgress';
 import { createBackup, restoreBackup } from './backup';
 import { readAll, replaceAll, setValue } from './db';
@@ -28,6 +29,7 @@ function forgetInMemoryState() {
     settings: DEFAULT_SETTINGS,
     hangul: EMPTY_HANGUL_PROGRESS,
     vocab: EMPTY_VOCAB_PROGRESS,
+    activity: EMPTY_ACTIVITY,
   });
 }
 
@@ -180,5 +182,39 @@ describe('vocabulary progress persistence', () => {
     await store().deleteMyWord(myId);
     expect(store().vocab.myWords).toEqual([]);
     expect(store().vocab.cards[myId]).toBeUndefined();
+  });
+});
+
+describe('activity log', () => {
+  it('records study actions for today and survives a backup round trip', async () => {
+    const store = () => useAppStore.getState();
+    await store().hydrate();
+    await store().gradeWord('vocab-greetings-네', 'good');
+    await store().gradeWord('vocab-greetings-네', 'again');
+    await store().recordLetters(['ㄱ', 'ㅏ'], true);
+    await store().logDrill(false);
+    await store().toggleTask('external:duolingo');
+    await store().toggleTask('reviews');
+    await store().toggleTask('reviews');
+    await store().setDaySize('minimum');
+    const day = Object.values(store().activity.days)[0]!;
+    expect(day).toMatchObject({
+      reviews: 2,
+      reviewsCorrect: 1,
+      newWords: 1,
+      answers: 2,
+      correct: 1,
+      tasksDone: ['external:duolingo'],
+      size: 'minimum',
+    });
+    expect(day.seconds).toBeGreaterThan(0);
+
+    const saved = store().activity;
+    const fileText = JSON.stringify(await createBackup());
+    await replaceAll({});
+    forgetInMemoryState();
+    await restoreBackup(fileText);
+    await store().hydrate();
+    expect(store().activity).toEqual(saved);
   });
 });

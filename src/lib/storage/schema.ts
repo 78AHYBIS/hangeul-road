@@ -8,6 +8,7 @@
 import { isValidISODate, type ISODate } from '../date';
 import { sanitizeHangulProgress } from '../hangulProgress';
 import { sanitizeVocabProgress } from '../vocabProgress';
+import { sanitizeActivity } from '../activity';
 
 export const APP_ID = 'hangeul-road';
 export const SCHEMA_VERSION = 1;
@@ -16,6 +17,7 @@ export const STORAGE_KEYS = {
   settings: 'settings',
   hangul: 'hangul',
   vocab: 'vocab',
+  activity: 'activity',
 } as const;
 
 export type Theme = 'system' | 'light' | 'dark';
@@ -121,6 +123,9 @@ export function parseBackup(raw: unknown): StoredData {
   }
   if (STORAGE_KEYS.vocab in data) {
     data[STORAGE_KEYS.vocab] = sanitizeVocabProgress(data[STORAGE_KEYS.vocab]);
+  }
+  if (STORAGE_KEYS.activity in data) {
+    data[STORAGE_KEYS.activity] = sanitizeActivity(data[STORAGE_KEYS.activity]);
   }
   return data;
 }

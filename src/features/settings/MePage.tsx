@@ -1,6 +1,8 @@
 import { useRef, useState, type ChangeEvent, type ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import { Card, Page } from '../../components/Page';
-import { isValidISODate } from '../../lib/date';
+import { effectiveStartDate } from '../../lib/activity';
+import { isValidISODate, todayISO } from '../../lib/date';
 import { downloadBackup, restoreBackup } from '../../lib/storage/backup';
 import {
   BackupError,
@@ -27,6 +29,8 @@ export function MePage() {
   const settings = useAppStore((s) => s.settings);
   const updateSettings = useAppStore((s) => s.updateSettings);
   const hydrate = useAppStore((s) => s.hydrate);
+  const activity = useAppStore((s) => s.activity);
+  const setStartDate = useAppStore((s) => s.setStartDate);
   const fileInput = useRef<HTMLInputElement>(null);
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null);
 
@@ -51,7 +55,35 @@ export function MePage() {
   }
 
   return (
-    <Page title="Me" subtitle="Settings and your data.">
+    <Page title="Me" subtitle="Progress, settings and your data.">
+      <Card>
+        <ul className="divide-y divide-stone-200 dark:divide-stone-800">
+          {[
+            {
+              to: '/me/progress',
+              title: 'Progress',
+              text: 'Words, calendar, time and reading speed.',
+            },
+            { to: '/me/week', title: 'Weekly review', text: 'The last seven days and one focus.' },
+            { to: '/roadmap', title: 'Roadmap', text: 'The stages up to departure.' },
+          ].map((item) => (
+            <li key={item.to}>
+              <Link to={item.to} className="flex min-h-14 items-center justify-between gap-3 py-2">
+                <span>
+                  <span className="block font-medium">{item.title}</span>
+                  <span className="block text-sm text-stone-500 dark:text-stone-400">
+                    {item.text}
+                  </span>
+                </span>
+                <span className="text-teal-700 dark:text-teal-400" aria-hidden="true">
+                  ›
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Card>
+
       <Card>
         <Field label="Theme">
           <Segmented
@@ -98,6 +130,18 @@ export function MePage() {
             step={0.1}
             value={settings.speechRate}
             onChange={(e) => void updateSettings({ speechRate: Number(e.target.value) })}
+          />
+        </Field>
+
+        <Field label="Start date" hint="The roadmap is planned from this day.">
+          <input
+            type="date"
+            aria-label="Start date"
+            className="w-full rounded-lg border border-stone-300 bg-transparent px-3 py-2 dark:border-stone-700"
+            value={effectiveStartDate(activity, todayISO())}
+            onChange={(e) => {
+              if (isValidISODate(e.target.value)) void setStartDate(e.target.value);
+            }}
           />
         </Field>
 

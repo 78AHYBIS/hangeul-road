@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { RoadmapPage } from '../features/daily/RoadmapPage';
 import { TodayPage } from '../features/daily/TodayPage';
 import { BuilderPage } from '../features/hangul/BuilderPage';
 import { DrillPage } from '../features/hangul/DrillPage';
@@ -13,6 +14,8 @@ import { KoreaPage } from '../features/korea-guide/KoreaPage';
 import { LearnPage } from '../features/learn/LearnPage';
 import { LibraryPage } from '../features/library/LibraryPage';
 import { MePage } from '../features/settings/MePage';
+import { ProgressPage } from '../features/settings/ProgressPage';
+import { WeeklyPage } from '../features/settings/WeeklyPage';
 import { DeckPage } from '../features/vocab/DeckPage';
 import { MyWordsPage } from '../features/vocab/MyWordsPage';
 import { NumbersPage } from '../features/vocab/NumbersPage';
@@ -56,7 +59,10 @@ export function App() {
           <Route path="learn/vocab/numbers" element={<NumbersPage />} />
           <Route path="library" element={<LibraryPage />} />
           <Route path="korea" element={<KoreaPage />} />
+          <Route path="roadmap" element={<RoadmapPage />} />
           <Route path="me" element={<MePage />} />
+          <Route path="me/progress" element={<ProgressPage />} />
+          <Route path="me/week" element={<WeeklyPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

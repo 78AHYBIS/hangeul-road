@@ -1,55 +1,151 @@
 import { Link } from 'react-router-dom';
 import { Card, Page } from '../../components/Page';
+import { muted } from '../../components/ui';
 import { daysUntil, formatLongDate } from '../../lib/date';
+import { DAILY_GOALS, type DailyGoal } from '../../lib/storage/schema';
 import { useAppStore } from '../../lib/storage/store';
+import { useToday } from './useToday';
+
+const SIZE_LABEL: Record<DailyGoal, string> = {
+  minimum: 'Minimum',
+  normal: 'Normal',
+  intense: 'Intense',
+};
 
 export function TodayPage() {
-  const departureDate = useAppStore((s) => s.settings.departureDate);
-  const days = daysUntil(departureDate);
+  const { plan, tasks, streak, position, settings } = useToday();
+  const toggleTask = useAppStore((s) => s.toggleTask);
+  const setDaySize = useAppStore((s) => s.setDaySize);
+  const days = daysUntil(settings.departureDate);
+  const doneCount = tasks.filter((t) => t.done).length;
+  const allDone = doneCount === tasks.length;
 
   return (
-    <Page title="Today" subtitle="Your daily plan will live here.">
+    <Page title="Today" subtitle={`About ${plan.minutes} minutes`}>
       <Card tone="accent">
-        <p className="text-sm text-teal-100">Departure to Korea</p>
-        {days > 0 ? (
-          <p className="mt-1">
-            <span className="text-5xl font-bold tabular-nums" data-testid="countdown-days">
-              {days}
-            </span>{' '}
-            <span className="text-lg">{days === 1 ? 'day to go' : 'days to go'}</span>
+        <div className="flex items-end justify-between gap-3">
+          <div>
+            <p className="text-sm text-teal-100">Departure to Korea</p>
+            {days > 0 ? (
+              <p className="mt-1">
+                <span className="text-5xl font-bold tabular-nums" data-testid="countdown-days">
+                  {days}
+                </span>{' '}
+                <span className="text-lg">{days === 1 ? 'day to go' : 'days to go'}</span>
+              </p>
+            ) : (
+              <p className="mt-1 text-3xl font-bold" data-testid="countdown-days">
+                {days === 0 ? 'Today is the day' : 'You are in Korea'}
+              </p>
+            )}
+          </div>
+          <p className="text-right text-sm text-teal-100" data-testid="streak">
+            <span className="block text-3xl font-bold text-white tabular-nums">
+              {streak.current}
+            </span>
+            day streak
           </p>
-        ) : (
-          <p className="mt-1 text-3xl font-bold" data-testid="countdown-days">
-            {days === 0 ? 'Today is the day' : 'You are in Korea'}
-          </p>
-        )}
+        </div>
         <p className="mt-2 text-sm text-teal-100">
-          {formatLongDate(departureDate)} ·{' '}
+          {formatLongDate(settings.departureDate)} ·{' '}
           <Link to="/me" className="underline underline-offset-2">
             change date
           </Link>
         </p>
       </Card>
 
+      {streak.comeback && (
+        <Card>
+          <h2 className="font-semibold">Welcome back</h2>
+          <p className={`mt-1 ${muted}`}>
+            Here is today’s plan. It is a light one to get going again.
+          </p>
+        </Card>
+      )}
+
       <Card>
-        <h2 className="font-semibold">Start with Hangul</h2>
-        <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
-          Daily tasks arrive in Phase 3. Until then, do one Hangul lesson or drill and your word
-          reviews each day.
-        </p>
-        <Link
-          to="/learn/hangul"
-          className="mt-3 flex min-h-12 items-center justify-center rounded-xl bg-teal-700 font-medium text-white"
+        <div className="flex items-baseline justify-between gap-3">
+          <h2 className="font-semibold">Today’s plan</h2>
+          <p className={`tabular-nums ${muted}`} data-testid="task-progress">
+            {doneCount} / {tasks.length}
+          </p>
+        </div>
+
+        <div
+          role="radiogroup"
+          aria-label="Day size"
+          className="mt-3 flex rounded-xl bg-stone-100 p-1 dark:bg-stone-800"
         >
-          Open Hangul
-        </Link>
-        <Link
-          to="/learn/vocab/review"
-          className="mt-2 flex min-h-12 items-center justify-center rounded-xl border border-stone-300 font-medium dark:border-stone-700"
-        >
-          Review vocabulary
-        </Link>
+          {DAILY_GOALS.map((size) => (
+            <button
+              key={size}
+              type="button"
+              role="radio"
+              aria-checked={plan.size === size}
+              onClick={() => void setDaySize(size)}
+              className={`min-h-10 flex-1 rounded-lg text-sm font-medium ${
+                plan.size === size
+                  ? 'bg-white text-teal-700 shadow-sm dark:bg-stone-950 dark:text-teal-400'
+                  : 'text-stone-600 dark:text-stone-300'
+              }`}
+            >
+              {SIZE_LABEL[size]}
+            </button>
+          ))}
+        </div>
+
+        <ul className="mt-2 divide-y divide-stone-200 dark:divide-stone-800" data-testid="tasks">
+          {tasks.map(({ task, done }) => (
+            <li key={task.id} className="flex items-center gap-3 py-3" data-task={task.id}>
+              <input
+                type="checkbox"
+                className="size-6 shrink-0 accent-teal-700"
+                checked={done}
+                onChange={() => void toggleTask(task.id)}
+                aria-label={`Done: ${task.title}`}
+              />
+              <div className="min-w-0 flex-1">
+                <p className={`font-medium ${done ? 'text-stone-400 line-through' : ''}`}>
+                  {task.title}
+                </p>
+                <p className={muted}>
+                  {task.detail} · {task.minutes} min
+                </p>
+              </div>
+              {task.to && !done && (
+                <Link
+                  to={task.to}
+                  className="flex min-h-10 shrink-0 items-center rounded-lg bg-teal-700 px-3 text-sm font-medium text-white"
+                >
+                  Go
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+        {allDone && (
+          <p className="mt-2 font-medium text-teal-700 dark:text-teal-400" role="status">
+            Done for today. See you tomorrow.
+          </p>
+        )}
       </Card>
+
+      <Link to="/roadmap" className="block">
+        <Card>
+          <p className={muted}>
+            Week {position.week} of {position.totalWeeks}
+          </p>
+          <div className="flex items-center justify-between gap-3">
+            <h2 className="font-semibold" data-testid="stage">
+              {position.title}
+            </h2>
+            <span className="text-teal-700 dark:text-teal-400" aria-hidden="true">
+              Roadmap ›
+            </span>
+          </div>
+          <p className={`mt-1 ${muted}`}>{position.focus}</p>
+        </Card>
+      </Link>
     </Page>
   );
 }
