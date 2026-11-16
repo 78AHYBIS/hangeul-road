@@ -68,9 +68,32 @@ Acceptance:
 - [x] One-handed review: every action is a single tap on a large button in the lower
       half of a phone screen. Checked at iPhone 13 size.
 
+### Phase 3 — Daily tasks, roadmap and progress (2026-11-16)
+
+- Today page: at most 5 tasks built each day from the roadmap, the review queue and
+  Hangul progress, with a Go button per task and three day sizes.
+- Roadmap generated from start date and departure date (2 + 4 + 4 + 4 weeks now).
+- Forgiving streak: a minimum day counts, one free rest day per week, and a
+  "welcome back" lighter day after 3 or more missed days.
+- Weekly review: days studied, new words, accuracy, weakest items, one focus.
+- Progress page: words by stage, study calendar, time studied, reading speed.
+- A quiet level and points line at the bottom of Progress. No penalties anywhere.
+- Start date setting in Me.
+- 155 unit tests in total.
+
+Acceptance:
+
+- [x] Task generator and streak rules are unit-tested, including missed days and a
+      late start.
+- [x] A new day never carries over unfinished tasks (tested, and checked in the
+      browser across simulated days).
+- [x] Today is useful on day 1 and day 100 (both tested). Honest limit: the lesson
+      slot only knows Hangul lessons and the number trainer until Phases 5 and 6 add
+      grammar, phrases and culture cards; the hooks for them are in place.
+
 ## Next
 
-Phase 3 — Daily tasks, roadmap and progress (see PROMPT.md).
+Phase 4 — Resource library (see PROMPT.md). It needs web search to verify every link.
 
 ## Decisions
 
@@ -91,6 +114,10 @@ Phase 3 — Daily tasks, roadmap and progress (see PROMPT.md).
 - **Typing is checked key by key** against the target word instead of using the
   device keyboard, so it works on a phone without a Korean keyboard installed.
 - **Stroke order** is drawn from simple line data in `strokes.ts`, not a font.
+- **Tasks tick themselves where the app can tell** (reviews finished, lesson marked
+  done); every task can also be ticked by hand.
+- **The roadmap start date** is the first day with activity unless set in Me.
+- **Study time is an estimate:** the gap between answers, capped at one minute each.
 - **Learning steps are day-based:** a new word rated Good returns tomorrow; Again
   repeats it at the end of the same session.
 - **Typing cards use the phone's own Korean keyboard** (a plain text field), unlike

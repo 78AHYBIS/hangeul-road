@@ -77,7 +77,7 @@ export function ProgressPage() {
         <p className={`mt-1 ${muted}`}>
           {all.daysStudied} {all.daysStudied === 1 ? 'day' : 'days'} studied in total.
         </p>
-        <div className="mt-3 grid grid-cols-7 gap-1.5" data-testid="calendar">
+        <div className="mx-auto mt-3 grid max-w-56 grid-cols-7 gap-1.5" data-testid="calendar">
           {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((d, i) => (
             <span key={i} className="text-center text-xs text-stone-500">
               {d}

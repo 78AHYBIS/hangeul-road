@@ -32,7 +32,7 @@ src/
   lib/          date.ts, hangul.ts (compose/decompose, romanize, keyboard),
                 hangulProgress.ts (letter stats), speech.ts, storage/,
                 srs.ts (spaced repetition), numbers.ts (Korean number readings),
-                vocabProgress.ts
+                vocabProgress.ts, activity.ts (daily log), streak.ts, roadmap.ts
   components/   shared UI (Page, Card, ComingSoon), ui.ts (button classes)
 scripts/        validate-content.ts (+ its test)
 ```
@@ -67,7 +67,7 @@ scripts/        validate-content.ts (+ its test)
 - IndexedDB database `hangeul-road`, one table `kv` (`key` -> `value`), wrapped by
   `src/lib/storage/db.ts`. Nothing else imports Dexie.
 - Each feature owns one key, listed in `STORAGE_KEYS` in `schema.ts`
-  (`settings`, `hangul`, `vocab`). A new feature adds a key, a type, a `sanitize…` function,
+  (`settings`, `hangul`, `vocab`, `activity`). A new feature adds a key, a type, a `sanitize…` function,
   and state + actions in `store.ts`.
 - `SCHEMA_VERSION` (now 1) describes the shape of saved data. When a saved shape
   changes: bump it and add a step to `migrate()` in `schema.ts`. It runs at startup
@@ -129,6 +129,21 @@ readingSpeed[], lessonsDone[] }`. See `src/lib/hangulProgress.ts`.
 - `buildQueue` caps reviews per day by daily goal (20 / 50 / 100) and new words
   (5 / 10 / 15). While the backlog is above the cap, no new words are added.
 - All dates are passed in; nothing in `srs.ts` reads the clock.
+
+## Daily plan (src/features/daily)
+
+- `tasks.ts` `buildPlan(input)` returns at most 5 tasks: reviews, lesson, drill,
+  culture, external. It is pure; `useToday.ts` gathers the inputs from the store.
+- Later phases plug in through `PlanInput`: `culture` (Phase 6 culture card) and
+  `external` (Phase 4 active course unit; Duolingo is the default). Grammar and phrase
+  lessons (Phase 5) go into `lessonTask`, which currently falls back to the number
+  trainer once all Hangul lessons are done. `PlanInput.stage` is passed in for that.
+- Nothing is carried over between days. Ticks live in `activity.days[date].tasksDone`.
+- Every study action must call a store action that logs to today (`gradeWord`,
+  `recordLetters`, `logDrill`), so streak, time and weekly review stay correct.
+- Streak: one free rest day per Monday-to-Sunday week; a day counts with one ticked
+  task or five answers; 3+ missed days in a row make a "comeback" day (minimum size).
+- Roadmap: `buildRoadmap(start, departure)`; 14 weeks give 2 + 4 + 4 + 4.
 
 ## Korean and link accuracy (from PROMPT.md, critical)
 
