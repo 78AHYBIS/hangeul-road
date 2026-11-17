@@ -15,6 +15,7 @@ const SIZE_LABEL: Record<DailyGoal, string> = {
 export function TodayPage() {
   const { plan, tasks, streak, position, settings } = useToday();
   const toggleTask = useAppStore((s) => s.toggleTask);
+  const toggleCourseUnit = useAppStore((s) => s.toggleCourseUnit);
   const setDaySize = useAppStore((s) => s.setDaySize);
   const days = daysUntil(settings.departureDate);
   const doneCount = tasks.filter((t) => t.done).length;
@@ -101,7 +102,11 @@ export function TodayPage() {
                 type="checkbox"
                 className="size-6 shrink-0 accent-teal-700"
                 checked={done}
-                onChange={() => void toggleTask(task.id)}
+                onChange={() =>
+                  void (task.unit
+                    ? toggleCourseUnit(task.unit.resourceId, task.unit.unitId)
+                    : toggleTask(task.id))
+                }
                 aria-label={`Done: ${task.title}`}
               />
               <div className="min-w-0 flex-1">

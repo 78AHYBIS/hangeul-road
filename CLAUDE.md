@@ -27,12 +27,13 @@ Before finishing a phase, run: lint, test, validate:content, build.
 ```
 src/
   app/          App.tsx (routes), Layout.tsx (bottom nav), nav.ts, useTheme.ts
-  features/     one folder per section: daily, learn, library, korea-guide, settings
+  features/     one folder per section: daily, learn, hangul, vocab, library, korea-guide, settings
   content/      learning data only (JSON), one folder per content type
   lib/          date.ts, hangul.ts (compose/decompose, romanize, keyboard),
                 hangulProgress.ts (letter stats), speech.ts, storage/,
                 srs.ts (spaced repetition), numbers.ts (Korean number readings),
-                vocabProgress.ts, activity.ts (daily log), streak.ts, roadmap.ts
+                vocabProgress.ts, activity.ts (daily log), streak.ts, roadmap.ts,
+                libraryProgress.ts (resource status, active courses, units)
   components/   shared UI (Page, Card, ComingSoon), ui.ts (button classes)
 scripts/        validate-content.ts (+ its test)
 ```
@@ -67,7 +68,7 @@ scripts/        validate-content.ts (+ its test)
 - IndexedDB database `hangeul-road`, one table `kv` (`key` -> `value`), wrapped by
   `src/lib/storage/db.ts`. Nothing else imports Dexie.
 - Each feature owns one key, listed in `STORAGE_KEYS` in `schema.ts`
-  (`settings`, `hangul`, `vocab`, `activity`). A new feature adds a key, a type, a `sanitize…` function,
+  (`settings`, `hangul`, `vocab`, `activity`, `library`). A new feature adds a key, a type, a `sanitize…` function,
   and state + actions in `store.ts`.
 - `SCHEMA_VERSION` (now 1) describes the shape of saved data. When a saved shape
   changes: bump it and add a step to `migrate()` in `schema.ts`. It runs at startup
@@ -121,6 +122,22 @@ readingSpeed[], lessonsDone[] }`. See `src/lib/hangulProgress.ts`.
 - Saved progress (`vocab` key): `{ cards: { [wordId]: Card }, myWords[], focusDeck }`.
   `Card` is defined in `src/lib/srs.ts`.
 
+### resources/
+
+- `resources.json` (37): `id` (`res-…`), `name`, `type` (course, youtube, website, app,
+  podcast, book, dictionary, tutor), `url` (https only), `description`, `why`, `skills[]`
+  (hangul, vocabulary, grammar, listening, speaking, culture, topik), `level` (beginner,
+  beginner-intermediate, all), `cost` (free, freemium, paid), `lastVerified`, optional
+  `optional` (TOPIK) and `note` (caveats, honest comparisons). The validator checks the
+  allowed values (`RESOURCE_ENUMS`, keep in sync with `index.ts`).
+- `path.json` (5): recommended path, one step per roadmap stage: `id`, `stage`, `title`,
+  `text`, `refs` (resource ids, checked by the validator).
+- Only add a resource after verifying it by web search; otherwise list it under
+  "Links to check" in `PROGRESS.md`. **Never change a resource id** (saved state uses it).
+- Saved progress (`library` key): `{ items: { [id]: { status, notes, units[] } }, active[],
+custom[] }`. At most 2 active courses. A unit is `{ id: 'u1', title, doneOn }`.
+  User-added resources have ids starting `custom-` and are shown as "added by you".
+
 ## Spaced repetition (src/lib/srs.ts)
 
 - Stages: new (no card), learning, review, mature (interval of 21+ days).
@@ -135,7 +152,11 @@ readingSpeed[], lessonsDone[] }`. See `src/lib/hangulProgress.ts`.
 - `tasks.ts` `buildPlan(input)` returns at most 5 tasks: reviews, lesson, drill,
   culture, external. It is pure; `useToday.ts` gathers the inputs from the store.
 - Later phases plug in through `PlanInput`: `culture` (Phase 6 culture card) and
-  `external` (Phase 4 active course unit; Duolingo is the default). Grammar and phrase
+  `external` (Duolingo by default). `external` is filled by `courseTaskForToday()` in
+  `libraryProgress.ts`: the first unit of an active course that is not done, or was ticked
+  today (so the task stays put for the day). Two active courses take turns by day. Ticking
+  a unit task on Today calls `toggleCourseUnit`, which also logs `unit:<id>:<unitId>` in
+  today's `tasksDone` so the streak counts it. Grammar and phrase
   lessons (Phase 5) go into `lessonTask`, which currently falls back to the number
   trainer once all Hangul lessons are done. `PlanInput.stage` is passed in for that.
 - Nothing is carried over between days. Ticks live in `activity.days[date].tasksDone`.

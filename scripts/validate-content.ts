@@ -11,6 +11,8 @@
  *   - items in the files listed in REQUIRED_FIELDS have those fields, non-empty
  *   - `example` contains Hangul, and `deck` points to an existing deck id
  *   - every `examples[]` entry has Hangul in `korean`
+ *   - resources use known type / level / cost / skills, an https URL and `lastVerified`;
+ *     path steps use a known roadmap stage and `refs` to existing resources
  */
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
@@ -37,7 +39,21 @@ export const REQUIRED_FIELDS: [RegExp, string[]][] = [
   [/hangul\/reading-words\.json$/, ['korean', 'romanization', 'meaning', 'category']],
   [/vocab\/decks\.json$/, ['title', 'description']],
   [/vocab\/deck-[^/]+\.json$/, ['korean', 'meaning', 'pos', 'deck', 'example', 'exampleMeaning']],
+  [
+    /resources\/resources\.json$/,
+    ['name', 'type', 'url', 'description', 'why', 'skills', 'level', 'cost', 'lastVerified'],
+  ],
+  [/resources\/path\.json$/, ['stage', 'title', 'text', 'refs']],
 ];
+
+/** Allowed values for resource fields (keep in sync with src/content/resources/index.ts). */
+export const RESOURCE_ENUMS: Record<string, readonly string[]> = {
+  type: ['course', 'youtube', 'website', 'app', 'podcast', 'book', 'dictionary', 'tutor'],
+  level: ['beginner', 'beginner-intermediate', 'all'],
+  cost: ['free', 'freemium', 'paid'],
+  skills: ['hangul', 'vocabulary', 'grammar', 'listening', 'speaking', 'culture', 'topik'],
+};
+const STAGES = ['hangul', 'core', 'survival', 'arrival', 'in-korea'];
 
 const isEmpty = (value: unknown) =>
   value === undefined ||
@@ -116,6 +132,12 @@ export function validateContent(files: ContentFile[]): ValidationResult {
       if ('lastVerified' in record && !ISO_DATE.test(String(record.lastVerified))) {
         errors.push(`${where}: "lastVerified" must be YYYY-MM-DD`);
       }
+      if (/resources\/resources\.json$/.test(normalizedPath)) {
+        checkResource(record, where, errors);
+      }
+      if (/resources\/path\.json$/.test(normalizedPath) && !STAGES.includes(String(record.stage))) {
+        errors.push(`${where}: "stage" must be one of ${STAGES.join(', ')}`);
+      }
       if (record.needsReview === true) needsReview.push(`${where} (${String(id)})`);
       if (Array.isArray(record.refs)) {
         for (const ref of record.refs) refs.push({ from: where, to: String(ref) });
@@ -127,6 +149,21 @@ export function validateContent(files: ContentFile[]): ValidationResult {
     if (!seenIds.has(ref.to)) errors.push(`${ref.from}: broken reference "${ref.to}"`);
   }
   return { errors, needsReview, itemCount };
+}
+
+/** Resource rules: known type/level/cost/skills, an https link, a verification date. */
+function checkResource(record: Record<string, unknown>, where: string, errors: string[]) {
+  for (const [field, allowed] of Object.entries(RESOURCE_ENUMS)) {
+    const value = record[field];
+    if (value === undefined) continue;
+    const values = Array.isArray(value) ? value : [value];
+    for (const v of values) {
+      if (!allowed.includes(String(v))) errors.push(`${where}: unknown ${field} "${String(v)}"`);
+    }
+  }
+  if (typeof record.url === 'string' && !/^https:\/\/[^\s]+$/.test(record.url)) {
+    errors.push(`${where}: "url" must start with https://`);
+  }
 }
 
 function loadFiles(contentDir: string): { files: ContentFile[]; errors: string[] } {

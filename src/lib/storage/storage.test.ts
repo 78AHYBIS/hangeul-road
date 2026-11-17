@@ -2,6 +2,8 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { EMPTY_HANGUL_PROGRESS } from '../hangulProgress';
 import { EMPTY_ACTIVITY } from '../activity';
 import { EMPTY_VOCAB_PROGRESS } from '../vocabProgress';
+import { EMPTY_LIBRARY } from '../libraryProgress';
+import { todayISO } from '../date';
 import { createBackup, restoreBackup } from './backup';
 import { readAll, replaceAll, setValue } from './db';
 import {
@@ -30,6 +32,7 @@ function forgetInMemoryState() {
     hangul: EMPTY_HANGUL_PROGRESS,
     vocab: EMPTY_VOCAB_PROGRESS,
     activity: EMPTY_ACTIVITY,
+    library: EMPTY_LIBRARY,
   });
 }
 
@@ -216,5 +219,56 @@ describe('activity log', () => {
     await restoreBackup(fileText);
     await store().hydrate();
     expect(store().activity).toEqual(saved);
+  });
+});
+
+describe('library progress', () => {
+  it('saves status, notes, active course and units, and survives a backup round trip', async () => {
+    const store = () => useAppStore.getState();
+    await store().hydrate();
+    expect(await store().toggleActiveCourse('res-gobilly-youtube')).toBe(true);
+    expect(await store().toggleActiveCourse('res-coursera-first-step')).toBe(true);
+    expect(await store().toggleActiveCourse('res-ttmik')).toBe(false);
+    await store().addCourseUnits('res-gobilly-youtube', ['Lesson 1', 'Lesson 2']);
+    await store().setResourceNotes('res-gobilly-youtube', 'Watch at 1.25x');
+    await store().setResourceStatus('res-anki', 'dropped');
+    const id = await store().addCustomResource({
+      name: 'Campus Korean class',
+      url: 'https://example.com',
+      type: 'course',
+      cost: 'free',
+      skills: ['speaking'],
+      description: '',
+    });
+    expect(id).toMatch(/^custom-/);
+
+    // Ticking a unit is logged for today, so it counts towards the streak.
+    await store().toggleCourseUnit('res-gobilly-youtube', 'u1');
+    expect(store().activity.days[todayISO()]!.tasksDone).toEqual(['unit:res-gobilly-youtube:u1']);
+    await store().toggleCourseUnit('res-gobilly-youtube', 'u1');
+    expect(store().activity.days[todayISO()]!.tasksDone).toEqual([]);
+    await store().toggleCourseUnit('res-gobilly-youtube', 'u1');
+
+    const saved = store().library;
+    expect(saved.active).toEqual(['res-gobilly-youtube', 'res-coursera-first-step']);
+    expect(saved.items['res-gobilly-youtube']).toMatchObject({
+      status: 'in-progress',
+      notes: 'Watch at 1.25x',
+      units: [
+        { id: 'u1', title: 'Lesson 1', doneOn: todayISO() },
+        { id: 'u2', title: 'Lesson 2', doneOn: null },
+      ],
+    });
+
+    forgetInMemoryState();
+    await store().hydrate();
+    expect(store().library).toEqual(saved);
+
+    const fileText = JSON.stringify(await createBackup());
+    await replaceAll({});
+    forgetInMemoryState();
+    await restoreBackup(fileText);
+    await store().hydrate();
+    expect(store().library).toEqual(saved);
   });
 });

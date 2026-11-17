@@ -1,11 +1,13 @@
 import { effectiveStartDate, studiedDates } from '../../lib/activity';
+import { courseTaskForToday } from '../../lib/libraryProgress';
 import { todayISO } from '../../lib/date';
 import { buildRoadmap, roadmapPosition } from '../../lib/roadmap';
 import { LIMITS, buildQueue } from '../../lib/srs';
 import { useAppStore } from '../../lib/storage/store';
 import { computeStreak } from '../../lib/streak';
 import { studyOrder } from '../vocab/words';
-import { buildPlan, isTaskDone, type PlanInput } from './tasks';
+import { findResource } from '../library/resources';
+import { buildPlan, dayIndex, isTaskDone, type PlanInput } from './tasks';
 
 /** Gathers everything the Today page shows: plan, streak and roadmap position. */
 export function useToday() {
@@ -13,6 +15,7 @@ export function useToday() {
   const hangul = useAppStore((s) => s.hangul);
   const vocab = useAppStore((s) => s.vocab);
   const activity = useAppStore((s) => s.activity);
+  const library = useAppStore((s) => s.library);
 
   const today = todayISO();
   const dayLog = activity.days[today];
@@ -35,6 +38,13 @@ export function useToday() {
     newWords: queue.newCards.length,
     hangul,
     dayLog,
+    // The next unit of an active Library course replaces the default Duolingo task.
+    external: courseTaskForToday(
+      library,
+      (id) => findResource(library, id)?.name,
+      today,
+      dayIndex(today),
+    ),
   };
   const plan = buildPlan(input);
   const tasks = plan.tasks.map((task) => ({ task, done: isTaskDone(task, input) }));

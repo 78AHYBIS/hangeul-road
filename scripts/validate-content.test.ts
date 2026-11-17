@@ -78,4 +78,40 @@ describe('validateContent', () => {
     expect(errors.join()).toMatch(/no Hangul/);
     expect(errors.join()).toMatch(/broken reference "deck-missing"/);
   });
+
+  it('checks resources: allowed values, https links, dates and path references', () => {
+    const good = {
+      id: 'res-a',
+      name: 'A',
+      type: 'course',
+      url: 'https://example.com',
+      description: 'd',
+      why: 'w',
+      skills: ['grammar'],
+      level: 'beginner',
+      cost: 'free',
+      lastVerified: '2026-11-17',
+    };
+    const { lastVerified: _date, ...unverified } = good;
+    void _date;
+    const { errors } = validateContent([
+      file(
+        [
+          good,
+          { ...good, id: 'res-b', type: 'blog', skills: ['cooking'], url: 'http://x.com' },
+          { ...unverified, id: 'res-c' },
+        ],
+        'src/content/resources/resources.json',
+      ),
+      file(
+        [
+          { id: 'path-1', stage: 'hangul', title: 't', text: 'x', refs: ['res-a'] },
+          { id: 'path-2', stage: 'later', title: 't', text: 'x', refs: ['res-ghost'] },
+        ],
+        'src/content/resources/path.json',
+      ),
+    ]);
+    // res-b: type, skill, url; res-c: lastVerified; path-2: stage, broken ref.
+    expect(errors).toHaveLength(6);
+  });
 });

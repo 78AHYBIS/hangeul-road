@@ -183,3 +183,36 @@ describe('isTaskDone', () => {
     expect(isTaskDone(external!, ticked)).toBe(true);
   });
 });
+
+describe('active course from the Library', () => {
+  const unitTask = {
+    id: 'course:res-gobilly-youtube:u3',
+    title: 'GO! Billy Korean (YouTube): Lesson 3',
+    detail: '22 units left.',
+    to: '/library/res-gobilly-youtube',
+    done: false,
+    unit: { resourceId: 'res-gobilly-youtube', unitId: 'u3' },
+  };
+
+  it('replaces the Duolingo task with the next unit of the active course', () => {
+    const without = buildPlan(base).tasks.at(-1)!;
+    expect(without.id).toBe('external:duolingo');
+
+    const withCourse = buildPlan({ ...base, external: unitTask }).tasks.at(-1)!;
+    expect(withCourse).toMatchObject({
+      id: 'external:course:res-gobilly-youtube:u3',
+      kind: 'external',
+      title: 'GO! Billy Korean (YouTube): Lesson 3',
+      to: '/library/res-gobilly-youtube',
+      unit: { resourceId: 'res-gobilly-youtube', unitId: 'u3' },
+    });
+  });
+
+  it('counts the course task as done when its unit was ticked today', () => {
+    const open = { ...base, external: unitTask };
+    const task = buildPlan(open).tasks.at(-1)!;
+    expect(isTaskDone(task, open)).toBe(false);
+    const ticked = { ...base, external: { ...unitTask, done: true } };
+    expect(isTaskDone(task, ticked)).toBe(true);
+  });
+});

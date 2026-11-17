@@ -20,6 +20,22 @@ import {
 } from '../activity';
 import { todayISO, type ISODate } from '../date';
 import { review, type Grade } from '../srs';
+import {
+  EMPTY_LIBRARY,
+  addCustom,
+  addUnits,
+  removeCustom,
+  removeUnit,
+  sanitizeLibrary,
+  setNotes,
+  setStatus,
+  toggleActive,
+  toggleUnit,
+  unitMarker,
+  type CustomResource,
+  type LibraryProgress,
+  type ResourceStatus,
+} from '../libraryProgress';
 import { EMPTY_VOCAB_PROGRESS, sanitizeVocabProgress, type VocabProgress } from '../vocabProgress';
 import { ensureCurrentSchema, getValue, setValue } from './db';
 import {
@@ -58,6 +74,19 @@ interface AppState {
   setStartDate: (date: ISODate | null) => Promise<void>;
   /** Counts one drill answer that is not tied to a letter (number trainer). */
   logDrill: (correct: boolean) => Promise<void>;
+
+  library: LibraryProgress;
+  setResourceStatus: (id: string, status: ResourceStatus) => Promise<void>;
+  setResourceNotes: (id: string, notes: string) => Promise<void>;
+  /** Makes a course active (or not). Returns false if two are already active. */
+  toggleActiveCourse: (id: string) => Promise<boolean>;
+  addCourseUnits: (id: string, titles: string[]) => Promise<void>;
+  /** Ticks or unticks a unit as done today; a ticked unit counts as a task for the streak. */
+  toggleCourseUnit: (id: string, unitId: string) => Promise<void>;
+  removeCourseUnit: (id: string, unitId: string) => Promise<void>;
+  /** Adds a resource of the user's own and returns its id. */
+  addCustomResource: (resource: Omit<CustomResource, 'id'>) => Promise<string>;
+  removeCustomResource: (id: string) => Promise<void>;
 }
 
 // Used to estimate study time: the gap between two actions, capped at one minute.
@@ -90,6 +119,10 @@ export const useAppStore = create<AppState>((set, get) => {
     set({ activity });
     await setValue(STORAGE_KEYS.activity, activity);
   };
+  const saveLibrary = async (library: LibraryProgress) => {
+    set({ library });
+    await setValue(STORAGE_KEYS.library, library);
+  };
   const saveActivity = async (activity: Activity) => {
     set({ activity });
     await setValue(STORAGE_KEYS.activity, activity);
@@ -101,6 +134,7 @@ export const useAppStore = create<AppState>((set, get) => {
     activity: EMPTY_ACTIVITY,
     settings: DEFAULT_SETTINGS,
     hangul: EMPTY_HANGUL_PROGRESS,
+    library: EMPTY_LIBRARY,
 
     hydrate: async () => {
       await ensureCurrentSchema();
@@ -108,7 +142,8 @@ export const useAppStore = create<AppState>((set, get) => {
       const hangul = sanitizeHangulProgress(await getValue(STORAGE_KEYS.hangul));
       const vocab = sanitizeVocabProgress(await getValue(STORAGE_KEYS.vocab));
       const activity = sanitizeActivity(await getValue(STORAGE_KEYS.activity));
-      set({ settings, hangul, vocab, activity, hydrated: true });
+      const library = sanitizeLibrary(await getValue(STORAGE_KEYS.library));
+      set({ settings, hangul, vocab, activity, library, hydrated: true });
     },
 
     updateSettings: async (patch) => {
@@ -185,5 +220,45 @@ export const useAppStore = create<AppState>((set, get) => {
 
     logDrill: (correct) =>
       logToday((d) => ({ ...d, answers: d.answers + 1, correct: d.correct + (correct ? 1 : 0) })),
+
+    setResourceStatus: (id, status) => saveLibrary(setStatus(get().library, id, status)),
+
+    setResourceNotes: (id, notes) => saveLibrary(setNotes(get().library, id, notes)),
+
+    toggleActiveCourse: async (id) => {
+      const before = get().library;
+      const after = toggleActive(before, id);
+      if (after === before) return false;
+      await saveLibrary(after);
+      return true;
+    },
+
+    addCourseUnits: (id, titles) => saveLibrary(addUnits(get().library, id, titles)),
+
+    toggleCourseUnit: async (id, unitId) => {
+      const today = todayISO();
+      const library = toggleUnit(get().library, id, unitId, today);
+      await saveLibrary(library);
+      const done = library.items[id]?.units.find((u) => u.id === unitId)?.doneOn === today;
+      const marker = unitMarker(id, unitId);
+      await saveActivity(
+        updateDay(get().activity, today, (d) => ({
+          ...d,
+          tasksDone: done
+            ? [...new Set([...d.tasksDone, marker])]
+            : d.tasksDone.filter((t) => t !== marker),
+        })),
+      );
+    },
+
+    removeCourseUnit: (id, unitId) => saveLibrary(removeUnit(get().library, id, unitId)),
+
+    addCustomResource: async (resource) => {
+      const id = `custom-${Date.now().toString(36)}`;
+      await saveLibrary(addCustom(get().library, { ...resource, id }));
+      return id;
+    },
+
+    removeCustomResource: (id) => saveLibrary(removeCustom(get().library, id)),
   };
 });

@@ -27,6 +27,8 @@ export interface Task {
   /** Where the task is done in the app, if anywhere. */
   to?: string;
   minutes: number;
+  /** Set when the task is a unit of an active course: ticking it ticks the unit. */
+  unit?: { resourceId: string; unitId: string };
 }
 
 /** A task supplied by another part of the app (culture cards, active course). */
@@ -35,6 +37,9 @@ export interface ExtraTask {
   title: string;
   detail: string;
   to?: string;
+  /** Already done today (e.g. the course unit was ticked in the Library). */
+  done?: boolean;
+  unit?: { resourceId: string; unitId: string };
 }
 
 export interface PlanInput {
@@ -52,7 +57,7 @@ export interface PlanInput {
   dayLog: DayLog | undefined;
   /** Phase 6 passes today's culture card here. */
   culture?: ExtraTask | null;
-  /** Phase 4 passes the next unit of the active course; otherwise Duolingo is used. */
+  /** The next unit of an active course (see courseTaskForToday); otherwise Duolingo. */
   external?: ExtraTask | null;
 }
 
@@ -69,7 +74,7 @@ const DUOLINGO: ExtraTask = {
 };
 
 /** A different whole number every day, used to rotate between options. */
-function dayIndex(date: ISODate): number {
+export function dayIndex(date: ISODate): number {
   const d = parseISODate(date)!;
   return Math.round(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86_400_000);
 }
@@ -195,7 +200,15 @@ export function buildPlan(input: PlanInput): Plan {
       ? { ...input.culture, id: `culture:${input.culture.id}`, kind: 'culture', minutes: 3 }
       : null;
     const ext = input.external ?? DUOLINGO;
-    const external: Task = { ...ext, id: `external:${ext.id}`, kind: 'external', minutes: 5 };
+    const external: Task = {
+      id: `external:${ext.id}`,
+      kind: 'external',
+      title: ext.title,
+      detail: ext.detail,
+      to: ext.to,
+      unit: ext.unit,
+      minutes: 5,
+    };
     const drill = drillTask(input);
     // The extra task is the first to go when the list would pass five.
     const extra = size === 'intense' && drill.id !== 'drill:timed' ? TIMED : null;
@@ -211,7 +224,7 @@ export function buildPlan(input: PlanInput): Plan {
 
 /**
  * Is a task finished? Ticked by hand, or detected from what was actually done:
- * no reviews left, the lesson marked done, or ten drill answers today.
+ * no reviews left, the lesson marked done, or the course unit ticked today.
  */
 export function isTaskDone(task: Task, input: PlanInput): boolean {
   const log = input.dayLog;
@@ -221,6 +234,9 @@ export function isTaskDone(task: Task, input: PlanInput): boolean {
   }
   if (task.kind === 'lesson') {
     return input.hangul.lessonsDone.includes(task.id.replace('lesson:', ''));
+  }
+  if (task.kind === 'external' && input.external) {
+    return task.id === `external:${input.external.id}` && input.external.done === true;
   }
   return false;
 }

@@ -91,9 +91,44 @@ Acceptance:
       slot only knows Hangul lessons and the number trainer until Phases 5 and 6 add
       grammar, phrases and culture cards; the hooks for them are in place.
 
+### Phase 4 — Resource library (2026-11-17)
+
+- 37 resources, each checked by web search on 2026-11-17: courses, YouTube channels,
+  websites, apps, a podcast, a book, dictionaries, tutors and exchange apps, TOPIK, and
+  official UNIST, Ulsan and Korea sites. Each has an honest description, why it helps,
+  level, cost, skills and `lastVerified`. Prices and caveats are in a "Good to know" note.
+- Library page: search, filters (type, skill, level, cost, my status), active courses at
+  the top, and a recommended path showing the current roadmap stage (all 5 on tap).
+- Resource page: open the link, my status (not started / in progress / finished /
+  dropped), notes saved as you type, "Make active course" (at most 2), and units:
+  add one, add a numbered run ("Lesson 5" onwards) or paste a list; tick them off.
+- Today: the next unit of an active course replaces the Duolingo task. Ticking it on
+  Today ticks the unit (and counts for the streak). Two active courses take turns daily.
+  An active course with no units shows "Continue …" with a link to add them.
+- Add your own resource (name, link, type, cost, skills, description); marked
+  "added by you, not checked".
+- New saved key `library`, included in export / import automatically. Schema version
+  stays 1 (a new key needs no migration; missing data falls back to empty).
+- The validator checks resource types, skills, levels, costs, https links,
+  `lastVerified`, path stages and references.
+- 186 unit tests in total.
+
+Acceptance:
+
+- [x] At least 30 resources, every one verified by web search during this phase (37).
+      Honest limit: the session's network blocked opening the sites directly, so
+      verification is from search results (official domains, current listings, recent
+      articles), not from loading each page. YouTube handles were confirmed through
+      listing sites, not YouTube itself. Tap each link once on your phone.
+- [x] Unverified ideas are listed below under "Links to check", not shown in the app.
+- [x] Marking an active course changes what the Today page suggests (unit-tested, and
+      checked in the browser at iPhone 13 size: Duolingo → "GO! Billy Korean (YouTube):
+      Lesson 1", ticked on Today, still ticked after reload, unit ticked in the Library).
+
 ## Next
 
-Phase 4 — Resource library (see PROMPT.md). It needs web search to verify every link.
+Phase 5 — Grammar and survival phrases (see PROMPT.md). Grammar and phrase lessons go
+into `lessonTask` in `src/features/daily/tasks.ts`.
 
 ## Decisions
 
@@ -125,6 +160,12 @@ Phase 4 — Resource library (see PROMPT.md). It needs web search to verify ever
 - **Card type is chosen by review count**, so it rotates predictably and needs no
   extra saved data.
 - **A letter is solid** after 6+ recent answers with 85% correct (last 10 count).
+- **At most 2 active courses**, and finishing or dropping one removes it from active.
+- **Today's course unit stays put for the day:** a unit ticked today keeps showing (as
+  done) until tomorrow, instead of the next unit appearing straight away.
+- **Recommended path is free first:** paid courses (Coursera, TTMIK, Udemy) are listed
+  with an honest note on what the free options already cover.
+- **Duolingo stays the default external task** when no course is active.
 
 ## Known issues
 
@@ -133,7 +174,11 @@ Phase 4 — Resource library (see PROMPT.md). It needs web search to verify ever
 - The timed reading drill trusts taps; it cannot hear whether an item was read.
 - The bottom nav has no desktop layout yet (it is centred, max 576px wide). Fine for
   now; revisit in Phase 8.
-- Bundle is one 370 kB JS file (118 kB gzipped). Code-splitting is planned for Phase 8.
+- Bundle is one 665 kB JS file (191 kB gzipped); Vite warns about the size. Code-splitting
+  is planned for Phase 8.
+- Resource prices, free tiers and subscriber counts change often. The app says so on each
+  resource page; re-verify the library before relying on a price.
+- Links open in a new tab and need internet; the library itself works offline.
 
 ## Korean items needing review
 
@@ -150,4 +195,23 @@ polite sentences, but none of it has been checked by a native speaker. Worth a g
 
 ## Links to check
 
-None yet.
+Not in the app until verified:
+
+- **Korean Grammar in Use: Beginning** (Darakwon book): a well-known grammar book, but I
+  found no official publisher page to link, only shops.
+- **Easy Korean** (Easy Languages street interviews): sources disagree on whether a
+  Korean channel or only a playlist exists.
+- **KoreanClass101**: not researched this phase.
+- **Naver Dictionary deep link** (`korean.dict.naver.com/koendict`): not confirmed, so
+  the app links to `dict.naver.com`.
+
+Details to re-check on the sites themselves:
+
+- **Talk To Me In Korean:** one TTMIK page says the free Basic membership is being
+  discontinued; older pages say core lessons are free. Marked paid.
+- **Coursera (Yonsei courses):** whether a free audit option exists right now.
+- **Nuri King Sejong Institute:** whether live online classes are open to learners in
+  Kazakhstan; self-study courses need only a free account.
+- **Ulsan Tourism site** (`tour.ulsan.go.kr/tour/eng`): official, but parts look dated.
+- **YouTube handles** (TTMIK by channel id, @KoreanUnnie, @seemile, @koreanenglishman,
+  @asianboss, GO! Billy's /user/ link): taken from listing sites.

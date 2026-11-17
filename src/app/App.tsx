@@ -12,7 +12,9 @@ import { TimedPage } from '../features/hangul/TimedPage';
 import { TypingPage } from '../features/hangul/TypingPage';
 import { KoreaPage } from '../features/korea-guide/KoreaPage';
 import { LearnPage } from '../features/learn/LearnPage';
+import { AddResourcePage } from '../features/library/AddResourcePage';
 import { LibraryPage } from '../features/library/LibraryPage';
+import { ResourcePage } from '../features/library/ResourcePage';
 import { MePage } from '../features/settings/MePage';
 import { ProgressPage } from '../features/settings/ProgressPage';
 import { WeeklyPage } from '../features/settings/WeeklyPage';
@@ -58,6 +60,8 @@ export function App() {
           <Route path="learn/vocab/my-words" element={<MyWordsPage />} />
           <Route path="learn/vocab/numbers" element={<NumbersPage />} />
           <Route path="library" element={<LibraryPage />} />
+          <Route path="library/add" element={<AddResourcePage />} />
+          <Route path="library/:id" element={<ResourcePage />} />
           <Route path="korea" element={<KoreaPage />} />
           <Route path="roadmap" element={<RoadmapPage />} />
           <Route path="me" element={<MePage />} />

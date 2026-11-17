@@ -1,0 +1,37 @@
+[
+  {
+    "id": "path-hangul",
+    "stage": "hangul",
+    "title": "Read Hangul",
+    "text": "Use the Hangul lessons in this app first. Keep Duolingo as a light daily extra. If a letter or rule is still unclear, read How to Study Korean Unit 0.",
+    "refs": ["res-duolingo", "res-howtostudykorean"]
+  },
+  {
+    "id": "path-core",
+    "stage": "core",
+    "title": "One course for grammar",
+    "text": "Pick one structured course and make it your active course: First Step Korean, or GO! Billy’s numbered beginner course if you want it free. Look words up in the NIKL learners’ dictionary or Naver.",
+    "refs": ["res-coursera-first-step", "res-gobilly-youtube", "res-krdict", "res-naver-dict"]
+  },
+  {
+    "id": "path-survival",
+    "stage": "survival",
+    "title": "Listen and speak",
+    "text": "Move on to Learn to Speak Korean 1. Add the beginner conversation podcast for listening, and start one language exchange app for a few messages a week.",
+    "refs": ["res-coursera-speak-1", "res-ttmik-podcast", "res-hellotalk"]
+  },
+  {
+    "id": "path-arrival",
+    "stage": "arrival",
+    "title": "Get ready to land",
+    "text": "Download Papago’s offline Korean pack. Read UNIST’s inbound pages and the Ulsan city site. Consider two or three italki lessons to practise speaking with a real person.",
+    "refs": ["res-papago", "res-unist-inbound", "res-ulsan-city", "res-italki"]
+  },
+  {
+    "id": "path-in-korea",
+    "stage": "in-korea",
+    "title": "Keep going in Korea",
+    "text": "Keep your daily reviews. Use Visit Korea for weekend trips. If you want a goal for the semester, try a TOPIK I mock test.",
+    "refs": ["res-visitkorea", "res-ulsan-tour", "res-topikguide"]
+  }
+]
