@@ -1,4 +1,5 @@
 import { effectiveStartDate, studiedDates } from '../../lib/activity';
+import { weakest } from '../../lib/grammarProgress';
 import { courseTaskForToday } from '../../lib/libraryProgress';
 import { todayISO } from '../../lib/date';
 import { buildRoadmap, roadmapPosition } from '../../lib/roadmap';
@@ -16,6 +17,8 @@ export function useToday() {
   const vocab = useAppStore((s) => s.vocab);
   const activity = useAppStore((s) => s.activity);
   const library = useAppStore((s) => s.library);
+  const grammar = useAppStore((s) => s.grammar);
+  const phrases = useAppStore((s) => s.phrases);
 
   const today = todayISO();
   const dayLog = activity.days[today];
@@ -37,6 +40,10 @@ export function useToday() {
     reviewsDue: queue.reviews.length,
     newWords: queue.newCards.length,
     hangul,
+    grammarDone: grammar.done,
+    packsDone: phrases.done,
+    weakGrammar: weakest(grammar.done, grammar.results),
+    weakPack: weakest(phrases.done, phrases.results),
     dayLog,
     // The next unit of an active Library course replaces the default Duolingo task.
     external: courseTaskForToday(

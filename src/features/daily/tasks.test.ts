@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest';
+import { GRAMMAR_LESSONS } from '../../content/grammar';
 import { LETTERS, LETTER_LESSONS, RULE_LESSONS } from '../../content/hangul';
+import { PHRASE_PACKS } from '../../content/phrases';
 import { EMPTY_DAY } from '../../lib/activity';
 import { addDays } from '../../lib/date';
 import {
@@ -7,7 +9,14 @@ import {
   recordLetterResults,
   type HangulProgress,
 } from '../../lib/hangulProgress';
-import { MAX_TASKS, buildPlan, isTaskDone, type PlanInput } from './tasks';
+import {
+  MAX_TASKS,
+  buildPlan,
+  dayIndex,
+  isTaskDone,
+  lessonTaskById,
+  type PlanInput,
+} from './tasks';
 
 const base: PlanInput = {
   today: '2026-11-16',
@@ -18,6 +27,8 @@ const base: PlanInput = {
   reviewsDue: 0,
   newWords: 10,
   hangul: EMPTY_HANGUL_PROGRESS,
+  grammarDone: [],
+  packsDone: [],
   dayLog: undefined,
 };
 
@@ -125,7 +136,7 @@ describe('buildPlan: missed days and late start', () => {
 });
 
 describe('buildPlan: progress through the content', () => {
-  it('moves from letter lessons to reading rules to numbers', () => {
+  it('moves from letter lessons to reading rules to grammar in the Hangul stage', () => {
     const lesson = (lessonsDone: string[]) =>
       buildPlan({ ...base, hangul: { ...EMPTY_HANGUL_PROGRESS, lessonsDone } }).tasks.find(
         (t) => t.kind === 'lesson',
@@ -133,7 +144,9 @@ describe('buildPlan: progress through the content', () => {
     const letters = LETTER_LESSONS.map((l) => l.id);
     expect(lesson([letters[0]!])).toBe(`lesson:${letters[1]}`);
     expect(lesson(letters)).toBe('lesson:hangul-rule-batchim');
-    expect(lesson([...letters, ...RULE_LESSONS.map((r) => r.id)])).toMatch(/^lesson:numbers-/);
+    expect(lesson([...letters, ...RULE_LESSONS.map((r) => r.id)])).toBe(
+      'lesson:grammar-01-word-order',
+    );
   });
 
   it('is still useful on day 100: reviews, numbers, a reading drill and the external task', () => {
@@ -214,5 +227,138 @@ describe('active course from the Library', () => {
     expect(isTaskDone(task, open)).toBe(false);
     const ticked = { ...base, external: { ...unitTask, done: true } };
     expect(isTaskDone(task, ticked)).toBe(true);
+  });
+});
+
+describe('grammar and phrases in the plan (Phase 5)', () => {
+  const letters = LETTER_LESSONS.map((l) => l.id);
+  const rules = RULE_LESSONS.map((r) => r.id);
+  const grammarIds = GRAMMAR_LESSONS.map((l) => l.id);
+  const packIds = PHRASE_PACKS.map((p) => p.id);
+  const lessonOf = (input: Partial<PlanInput>) =>
+    buildPlan({ ...base, ...input }).tasks.find((t) => t.kind === 'lesson')!;
+  const hangulDone = (extra: string[] = []) => ({
+    ...EMPTY_HANGUL_PROGRESS,
+    lessonsDone: [...letters, ...extra],
+  });
+  // Two days next to each other, so the survival stage shows both of its turns.
+  const even = (() => {
+    let d = '2027-01-04';
+    while (dayIndex(d) % 2 !== 0) d = addDays(d, 1);
+    return d;
+  })();
+  const odd = addDays(even, 1);
+
+  it('always starts with the letter lessons, whatever the stage', () => {
+    for (const stage of ['core', 'survival', 'arrival'] as const) {
+      expect(lessonOf({ stage }).id).toBe('lesson:hangul-lesson-basic-vowels');
+    }
+  });
+
+  it('gives grammar first in the core stage, before the remaining reading rules', () => {
+    expect(lessonOf({ stage: 'core', hangul: hangulDone() }).id).toBe(
+      'lesson:grammar-01-word-order',
+    );
+    const next = lessonOf({ stage: 'core', hangul: hangulDone(), grammarDone: grammarIds });
+    expect(next.id).toBe(`lesson:${rules[0]}`);
+    const after = lessonOf({
+      stage: 'core',
+      hangul: hangulDone(rules),
+      grammarDone: grammarIds.slice(0, 3),
+    });
+    expect(after.id).toBe(`lesson:${grammarIds[3]}`);
+    expect(after.to).toBe(`/learn/grammar/${grammarIds[3]}`);
+  });
+
+  it('alternates phrase packs and grammar day by day in the survival stage', () => {
+    const input = { stage: 'survival' as const, hangul: hangulDone(rules) };
+    expect(lessonOf({ ...input, today: even }).id).toBe(`lesson:${packIds[0]}`);
+    expect(lessonOf({ ...input, today: odd }).id).toBe(`lesson:${grammarIds[0]}`);
+    // With all grammar done, every day is a phrase pack.
+    expect(lessonOf({ ...input, today: odd, grammarDone: grammarIds }).id).toBe(
+      `lesson:${packIds[0]}`,
+    );
+  });
+
+  it('puts the remaining phrase packs first in the arrival stage', () => {
+    const t = lessonOf({
+      stage: 'arrival',
+      hangul: hangulDone(rules),
+      packsDone: packIds.slice(0, 5),
+    });
+    expect(t.id).toBe(`lesson:${packIds[5]}`);
+    expect(t.to).toBe(`/learn/phrases/${packIds[5]}`);
+  });
+
+  it('falls back to the number trainer only when every lesson is finished', () => {
+    const t = lessonOf({
+      stage: 'arrival',
+      hangul: hangulDone(rules),
+      grammarDone: grammarIds,
+      packsDone: packIds,
+    });
+    expect(t.id).toMatch(/^lesson:numbers-/);
+  });
+
+  it('keeps a lesson finished today in place, ticked, instead of showing the next one', () => {
+    const input: PlanInput = {
+      ...base,
+      stage: 'core',
+      hangul: hangulDone(rules),
+      grammarDone: [grammarIds[0]!],
+      dayLog: { ...EMPTY_DAY, tasksDone: [`lesson:${grammarIds[0]}`] },
+    };
+    const plan = buildPlan(input);
+    const lesson = plan.tasks.find((t) => t.kind === 'lesson')!;
+    expect(lesson.id).toBe(`lesson:${grammarIds[0]}`);
+    expect(isTaskDone(lesson, input)).toBe(true);
+    // Tomorrow the next lesson appears.
+    const tomorrow = buildPlan({ ...input, today: addDays(input.today, 1), dayLog: undefined });
+    expect(tomorrow.tasks.find((t) => t.kind === 'lesson')!.id).toBe(`lesson:${grammarIds[1]}`);
+  });
+
+  it('detects finished grammar lessons and phrase packs', () => {
+    const input = { ...base, stage: 'survival' as const, hangul: hangulDone(rules) };
+    const grammarTask = lessonTaskById(`lesson:${grammarIds[2]}`)!;
+    const packTask = lessonTaskById(`lesson:${packIds[2]}`)!;
+    expect(isTaskDone(grammarTask, input)).toBe(false);
+    expect(isTaskDone(grammarTask, { ...input, grammarDone: [grammarIds[2]!] })).toBe(true);
+    expect(isTaskDone(packTask, { ...input, packsDone: [packIds[2]!] })).toBe(true);
+    expect(lessonTaskById('lesson:numbers-price')!.title).toMatch(/Numbers/);
+    expect(lessonTaskById('lesson:nope')).toBeNull();
+  });
+
+  it('adds grammar practice and phrase quizzes to the drill once letters are solid', () => {
+    const drills = new Set(
+      [0, 1, 2, 3, 4, 5].map(
+        (n) =>
+          buildPlan({
+            ...base,
+            today: addDays(base.today, n),
+            hangul: mastered(),
+            grammarDone: grammarIds.slice(0, 4),
+            packsDone: packIds.slice(0, 2),
+            weakGrammar: grammarIds[1],
+            weakPack: packIds[0],
+          }).tasks.find((t) => t.kind === 'drill')!.id,
+      ),
+    );
+    expect(drills).toContain(`drill:grammar:${grammarIds[1]}`);
+    expect(drills).toContain(`drill:quiz:${packIds[0]}`);
+    // Letters still weak: the drill stays on letters.
+    const weakLetters = buildPlan({ ...base, weakGrammar: grammarIds[0] });
+    expect(weakLetters.tasks.find((t) => t.kind === 'drill')!.id).not.toMatch(/grammar/);
+  });
+
+  it('keeps a practice drill done today in place', () => {
+    const input: PlanInput = {
+      ...base,
+      hangul: mastered(),
+      weakGrammar: grammarIds[5],
+      dayLog: { ...EMPTY_DAY, tasksDone: [`drill:grammar:${grammarIds[1]}`] },
+    };
+    const drill = buildPlan(input).tasks.find((t) => t.kind === 'drill')!;
+    expect(drill.id).toBe(`drill:grammar:${grammarIds[1]}`);
+    expect(isTaskDone(drill, input)).toBe(true);
   });
 });

@@ -10,11 +10,19 @@ import { ReadingPage } from '../features/hangul/ReadingPage';
 import { RulePage } from '../features/hangul/RulePage';
 import { TimedPage } from '../features/hangul/TimedPage';
 import { TypingPage } from '../features/hangul/TypingPage';
+import { GrammarHome } from '../features/grammar/GrammarHome';
+import { GrammarLessonPage } from '../features/grammar/GrammarLessonPage';
+import { GrammarPracticePage } from '../features/grammar/GrammarPracticePage';
 import { KoreaPage } from '../features/korea-guide/KoreaPage';
 import { LearnPage } from '../features/learn/LearnPage';
 import { AddResourcePage } from '../features/library/AddResourcePage';
 import { LibraryPage } from '../features/library/LibraryPage';
 import { ResourcePage } from '../features/library/ResourcePage';
+import { IntroPage } from '../features/phrases/IntroPage';
+import { PackPage } from '../features/phrases/PackPage';
+import { PackQuizPage } from '../features/phrases/PackQuizPage';
+import { PhrasebookPage } from '../features/phrases/PhrasebookPage';
+import { PhrasesHome } from '../features/phrases/PhrasesHome';
 import { MePage } from '../features/settings/MePage';
 import { ProgressPage } from '../features/settings/ProgressPage';
 import { WeeklyPage } from '../features/settings/WeeklyPage';
@@ -59,6 +67,14 @@ export function App() {
           <Route path="learn/vocab/deck/:id" element={<DeckPage />} />
           <Route path="learn/vocab/my-words" element={<MyWordsPage />} />
           <Route path="learn/vocab/numbers" element={<NumbersPage />} />
+          <Route path="learn/grammar" element={<GrammarHome />} />
+          <Route path="learn/grammar/:id" element={<GrammarLessonPage />} />
+          <Route path="learn/grammar/:id/practice" element={<GrammarPracticePage />} />
+          <Route path="learn/phrases" element={<PhrasesHome />} />
+          <Route path="learn/phrases/book" element={<PhrasebookPage />} />
+          <Route path="learn/phrases/intro" element={<IntroPage />} />
+          <Route path="learn/phrases/:id" element={<PackPage />} />
+          <Route path="learn/phrases/:id/quiz" element={<PackQuizPage />} />
           <Route path="library" element={<LibraryPage />} />
           <Route path="library/add" element={<AddResourcePage />} />
           <Route path="library/:id" element={<ResourcePage />} />

@@ -1,0 +1,866 @@
+[
+  {
+    "id": "phrases-first-meeting",
+    "title": "First meeting",
+    "situation": "Your first week: classmates, your buddy, people in the dorm. Introduce yourself and ask the usual first questions.",
+    "dialogue": [
+      {
+        "speaker": "Minji",
+        "korean": "안녕하세요. 저는 민지예요.",
+        "meaning": "Hello. I'm Minji."
+      },
+      {
+        "speaker": "You",
+        "korean": "안녕하세요. 저는 아이다르예요. 카자흐스탄에서 왔어요.",
+        "meaning": "Hello. I'm Aidar. I'm from Kazakhstan."
+      },
+      {
+        "speaker": "Minji",
+        "korean": "만나서 반가워요. 유니스트 학생이에요?",
+        "meaning": "Nice to meet you. Are you a UNIST student?"
+      },
+      {
+        "speaker": "You",
+        "korean": "네, 교환학생이에요. 전공은 정보시스템이에요.",
+        "meaning": "Yes, I'm an exchange student. My major is Information Systems."
+      },
+      {
+        "speaker": "Minji",
+        "korean": "와, 한국어 잘하네요!",
+        "meaning": "Wow, your Korean is good!"
+      },
+      {
+        "speaker": "You",
+        "korean": "아니에요. 아직 잘 못해요. 잘 부탁해요.",
+        "meaning": "Not at all, I'm not good yet. Nice to know you."
+      }
+    ],
+    "phrases": [
+      { "id": "phrase-meet-01", "korean": "안녕하세요.", "meaning": "Hello." },
+      {
+        "id": "phrase-meet-02",
+        "korean": "처음 뵙겠습니다.",
+        "meaning": "Nice to meet you (first meeting).",
+        "note": "Very polite. Good for professors, staff and older people."
+      },
+      { "id": "phrase-meet-03", "korean": "만나서 반가워요.", "meaning": "Nice to meet you." },
+      { "id": "phrase-meet-04", "korean": "이름이 뭐예요?", "meaning": "What is your name?" },
+      {
+        "id": "phrase-meet-05",
+        "korean": "카자흐스탄에서 왔어요.",
+        "meaning": "I'm from Kazakhstan."
+      },
+      {
+        "id": "phrase-meet-06",
+        "korean": "어느 나라에서 왔어요?",
+        "meaning": "Which country are you from?"
+      },
+      {
+        "id": "phrase-meet-07",
+        "korean": "저는 교환학생이에요.",
+        "meaning": "I'm an exchange student."
+      },
+      { "id": "phrase-meet-08", "korean": "전공이 뭐예요?", "meaning": "What is your major?" },
+      { "id": "phrase-meet-09", "korean": "몇 학년이에요?", "meaning": "What year are you in?" },
+      {
+        "id": "phrase-meet-10",
+        "korean": "한국어를 조금 해요.",
+        "meaning": "I speak a little Korean."
+      },
+      {
+        "id": "phrase-meet-11",
+        "korean": "잘 부탁드려요.",
+        "meaning": "I look forward to getting to know you.",
+        "note": "Said at the end of an introduction. There is no exact English match."
+      }
+    ],
+    "refs": ["grammar-02-copula", "grammar-03-topic", "grammar-13-questions"]
+  },
+  {
+    "id": "phrases-dorm",
+    "title": "Dorm check-in",
+    "situation": "At the dormitory office: checking in, getting your key card, and asking about rooms, laundry and rules.",
+    "dialogue": [
+      {
+        "speaker": "You",
+        "korean": "안녕하세요. 교환학생이에요. 체크인하고 싶어요.",
+        "meaning": "Hello. I'm an exchange student. I'd like to check in."
+      },
+      {
+        "speaker": "Staff",
+        "korean": "학생증이나 여권 있어요?",
+        "meaning": "Do you have a student ID or a passport?"
+      },
+      { "speaker": "You", "korean": "네, 여기 있어요.", "meaning": "Yes, here you are." },
+      {
+        "speaker": "Staff",
+        "korean": "방은 305호예요. 이건 카드 키예요.",
+        "meaning": "Your room is 305. This is your key card."
+      },
+      {
+        "speaker": "You",
+        "korean": "감사합니다. 와이파이 비밀번호가 뭐예요?",
+        "meaning": "Thank you. What is the Wi-Fi password?"
+      },
+      {
+        "speaker": "Staff",
+        "korean": "방에 있는 안내문에 있어요.",
+        "meaning": "It's on the information sheet in your room."
+      }
+    ],
+    "phrases": [
+      {
+        "id": "phrase-dorm-01",
+        "korean": "체크인하고 싶어요.",
+        "meaning": "I'd like to check in."
+      },
+      { "id": "phrase-dorm-02", "korean": "여기 있어요.", "meaning": "Here you are." },
+      {
+        "id": "phrase-dorm-03",
+        "korean": "제 방이 몇 호예요?",
+        "meaning": "What is my room number?"
+      },
+      { "id": "phrase-dorm-04", "korean": "열쇠를 잃어버렸어요.", "meaning": "I lost my key." },
+      {
+        "id": "phrase-dorm-05",
+        "korean": "세탁실이 어디예요?",
+        "meaning": "Where is the laundry room?"
+      },
+      {
+        "id": "phrase-dorm-06",
+        "korean": "와이파이 비밀번호가 뭐예요?",
+        "meaning": "What is the Wi-Fi password?"
+      },
+      { "id": "phrase-dorm-07", "korean": "통금 시간이 있어요?", "meaning": "Is there a curfew?" },
+      {
+        "id": "phrase-dorm-08",
+        "korean": "쓰레기는 어디에 버려요?",
+        "meaning": "Where do I throw away rubbish?"
+      },
+      {
+        "id": "phrase-dorm-09",
+        "korean": "방에 문제가 있어요.",
+        "meaning": "There is a problem with my room."
+      },
+      {
+        "id": "phrase-dorm-10",
+        "korean": "뜨거운 물이 안 나와요.",
+        "meaning": "There is no hot water."
+      }
+    ],
+    "refs": ["grammar-11-want", "grammar-14-existence"]
+  },
+  {
+    "id": "phrases-restaurant",
+    "title": "Cafeteria and restaurants",
+    "situation": "Getting a table, ordering, asking about spice, and paying. In a campus cafeteria you often buy a meal ticket or pay at a machine first.",
+    "dialogue": [
+      {
+        "speaker": "Staff",
+        "korean": "어서 오세요. 몇 분이세요?",
+        "meaning": "Welcome. How many people?"
+      },
+      { "speaker": "You", "korean": "두 명이요.", "meaning": "Two." },
+      { "speaker": "Staff", "korean": "이쪽으로 앉으세요.", "meaning": "Please sit over here." },
+      {
+        "speaker": "You",
+        "korean": "저기요, 메뉴판 좀 주세요.",
+        "meaning": "Excuse me, the menu, please."
+      },
+      {
+        "speaker": "You",
+        "korean": "김치찌개 하나하고 비빔밥 하나 주세요.",
+        "meaning": "One kimchi stew and one bibimbap, please."
+      },
+      { "speaker": "Staff", "korean": "네, 알겠습니다.", "meaning": "Certainly." },
+      { "speaker": "You", "korean": "계산해 주세요.", "meaning": "The bill, please." }
+    ],
+    "phrases": [
+      {
+        "id": "phrase-food-01",
+        "korean": "저기요!",
+        "meaning": "Excuse me! (to call staff)",
+        "note": "The normal, polite way to get a server's attention. Many places also have a call button on the table."
+      },
+      {
+        "id": "phrase-food-02",
+        "korean": "몇 분이세요?",
+        "meaning": "How many people? (you will hear this)"
+      },
+      { "id": "phrase-food-03", "korean": "두 명이요.", "meaning": "Two people." },
+      { "id": "phrase-food-04", "korean": "메뉴판 좀 주세요.", "meaning": "The menu, please." },
+      { "id": "phrase-food-05", "korean": "이거 주세요.", "meaning": "This one, please." },
+      {
+        "id": "phrase-food-13",
+        "korean": "물 좀 주세요.",
+        "meaning": "Water, please.",
+        "note": "In many restaurants water is self-service, from a dispenser or a jug on the table."
+      },
+      { "id": "phrase-food-06", "korean": "이거 매워요?", "meaning": "Is this spicy?" },
+      { "id": "phrase-food-07", "korean": "안 맵게 해 주세요.", "meaning": "Not spicy, please." },
+      {
+        "id": "phrase-food-08",
+        "korean": "식권은 어디서 사요?",
+        "meaning": "Where do I buy a meal ticket?"
+      },
+      {
+        "id": "phrase-food-09",
+        "korean": "잘 먹겠습니다.",
+        "meaning": "Thank you for the food. (before eating)",
+        "note": "Said before a meal, especially when someone else is paying."
+      },
+      {
+        "id": "phrase-food-10",
+        "korean": "잘 먹었습니다.",
+        "meaning": "Thank you for the meal. (after eating)"
+      },
+      { "id": "phrase-food-11", "korean": "포장해 주세요.", "meaning": "To take away, please." },
+      { "id": "phrase-food-12", "korean": "계산해 주세요.", "meaning": "The bill, please." }
+    ],
+    "refs": ["grammar-12-requests"]
+  },
+  {
+    "id": "phrases-cafe",
+    "title": "Cafes",
+    "situation": "Ordering coffee, choosing hot or iced, for here or to go, and finding a socket for your laptop.",
+    "dialogue": [
+      { "speaker": "Staff", "korean": "주문하시겠어요?", "meaning": "Are you ready to order?" },
+      {
+        "speaker": "You",
+        "korean": "아이스 아메리카노 한 잔 주세요.",
+        "meaning": "One iced americano, please."
+      },
+      { "speaker": "Staff", "korean": "드시고 가세요?", "meaning": "For here?" },
+      { "speaker": "You", "korean": "아니요, 가져갈게요.", "meaning": "No, to go." },
+      {
+        "speaker": "Staff",
+        "korean": "카드 여기 꽂아 주세요.",
+        "meaning": "Please insert your card here."
+      },
+      { "speaker": "Staff", "korean": "진동벨 드릴게요.", "meaning": "Here is your buzzer." }
+    ],
+    "phrases": [
+      {
+        "id": "phrase-cafe-01",
+        "korean": "아이스 아메리카노 한 잔 주세요.",
+        "meaning": "One iced americano, please."
+      },
+      { "id": "phrase-cafe-02", "korean": "따뜻한 걸로 주세요.", "meaning": "A hot one, please." },
+      {
+        "id": "phrase-cafe-03",
+        "korean": "드시고 가세요?",
+        "meaning": "For here? (you will hear this)"
+      },
+      { "id": "phrase-cafe-04", "korean": "여기서 먹을 거예요.", "meaning": "For here." },
+      { "id": "phrase-cafe-05", "korean": "가져갈게요.", "meaning": "To go." },
+      { "id": "phrase-cafe-06", "korean": "덜 달게 해 주세요.", "meaning": "Less sweet, please." },
+      { "id": "phrase-cafe-07", "korean": "와이파이 돼요?", "meaning": "Is there Wi-Fi?" },
+      {
+        "id": "phrase-cafe-08",
+        "korean": "콘센트 있어요?",
+        "meaning": "Is there a power socket?",
+        "note": "콘센트 is the everyday word for a wall socket."
+      },
+      {
+        "id": "phrase-cafe-09",
+        "korean": "화장실 비밀번호가 뭐예요?",
+        "meaning": "What is the restroom code?",
+        "note": "Many cafe restrooms have a keypad; the code is often on the receipt."
+      },
+      {
+        "id": "phrase-cafe-10",
+        "korean": "진동벨 드릴게요.",
+        "meaning": "Here is your buzzer. (you will hear this)",
+        "note": "It buzzes when your order is ready; collect it at the counter."
+      }
+    ],
+    "refs": ["grammar-12-requests", "grammar-10-future"]
+  },
+  {
+    "id": "phrases-convenience-store",
+    "title": "Convenience store",
+    "situation": "Paying at the counter, bags, heating up a lunch box, and topping up a transit card.",
+    "dialogue": [
+      { "speaker": "Staff", "korean": "어서 오세요.", "meaning": "Welcome." },
+      { "speaker": "You", "korean": "이거 데워 주세요.", "meaning": "Please heat this up." },
+      { "speaker": "Staff", "korean": "봉투 필요하세요?", "meaning": "Do you need a bag?" },
+      {
+        "speaker": "You",
+        "korean": "아니요, 괜찮아요. 카드로 할게요.",
+        "meaning": "No, thanks. I'll pay by card."
+      },
+      {
+        "speaker": "Staff",
+        "korean": "영수증 드릴까요?",
+        "meaning": "Would you like the receipt?"
+      },
+      { "speaker": "You", "korean": "아니요, 버려 주세요.", "meaning": "No, please throw it away." }
+    ],
+    "phrases": [
+      {
+        "id": "phrase-store-01",
+        "korean": "봉투 필요하세요?",
+        "meaning": "Do you need a bag? (you will hear this)",
+        "note": "Bags usually cost a little extra."
+      },
+      { "id": "phrase-store-02", "korean": "봉투 하나 주세요.", "meaning": "One bag, please." },
+      { "id": "phrase-store-03", "korean": "이거 데워 주세요.", "meaning": "Please heat this up." },
+      { "id": "phrase-store-04", "korean": "젓가락 주세요.", "meaning": "Chopsticks, please." },
+      { "id": "phrase-store-05", "korean": "카드로 할게요.", "meaning": "I'll pay by card." },
+      { "id": "phrase-store-06", "korean": "현금으로 할게요.", "meaning": "I'll pay in cash." },
+      {
+        "id": "phrase-store-07",
+        "korean": "교통카드 충전해 주세요.",
+        "meaning": "Please top up my transit card.",
+        "note": "Top-ups at the counter are usually paid in cash."
+      },
+      {
+        "id": "phrase-store-08",
+        "korean": "영수증 드릴까요?",
+        "meaning": "Would you like the receipt? (you will hear this)"
+      },
+      { "id": "phrase-store-09", "korean": "영수증 주세요.", "meaning": "The receipt, please." },
+      {
+        "id": "phrase-store-10",
+        "korean": "괜찮아요.",
+        "meaning": "It's fine. / No, thank you.",
+        "note": "A soft, polite way to say no to an offer."
+      }
+    ],
+    "refs": ["grammar-12-requests"]
+  },
+  {
+    "id": "phrases-shopping",
+    "title": "Shopping and prices",
+    "situation": "Asking prices, sizes and colours, trying things on, and paying. Bargaining only happens at traditional markets.",
+    "dialogue": [
+      { "speaker": "You", "korean": "이거 얼마예요?", "meaning": "How much is this?" },
+      { "speaker": "Staff", "korean": "만 오천 원이에요.", "meaning": "It's 15,000 won." },
+      { "speaker": "You", "korean": "다른 색 있어요?", "meaning": "Do you have other colours?" },
+      {
+        "speaker": "Staff",
+        "korean": "네, 검은색하고 흰색이 있어요.",
+        "meaning": "Yes, black and white."
+      },
+      { "speaker": "You", "korean": "입어 봐도 돼요?", "meaning": "Can I try it on?" },
+      {
+        "speaker": "Staff",
+        "korean": "네, 탈의실은 저쪽이에요.",
+        "meaning": "Yes, the fitting room is over there."
+      },
+      {
+        "speaker": "You",
+        "korean": "이걸로 할게요. 카드 돼요?",
+        "meaning": "I'll take this. Can I pay by card?"
+      }
+    ],
+    "phrases": [
+      { "id": "phrase-shop-01", "korean": "이거 얼마예요?", "meaning": "How much is this?" },
+      { "id": "phrase-shop-02", "korean": "너무 비싸요.", "meaning": "It's too expensive." },
+      {
+        "id": "phrase-shop-03",
+        "korean": "좀 깎아 주세요.",
+        "meaning": "Could you give me a discount?",
+        "note": "Only at traditional markets and small stalls, not in shops with price tags."
+      },
+      {
+        "id": "phrase-shop-04",
+        "korean": "다른 색 있어요?",
+        "meaning": "Do you have other colours?"
+      },
+      {
+        "id": "phrase-shop-05",
+        "korean": "더 큰 거 있어요?",
+        "meaning": "Do you have a bigger one?"
+      },
+      { "id": "phrase-shop-06", "korean": "입어 봐도 돼요?", "meaning": "Can I try it on?" },
+      { "id": "phrase-shop-07", "korean": "그냥 구경하는 거예요.", "meaning": "I'm just looking." },
+      { "id": "phrase-shop-08", "korean": "이걸로 할게요.", "meaning": "I'll take this one." },
+      { "id": "phrase-shop-09", "korean": "카드 돼요?", "meaning": "Can I pay by card?" },
+      { "id": "phrase-shop-10", "korean": "환불돼요?", "meaning": "Can I get a refund?" }
+    ],
+    "refs": ["grammar-13-questions", "grammar-14-existence"]
+  },
+  {
+    "id": "phrases-transport",
+    "title": "Bus, subway and taxi",
+    "situation": "Telling a taxi driver where to go, checking which bus to take, and getting off at the right stop.",
+    "dialogue": [
+      { "speaker": "Driver", "korean": "어디로 가세요?", "meaning": "Where are you going?" },
+      { "speaker": "You", "korean": "유니스트로 가 주세요.", "meaning": "To UNIST, please." },
+      { "speaker": "You", "korean": "얼마나 걸려요?", "meaning": "How long does it take?" },
+      { "speaker": "Driver", "korean": "이십 분 정도 걸려요.", "meaning": "About twenty minutes." },
+      {
+        "speaker": "You",
+        "korean": "여기서 세워 주세요. 카드 돼요?",
+        "meaning": "Please stop here. Can I pay by card?"
+      },
+      { "speaker": "Driver", "korean": "네, 돼요.", "meaning": "Yes, you can." }
+    ],
+    "phrases": [
+      { "id": "phrase-move-01", "korean": "유니스트로 가 주세요.", "meaning": "To UNIST, please." },
+      {
+        "id": "phrase-move-02",
+        "korean": "이 주소로 가 주세요.",
+        "meaning": "To this address, please.",
+        "note": "Show the address in Korean on your phone."
+      },
+      { "id": "phrase-move-03", "korean": "여기서 세워 주세요.", "meaning": "Please stop here." },
+      { "id": "phrase-move-04", "korean": "얼마나 걸려요?", "meaning": "How long does it take?" },
+      {
+        "id": "phrase-move-05",
+        "korean": "이 버스 울산역에 가요?",
+        "meaning": "Does this bus go to Ulsan Station?"
+      },
+      {
+        "id": "phrase-move-06",
+        "korean": "몇 번 버스를 타야 돼요?",
+        "meaning": "Which bus number should I take?"
+      },
+      { "id": "phrase-move-07", "korean": "어디에서 내려요?", "meaning": "Where do I get off?" },
+      { "id": "phrase-move-08", "korean": "갈아타야 돼요?", "meaning": "Do I need to transfer?" },
+      {
+        "id": "phrase-move-09",
+        "korean": "다음 역은 어디예요?",
+        "meaning": "What is the next station?"
+      },
+      {
+        "id": "phrase-move-10",
+        "korean": "교통카드는 어디서 사요?",
+        "meaning": "Where can I buy a transit card?"
+      }
+    ],
+    "refs": ["grammar-12-requests", "grammar-06-place-time"]
+  },
+  {
+    "id": "phrases-directions",
+    "title": "Asking directions",
+    "situation": "Stopping someone politely, asking where a place is, and understanding left, right and straight on.",
+    "dialogue": [
+      {
+        "speaker": "You",
+        "korean": "실례합니다. 이 근처에 편의점이 있어요?",
+        "meaning": "Excuse me. Is there a convenience store near here?"
+      },
+      {
+        "speaker": "Passer-by",
+        "korean": "네, 저기 은행 옆에 있어요.",
+        "meaning": "Yes, over there next to the bank."
+      },
+      { "speaker": "You", "korean": "여기서 멀어요?", "meaning": "Is it far from here?" },
+      {
+        "speaker": "Passer-by",
+        "korean": "아니요, 가까워요. 쭉 가서 오른쪽으로 가세요.",
+        "meaning": "No, it's close. Go straight on, then turn right."
+      },
+      { "speaker": "You", "korean": "감사합니다!", "meaning": "Thank you!" }
+    ],
+    "phrases": [
+      {
+        "id": "phrase-way-01",
+        "korean": "실례합니다.",
+        "meaning": "Excuse me.",
+        "note": "Use it before asking a stranger something."
+      },
+      {
+        "id": "phrase-way-02",
+        "korean": "화장실이 어디예요?",
+        "meaning": "Where is the restroom?"
+      },
+      {
+        "id": "phrase-way-03",
+        "korean": "이 근처에 약국 있어요?",
+        "meaning": "Is there a pharmacy near here?"
+      },
+      { "id": "phrase-way-04", "korean": "여기서 멀어요?", "meaning": "Is it far from here?" },
+      { "id": "phrase-way-05", "korean": "걸어서 갈 수 있어요?", "meaning": "Can I walk there?" },
+      { "id": "phrase-way-06", "korean": "쭉 가세요.", "meaning": "Go straight on." },
+      { "id": "phrase-way-07", "korean": "오른쪽으로 가세요.", "meaning": "Turn right." },
+      { "id": "phrase-way-08", "korean": "왼쪽으로 가세요.", "meaning": "Turn left." },
+      { "id": "phrase-way-09", "korean": "길을 잃었어요.", "meaning": "I'm lost." },
+      { "id": "phrase-way-10", "korean": "천천히 말해 주세요.", "meaning": "Please speak slowly." },
+      {
+        "id": "phrase-way-11",
+        "korean": "다시 한번 말해 주세요.",
+        "meaning": "Please say that again."
+      }
+    ],
+    "refs": ["grammar-13-questions", "grammar-14-existence"]
+  },
+  {
+    "id": "phrases-bank-phone",
+    "title": "Bank and phone shop",
+    "situation": "Opening an account (you usually need your ARC and passport), getting a debit card, and buying a SIM and a phone plan.",
+    "dialogue": [
+      { "speaker": "Staff", "korean": "어떻게 오셨어요?", "meaning": "How can I help you?" },
+      {
+        "speaker": "You",
+        "korean": "통장을 만들고 싶어요.",
+        "meaning": "I'd like to open a bank account."
+      },
+      {
+        "speaker": "Staff",
+        "korean": "외국인 등록증하고 여권 있으세요?",
+        "meaning": "Do you have your residence card (ARC) and passport?"
+      },
+      {
+        "speaker": "You",
+        "korean": "네, 여기 있어요. 체크카드도 만들고 싶어요.",
+        "meaning": "Yes, here they are. I'd also like a debit card."
+      },
+      {
+        "speaker": "Staff",
+        "korean": "네, 이 신청서를 써 주세요.",
+        "meaning": "Sure. Please fill in this form."
+      }
+    ],
+    "phrases": [
+      {
+        "id": "phrase-bank-01",
+        "korean": "어떻게 오셨어요?",
+        "meaning": "How can I help you? (you will hear this)",
+        "note": "Literally 'How did you come?'. Staff ask it at banks and offices."
+      },
+      {
+        "id": "phrase-bank-02",
+        "korean": "통장을 만들고 싶어요.",
+        "meaning": "I'd like to open a bank account."
+      },
+      {
+        "id": "phrase-bank-03",
+        "korean": "체크카드를 만들고 싶어요.",
+        "meaning": "I'd like a debit card."
+      },
+      {
+        "id": "phrase-bank-04",
+        "korean": "번호표를 뽑으세요.",
+        "meaning": "Please take a number ticket. (you will hear this)"
+      },
+      {
+        "id": "phrase-bank-05",
+        "korean": "돈을 보내고 싶어요.",
+        "meaning": "I want to send money."
+      },
+      {
+        "id": "phrase-bank-06",
+        "korean": "유심을 사고 싶어요.",
+        "meaning": "I'd like to buy a SIM card.",
+        "note": "A SIM card is called 유심 (USIM)."
+      },
+      {
+        "id": "phrase-bank-07",
+        "korean": "선불 요금제 있어요?",
+        "meaning": "Do you have prepaid plans?"
+      },
+      {
+        "id": "phrase-bank-08",
+        "korean": "한 달에 얼마예요?",
+        "meaning": "How much is it per month?"
+      },
+      {
+        "id": "phrase-bank-09",
+        "korean": "데이터는 몇 기가예요?",
+        "meaning": "How many gigabytes of data?"
+      },
+      {
+        "id": "phrase-bank-10",
+        "korean": "영어 하시는 분 계세요?",
+        "meaning": "Is there anyone here who speaks English?"
+      }
+    ],
+    "refs": ["grammar-11-want", "grammar-16-formal"]
+  },
+  {
+    "id": "phrases-pharmacy-hospital",
+    "title": "Pharmacy and hospital",
+    "situation": "Describing how you feel at a pharmacy or a clinic, and understanding how to take your medicine.",
+    "dialogue": [
+      {
+        "speaker": "Pharmacist",
+        "korean": "어디가 아프세요?",
+        "meaning": "What seems to be the problem?"
+      },
+      {
+        "speaker": "You",
+        "korean": "머리가 아프고 열이 나요.",
+        "meaning": "I have a headache and a fever."
+      },
+      { "speaker": "Pharmacist", "korean": "언제부터 아프셨어요?", "meaning": "Since when?" },
+      { "speaker": "You", "korean": "어제부터요.", "meaning": "Since yesterday." },
+      {
+        "speaker": "Pharmacist",
+        "korean": "이 약을 하루에 세 번 드세요. 식후에 드세요.",
+        "meaning": "Take this three times a day, after meals."
+      },
+      { "speaker": "You", "korean": "감사합니다.", "meaning": "Thank you." }
+    ],
+    "phrases": [
+      {
+        "id": "phrase-health-01",
+        "korean": "어디가 아프세요?",
+        "meaning": "What is wrong? (you will hear this)"
+      },
+      { "id": "phrase-health-02", "korean": "머리가 아파요.", "meaning": "I have a headache." },
+      { "id": "phrase-health-03", "korean": "배가 아파요.", "meaning": "I have a stomach ache." },
+      { "id": "phrase-health-04", "korean": "열이 나요.", "meaning": "I have a fever." },
+      { "id": "phrase-health-05", "korean": "기침이 나요.", "meaning": "I have a cough." },
+      { "id": "phrase-health-06", "korean": "감기에 걸렸어요.", "meaning": "I have a cold." },
+      {
+        "id": "phrase-health-07",
+        "korean": "감기약 있어요?",
+        "meaning": "Do you have cold medicine?"
+      },
+      {
+        "id": "phrase-health-08",
+        "korean": "하루에 몇 번 먹어요?",
+        "meaning": "How many times a day do I take it?"
+      },
+      { "id": "phrase-health-09", "korean": "알레르기가 있어요.", "meaning": "I have an allergy." },
+      {
+        "id": "phrase-health-10",
+        "korean": "근처에 병원 있어요?",
+        "meaning": "Is there a clinic nearby?"
+      },
+      {
+        "id": "phrase-health-11",
+        "korean": "처방전 여기 있어요.",
+        "meaning": "Here is my prescription."
+      }
+    ],
+    "refs": ["grammar-04-subject", "grammar-14-existence"]
+  },
+  {
+    "id": "phrases-professor",
+    "title": "Talking to a professor",
+    "situation": "Greeting a professor, asking a question after class, and asking about deadlines. Use the 합니다 style and the title 교수님.",
+    "dialogue": [
+      {
+        "speaker": "You",
+        "korean": "교수님, 안녕하세요. 저는 교환학생 아이다르입니다.",
+        "meaning": "Hello, Professor. I'm Aidar, an exchange student."
+      },
+      {
+        "speaker": "Professor",
+        "korean": "네, 반가워요. 무슨 일이에요?",
+        "meaning": "Nice to meet you. What can I do for you?"
+      },
+      {
+        "speaker": "You",
+        "korean": "질문이 있습니다. 혹시 지금 시간 괜찮으세요?",
+        "meaning": "I have a question. Do you have a moment now?"
+      },
+      { "speaker": "Professor", "korean": "네, 괜찮아요.", "meaning": "Yes, that's fine." },
+      {
+        "speaker": "You",
+        "korean": "과제 마감일이 언제예요?",
+        "meaning": "When is the assignment due?"
+      },
+      { "speaker": "Professor", "korean": "다음 주 금요일이에요.", "meaning": "Next Friday." },
+      {
+        "speaker": "You",
+        "korean": "알겠습니다. 감사합니다, 교수님.",
+        "meaning": "I see. Thank you, Professor."
+      }
+    ],
+    "phrases": [
+      {
+        "id": "phrase-prof-01",
+        "korean": "교수님, 안녕하세요.",
+        "meaning": "Hello, Professor.",
+        "note": "Call a professor 교수님, not by name."
+      },
+      { "id": "phrase-prof-02", "korean": "질문이 있습니다.", "meaning": "I have a question." },
+      {
+        "id": "phrase-prof-03",
+        "korean": "혹시 지금 시간 괜찮으세요?",
+        "meaning": "Do you have a moment now?"
+      },
+      {
+        "id": "phrase-prof-04",
+        "korean": "다시 한번 설명해 주시겠어요?",
+        "meaning": "Could you explain it once more?"
+      },
+      {
+        "id": "phrase-prof-05",
+        "korean": "이해가 잘 안 돼요.",
+        "meaning": "I don't quite understand."
+      },
+      {
+        "id": "phrase-prof-06",
+        "korean": "과제 마감일이 언제예요?",
+        "meaning": "When is the assignment due?"
+      },
+      {
+        "id": "phrase-prof-07",
+        "korean": "면담 시간이 언제예요?",
+        "meaning": "When are your office hours?"
+      },
+      { "id": "phrase-prof-08", "korean": "늦어서 죄송합니다.", "meaning": "I'm sorry I'm late." },
+      { "id": "phrase-prof-09", "korean": "알겠습니다.", "meaning": "I see. / Understood." },
+      {
+        "id": "phrase-prof-10",
+        "korean": "감사합니다, 교수님.",
+        "meaning": "Thank you, Professor."
+      }
+    ],
+    "refs": ["grammar-16-formal", "grammar-13-questions"]
+  },
+  {
+    "id": "phrases-classmates",
+    "title": "Classmates and making friends",
+    "situation": "Chatting after class, suggesting lunch, swapping contacts, and working in a group project.",
+    "dialogue": [
+      {
+        "speaker": "Classmate",
+        "korean": "안녕하세요! 혹시 교환학생이에요?",
+        "meaning": "Hi! Are you an exchange student, by any chance?"
+      },
+      {
+        "speaker": "You",
+        "korean": "네, 카자흐스탄에서 왔어요.",
+        "meaning": "Yes, I'm from Kazakhstan."
+      },
+      {
+        "speaker": "Classmate",
+        "korean": "와, 진짜요? 한국 생활은 어때요?",
+        "meaning": "Wow, really? How is life in Korea?"
+      },
+      {
+        "speaker": "You",
+        "korean": "재미있어요. 그런데 아직 한국어가 어려워요.",
+        "meaning": "It's fun. But Korean is still hard for me."
+      },
+      {
+        "speaker": "Classmate",
+        "korean": "우리 같이 점심 먹을래요?",
+        "meaning": "Shall we have lunch together?"
+      },
+      {
+        "speaker": "You",
+        "korean": "좋아요! 카톡 아이디가 뭐예요?",
+        "meaning": "Sounds good! What's your KakaoTalk ID?"
+      }
+    ],
+    "phrases": [
+      {
+        "id": "phrase-friend-01",
+        "korean": "같이 밥 먹을래요?",
+        "meaning": "Shall we eat together?"
+      },
+      {
+        "id": "phrase-friend-02",
+        "korean": "같이 공부할래요?",
+        "meaning": "Shall we study together?"
+      },
+      { "id": "phrase-friend-03", "korean": "좋아요!", "meaning": "Sounds good!" },
+      {
+        "id": "phrase-friend-04",
+        "korean": "카톡 아이디가 뭐예요?",
+        "meaning": "What's your KakaoTalk ID?"
+      },
+      {
+        "id": "phrase-friend-05",
+        "korean": "나이가 어떻게 되세요?",
+        "meaning": "May I ask how old you are?",
+        "note": "Age is a normal question in Korea: it decides who speaks more politely."
+      },
+      {
+        "id": "phrase-friend-06",
+        "korean": "주말에 뭐 해요?",
+        "meaning": "What do you do at the weekend?"
+      },
+      { "id": "phrase-friend-07", "korean": "취미가 뭐예요?", "meaning": "What are your hobbies?" },
+      {
+        "id": "phrase-friend-08",
+        "korean": "우리 같은 조예요.",
+        "meaning": "We're in the same group. (group project)"
+      },
+      {
+        "id": "phrase-friend-09",
+        "korean": "말 편하게 하세요.",
+        "meaning": "Feel free to talk casually with me.",
+        "note": "An invitation to drop polite endings. Usually the older person says it first."
+      },
+      {
+        "id": "phrase-friend-10",
+        "korean": "다음에 또 만나요.",
+        "meaning": "See you again next time."
+      },
+      {
+        "id": "phrase-friend-11",
+        "korean": "고마워.",
+        "meaning": "Thanks.",
+        "casual": true,
+        "note": "Casual. Only with close friends of your age or younger."
+      }
+    ],
+    "refs": ["grammar-10-future", "grammar-11-want"]
+  },
+  {
+    "id": "phrases-emergencies",
+    "title": "Emergencies",
+    "situation": "Getting help fast. In Korea, call 112 for the police and 119 for fire and ambulance. Both can connect you to an interpreter.",
+    "lastVerified": "2026-11-17",
+    "dialogue": [
+      {
+        "speaker": "Operator",
+        "korean": "네, 119입니다. 무슨 일이세요?",
+        "meaning": "This is 119. What is the emergency?"
+      },
+      {
+        "speaker": "You",
+        "korean": "친구가 쓰러졌어요. 구급차를 보내 주세요.",
+        "meaning": "My friend has collapsed. Please send an ambulance."
+      },
+      {
+        "speaker": "Operator",
+        "korean": "주소가 어떻게 되세요?",
+        "meaning": "What is the address?"
+      },
+      {
+        "speaker": "You",
+        "korean": "유니스트 기숙사예요. 영어 할 수 있어요?",
+        "meaning": "The UNIST dorm. Can you speak English?"
+      }
+    ],
+    "phrases": [
+      { "id": "phrase-help-01", "korean": "도와주세요!", "meaning": "Help!" },
+      {
+        "id": "phrase-help-02",
+        "korean": "경찰을 불러 주세요.",
+        "meaning": "Please call the police."
+      },
+      {
+        "id": "phrase-help-03",
+        "korean": "구급차를 불러 주세요.",
+        "meaning": "Please call an ambulance."
+      },
+      {
+        "id": "phrase-help-04",
+        "korean": "불이야!",
+        "meaning": "Fire!",
+        "casual": true,
+        "note": "The shout people use in a fire. Shouts are not polite speech."
+      },
+      { "id": "phrase-help-05", "korean": "조심하세요!", "meaning": "Be careful!" },
+      { "id": "phrase-help-06", "korean": "다쳤어요.", "meaning": "I'm hurt." },
+      { "id": "phrase-help-07", "korean": "지갑을 잃어버렸어요.", "meaning": "I lost my wallet." },
+      {
+        "id": "phrase-help-08",
+        "korean": "휴대폰을 도둑맞았어요.",
+        "meaning": "My phone was stolen."
+      },
+      {
+        "id": "phrase-help-09",
+        "korean": "영어 할 수 있는 사람 있어요?",
+        "meaning": "Is there anyone who speaks English?"
+      },
+      {
+        "id": "phrase-help-10",
+        "korean": "대사관에 연락하고 싶어요.",
+        "meaning": "I want to contact my embassy."
+      }
+    ],
+    "refs": ["grammar-12-requests", "grammar-09-past"]
+  }
+]

@@ -10,6 +10,8 @@ import { sanitizeHangulProgress } from '../hangulProgress';
 import { sanitizeVocabProgress } from '../vocabProgress';
 import { sanitizeActivity } from '../activity';
 import { sanitizeLibrary } from '../libraryProgress';
+import { sanitizeGrammarProgress } from '../grammarProgress';
+import { sanitizePhraseProgress } from '../phraseProgress';
 
 export const APP_ID = 'hangeul-road';
 export const SCHEMA_VERSION = 1;
@@ -20,6 +22,8 @@ export const STORAGE_KEYS = {
   vocab: 'vocab',
   activity: 'activity',
   library: 'library',
+  grammar: 'grammar',
+  phrases: 'phrases',
 } as const;
 
 export type Theme = 'system' | 'light' | 'dark';
@@ -131,6 +135,12 @@ export function parseBackup(raw: unknown): StoredData {
   }
   if (STORAGE_KEYS.library in data) {
     data[STORAGE_KEYS.library] = sanitizeLibrary(data[STORAGE_KEYS.library]);
+  }
+  if (STORAGE_KEYS.grammar in data) {
+    data[STORAGE_KEYS.grammar] = sanitizeGrammarProgress(data[STORAGE_KEYS.grammar]);
+  }
+  if (STORAGE_KEYS.phrases in data) {
+    data[STORAGE_KEYS.phrases] = sanitizePhraseProgress(data[STORAGE_KEYS.phrases]);
   }
   return data;
 }

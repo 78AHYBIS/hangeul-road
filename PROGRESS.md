@@ -125,10 +125,54 @@ Acceptance:
       checked in the browser at iPhone 13 size: Duolingo → "GO! Billy Korean (YouTube):
       Lesson 1", ticked on Today, still ticked after reload, unit ticked in the Library).
 
+### Phase 5 — Grammar and survival phrases (2026-11-17)
+
+- 16 grammar lessons in the spec's order (은/는 and 이/가 have one lesson each). Each has
+  the pattern, a plain explanation, 4 to 6 polite examples with audio, and 6 or 7
+  practice questions: choose the particle, fill the blank, put the words in order,
+  translate with tiles (with wrong tiles mixed in). Wrong answers show the right
+  sentence and a short reason, in amber, never red.
+- 13 situation phrase packs (137 phrases): first meeting, dorm, cafeteria and
+  restaurants, cafes, convenience store, shopping, bus/subway/taxi, directions, bank and
+  phone shop, pharmacy and hospital, professor, classmates, emergencies. Each has a
+  dialogue, key phrases with notes, links to its grammar lessons, and a 6-question quiz
+  (Korean → meaning, meaning → Korean, and listening when a Korean voice exists).
+- Self-introduction builder: name, country, university, exchange student or not,
+  major, up to 2 hobbies. It picks the right particles (이에요/예요, 과/와) from the
+  batchim, in 해요 or 합니다 style, with audio per line. Saved, and shown at the top of
+  the phrasebook.
+- Phrasebook: all phrases as large cards, search (English or Korean), filter by
+  situation, starred phrases first, and a full-screen "show" mode with big text for
+  reading out or showing someone.
+- Today: lessons follow the roadmap stage (letters first, then grammar in the core
+  weeks, packs and grammar on alternate days in the survival weeks, remaining packs in the
+  arrival weeks). A lesson finished today stays on Today, ticked, instead of the next
+  lesson popping up; this now also applies to Hangul lessons. Once all letters are solid,
+  the drill slot offers practice of the weakest grammar lesson or phrase pack.
+- New saved keys `grammar` and `phrases`, included in export / import automatically.
+  Schema version stays 1 (new keys need no migration).
+- The validator checks grammar practice items (one gap, answer among the options, tiles
+  with Hangul, no distractor that is also a right tile) and phrase packs (Hangul and
+  meaning on every line, phrase ids unique across all content).
+- 232 unit tests in total.
+
+Acceptance:
+
+- [x] At least 15 grammar lessons (16) and 12 phrase packs (13) pass `validate:content`.
+      Tests also check polite endings everywhere, except phrases marked casual.
+- [x] Grammar and phrases are wired into the daily task generator by roadmap stage
+      (unit-tested per stage, and checked in the browser: in week 4 Today offered
+      "Grammar: Sentence order"; after the practice it stayed ticked, also after a reload).
+- [x] Phrasebook works with no network: checked in Chromium at iPhone 13 size with the
+      network switched off (137 phrases, search, starred filter, show mode, grammar and
+      pack pages; no failed requests). Honest limit: all content is in the app bundle,
+      so it works offline once the app is open. Opening the app cold in airplane mode
+      needs the service worker from Phase 8.
+
 ## Next
 
-Phase 5 — Grammar and survival phrases (see PROMPT.md). Grammar and phrase lessons go
-into `lessonTask` in `src/features/daily/tasks.ts`.
+Phase 6 — Culture and daily life (see PROMPT.md). Culture cards plug into
+`PlanInput.culture` in `src/features/daily/tasks.ts`.
 
 ## Decisions
 
@@ -166,6 +210,16 @@ into `lessonTask` in `src/features/daily/tasks.ts`.
 - **Recommended path is free first:** paid courses (Coursera, TTMIK, Udemy) are listed
   with an honest note on what the free options already cover.
 - **Duolingo stays the default external task** when no course is active.
+- **No romanization for grammar and phrases:** Hangul first (spec, section 2). The
+  syllable romanizer ignores sound changes, so it would be wrong for sentences anyway.
+- **Finishing the practice or quiz marks a lesson or pack done**, whatever the score.
+  There is no pass mark; a "Mark as done" button exists for skipping practice.
+- **Grammar practice keeps the lesson's order** (easier items first); options and tiles
+  are shuffled, and tiles never start in the correct order.
+- **Word-order exercises accept listed variants only** (`accept`), so sentences with
+  freely movable parts were avoided or given their variants.
+- **The self-introduction needs Hangul** for the 해요 particles; a Latin name falls back
+  to 입니다, which fits any word, with a note.
 
 ## Known issues
 
@@ -190,6 +244,17 @@ polite sentences, but none of it has been checked by a native speaker. Worth a g
   출입국사무소 (the official name has changed over the years), 휴대폰 / 핸드폰.
 
 - Sound descriptions and Russian comparisons in `letters.json` (approximations by nature).
+- All grammar lessons and phrase packs (`src/content/grammar/lessons.json`,
+  `src/content/phrases/packs.json`): standard textbook forms, but worth a read by a
+  teacher. Specific choices to check:
+  - 아이다르 as the Hangul spelling of Aidar (dialogues and the builder's placeholder).
+  - Spacing: 잘 못해요 (be poor at) vs 못 해요 (cannot do); 도와주세요 written together.
+  - 정보시스템 for "Information Systems" in the major list.
+  - Natural-sounding but more advanced forms in dialogues (드릴까요, 먹을래요, 해야 돼요,
+    -아도 돼요): they are taught as set phrases, not as grammar yet.
+  - Emergency numbers 112 (police) and 119 (fire, ambulance), verified 2026-11-17 on
+    gov.uk and the New Zealand embassy in Korea. Helpline details (1330, 1345) are left
+    for Phase 6.
 - Stroke order follows the standard school order (e.g. ㅂ 4 strokes, ㅌ 3, ㅈ 2).
   Some teachers and fonts differ slightly.
 

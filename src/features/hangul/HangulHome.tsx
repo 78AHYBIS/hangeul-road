@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { LinkRow } from '../../components/LinkRow';
 import { Card, Page } from '../../components/Page';
 import { muted } from '../../components/ui';
 import { LETTERS, LETTER_LESSONS, RULE_LESSONS, type LetterGroup } from '../../content/hangul';
@@ -69,7 +70,7 @@ export function HangulHome() {
         <h2 className="font-semibold">Lessons</h2>
         <ul className="mt-2 divide-y divide-stone-200 dark:divide-stone-800">
           {LETTER_LESSONS.map((lesson) => (
-            <Row
+            <LinkRow
               key={lesson.id}
               to={`/learn/hangul/lesson/${lesson.id}`}
               title={lesson.title}
@@ -80,7 +81,7 @@ export function HangulHome() {
             />
           ))}
           {RULE_LESSONS.map((rule) => (
-            <Row
+            <LinkRow
               key={rule.id}
               to={`/learn/hangul/rule/${rule.id}`}
               title={rule.title}
@@ -95,19 +96,19 @@ export function HangulHome() {
         <h2 className="font-semibold">Practice</h2>
         <ul className="mt-2 divide-y divide-stone-200 dark:divide-stone-800">
           {DRILL_TYPES.map((type) => (
-            <Row
+            <LinkRow
               key={type}
               to={`/learn/hangul/drill/${type}`}
               title={DRILL_INFO[type].title}
               text={DRILL_INFO[type].short}
             />
           ))}
-          <Row
+          <LinkRow
             to="/learn/hangul/timed"
             title="Timed reading"
             text="30 seconds. Tracks your speed over time."
           />
-          <Row
+          <LinkRow
             to="/learn/hangul/typing"
             title="Typing"
             text="The Korean two-set keyboard layout."
@@ -118,12 +119,12 @@ export function HangulHome() {
       <Card>
         <h2 className="font-semibold">Tools</h2>
         <ul className="mt-2 divide-y divide-stone-200 dark:divide-stone-800">
-          <Row
+          <LinkRow
             to="/learn/hangul/builder"
             title="Syllable block builder"
             text="Combine letters and hear the result."
           />
-          <Row
+          <LinkRow
             to="/learn/hangul/reading"
             title="Real-world reading"
             text="Loanwords, places, brands, signs and menus."
@@ -134,31 +135,5 @@ export function HangulHome() {
         </div>
       </Card>
     </Page>
-  );
-}
-
-function Row({
-  to,
-  title,
-  text,
-  done,
-}: {
-  to: string;
-  title: string;
-  text: string;
-  done?: boolean;
-}) {
-  return (
-    <li>
-      <Link to={to} className="flex min-h-14 items-center justify-between gap-3 py-2">
-        <span>
-          <span className="block font-medium">{title}</span>
-          <span className={`block ${muted}`}>{text}</span>
-        </span>
-        <span className="shrink-0 text-teal-700 dark:text-teal-400">
-          {done ? <span aria-label="done">✓</span> : <span aria-hidden="true">›</span>}
-        </span>
-      </Link>
-    </li>
   );
 }

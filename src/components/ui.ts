@@ -9,3 +9,16 @@ export const inputClass =
 /** Small rounded label, e.g. "Free" or "YouTube". */
 export const chip =
   'inline-flex items-center rounded-full bg-stone-100 px-2 py-0.5 text-xs text-stone-600 dark:bg-stone-800 dark:text-stone-300';
+
+/**
+ * An answer button in a multiple-choice question: neutral before answering, then
+ * teal for the right answer and amber for a wrong pick. Amber, not red: no alarm.
+ */
+export function choiceClass(answered: boolean, isAnswer: boolean, isPicked: boolean): string {
+  if (!answered) return 'border-stone-300 dark:border-stone-700';
+  if (isAnswer) return 'border-teal-700 bg-teal-700 text-white';
+  if (isPicked) {
+    return 'border-amber-500 bg-amber-100 text-amber-950 dark:bg-amber-900 dark:text-amber-50';
+  }
+  return 'border-stone-200 opacity-50 dark:border-stone-800';
+}

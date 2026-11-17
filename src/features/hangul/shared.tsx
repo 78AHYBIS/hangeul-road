@@ -3,7 +3,16 @@ import { useAppStore } from '../../lib/storage/store';
 import { useKoreanVoice } from './useKoreanVoice';
 
 /** Plays Korean audio. Disabled, with a clear label, when the device has no Korean voice. */
-export function SpeakButton({ text, label = 'Listen' }: { text: string; label?: string }) {
+export function SpeakButton({
+  text,
+  label = 'Listen',
+  compact = false,
+}: {
+  text: string;
+  label?: string;
+  /** Icon only, for rows in a list where the Korean text needs the width. */
+  compact?: boolean;
+}) {
   const status = useKoreanVoice();
   const rate = useAppStore((s) => s.settings.speechRate);
   return (
@@ -11,8 +20,11 @@ export function SpeakButton({ text, label = 'Listen' }: { text: string; label?: 
       type="button"
       disabled={status !== 'available'}
       onClick={() => speak(text, rate)}
-      aria-label={`${label}: ${text}`}
-      className="inline-flex min-h-11 items-center gap-2 rounded-full border border-stone-300 px-4 text-sm font-medium disabled:opacity-50 dark:border-stone-700"
+      aria-label={`${status === 'unavailable' ? 'No audio' : label}: ${text}`}
+      title={status === 'unavailable' ? 'No Korean voice on this device' : undefined}
+      className={`inline-flex shrink-0 items-center justify-center gap-2 rounded-full border border-stone-300 text-sm font-medium disabled:opacity-50 dark:border-stone-700 ${
+        compact ? 'size-11' : 'min-h-11 px-4'
+      }`}
     >
       <svg
         viewBox="0 0 24 24"
@@ -26,7 +38,7 @@ export function SpeakButton({ text, label = 'Listen' }: { text: string; label?: 
       >
         <path d="M4 9v6h4l5 4V5L8 9H4ZM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12" />
       </svg>
-      {status === 'unavailable' ? 'No audio' : label}
+      {!compact && (status === 'unavailable' ? 'No audio' : label)}
     </button>
   );
 }

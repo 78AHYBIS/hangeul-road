@@ -27,14 +27,17 @@ Before finishing a phase, run: lint, test, validate:content, build.
 ```
 src/
   app/          App.tsx (routes), Layout.tsx (bottom nav), nav.ts, useTheme.ts
-  features/     one folder per section: daily, learn, hangul, vocab, library, korea-guide, settings
+  features/     one folder per section: daily, learn, hangul, vocab, grammar, phrases, library,
+                korea-guide, settings
   content/      learning data only (JSON), one folder per content type
   lib/          date.ts, hangul.ts (compose/decompose, romanize, keyboard),
                 hangulProgress.ts (letter stats), speech.ts, storage/,
                 srs.ts (spaced repetition), numbers.ts (Korean number readings),
                 vocabProgress.ts, activity.ts (daily log), streak.ts, roadmap.ts,
-                libraryProgress.ts (resource status, active courses, units)
-  components/   shared UI (Page, Card, ComingSoon), ui.ts (button classes)
+                libraryProgress.ts (resource status, active courses, units),
+                particles.ts (은/는, 이/가, 이에요/예요… by batchim), selfIntro.ts,
+                grammarProgress.ts, phraseProgress.ts
+  components/   shared UI (Page, Card, ComingSoon, LinkRow), ui.ts (button classes, choiceClass)
 scripts/        validate-content.ts (+ its test)
 ```
 
@@ -58,6 +61,8 @@ scripts/        validate-content.ts (+ its test)
   (the React lint rules reject it). Drill builders take an `rng` argument for tests.
 - **Audio:** only through `SpeakButton` / `speak()` in `src/lib/speech.ts`. Show
   `<VoiceNotice />` on any screen with audio, so a missing Korean voice is explained.
+  In list rows use `<SpeakButton compact />` (icon only) so the Korean keeps the width.
+- **Korean text:** mark it `lang="ko"`; `index.css` then keeps words whole when wrapping.
 - **Romanization:** render it with `<Romanization text=… />`, which obeys the setting.
   Exception: single-letter sound labels (`g / k`) in letter lessons and letter drills,
   because there they are the answer.
@@ -68,7 +73,7 @@ scripts/        validate-content.ts (+ its test)
 - IndexedDB database `hangeul-road`, one table `kv` (`key` -> `value`), wrapped by
   `src/lib/storage/db.ts`. Nothing else imports Dexie.
 - Each feature owns one key, listed in `STORAGE_KEYS` in `schema.ts`
-  (`settings`, `hangul`, `vocab`, `activity`, `library`). A new feature adds a key, a type, a `sanitize…` function,
+  (`settings`, `hangul`, `vocab`, `activity`, `library`, `grammar`, `phrases`). A new feature adds a key, a type, a `sanitize…` function,
   and state + actions in `store.ts`.
 - `SCHEMA_VERSION` (now 1) describes the shape of saved data. When a saved shape
   changes: bump it and add a step to `migrate()` in `schema.ts`. It runs at startup
@@ -138,6 +143,33 @@ readingSpeed[], lessonsDone[] }`. See `src/lib/hangulProgress.ts`.
 custom[] }`. At most 2 active courses. A unit is `{ id: 'u1', title, doneOn }`.
   User-added resources have ids starting `custom-` and are shown as "added by you".
 
+### grammar/
+
+- `lessons.json` (16, in study order): `id` (`grammar-NN-<slug>`), `title`, `summary`,
+  `pattern`, `explanation[]`, `examples[]` (4 to 6, `{ korean, meaning, note? }`, polite
+  endings), `practice[]` (6 or more). Practice types:
+  - `particle` / `blank`: `korean` with exactly one `___`, `options[]`, `answer`, `meaning`,
+    optional `why`.
+  - `order`: `tiles[]` in the correct order (the app shuffles), `meaning`, optional
+    `accept[]` (other correct word orders, as full sentences).
+  - `translate`: `meaning`, `tiles[]`, `distractors[]` (wrong tiles), optional `accept[]`.
+- Saved progress (`grammar` key): `{ done[], results: { [lessonId]: { correct, total, date } } }`.
+- **Never change a lesson id** (saved progress and today's ticks use it).
+
+### phrases/
+
+- `packs.json` (13, in study order): `id` (`phrases-<slug>`), `title`, `situation`,
+  `dialogue[]` (`{ speaker, korean, meaning }`, the learner is `"You"`), `phrases[]`
+  (`{ id: 'phrase-<pack>-NN', korean, meaning, note?, casual? }`, at least 4), `refs`
+  (grammar lesson ids), optional `lastVerified` (for facts like emergency numbers).
+- Phrase ids are checked for uniqueness across all content. **Never change one**:
+  starred phrases are saved by id. Quizzes are generated from the phrases
+  (`features/phrases/quiz.ts`); a meaning with "(you will hear this)" is only asked
+  from Korean, never produced.
+- Everything polite (요 / 니다 / 니까) unless `casual: true` with a `note` (tested).
+- Saved progress (`phrases` key): `{ done[], results{}, starred[], intro }`; `intro` is the
+  self-introduction details (`IntroDetails` in `src/lib/selfIntro.ts`).
+
 ## Spaced repetition (src/lib/srs.ts)
 
 - Stages: new (no card), learning, review, mature (interval of 21+ days).
@@ -156,9 +188,16 @@ custom[] }`. At most 2 active courses. A unit is `{ id: 'u1', title, doneOn }`.
   `libraryProgress.ts`: the first unit of an active course that is not done, or was ticked
   today (so the task stays put for the day). Two active courses take turns by day. Ticking
   a unit task on Today calls `toggleCourseUnit`, which also logs `unit:<id>:<unitId>` in
-  today's `tasksDone` so the streak counts it. Grammar and phrase
-  lessons (Phase 5) go into `lessonTask`, which currently falls back to the number
-  trainer once all Hangul lessons are done. `PlanInput.stage` is passed in for that.
+  today's `tasksDone` so the streak counts it.
+- `lessonTask`: letter lessons always first; then by stage (`lessonOrder`): hangul →
+  rules, grammar, packs; core → grammar, rules, packs; survival → packs and grammar on
+  alternate days; arrival / in Korea → packs, grammar, rules; then the number trainer.
+- Finishing a lesson (Hangul, grammar, pack) logs `lesson:<id>` in today's `tasksDone`,
+  and the plan keeps that lesson (ticked) for the rest of the day. Re-practising a done
+  grammar lesson or pack logs `drill:grammar:<id>` / `drill:quiz:<id>`, which keeps the
+  drill in place the same way.
+- `drillTask`: weak letters first; once all are solid, the weakest grammar lesson and
+  phrase pack (`weakest()` in `grammarProgress.ts`) take two days out of three.
 - Nothing is carried over between days. Ticks live in `activity.days[date].tasksDone`.
 - Every study action must call a store action that logs to today (`gradeWord`,
   `recordLetters`, `logDrill`), so streak, time and weekly review stay correct.

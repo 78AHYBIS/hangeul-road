@@ -3,6 +3,8 @@ import { EMPTY_HANGUL_PROGRESS } from '../hangulProgress';
 import { EMPTY_ACTIVITY } from '../activity';
 import { EMPTY_VOCAB_PROGRESS } from '../vocabProgress';
 import { EMPTY_LIBRARY } from '../libraryProgress';
+import { EMPTY_GRAMMAR_PROGRESS } from '../grammarProgress';
+import { EMPTY_PHRASE_PROGRESS } from '../phraseProgress';
 import { todayISO } from '../date';
 import { createBackup, restoreBackup } from './backup';
 import { readAll, replaceAll, setValue } from './db';
@@ -33,6 +35,8 @@ function forgetInMemoryState() {
     vocab: EMPTY_VOCAB_PROGRESS,
     activity: EMPTY_ACTIVITY,
     library: EMPTY_LIBRARY,
+    grammar: EMPTY_GRAMMAR_PROGRESS,
+    phrases: EMPTY_PHRASE_PROGRESS,
   });
 }
 
@@ -270,5 +274,93 @@ describe('library progress', () => {
     await restoreBackup(fileText);
     await store().hydrate();
     expect(store().library).toEqual(saved);
+  });
+});
+
+describe('grammar and phrase progress', () => {
+  it('saves lessons, scores, stars and the introduction, and survives a backup round trip', async () => {
+    const store = () => useAppStore.getState();
+    const today = todayISO();
+    await store().hydrate();
+
+    // The first practice finishes the lesson and counts as today's lesson.
+    await store().finishGrammarPractice('grammar-01-word-order', 5, 6);
+    // Practising it again counts as today's drill instead.
+    await store().finishGrammarPractice('grammar-01-word-order', 6, 6);
+    await store().markGrammarDone('grammar-02-copula');
+    await store().finishPackQuiz('phrases-cafe', 4, 6);
+    await store().markPackDone('phrases-dorm');
+    await store().toggleStarPhrase('phrase-cafe-01');
+    await store().toggleStarPhrase('phrase-food-12');
+    await store().toggleStarPhrase('phrase-cafe-01');
+    await store().setIntro({
+      name: '아이다르',
+      country: '카자흐스탄',
+      university: '유니스트',
+      exchange: true,
+      major: '정보시스템',
+      hobbies: ['여행', '요리', '축구'],
+    });
+
+    expect(store().grammar).toEqual({
+      done: ['grammar-01-word-order', 'grammar-02-copula'],
+      results: { 'grammar-01-word-order': { correct: 6, total: 6, date: today } },
+    });
+    expect(store().phrases.done).toEqual(['phrases-cafe', 'phrases-dorm']);
+    expect(store().phrases.starred).toEqual(['phrase-food-12']);
+    expect(store().phrases.intro.hobbies).toEqual(['여행', '요리']);
+    expect(store().activity.days[today]!.tasksDone).toEqual([
+      'lesson:grammar-01-word-order',
+      'drill:grammar:grammar-01-word-order',
+      'lesson:grammar-02-copula',
+      'lesson:phrases-cafe',
+      'lesson:phrases-dorm',
+    ]);
+
+    const grammar = store().grammar;
+    const phrases = store().phrases;
+    forgetInMemoryState();
+    await store().hydrate();
+    expect(store().grammar).toEqual(grammar);
+    expect(store().phrases).toEqual(phrases);
+
+    const fileText = JSON.stringify(await createBackup());
+    await replaceAll({});
+    forgetInMemoryState();
+    await restoreBackup(fileText);
+    await store().hydrate();
+    expect(store().grammar).toEqual(grammar);
+    expect(store().phrases).toEqual(phrases);
+  });
+
+  it("notes a finished Hangul lesson in today's ticks, so Today keeps it in place", async () => {
+    const store = () => useAppStore.getState();
+    await store().hydrate();
+    await store().markLessonDone('hangul-lesson-basic-vowels');
+    await store().markLessonDone('hangul-lesson-basic-vowels');
+    expect(store().activity.days[todayISO()]!.tasksDone).toEqual([
+      'lesson:hangul-lesson-basic-vowels',
+    ]);
+  });
+
+  it('cleans bad grammar and phrase data from a backup instead of failing', async () => {
+    await restoreBackup(
+      JSON.stringify({
+        app: 'hangeul-road',
+        schemaVersion: SCHEMA_VERSION,
+        exportedAt: new Date().toISOString(),
+        data: {
+          grammar: { done: ['grammar-01-word-order', 7, ''], results: { x: { total: 'a' } } },
+          phrases: { starred: 'nope', intro: { name: 42, hobbies: ['독서', '독서'] } },
+        },
+      }),
+    );
+    await useAppStore.getState().hydrate();
+    expect(useAppStore.getState().grammar).toEqual({
+      done: ['grammar-01-word-order'],
+      results: {},
+    });
+    expect(useAppStore.getState().phrases.starred).toEqual([]);
+    expect(useAppStore.getState().phrases.intro).toMatchObject({ name: '', hobbies: ['독서'] });
   });
 });

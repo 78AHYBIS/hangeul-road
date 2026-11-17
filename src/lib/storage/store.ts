@@ -37,6 +37,19 @@ import {
   type ResourceStatus,
 } from '../libraryProgress';
 import { EMPTY_VOCAB_PROGRESS, sanitizeVocabProgress, type VocabProgress } from '../vocabProgress';
+import {
+  EMPTY_GRAMMAR_PROGRESS,
+  addDone,
+  sanitizeGrammarProgress,
+  type GrammarProgress,
+} from '../grammarProgress';
+import {
+  EMPTY_PHRASE_PROGRESS,
+  sanitizePhraseProgress,
+  toggleStar,
+  type PhraseProgress,
+} from '../phraseProgress';
+import { sanitizeIntro, type IntroDetails } from '../selfIntro';
 import { ensureCurrentSchema, getValue, setValue } from './db';
 import {
   type DailyGoal,
@@ -87,6 +100,22 @@ interface AppState {
   /** Adds a resource of the user's own and returns its id. */
   addCustomResource: (resource: Omit<CustomResource, 'id'>) => Promise<string>;
   removeCustomResource: (id: string) => Promise<void>;
+
+  grammar: GrammarProgress;
+  /**
+   * Saves a finished practice session (score) and marks the lesson done. The first
+   * time, it counts as today's lesson; after that, as today's practice drill.
+   */
+  finishGrammarPractice: (lessonId: string, correct: number, total: number) => Promise<void>;
+  /** Marks a grammar lesson done without practice. */
+  markGrammarDone: (lessonId: string) => Promise<void>;
+
+  phrases: PhraseProgress;
+  /** Saves a finished pack quiz and marks the pack done (same rules as grammar practice). */
+  finishPackQuiz: (packId: string, correct: number, total: number) => Promise<void>;
+  markPackDone: (packId: string) => Promise<void>;
+  toggleStarPhrase: (phraseId: string) => Promise<void>;
+  setIntro: (details: IntroDetails) => Promise<void>;
 }
 
 // Used to estimate study time: the gap between two actions, capped at one minute.
@@ -127,6 +156,26 @@ export const useAppStore = create<AppState>((set, get) => {
     set({ activity });
     await setValue(STORAGE_KEYS.activity, activity);
   };
+  const saveGrammar = async (grammar: GrammarProgress) => {
+    set({ grammar });
+    await setValue(STORAGE_KEYS.grammar, grammar);
+  };
+  const savePhrases = async (phrases: PhraseProgress) => {
+    set({ phrases });
+    await setValue(STORAGE_KEYS.phrases, phrases);
+  };
+  /**
+   * Notes a finished lesson in today's ticked tasks, as `lesson:<id>`. The Today plan
+   * then keeps showing that lesson (ticked) for the rest of the day, and it counts
+   * for the streak.
+   */
+  const tickToday = (marker: string) =>
+    saveActivity(
+      updateDay(get().activity, todayISO(), (d) => ({
+        ...d,
+        tasksDone: d.tasksDone.includes(marker) ? d.tasksDone : [...d.tasksDone, marker],
+      })),
+    );
 
   return {
     hydrated: false,
@@ -135,6 +184,8 @@ export const useAppStore = create<AppState>((set, get) => {
     settings: DEFAULT_SETTINGS,
     hangul: EMPTY_HANGUL_PROGRESS,
     library: EMPTY_LIBRARY,
+    grammar: EMPTY_GRAMMAR_PROGRESS,
+    phrases: EMPTY_PHRASE_PROGRESS,
 
     hydrate: async () => {
       await ensureCurrentSchema();
@@ -143,7 +194,9 @@ export const useAppStore = create<AppState>((set, get) => {
       const vocab = sanitizeVocabProgress(await getValue(STORAGE_KEYS.vocab));
       const activity = sanitizeActivity(await getValue(STORAGE_KEYS.activity));
       const library = sanitizeLibrary(await getValue(STORAGE_KEYS.library));
-      set({ settings, hangul, vocab, activity, library, hydrated: true });
+      const grammar = sanitizeGrammarProgress(await getValue(STORAGE_KEYS.grammar));
+      const phrases = sanitizePhraseProgress(await getValue(STORAGE_KEYS.phrases));
+      set({ settings, hangul, vocab, activity, library, grammar, phrases, hydrated: true });
     },
 
     updateSettings: async (patch) => {
@@ -167,6 +220,7 @@ export const useAppStore = create<AppState>((set, get) => {
       const hangul = get().hangul;
       if (hangul.lessonsDone.includes(lessonId)) return;
       await saveHangul({ ...hangul, lessonsDone: [...hangul.lessonsDone, lessonId] });
+      await tickToday(`lesson:${lessonId}`);
     },
 
     gradeWord: async (wordId, grade) => {
@@ -260,5 +314,44 @@ export const useAppStore = create<AppState>((set, get) => {
     },
 
     removeCustomResource: (id) => saveLibrary(removeCustom(get().library, id)),
+
+    finishGrammarPractice: async (lessonId, correct, total) => {
+      const grammar = get().grammar;
+      const first = !grammar.done.includes(lessonId);
+      await saveGrammar({
+        done: addDone(grammar.done, lessonId),
+        results: { ...grammar.results, [lessonId]: { correct, total, date: todayISO() } },
+      });
+      await tickToday(first ? `lesson:${lessonId}` : `drill:grammar:${lessonId}`);
+    },
+
+    markGrammarDone: async (lessonId) => {
+      const grammar = get().grammar;
+      if (grammar.done.includes(lessonId)) return;
+      await saveGrammar({ ...grammar, done: addDone(grammar.done, lessonId) });
+      await tickToday(`lesson:${lessonId}`);
+    },
+
+    finishPackQuiz: async (packId, correct, total) => {
+      const phrases = get().phrases;
+      const first = !phrases.done.includes(packId);
+      await savePhrases({
+        ...phrases,
+        done: addDone(phrases.done, packId),
+        results: { ...phrases.results, [packId]: { correct, total, date: todayISO() } },
+      });
+      await tickToday(first ? `lesson:${packId}` : `drill:quiz:${packId}`);
+    },
+
+    markPackDone: async (packId) => {
+      const phrases = get().phrases;
+      if (phrases.done.includes(packId)) return;
+      await savePhrases({ ...phrases, done: addDone(phrases.done, packId) });
+      await tickToday(`lesson:${packId}`);
+    },
+
+    toggleStarPhrase: (phraseId) => savePhrases(toggleStar(get().phrases, phraseId)),
+
+    setIntro: (details) => savePhrases({ ...get().phrases, intro: sanitizeIntro(details) }),
   };
 });

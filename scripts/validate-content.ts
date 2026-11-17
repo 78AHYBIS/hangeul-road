@@ -13,6 +13,10 @@
  *   - every `examples[]` entry has Hangul in `korean`
  *   - resources use known type / level / cost / skills, an https URL and `lastVerified`;
  *     path steps use a known roadmap stage and `refs` to existing resources
+ *   - grammar lessons have 4 to 6 examples and practice items that can be answered
+ *     (one `___` gap, the answer among the options, tiles with Hangul)
+ *   - phrase packs: every dialogue line and phrase has Hangul and a meaning; phrase ids
+ *     are unique across all content, like item ids
  */
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
@@ -44,6 +48,11 @@ export const REQUIRED_FIELDS: [RegExp, string[]][] = [
     ['name', 'type', 'url', 'description', 'why', 'skills', 'level', 'cost', 'lastVerified'],
   ],
   [/resources\/path\.json$/, ['stage', 'title', 'text', 'refs']],
+  [
+    /grammar\/lessons\.json$/,
+    ['title', 'summary', 'pattern', 'explanation', 'examples', 'practice'],
+  ],
+  [/phrases\/packs\.json$/, ['title', 'situation', 'dialogue', 'phrases']],
 ];
 
 /** Allowed values for resource fields (keep in sync with src/content/resources/index.ts). */
@@ -54,6 +63,8 @@ export const RESOURCE_ENUMS: Record<string, readonly string[]> = {
   skills: ['hangul', 'vocabulary', 'grammar', 'listening', 'speaking', 'culture', 'topik'],
 };
 const STAGES = ['hangul', 'core', 'survival', 'arrival', 'in-korea'];
+export const PRACTICE_TYPES = ['particle', 'blank', 'order', 'translate'];
+const GAP = '___';
 
 const isEmpty = (value: unknown) =>
   value === undefined ||
@@ -138,6 +149,18 @@ export function validateContent(files: ContentFile[]): ValidationResult {
       if (/resources\/path\.json$/.test(normalizedPath) && !STAGES.includes(String(record.stage))) {
         errors.push(`${where}: "stage" must be one of ${STAGES.join(', ')}`);
       }
+      if (/grammar\/lessons\.json$/.test(normalizedPath)) {
+        checkGrammarLesson(record, where, errors);
+      }
+      if (/phrases\/packs\.json$/.test(normalizedPath)) {
+        checkPhrasePack(record, where, errors, (phraseId, at) => {
+          if (seenIds.has(phraseId)) {
+            errors.push(`${at}: duplicate id "${phraseId}" (also in ${seenIds.get(phraseId)})`);
+          } else {
+            seenIds.set(phraseId, at);
+          }
+        });
+      }
       if (record.needsReview === true) needsReview.push(`${where} (${String(id)})`);
       if (Array.isArray(record.refs)) {
         for (const ref of record.refs) refs.push({ from: where, to: String(ref) });
@@ -164,6 +187,93 @@ function checkResource(record: Record<string, unknown>, where: string, errors: s
   if (typeof record.url === 'string' && !/^https:\/\/[^\s]+$/.test(record.url)) {
     errors.push(`${where}: "url" must start with https://`);
   }
+}
+
+const hasHangul = (v: unknown) => typeof v === 'string' && HANGUL.test(v);
+const isText = (v: unknown) => typeof v === 'string' && v.trim() !== '';
+const isTextList = (v: unknown, min: number) =>
+  Array.isArray(v) && v.length >= min && v.every(isText);
+
+/** Grammar rules: 4 to 6 examples, and practice items that have one right answer. */
+function checkGrammarLesson(record: Record<string, unknown>, where: string, errors: string[]) {
+  const examples = record.examples;
+  if (Array.isArray(examples) && (examples.length < 4 || examples.length > 6)) {
+    errors.push(`${where}: needs 4 to 6 examples (has ${examples.length})`);
+  }
+  if (Array.isArray(examples)) {
+    examples.forEach((e: unknown, i: number) => {
+      if (!isText((e as Record<string, unknown> | null)?.meaning)) {
+        errors.push(`${where}.examples[${i}]: missing "meaning"`);
+      }
+    });
+  }
+  if (!Array.isArray(record.practice)) return;
+  record.practice.forEach((raw: unknown, i: number) => {
+    const at = `${where}.practice[${i}]`;
+    const p = (typeof raw === 'object' && raw !== null ? raw : {}) as Record<string, unknown>;
+    if (!PRACTICE_TYPES.includes(String(p.type))) {
+      errors.push(`${at}: "type" must be one of ${PRACTICE_TYPES.join(', ')}`);
+      return;
+    }
+    if (!isText(p.meaning)) errors.push(`${at}: missing "meaning"`);
+    if (p.type === 'particle' || p.type === 'blank') {
+      const korean = String(p.korean ?? '');
+      if (!HANGUL.test(korean) || korean.split(GAP).length !== 2) {
+        errors.push(`${at}: "korean" needs Hangul and exactly one ${GAP} gap`);
+      }
+      const options = p.options;
+      if (
+        !isTextList(options, 2) ||
+        new Set(options as string[]).size !== (options as string[]).length
+      ) {
+        errors.push(`${at}: needs at least 2 different "options"`);
+      } else if (!(options as string[]).includes(String(p.answer))) {
+        errors.push(`${at}: "answer" is not one of the options`);
+      }
+    } else {
+      if (!isTextList(p.tiles, 2) || !(p.tiles as unknown[]).every(hasHangul)) {
+        errors.push(`${at}: needs at least 2 "tiles" with Hangul`);
+      }
+      if (p.type === 'translate') {
+        if (!isTextList(p.distractors, 1)) {
+          errors.push(`${at}: needs at least 1 "distractors" tile`);
+        } else if ((p.distractors as string[]).some((d) => (p.tiles as string[]).includes(d))) {
+          errors.push(`${at}: a distractor is also a correct tile`);
+        }
+      }
+      if (p.accept !== undefined && !isTextList(p.accept, 1)) {
+        errors.push(`${at}: "accept" must be a list of sentences`);
+      }
+    }
+  });
+}
+
+/** Phrase pack rules: dialogue and phrases have Hangul and a meaning; phrase ids are unique. */
+function checkPhrasePack(
+  record: Record<string, unknown>,
+  where: string,
+  errors: string[],
+  registerId: (id: string, at: string) => void,
+) {
+  const lines = Array.isArray(record.dialogue) ? record.dialogue : [];
+  lines.forEach((raw: unknown, i: number) => {
+    const line = (raw ?? {}) as Record<string, unknown>;
+    if (!isText(line.speaker)) errors.push(`${where}.dialogue[${i}]: missing "speaker"`);
+    if (!hasHangul(line.korean)) errors.push(`${where}.dialogue[${i}]: "korean" has no Hangul`);
+    if (!isText(line.meaning)) errors.push(`${where}.dialogue[${i}]: missing "meaning"`);
+  });
+  const phrases = Array.isArray(record.phrases) ? record.phrases : [];
+  if (phrases.length > 0 && phrases.length < 4) {
+    errors.push(`${where}: needs at least 4 phrases for its quiz`);
+  }
+  phrases.forEach((raw: unknown, i: number) => {
+    const at = `${where}.phrases[${i}]`;
+    const phrase = (raw ?? {}) as Record<string, unknown>;
+    if (!isText(phrase.id)) errors.push(`${at}: missing "id"`);
+    else registerId(String(phrase.id), at);
+    if (!hasHangul(phrase.korean)) errors.push(`${at}: "korean" has no Hangul`);
+    if (!isText(phrase.meaning)) errors.push(`${at}: missing "meaning"`);
+  });
 }
 
 function loadFiles(contentDir: string): { files: ContentFile[]; errors: string[] } {
