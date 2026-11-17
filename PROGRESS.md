@@ -169,10 +169,65 @@ Acceptance:
       so it works offline once the app is open. Opening the app cold in airplane mode
       needs the service worker from Phase 8.
 
+### Phase 6 — Culture and daily life (2026-11-17)
+
+- 55 culture cards in 12 topics: the 11 from the spec (respect and hierarchy, dining,
+  university life, dorm and waste sorting, getting around, money and shopping, social life
+  and drinking, holidays and seasons, food, communication style, safety and health) plus
+  Ulsan and UNIST. Each card has a summary, 2 short paragraphs, "what to do", "what to
+  avoid", Korean words with audio, and a "this varies" note where practice differs.
+- Ulsan and UNIST section at the top of the Korea tab (7 cards): the city, UNIST and
+  Eonyang, the airport to Ulsan (Incheon via Seoul Station or a direct bus; Gimhae by bus;
+  Gimpo flights), KTX Ulsan Station to campus, places in Ulsan, day trips to Busan and
+  Gyeongju. Every card cites official sources in its footer, with a check date.
+- A 4-question quiz per topic (48 questions), each answer with a short reason, in amber
+  and teal like the other quizzes. Scores are saved; answers count for the streak.
+- Today: the culture slot shows one card a day, one topic after another (Ulsan, safety,
+  transport, dorm, money and food first in the arrival weeks). A card read today stays on
+  Today, ticked; ticking the task on Today marks the card read. When every card of a topic
+  is read, its quiz comes next. Once everything is done, the card read longest ago returns
+  as "Read again".
+- New saved key `culture` (`{ read: { cardId: date }, results }`), included in export /
+  import automatically. Schema version stays 1.
+- The validator checks culture cards (topic exists, do / avoid / words, https sources) and
+  topic quizzes (3+ questions, answer among the options). A card that cites sources or
+  mentions a year or a phone number must have `lastVerified`; Ulsan cards must cite a source.
+- 250 unit tests in total.
+
+Facts checked by web search on 2026-11-17 (search results only; the session could not
+open the sites themselves, as in Phase 4):
+
+- 2027 holidays: Seollal 6 to 8 February plus a substitute day on 9 February; semester
+  holidays 1 March, 1 May (Labour Day, a public holiday since 2026), 5 May, 13 May
+  (Buddha's Birthday), 6 June; Chuseok 14 to 16 September.
+- Emergency and help numbers 112, 119, 1330 (travel helpline), 1345 (immigration).
+- Transport: the direct KTX from Incheon Airport ended in 2018; AREX + KTX via Seoul
+  Station; direct Incheon Airport to Ulsan buses (about 5 hours); Gimhae to Ulsan
+  limousine (about 1 hour); Gimpo to Ulsan flights; KTX Ulsan Station to UNIST
+  (10 to 15 minutes by taxi, bus 337 named in UNIST directions); Donghae Line from
+  Taehwagang to Busan Bujeon (about 76 minutes).
+- UNIST address (50 UNIST-gil, Eonyang-eup, Ulju-gun); Bangudae petroglyphs inscribed as
+  UNESCO World Heritage in July 2025.
+
+Acceptance:
+
+- [x] At least 40 culture cards across all topics (55, at least 3 per topic; tested).
+- [x] Time-sensitive facts carry a `lastVerified` date (17 cards). The validator enforces
+      it for any card with sources, a year or a phone number, and a test lists the
+      holiday, emergency and transport cards.
+- [x] The Ulsan/UNIST section exists and cites official sources in the card footers
+      (UNIST, UNIST International Affairs, Ulsan city, Ulsan tourism, Korail, VISITKOREA,
+      Busan city). Checked in Chromium at iPhone 13 size: Today offered "Korea life: Age
+      and seniority"; reading it ticked the task, still ticked after a reload; unticking and
+      ticking on Today works; the Ulsan quiz saved its score; no console errors, no
+      sideways scrolling.
+
 ## Next
 
-Phase 6 — Culture and daily life (see PROMPT.md). Culture cards plug into
-`PlanInput.culture` in `src/features/daily/tasks.ts`.
+Phase 7 — Korea apps and arrival guide (see PROMPT.md). The Korea tab already has the
+culture section; the apps directory and checklists replace the "Phase 7" placeholders in
+`src/features/korea-guide/KoreaPage.tsx`. Several culture cards point to "the Korea apps
+guide" (delivery, payments, emergency alerts).
 
 ## Decisions
 
@@ -218,6 +273,15 @@ Phase 6 — Culture and daily life (see PROMPT.md). Culture cards plug into
   are shuffled, and tiles never start in the correct order.
 - **Word-order exercises accept listed variants only** (`accept`), so sentences with
   freely movable parts were avoided or given their variants.
+- **Culture cards are marked read by a button** ("Done reading"), not by opening them, so
+  a card opened by accident does not count.
+- **One card a day, rotating topics**, so Today varies; the topic quiz is offered once all
+  of its cards are read. The Korea tab lets you read ahead freely.
+- **Culture words are inline** (`words[]` on each card), not links to vocabulary decks:
+  many are phrases or names (울산역, 말 놓으세요) that do not belong in the SRS decks.
+- **Sources cite official pages only** (government, UNIST, Korail, tourism boards). Third-
+  party guides were used to cross-check, not cited. Details that change (bus numbers, taxi
+  fares) are given as "at the last check", with a reminder to check again.
 - **The self-introduction needs Hangul** for the 해요 particles; a Latin name falls back
   to 입니다, which fits any word, with a note.
 
@@ -233,6 +297,9 @@ Phase 6 — Culture and daily life (see PROMPT.md). Culture cards plug into
 - Resource prices, free tiers and subscriber counts change often. The app says so on each
   resource page; re-verify the library before relying on a price.
 - Links open in a new tab and need internet; the library itself works offline.
+- Bundle is now 853 kB (246 kB gzipped) with the culture content. Still planned for Phase 8.
+- Culture facts that change: transport times and fares, bus routes near UNIST, the Labour
+  Day substitute-holiday rule, waste rules per building. Re-check close to departure.
 
 ## Korean items needing review
 
@@ -253,8 +320,15 @@ polite sentences, but none of it has been checked by a native speaker. Worth a g
   - Natural-sounding but more advanced forms in dialogues (드릴까요, 먹을래요, 해야 돼요,
     -아도 돼요): they are taught as set phrases, not as grammar yet.
   - Emergency numbers 112 (police) and 119 (fire, ambulance), verified 2026-11-17 on
-    gov.uk and the New Zealand embassy in Korea. Helpline details (1330, 1345) are left
-    for Phase 6.
+    gov.uk and the New Zealand embassy in Korea. Helplines 1330 and 1345 are covered in
+    the Phase 6 culture card.
+- Culture cards (`src/content/culture/cards.json`): Korean words and short phrases,
+  standard forms. Worth a check: 말 놓으세요, 먼저 가 보겠습니다, 안 맵게 해 주세요,
+  유니스트로 가 주세요, 카드 돼요? (colloquial), 팀플 (common student short form),
+  and the messaging shortcuts ㅋㅋ / ㅎㅎ / ㅠㅠ (casual, labelled as such).
+- Cultural statements are written as general patterns with "this varies" notes; a Korean
+  friend or the UNIST buddy can confirm what applies on campus (dorm rules, festivals,
+  drinking events, cafeteria payment).
 - Stroke order follows the standard school order (e.g. ㅂ 4 strokes, ㅌ 3, ㅈ 2).
   Some teachers and fonts differ slightly.
 
@@ -278,5 +352,12 @@ Details to re-check on the sites themselves:
 - **Nuri King Sejong Institute:** whether live online classes are open to learners in
   Kazakhstan; self-study courses need only a free account.
 - **Ulsan Tourism site** (`tour.ulsan.go.kr/tour/eng`): official, but parts look dated.
+- **Visit Busan** (`visitbusan.net/en`): official Busan tourism portal per search results,
+  but the exact URL was not confirmed, so the Busan card cites `busan.go.kr/eng/tourism`.
+- **Gyeongju city tourism site**: not found in search results; the Gyeongju card cites
+  VISITKOREA instead.
+- **UNIST campus health service and airport pickup**: not confirmed; the cards tell you
+  to ask UNIST.
+- **Bus routes near UNIST** (337, 327, 807, 304): UNIST pages name different routes.
 - **YouTube handles** (TTMIK by channel id, @KoreanUnnie, @seemile, @koreanenglishman,
   @asianboss, GO! Billy's /user/ link): taken from listing sites.

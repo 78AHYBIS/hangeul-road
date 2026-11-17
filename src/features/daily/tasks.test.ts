@@ -3,6 +3,8 @@ import { GRAMMAR_LESSONS } from '../../content/grammar';
 import { LETTERS, LETTER_LESSONS, RULE_LESSONS } from '../../content/hangul';
 import { PHRASE_PACKS } from '../../content/phrases';
 import { EMPTY_DAY } from '../../lib/activity';
+import { EMPTY_CULTURE_PROGRESS } from '../../lib/cultureProgress';
+import { cultureTaskForToday } from '../culture/culture';
 import { addDays } from '../../lib/date';
 import {
   EMPTY_HANGUL_PROGRESS,
@@ -360,5 +362,29 @@ describe('grammar and phrases in the plan (Phase 5)', () => {
     const drill = buildPlan(input).tasks.find((t) => t.kind === 'drill')!;
     expect(drill.id).toBe(`drill:grammar:${grammarIds[1]}`);
     expect(isTaskDone(drill, input)).toBe(true);
+  });
+});
+
+describe('culture cards in the plan (Phase 6)', () => {
+  const culture = cultureTaskForToday(EMPTY_CULTURE_PROGRESS, base.today, 'core')!;
+
+  it('adds the culture card on normal and intense days, not on minimum days', () => {
+    const normal = buildPlan({ ...base, reviewsDue: 5, culture });
+    const task = normal.tasks.find((t) => t.kind === 'culture')!;
+    expect(task).toMatchObject({
+      id: `culture:${culture.id}`,
+      card: culture.id,
+      to: `/korea/card/${culture.id}`,
+    });
+    expect(kinds({ ...base, size: 'intense', culture })).toContain('culture');
+    expect(kinds({ ...base, size: 'minimum', culture })).not.toContain('culture');
+  });
+
+  it('is done when the card was read today, or ticked by hand', () => {
+    const task = buildPlan({ ...base, culture }).tasks.find((t) => t.kind === 'culture')!;
+    expect(isTaskDone(task, { ...base, culture })).toBe(false);
+    expect(isTaskDone(task, { ...base, culture: { ...culture, done: true } })).toBe(true);
+    const ticked = { ...base, culture, dayLog: { ...EMPTY_DAY, tasksDone: [task.id] } };
+    expect(isTaskDone(task, ticked)).toBe(true);
   });
 });

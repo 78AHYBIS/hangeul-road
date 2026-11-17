@@ -114,4 +114,56 @@ describe('validateContent', () => {
     // res-b: type, skill, url; res-c: lastVerified; path-2: stage, broken ref.
     expect(errors).toHaveLength(6);
   });
+
+  it('checks culture cards and topic quizzes', () => {
+    const topic = {
+      id: 'culture-topic-x',
+      title: 't',
+      korean: '예절',
+      intro: 'i',
+      quiz: [1, 2, 3].map(() => ({ question: 'q', options: ['a', 'b'], answer: 'a', why: 'w' })),
+    };
+    const card = {
+      id: 'culture-a',
+      topic: 'culture-topic-x',
+      title: 't',
+      summary: 's',
+      body: ['b'],
+      do: ['d'],
+      avoid: ['a'],
+      words: [{ korean: '나이', meaning: 'age' }],
+    };
+    const topics = (items: unknown[]) => file(items, 'src/content/culture/topics.json');
+    const cards = (items: unknown[]) => file(items, 'src/content/culture/cards.json');
+    expect(validateContent([topics([topic]), cards([card])]).errors).toEqual([]);
+
+    const { errors } = validateContent([
+      topics([
+        topic,
+        {
+          ...topic,
+          id: 'culture-topic-ulsan',
+          quiz: [{ question: 'q', options: ['a'], answer: 'z' }],
+        },
+      ]),
+      cards([
+        { ...card, id: 'culture-b', topic: 'culture-topic-ghost' },
+        { ...card, id: 'culture-c', words: [{ korean: 'age', meaning: '' }] },
+        { ...card, id: 'culture-d', body: ['Call 119.'] },
+        { ...card, id: 'culture-e', sources: [{ name: 'x', url: 'http://x.com' }] },
+        { ...card, id: 'culture-f', topic: 'culture-topic-ulsan', lastVerified: '2026-11-17' },
+      ]),
+    ]);
+    const text = errors.join('\n');
+    expect(text).toMatch(/quiz of at least 3/);
+    expect(text).toMatch(/missing "why"/);
+    expect(text).toMatch(/at least 2 different "options"/);
+    expect(text).toMatch(/broken reference "culture-topic-ghost"/);
+    expect(text).toMatch(/words\[0\]: "korean" has no Hangul/);
+    expect(text).toMatch(/words\[0\]: missing "meaning"/);
+    expect(text).toMatch(/culture-d|cards\.json\[2\]: cites sources/);
+    expect(text).toMatch(/"url" must start with https/);
+    expect(text).toMatch(/must cite an official source/);
+    expect(errors).toHaveLength(10);
+  });
 });

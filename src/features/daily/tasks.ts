@@ -31,6 +31,8 @@ export interface Task {
   minutes: number;
   /** Set when the task is a unit of an active course: ticking it ticks the unit. */
   unit?: { resourceId: string; unitId: string };
+  /** Set when the task is a culture card: ticking it marks the card read. */
+  card?: string;
 }
 
 /** A task supplied by another part of the app (culture cards, active course). */
@@ -42,6 +44,7 @@ export interface ExtraTask {
   /** Already done today (e.g. the course unit was ticked in the Library). */
   done?: boolean;
   unit?: { resourceId: string; unitId: string };
+  card?: string;
 }
 
 export interface PlanInput {
@@ -63,7 +66,7 @@ export interface PlanInput {
   weakGrammar?: string | null;
   weakPack?: string | null;
   dayLog: DayLog | undefined;
-  /** Phase 6 passes today's culture card here. */
+  /** Today's culture card or topic quiz (see cultureTaskForToday). */
   culture?: ExtraTask | null;
   /** The next unit of an active course (see courseTaskForToday); otherwise Duolingo. */
   external?: ExtraTask | null;
@@ -340,7 +343,15 @@ export function buildPlan(input: PlanInput): Plan {
     tasks = [reviews ?? drillTask(input)];
   } else {
     const culture: Task | null = input.culture
-      ? { ...input.culture, id: `culture:${input.culture.id}`, kind: 'culture', minutes: 3 }
+      ? {
+          id: `culture:${input.culture.id}`,
+          kind: 'culture',
+          title: input.culture.title,
+          detail: input.culture.detail,
+          to: input.culture.to,
+          card: input.culture.card,
+          minutes: 3,
+        }
       : null;
     const ext = input.external ?? DUOLINGO;
     const external: Task = {
@@ -382,6 +393,9 @@ export function isTaskDone(task: Task, input: PlanInput): boolean {
       input.grammarDone.includes(id) ||
       input.packsDone.includes(id)
     );
+  }
+  if (task.kind === 'culture' && input.culture) {
+    return task.id === `culture:${input.culture.id}` && input.culture.done === true;
   }
   if (task.kind === 'external' && input.external) {
     return task.id === `external:${input.external.id}` && input.external.done === true;

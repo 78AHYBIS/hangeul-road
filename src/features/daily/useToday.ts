@@ -8,6 +8,7 @@ import { useAppStore } from '../../lib/storage/store';
 import { computeStreak } from '../../lib/streak';
 import { studyOrder } from '../vocab/words';
 import { findResource } from '../library/resources';
+import { cultureTaskForToday } from '../culture/culture';
 import { buildPlan, dayIndex, isTaskDone, type PlanInput } from './tasks';
 
 /** Gathers everything the Today page shows: plan, streak and roadmap position. */
@@ -19,6 +20,7 @@ export function useToday() {
   const library = useAppStore((s) => s.library);
   const grammar = useAppStore((s) => s.grammar);
   const phrases = useAppStore((s) => s.phrases);
+  const culture = useAppStore((s) => s.culture);
 
   const today = todayISO();
   const dayLog = activity.days[today];
@@ -45,6 +47,7 @@ export function useToday() {
     weakGrammar: weakest(grammar.done, grammar.results),
     weakPack: weakest(phrases.done, phrases.results),
     dayLog,
+    culture: cultureTaskForToday(culture, today, position.stageId),
     // The next unit of an active Library course replaces the default Duolingo task.
     external: courseTaskForToday(
       library,

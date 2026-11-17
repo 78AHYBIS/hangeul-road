@@ -17,6 +17,10 @@
  *     (one `___` gap, the answer among the options, tiles with Hangul)
  *   - phrase packs: every dialogue line and phrase has Hangul and a meaning; phrase ids
  *     are unique across all content, like item ids
+ *   - culture cards: an existing topic, do / avoid lists, Korean words with meanings,
+ *     https sources; a card that cites sources or states a date or phone number needs
+ *     `lastVerified`; Ulsan / UNIST cards must cite at least one official source
+ *   - culture topics: a quiz of 3+ questions, each with its answer among the options
  */
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
@@ -53,6 +57,8 @@ export const REQUIRED_FIELDS: [RegExp, string[]][] = [
     ['title', 'summary', 'pattern', 'explanation', 'examples', 'practice'],
   ],
   [/phrases\/packs\.json$/, ['title', 'situation', 'dialogue', 'phrases']],
+  [/culture\/topics\.json$/, ['title', 'korean', 'intro', 'quiz']],
+  [/culture\/cards\.json$/, ['topic', 'title', 'summary', 'body', 'do', 'avoid', 'words']],
 ];
 
 /** Allowed values for resource fields (keep in sync with src/content/resources/index.ts). */
@@ -160,6 +166,13 @@ export function validateContent(files: ContentFile[]): ValidationResult {
             seenIds.set(phraseId, at);
           }
         });
+      }
+      if (/culture\/cards\.json$/.test(normalizedPath)) {
+        checkCultureCard(record, where, errors);
+        if (typeof record.topic === 'string') refs.push({ from: where, to: record.topic });
+      }
+      if (/culture\/topics\.json$/.test(normalizedPath)) {
+        checkCultureTopic(record, where, errors);
       }
       if (record.needsReview === true) needsReview.push(`${where} (${String(id)})`);
       if (Array.isArray(record.refs)) {
@@ -273,6 +286,69 @@ function checkPhrasePack(
     else registerId(String(phrase.id), at);
     if (!hasHangul(phrase.korean)) errors.push(`${at}: "korean" has no Hangul`);
     if (!isText(phrase.meaning)) errors.push(`${at}: missing "meaning"`);
+  });
+}
+
+/** Topic whose cards must cite an official source (spec: Ulsan / UNIST card footers). */
+export const SOURCED_TOPIC = 'culture-topic-ulsan';
+/** A year (2027) or an emergency / helpline number (112, 1330): facts that can change. */
+const TIME_SENSITIVE = /\b20\d\d\b|\b1\d{2,3}\b/;
+
+/** Culture card rules: lists of advice, Korean words, sources and verification dates. */
+function checkCultureCard(record: Record<string, unknown>, where: string, errors: string[]) {
+  for (const field of ['body', 'do', 'avoid']) {
+    if (record[field] !== undefined && !isTextList(record[field], 1)) {
+      errors.push(`${where}: "${field}" must be a list of text`);
+    }
+  }
+  const words = Array.isArray(record.words) ? record.words : [];
+  words.forEach((raw: unknown, i: number) => {
+    const word = (raw ?? {}) as Record<string, unknown>;
+    if (!hasHangul(word.korean)) errors.push(`${where}.words[${i}]: "korean" has no Hangul`);
+    if (!isText(word.meaning)) errors.push(`${where}.words[${i}]: missing "meaning"`);
+  });
+  const sources = record.sources;
+  if (sources !== undefined) {
+    if (!Array.isArray(sources) || sources.length === 0) {
+      errors.push(`${where}: "sources" must be a non-empty list`);
+    } else {
+      sources.forEach((raw: unknown, i: number) => {
+        const source = (raw ?? {}) as Record<string, unknown>;
+        if (!isText(source.name)) errors.push(`${where}.sources[${i}]: missing "name"`);
+        if (typeof source.url !== 'string' || !/^https:\/\/[^\s]+$/.test(source.url)) {
+          errors.push(`${where}.sources[${i}]: "url" must start with https://`);
+        }
+      });
+    }
+  }
+  const text = [record.summary, ...(Array.isArray(record.body) ? record.body : [])].join(' ');
+  if ((sources !== undefined || TIME_SENSITIVE.test(text)) && !('lastVerified' in record)) {
+    errors.push(`${where}: cites sources or a date / number, so it needs "lastVerified"`);
+  }
+  if (record.topic === SOURCED_TOPIC && sources === undefined) {
+    errors.push(`${where}: Ulsan and UNIST cards must cite an official source`);
+  }
+}
+
+/** Culture topic rules: a quiz of 3+ questions with one listed answer each. */
+function checkCultureTopic(record: Record<string, unknown>, where: string, errors: string[]) {
+  const quiz = record.quiz;
+  if (!Array.isArray(quiz)) return;
+  if (quiz.length < 3) errors.push(`${where}: needs a quiz of at least 3 questions`);
+  quiz.forEach((raw: unknown, i: number) => {
+    const at = `${where}.quiz[${i}]`;
+    const q = (raw ?? {}) as Record<string, unknown>;
+    if (!isText(q.question)) errors.push(`${at}: missing "question"`);
+    if (!isText(q.why)) errors.push(`${at}: missing "why"`);
+    const options = q.options;
+    if (
+      !isTextList(options, 2) ||
+      new Set(options as string[]).size !== (options as string[]).length
+    ) {
+      errors.push(`${at}: needs at least 2 different "options"`);
+    } else if (!(options as string[]).includes(String(q.answer))) {
+      errors.push(`${at}: "answer" is not one of the options`);
+    }
   });
 }
 

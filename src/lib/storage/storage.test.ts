@@ -5,6 +5,7 @@ import { EMPTY_VOCAB_PROGRESS } from '../vocabProgress';
 import { EMPTY_LIBRARY } from '../libraryProgress';
 import { EMPTY_GRAMMAR_PROGRESS } from '../grammarProgress';
 import { EMPTY_PHRASE_PROGRESS } from '../phraseProgress';
+import { EMPTY_CULTURE_PROGRESS } from '../cultureProgress';
 import { todayISO } from '../date';
 import { createBackup, restoreBackup } from './backup';
 import { readAll, replaceAll, setValue } from './db';
@@ -37,6 +38,7 @@ function forgetInMemoryState() {
     library: EMPTY_LIBRARY,
     grammar: EMPTY_GRAMMAR_PROGRESS,
     phrases: EMPTY_PHRASE_PROGRESS,
+    culture: EMPTY_CULTURE_PROGRESS,
   });
 }
 
@@ -362,5 +364,39 @@ describe('grammar and phrase progress', () => {
     });
     expect(useAppStore.getState().phrases.starred).toEqual([]);
     expect(useAppStore.getState().phrases.intro).toMatchObject({ name: '', hobbies: ['독서'] });
+  });
+});
+
+describe('culture progress', () => {
+  it('saves read cards and quiz scores, logs them for today, and survives a backup', async () => {
+    const store = () => useAppStore.getState();
+    const today = todayISO();
+    await store().hydrate();
+
+    await store().setCardRead('culture-bowing', true);
+    await store().setCardRead('culture-titles', true);
+    await store().setCardRead('culture-titles', false);
+    await store().finishCultureQuiz('culture-topic-respect', 3, 4);
+
+    expect(store().culture).toEqual({
+      read: { 'culture-bowing': today },
+      results: { 'culture-topic-respect': { correct: 3, total: 4, date: today } },
+    });
+    expect(store().activity.days[today]!.tasksDone).toEqual([
+      'culture:culture-bowing',
+      'culture:quiz:culture-topic-respect',
+    ]);
+
+    const culture = store().culture;
+    forgetInMemoryState();
+    await store().hydrate();
+    expect(store().culture).toEqual(culture);
+
+    const fileText = JSON.stringify(await createBackup());
+    await replaceAll({});
+    forgetInMemoryState();
+    await restoreBackup(fileText);
+    await store().hydrate();
+    expect(store().culture).toEqual(culture);
   });
 });

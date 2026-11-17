@@ -13,6 +13,9 @@ import { TypingPage } from '../features/hangul/TypingPage';
 import { GrammarHome } from '../features/grammar/GrammarHome';
 import { GrammarLessonPage } from '../features/grammar/GrammarLessonPage';
 import { GrammarPracticePage } from '../features/grammar/GrammarPracticePage';
+import { CardPage } from '../features/culture/CardPage';
+import { TopicPage } from '../features/culture/TopicPage';
+import { TopicQuizPage } from '../features/culture/TopicQuizPage';
 import { KoreaPage } from '../features/korea-guide/KoreaPage';
 import { LearnPage } from '../features/learn/LearnPage';
 import { AddResourcePage } from '../features/library/AddResourcePage';
@@ -79,6 +82,9 @@ export function App() {
           <Route path="library/add" element={<AddResourcePage />} />
           <Route path="library/:id" element={<ResourcePage />} />
           <Route path="korea" element={<KoreaPage />} />
+          <Route path="korea/topic/:id" element={<TopicPage />} />
+          <Route path="korea/topic/:id/quiz" element={<TopicQuizPage />} />
+          <Route path="korea/card/:id" element={<CardPage />} />
           <Route path="roadmap" element={<RoadmapPage />} />
           <Route path="me" element={<MePage />} />
           <Route path="me/progress" element={<ProgressPage />} />

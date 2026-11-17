@@ -16,6 +16,7 @@ export function TodayPage() {
   const { plan, tasks, streak, position, settings } = useToday();
   const toggleTask = useAppStore((s) => s.toggleTask);
   const toggleCourseUnit = useAppStore((s) => s.toggleCourseUnit);
+  const setCardRead = useAppStore((s) => s.setCardRead);
   const setDaySize = useAppStore((s) => s.setDaySize);
   const days = daysUntil(settings.departureDate);
   const doneCount = tasks.filter((t) => t.done).length;
@@ -105,7 +106,9 @@ export function TodayPage() {
                 onChange={() =>
                   void (task.unit
                     ? toggleCourseUnit(task.unit.resourceId, task.unit.unitId)
-                    : toggleTask(task.id))
+                    : task.card
+                      ? setCardRead(task.card, !done)
+                      : toggleTask(task.id))
                 }
                 aria-label={`Done: ${task.title}`}
               />

@@ -12,6 +12,7 @@ import { sanitizeActivity } from '../activity';
 import { sanitizeLibrary } from '../libraryProgress';
 import { sanitizeGrammarProgress } from '../grammarProgress';
 import { sanitizePhraseProgress } from '../phraseProgress';
+import { sanitizeCultureProgress } from '../cultureProgress';
 
 export const APP_ID = 'hangeul-road';
 export const SCHEMA_VERSION = 1;
@@ -24,6 +25,7 @@ export const STORAGE_KEYS = {
   library: 'library',
   grammar: 'grammar',
   phrases: 'phrases',
+  culture: 'culture',
 } as const;
 
 export type Theme = 'system' | 'light' | 'dark';
@@ -141,6 +143,9 @@ export function parseBackup(raw: unknown): StoredData {
   }
   if (STORAGE_KEYS.phrases in data) {
     data[STORAGE_KEYS.phrases] = sanitizePhraseProgress(data[STORAGE_KEYS.phrases]);
+  }
+  if (STORAGE_KEYS.culture in data) {
+    data[STORAGE_KEYS.culture] = sanitizeCultureProgress(data[STORAGE_KEYS.culture]);
   }
   return data;
 }

@@ -28,7 +28,7 @@ Before finishing a phase, run: lint, test, validate:content, build.
 src/
   app/          App.tsx (routes), Layout.tsx (bottom nav), nav.ts, useTheme.ts
   features/     one folder per section: daily, learn, hangul, vocab, grammar, phrases, library,
-                korea-guide, settings
+                culture, korea-guide, settings
   content/      learning data only (JSON), one folder per content type
   lib/          date.ts, hangul.ts (compose/decompose, romanize, keyboard),
                 hangulProgress.ts (letter stats), speech.ts, storage/,
@@ -36,7 +36,7 @@ src/
                 vocabProgress.ts, activity.ts (daily log), streak.ts, roadmap.ts,
                 libraryProgress.ts (resource status, active courses, units),
                 particles.ts (은/는, 이/가, 이에요/예요… by batchim), selfIntro.ts,
-                grammarProgress.ts, phraseProgress.ts
+                grammarProgress.ts, phraseProgress.ts, cultureProgress.ts
   components/   shared UI (Page, Card, ComingSoon, LinkRow), ui.ts (button classes, choiceClass)
 scripts/        validate-content.ts (+ its test)
 ```
@@ -73,7 +73,7 @@ scripts/        validate-content.ts (+ its test)
 - IndexedDB database `hangeul-road`, one table `kv` (`key` -> `value`), wrapped by
   `src/lib/storage/db.ts`. Nothing else imports Dexie.
 - Each feature owns one key, listed in `STORAGE_KEYS` in `schema.ts`
-  (`settings`, `hangul`, `vocab`, `activity`, `library`, `grammar`, `phrases`). A new feature adds a key, a type, a `sanitize…` function,
+  (`settings`, `hangul`, `vocab`, `activity`, `library`, `grammar`, `phrases`, `culture`). A new feature adds a key, a type, a `sanitize…` function,
   and state + actions in `store.ts`.
 - `SCHEMA_VERSION` (now 1) describes the shape of saved data. When a saved shape
   changes: bump it and add a step to `migrate()` in `schema.ts`. It runs at startup
@@ -170,6 +170,23 @@ custom[] }`. At most 2 active courses. A unit is `{ id: 'u1', title, doneOn }`.
 - Saved progress (`phrases` key): `{ done[], results{}, starred[], intro }`; `intro` is the
   self-introduction details (`IntroDetails` in `src/lib/selfIntro.ts`).
 
+### culture/
+
+- `topics.json` (12, display order): `id` (`culture-topic-<slug>`), `title`, `korean`,
+  `intro`, `quiz[]` (3+ of `{ question, options[], answer, why }`). `culture-topic-ulsan`
+  is shown as its own section at the top of the Korea tab.
+- `cards.json` (55, grouped by topic): `id` (`culture-<slug>`), `topic`, `title`, `summary`,
+  `body[]`, `do[]`, `avoid[]`, `words[]` (`{ korean, meaning }`), optional `varies`
+  ("this varies" note), `sources[]` (`{ name, url }`, official https pages only),
+  `lastVerified`.
+- The validator requires `lastVerified` on a card with sources or with a year or phone
+  number in its summary/body, and at least one source on every Ulsan card.
+- **Never change a card id** (read state is saved by id). Time-sensitive facts must be
+  verified by web search; keep caveats ("check again close to the date") in the text.
+- Saved progress (`culture` key): `{ read: { [cardId]: date }, results: { [topicId]: { correct,
+total, date } } }`. Reading logs `culture:<cardId>`, a quiz `culture:quiz:<topicId>`.
+- Today: `cultureTaskForToday()` in `features/culture/culture.ts` fills `PlanInput.culture`.
+
 ## Spaced repetition (src/lib/srs.ts)
 
 - Stages: new (no card), learning, review, mature (interval of 21+ days).
@@ -183,7 +200,8 @@ custom[] }`. At most 2 active courses. A unit is `{ id: 'u1', title, doneOn }`.
 
 - `tasks.ts` `buildPlan(input)` returns at most 5 tasks: reviews, lesson, drill,
   culture, external. It is pure; `useToday.ts` gathers the inputs from the store.
-- Later phases plug in through `PlanInput`: `culture` (Phase 6 culture card) and
+- Other features plug in through `PlanInput`: `culture` (today's card or topic quiz; a
+  card task has `card`, and ticking it on Today calls `setCardRead`) and
   `external` (Duolingo by default). `external` is filled by `courseTaskForToday()` in
   `libraryProgress.ts`: the first unit of an active course that is not done, or was ticked
   today (so the task stays put for the day). Two active courses take turns by day. Ticking

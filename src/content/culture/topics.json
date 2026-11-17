@@ -1,0 +1,561 @@
+[
+  {
+    "id": "culture-topic-respect",
+    "title": "Respect and hierarchy",
+    "korean": "예절",
+    "intro": "Age and position shape how people talk to each other in Korea. Knowing the basics makes first meetings much easier.",
+    "quiz": [
+      {
+        "question": "A new Korean classmate asks how old you are soon after meeting you. Why?",
+        "options": [
+          "Age helps decide how you will speak to each other",
+          "It is a test of your Korean",
+          "They are being rude",
+          "It is needed for a student card"
+        ],
+        "answer": "Age helps decide how you will speak to each other",
+        "why": "Age often decides speech level and titles, so the question is normal and friendly."
+      },
+      {
+        "question": "How should you address your professor?",
+        "options": ["교수님", "Your professor's given name with 씨", "선배", "형"],
+        "answer": "교수님",
+        "why": "교수님 (professor + the honorific 님) is the normal way to address a professor."
+      },
+      {
+        "question": "Someone older hands you something. What is the polite way to take it?",
+        "options": [
+          "With both hands",
+          "With your left hand only",
+          "Wait for them to put it on the table",
+          "Any way is fine"
+        ],
+        "answer": "With both hands",
+        "why": "Giving and receiving with both hands (or the right hand supported by the left) shows respect."
+      },
+      {
+        "question": "When can you switch to casual speech (반말) with a new friend?",
+        "options": [
+          "When they suggest it",
+          "From the first meeting",
+          "After one week",
+          "Never, with anyone"
+        ],
+        "answer": "When they suggest it",
+        "why": "Stay with polite 해요 style until the other person suggests speaking casually."
+      }
+    ]
+  },
+  {
+    "id": "culture-topic-dining",
+    "title": "Dining etiquette",
+    "korean": "식사 예절",
+    "intro": "Meals are shared and social. A few habits show good manners at the table, especially with older people.",
+    "quiz": [
+      {
+        "question": "You are eating with your professor. When do you start?",
+        "options": [
+          "After the oldest person starts",
+          "As soon as the food arrives",
+          "After everyone has finished talking",
+          "When the waiter says so"
+        ],
+        "answer": "After the oldest person starts",
+        "why": "Traditionally the eldest or most senior person starts first."
+      },
+      {
+        "question": "Which of these should you avoid?",
+        "options": [
+          "Standing chopsticks upright in a bowl of rice",
+          "Eating rice with a spoon",
+          "Sharing side dishes",
+          "Saying 잘 먹겠습니다 before eating"
+        ],
+        "answer": "Standing chopsticks upright in a bowl of rice",
+        "why": "Upright chopsticks in rice look like offerings at memorial rites."
+      },
+      {
+        "question": "What do you say before you start eating?",
+        "options": ["잘 먹겠습니다", "잘 먹었습니다", "수고하세요", "실례합니다"],
+        "answer": "잘 먹겠습니다",
+        "why": "잘 먹겠습니다 before the meal; 잘 먹었습니다 after it."
+      },
+      {
+        "question": "Where do you usually pay in a Korean restaurant?",
+        "options": [
+          "At the counter on the way out",
+          "At the table, with a tip",
+          "Before you sit down, always",
+          "By leaving cash on the table"
+        ],
+        "answer": "At the counter on the way out",
+        "why": "Most restaurants take payment at the counter (or a kiosk). Tipping is not expected."
+      }
+    ]
+  },
+  {
+    "id": "culture-topic-university",
+    "title": "University life",
+    "korean": "대학 생활",
+    "intro": "Professors, group projects, clubs and the senior–junior system: how student life usually works.",
+    "quiz": [
+      {
+        "question": "In a 선배–후배 relationship, who is the 선배?",
+        "options": [
+          "The student who entered earlier",
+          "The student with better grades",
+          "The club president only",
+          "Any foreign student"
+        ],
+        "answer": "The student who entered earlier",
+        "why": "선배 means senior: someone who started school, a club or a job before you."
+      },
+      {
+        "question": "What is a good way to start an email to a professor?",
+        "options": [
+          "Greet them, then say who you are and which class you take",
+          "Write only your question",
+          "Use casual Korean to sound friendly",
+          "Write in capital letters so it stands out"
+        ],
+        "answer": "Greet them, then say who you are and which class you take",
+        "why": "A short greeting and introduction is expected before the request."
+      },
+      {
+        "question": "What is a 동아리?",
+        "options": ["A student club", "A dorm room", "A final exam", "A cafeteria meal"],
+        "answer": "A student club",
+        "why": "동아리 are student clubs. They usually recruit at the start of a semester."
+      },
+      {
+        "question": "Your group project chat asks a question. What is expected?",
+        "options": [
+          "Reply reasonably soon, even just to say when you will answer",
+          "Reply only at the next meeting",
+          "Leave the chat if you are busy",
+          "Answer only if the leader asks you by name"
+        ],
+        "answer": "Reply reasonably soon, even just to say when you will answer",
+        "why": "Group work runs on group chats; a quick reply keeps everyone on track."
+      }
+    ]
+  },
+  {
+    "id": "culture-topic-dorm",
+    "title": "Dorm and housing life",
+    "korean": "기숙사 생활",
+    "intro": "Shared rooms, quiet hours, laundry and the waste sorting system that surprises most newcomers.",
+    "quiz": [
+      {
+        "question": "What is a 종량제 봉투?",
+        "options": [
+          "The official bag for general waste, bought in shops",
+          "A free bag for recycling",
+          "A laundry bag",
+          "A bag for food waste only, given by the dorm"
+        ],
+        "answer": "The official bag for general waste, bought in shops",
+        "why": "General waste goes in official volume-based bags; the bag price is the disposal fee."
+      },
+      {
+        "question": "What should you do with a plastic drink bottle before recycling it?",
+        "options": [
+          "Empty and rinse it, and remove the label",
+          "Throw it in general waste",
+          "Put it in the food waste bin",
+          "Nothing, recycling is sorted later"
+        ],
+        "answer": "Empty and rinse it, and remove the label",
+        "why": "Clean, sorted recyclables are expected; dirty items may count as general waste."
+      },
+      {
+        "question": "On a Korean washing machine, what does 탈수 mean?",
+        "options": ["Spin", "Rinse", "Wash", "Dry"],
+        "answer": "Spin",
+        "why": "세탁 wash, 헹굼 rinse, 탈수 spin, 건조 dry."
+      },
+      {
+        "question": "Where do waste rules differ?",
+        "options": [
+          "Between cities, districts and buildings",
+          "Nowhere, they are the same everywhere",
+          "Only in Seoul",
+          "Only for restaurants"
+        ],
+        "answer": "Between cities, districts and buildings",
+        "why": "The basics are national, but details vary. Ask your dorm office."
+      }
+    ]
+  },
+  {
+    "id": "culture-topic-transport",
+    "title": "Getting around",
+    "korean": "교통",
+    "intro": "Transit cards, buses, subways, taxis and trains between cities.",
+    "quiz": [
+      {
+        "question": "Why should you tap your transit card when getting off the bus?",
+        "options": [
+          "So a transfer to the next bus or subway is discounted",
+          "Because the driver checks it",
+          "To open the back door",
+          "It is not needed anywhere"
+        ],
+        "answer": "So a transfer to the next bus or subway is discounted",
+        "why": "Transfer discounts are calculated from when you tap off."
+      },
+      {
+        "question": "What does 충전 mean at a ticket machine or convenience store?",
+        "options": ["Top up", "Refund", "Transfer", "Exit"],
+        "answer": "Top up",
+        "why": "충전 is charging or topping up a card (or a phone battery)."
+      },
+      {
+        "question": "Who are the 노약자석 seats for?",
+        "options": [
+          "Elderly, disabled and pregnant passengers, and people with small children",
+          "Students",
+          "Anyone who paid more",
+          "Bus drivers on a break"
+        ],
+        "answer": "Elderly, disabled and pregnant passengers, and people with small children",
+        "why": "Leave priority seats free even when the bus or train is busy."
+      },
+      {
+        "question": "You want to travel by train on a holiday weekend. What should you do?",
+        "options": [
+          "Book early, tickets sell out",
+          "Buy at the station on the day",
+          "Ask the driver on board",
+          "Trains do not run on holidays"
+        ],
+        "answer": "Book early, tickets sell out",
+        "why": "Seollal and Chuseok in particular are the busiest travel days of the year."
+      }
+    ]
+  },
+  {
+    "id": "culture-topic-money",
+    "title": "Money and shopping",
+    "korean": "돈과 쇼핑",
+    "intro": "Cards, cash, convenience stores, markets and the famous delivery culture.",
+    "quiz": [
+      {
+        "question": "A cashier asks 봉투 필요하세요? What are they asking?",
+        "options": [
+          "Do you need a bag?",
+          "Do you have a points card?",
+          "Do you want a receipt?",
+          "Do you want to pay by card?"
+        ],
+        "answer": "Do you need a bag?",
+        "why": "봉투 is a bag; bags usually cost a little."
+      },
+      {
+        "question": "What does 1+1 on a convenience store shelf mean?",
+        "options": [
+          "Buy one, get one free",
+          "One per customer",
+          "Price for one item only",
+          "Sold out soon"
+        ],
+        "answer": "Buy one, get one free",
+        "why": "1+1 and 2+1 deals are everywhere in convenience stores."
+      },
+      {
+        "question": "Is it a good idea to carry some cash?",
+        "options": [
+          "Yes, a little, for markets and small shops",
+          "No, cash is never accepted",
+          "Only coins are needed",
+          "Only for taxis"
+        ],
+        "answer": "Yes, a little, for markets and small shops",
+        "why": "Cards work almost everywhere, but small market stalls and some machines prefer cash."
+      },
+      {
+        "question": "What does 포장 mean when you order food?",
+        "options": ["Takeaway", "Eat in", "Delivery fee", "Receipt"],
+        "answer": "Takeaway",
+        "why": "포장 is takeaway; 매장 means eating in the shop."
+      }
+    ]
+  },
+  {
+    "id": "culture-topic-social",
+    "title": "Social life",
+    "korean": "친구 사귀기",
+    "intro": "Making friends, group outings, drinking culture and cafes.",
+    "quiz": [
+      {
+        "question": "A classmate says 다음에 밥 한번 먹어요. What does it usually mean?",
+        "options": [
+          "A friendly goodbye; it may or may not become a real plan",
+          "A firm invitation for tomorrow",
+          "They want you to pay",
+          "They are angry"
+        ],
+        "answer": "A friendly goodbye; it may or may not become a real plan",
+        "why": "It is a warm phrase. If you want to meet, suggest a day."
+      },
+      {
+        "question": "How can you politely say you do not drink alcohol?",
+        "options": ["저는 술을 안 마셔요.", "술 싫어!", "안 돼요!", "몰라요."],
+        "answer": "저는 술을 안 마셔요.",
+        "why": "A calm, polite sentence is enough. You can drink something else and still join in."
+      },
+      {
+        "question": "What is a 스터디카페?",
+        "options": [
+          "A quiet study space you pay for by the hour",
+          "A cafe run by a university club",
+          "A library inside a cafeteria",
+          "A coffee shop that bans laptops"
+        ],
+        "answer": "A quiet study space you pay for by the hour",
+        "why": "Study cafes are popular for exam preparation."
+      },
+      {
+        "question": "What does 2차 mean on a night out?",
+        "options": [
+          "Moving on to a second place",
+          "Paying a second time",
+          "The second bus home",
+          "A second drink, required"
+        ],
+        "answer": "Moving on to a second place",
+        "why": "Outings often move from 1차 (dinner) to 2차 and beyond. You can leave after any round."
+      }
+    ]
+  },
+  {
+    "id": "culture-topic-holidays",
+    "title": "Holidays and seasons",
+    "korean": "명절과 계절",
+    "intro": "Seollal, Chuseok, spring blossoms, the public holidays of your semester and the weather to expect.",
+    "quiz": [
+      {
+        "question": "What do people say to each other at Seollal?",
+        "options": ["새해 복 많이 받으세요", "생일 축하해요", "수고하셨습니다", "잘 먹겠습니다"],
+        "answer": "새해 복 많이 받으세요",
+        "why": "It means \"receive a lot of luck in the new year\"."
+      },
+      {
+        "question": "Which public holiday falls on Wednesday, 5 May 2027?",
+        "options": ["어린이날 (Children's Day)", "추석", "설날", "현충일 (Memorial Day)"],
+        "answer": "어린이날 (Children's Day)",
+        "why": "Children's Day is 5 May every year."
+      },
+      {
+        "question": "What is 미세먼지?",
+        "options": [
+          "Fine dust air pollution",
+          "Light spring rain",
+          "A spring festival",
+          "Pollen from cherry trees"
+        ],
+        "answer": "Fine dust air pollution",
+        "why": "Check the air quality on spring days; many people wear masks when it is high."
+      },
+      {
+        "question": "What happens at 10 a.m. on Memorial Day (현충일, 6 June)?",
+        "options": [
+          "A siren sounds and many people stand for a minute of silence",
+          "Fireworks start",
+          "All shops open late",
+          "Free public transport"
+        ],
+        "answer": "A siren sounds and many people stand for a minute of silence",
+        "why": "It honours people who died serving the country."
+      }
+    ]
+  },
+  {
+    "id": "culture-topic-food",
+    "title": "Food",
+    "korean": "음식",
+    "intro": "Common dishes, how spicy things are, how to ask what is inside, and campus cafeteria meals.",
+    "quiz": [
+      {
+        "question": "How do you ask for a dish not to be spicy?",
+        "options": ["안 맵게 해 주세요.", "맵게 해 주세요.", "포장해 주세요.", "계산해 주세요."],
+        "answer": "안 맵게 해 주세요.",
+        "why": "안 맵게 = not spicy. Not every restaurant can change a dish, but many can."
+      },
+      {
+        "question": "What is 학식?",
+        "options": [
+          "Food at the student cafeteria",
+          "A type of kimchi",
+          "A school exam",
+          "A delivery app"
+        ],
+        "answer": "Food at the student cafeteria",
+        "why": "학식 is short for 학생 식당 food: cheap, set meals on a tray."
+      },
+      {
+        "question": "You want to know if a dish has pork in it. What do you ask?",
+        "options": [
+          "돼지고기 들어가요?",
+          "돼지고기 주세요.",
+          "돼지고기 얼마예요?",
+          "돼지고기 좋아해요."
+        ],
+        "answer": "돼지고기 들어가요?",
+        "why": "들어가요? = does it go in? Use it with any ingredient."
+      },
+      {
+        "question": "Kimchi and many soups can contain fish or seafood products. Why does this matter?",
+        "options": [
+          "Vegetarians and people with allergies should ask",
+          "They are always very expensive",
+          "They cannot be eaten with rice",
+          "It does not matter"
+        ],
+        "answer": "Vegetarians and people with allergies should ask",
+        "why": "Fermented seafood (젓갈) and anchovy stock are common, even in dishes that look vegetarian."
+      }
+    ]
+  },
+  {
+    "id": "culture-topic-communication",
+    "title": "Communication style",
+    "korean": "소통",
+    "intro": "Indirect answers, nunchi and messaging habits.",
+    "quiz": [
+      {
+        "question": "You ask a favour and hear 좀 어려울 것 같아요. What does it usually mean?",
+        "options": [
+          "A polite no",
+          "Yes, with pleasure",
+          "Ask again tomorrow",
+          "They did not understand"
+        ],
+        "answer": "A polite no",
+        "why": "\"It seems a bit difficult\" is a soft way to refuse."
+      },
+      {
+        "question": "What is 눈치?",
+        "options": [
+          "Sensing the mood and what others expect",
+          "A kind of dessert",
+          "A formal greeting",
+          "A university rule"
+        ],
+        "answer": "Sensing the mood and what others expect",
+        "why": "Watching what others do and adjusting is valued in groups."
+      },
+      {
+        "question": "In KakaoTalk, what does a small 1 next to your message mean?",
+        "options": [
+          "It has not been read yet",
+          "It was liked once",
+          "It was sent once",
+          "It has one mistake"
+        ],
+        "answer": "It has not been read yet",
+        "why": "The number shows how many people in the chat have not read it."
+      },
+      {
+        "question": "How do you politely get a waiter's attention?",
+        "options": ["저기요", "야", "빨리요", "안녕"],
+        "answer": "저기요",
+        "why": "저기요 (excuse me) is the normal way. 야 is rude to strangers."
+      }
+    ]
+  },
+  {
+    "id": "culture-topic-safety",
+    "title": "Safety and health",
+    "korean": "안전과 건강",
+    "intro": "Emergency numbers, pharmacies, clinics and emergency alerts.",
+    "quiz": [
+      {
+        "question": "Which number do you call for an ambulance?",
+        "options": ["119", "112", "1330", "1345"],
+        "answer": "119",
+        "why": "119 is fire and ambulance; 112 is police."
+      },
+      {
+        "question": "What is 1330?",
+        "options": [
+          "The Korea Travel Helpline, with English and other languages",
+          "The police",
+          "A taxi company",
+          "The UNIST front desk"
+        ],
+        "answer": "The Korea Travel Helpline, with English and other languages",
+        "why": "It gives travel information and can help with interpretation."
+      },
+      {
+        "question": "You have a cold and a sore throat. Which clinic do many Koreans visit?",
+        "options": [
+          "이비인후과 (ENT)",
+          "치과 (dentist)",
+          "피부과 (dermatology)",
+          "안과 (eye clinic)"
+        ],
+        "answer": "이비인후과 (ENT)",
+        "why": "For colds, people often go to an ENT clinic or a 내과 (internal medicine)."
+      },
+      {
+        "question": "Your phone makes a loud alarm with a text in Korean. What is it likely to be?",
+        "options": [
+          "An emergency or disaster alert (재난문자)",
+          "A spam message",
+          "A KakaoTalk call",
+          "A bank advert"
+        ],
+        "answer": "An emergency or disaster alert (재난문자)",
+        "why": "Read it, or translate it, to see whether you need to act."
+      }
+    ]
+  },
+  {
+    "id": "culture-topic-ulsan",
+    "title": "Ulsan and UNIST",
+    "korean": "울산과 유니스트",
+    "intro": "Your city and campus: getting there from the airport, the area around UNIST, and trips nearby.",
+    "quiz": [
+      {
+        "question": "Which train station is closest to UNIST?",
+        "options": [
+          "KTX Ulsan Station (울산역)",
+          "Taehwagang Station",
+          "Busan Station",
+          "Seoul Station"
+        ],
+        "answer": "KTX Ulsan Station (울산역)",
+        "why": "The KTX station is in the Eonyang area, about 10 to 15 minutes by taxi from campus."
+      },
+      {
+        "question": "Can you take a KTX train directly from Incheon Airport to Ulsan today?",
+        "options": [
+          "No, change at Seoul Station (or take a direct bus)",
+          "Yes, every hour",
+          "Yes, but only at night",
+          "Only on weekends"
+        ],
+        "answer": "No, change at Seoul Station (or take a direct bus)",
+        "why": "The airport KTX service ended in 2018; some old guides still mention it."
+      },
+      {
+        "question": "Which nearby city was the capital of the Silla kingdom?",
+        "options": ["Gyeongju", "Busan", "Daegu", "Pohang"],
+        "answer": "Gyeongju",
+        "why": "Gyeongju is full of Silla tombs, temples and museums, and is close to Ulsan."
+      },
+      {
+        "question": "How can you get from Ulsan to Busan without a car?",
+        "options": [
+          "The Donghae Line train from Taehwagang Station",
+          "Only by plane",
+          "Only by taxi",
+          "There is no connection"
+        ],
+        "answer": "The Donghae Line train from Taehwagang Station",
+        "why": "The commuter line runs to Busan Bujeon; intercity buses and KTX are other options."
+      }
+    ]
+  }
+]

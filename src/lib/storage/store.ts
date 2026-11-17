@@ -50,6 +50,14 @@ import {
   type PhraseProgress,
 } from '../phraseProgress';
 import { sanitizeIntro, type IntroDetails } from '../selfIntro';
+import {
+  EMPTY_CULTURE_PROGRESS,
+  cardMarker,
+  quizMarker,
+  sanitizeCultureProgress,
+  setRead,
+  type CultureProgress,
+} from '../cultureProgress';
 import { ensureCurrentSchema, getValue, setValue } from './db';
 import {
   type DailyGoal,
@@ -116,6 +124,15 @@ interface AppState {
   markPackDone: (packId: string) => Promise<void>;
   toggleStarPhrase: (phraseId: string) => Promise<void>;
   setIntro: (details: IntroDetails) => Promise<void>;
+
+  culture: CultureProgress;
+  /**
+   * Marks a culture card read today (logs `culture:<id>` so Today ticks it and the streak
+   * counts it), or unread (removes both).
+   */
+  setCardRead: (cardId: string, read: boolean) => Promise<void>;
+  /** Saves a finished topic quiz and logs it for today. */
+  finishCultureQuiz: (topicId: string, correct: number, total: number) => Promise<void>;
 }
 
 // Used to estimate study time: the gap between two actions, capped at one minute.
@@ -164,6 +181,10 @@ export const useAppStore = create<AppState>((set, get) => {
     set({ phrases });
     await setValue(STORAGE_KEYS.phrases, phrases);
   };
+  const saveCulture = async (culture: CultureProgress) => {
+    set({ culture });
+    await setValue(STORAGE_KEYS.culture, culture);
+  };
   /**
    * Notes a finished lesson in today's ticked tasks, as `lesson:<id>`. The Today plan
    * then keeps showing that lesson (ticked) for the rest of the day, and it counts
@@ -186,6 +207,7 @@ export const useAppStore = create<AppState>((set, get) => {
     library: EMPTY_LIBRARY,
     grammar: EMPTY_GRAMMAR_PROGRESS,
     phrases: EMPTY_PHRASE_PROGRESS,
+    culture: EMPTY_CULTURE_PROGRESS,
 
     hydrate: async () => {
       await ensureCurrentSchema();
@@ -196,7 +218,18 @@ export const useAppStore = create<AppState>((set, get) => {
       const library = sanitizeLibrary(await getValue(STORAGE_KEYS.library));
       const grammar = sanitizeGrammarProgress(await getValue(STORAGE_KEYS.grammar));
       const phrases = sanitizePhraseProgress(await getValue(STORAGE_KEYS.phrases));
-      set({ settings, hangul, vocab, activity, library, grammar, phrases, hydrated: true });
+      const culture = sanitizeCultureProgress(await getValue(STORAGE_KEYS.culture));
+      set({
+        settings,
+        hangul,
+        vocab,
+        activity,
+        library,
+        grammar,
+        phrases,
+        culture,
+        hydrated: true,
+      });
     },
 
     updateSettings: async (patch) => {
@@ -353,5 +386,28 @@ export const useAppStore = create<AppState>((set, get) => {
     toggleStarPhrase: (phraseId) => savePhrases(toggleStar(get().phrases, phraseId)),
 
     setIntro: (details) => savePhrases({ ...get().phrases, intro: sanitizeIntro(details) }),
+
+    setCardRead: async (cardId, read) => {
+      const today = todayISO();
+      await saveCulture(setRead(get().culture, cardId, read, today));
+      const marker = cardMarker(cardId);
+      await saveActivity(
+        updateDay(get().activity, today, (d) => ({
+          ...d,
+          tasksDone: read
+            ? [...new Set([...d.tasksDone, marker])]
+            : d.tasksDone.filter((t) => t !== marker),
+        })),
+      );
+    },
+
+    finishCultureQuiz: async (topicId, correct, total) => {
+      const culture = get().culture;
+      await saveCulture({
+        ...culture,
+        results: { ...culture.results, [topicId]: { correct, total, date: todayISO() } },
+      });
+      await tickToday(quizMarker(topicId));
+    },
   };
 });
