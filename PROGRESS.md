@@ -325,9 +325,6 @@ guide" (delivery, payments, emergency alerts).
 - Bundle is now 853 kB (246 kB gzipped) with the culture content. Still planned for Phase 8.
 - Culture facts that change: transport times and fares, bus routes near UNIST, the Labour
   Day substitute-holiday rule, waste rules per building. Re-check close to departure.
-- Korean inside English explanation text (grammar explanations, culture card bodies) can
-  wrap in the middle of a word, because those strings mix both languages and cannot be
-  marked `lang="ko"` as a whole.
 
 ## Korean items needing review
 
