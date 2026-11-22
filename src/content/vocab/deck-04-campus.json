@@ -394,5 +394,62 @@
     "deck": "deck-campus",
     "example": "김 선생님이 한국어를 가르쳐요.",
     "exampleMeaning": "Teacher Kim teaches Korean."
+  },
+  {
+    "id": "vocab-campus-체육관",
+    "korean": "체육관",
+    "meaning": "sports hall",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "체육관에서 농구를 해요.",
+    "exampleMeaning": "I play basketball in the sports hall.",
+    "note": "A hall for sports and games. A fitness gym with machines is 헬스장."
+  },
+  {
+    "id": "vocab-campus-운동장",
+    "korean": "운동장",
+    "meaning": "sports field",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "운동장에서 축구를 해요.",
+    "exampleMeaning": "We play football on the sports field."
+  },
+  {
+    "id": "vocab-campus-방학",
+    "korean": "방학",
+    "meaning": "school vacation",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "방학에 여행을 갈 거예요.",
+    "exampleMeaning": "I am going to travel in the vacation.",
+    "note": "The break between semesters. A single day off is 휴일."
+  },
+  {
+    "id": "vocab-campus-연필",
+    "korean": "연필",
+    "meaning": "pencil",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "연필 있어요?",
+    "exampleMeaning": "Do you have a pencil?"
+  },
+  {
+    "id": "vocab-campus-시계",
+    "korean": "시계",
+    "meaning": "clock, watch",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "교실에 시계가 없어요.",
+    "exampleMeaning": "There is no clock in the classroom."
+  },
+  {
+    "id": "vocab-campus-칠판",
+    "korean": "칠판",
+    "meaning": "blackboard",
+    "pos": "noun",
+    "deck": "deck-campus",
+    "example": "교수님이 칠판에 쓰셨어요.",
+    "exampleMeaning": "The professor wrote on the board.",
+    "note": "A whiteboard is usually called 화이트보드."
   }
 ]

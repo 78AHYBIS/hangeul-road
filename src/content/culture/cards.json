@@ -53,6 +53,48 @@
     ]
   },
   {
+    "id": "culture-korean-names",
+    "topic": "culture-topic-respect",
+    "title": "Korean names",
+    "summary": "Family name first, usually three syllables, and a woman keeps her family name when she marries.",
+    "body": [
+      "A Korean name starts with the family name: in 김민수, 김 is the family name and 민수 the given name. Most names have three syllables, a one-syllable family name and a two-syllable given name, though shorter and longer names exist. A few family names such as 김, 이 and 박 are very common, so the given name is what tells people apart.",
+      "Women keep their own family name after marriage, and children usually take their father's. Between close friends, a younger friend is called by the given name plus 아 after a consonant or 야 after a vowel: 민준아, 수미야."
+    ],
+    "do": [
+      "Use the given name or the full name with 씨 for people your age you do not know well: 민수 씨, 김민수 씨.",
+      "Repeat a new name back to check it: 민수 씨 맞아요?",
+      "Keep 아 / 야 for close friends who are your age or younger."
+    ],
+    "avoid": [
+      "Using 아 / 야 with someone older, even a good friend.",
+      "Assuming a married couple shares a family name."
+    ],
+    "words": [
+      {
+        "korean": "성",
+        "meaning": "family name"
+      },
+      {
+        "korean": "이름",
+        "meaning": "name, given name"
+      },
+      {
+        "korean": "성함",
+        "meaning": "name (honorific, for older people)"
+      },
+      {
+        "korean": "성함이 어떻게 되세요?",
+        "meaning": "May I ask your name? (to someone older)"
+      },
+      {
+        "korean": "민준아 / 수미야",
+        "meaning": "calling a close friend: given name + 아 / 야"
+      }
+    ],
+    "varies": "Some people use an English name or a nickname on campus or at work. Use the name they introduce themselves with."
+  },
+  {
     "id": "culture-bowing",
     "topic": "culture-topic-respect",
     "title": "Bowing and two hands",

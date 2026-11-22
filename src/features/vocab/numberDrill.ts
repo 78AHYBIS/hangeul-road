@@ -1,7 +1,7 @@
 /** Question generator for the number trainer. Randomness is passed in for tests. */
-import { clockTime, native, phoneNumber, price, sino } from '../../lib/numbers';
+import { clockTime, date, native, phoneNumber, price, sino } from '../../lib/numbers';
 
-export const NUMBER_MODES = ['sino', 'native', 'price', 'time', 'phone'] as const;
+export const NUMBER_MODES = ['sino', 'native', 'price', 'time', 'date', 'phone'] as const;
 export type NumberMode = (typeof NUMBER_MODES)[number];
 
 export const NUMBER_MODE_INFO: Record<NumberMode, { title: string; hint: string }> = {
@@ -9,6 +9,7 @@ export const NUMBER_MODE_INFO: Record<NumberMode, { title: string; hint: string 
   native: { title: 'Native Korean', hint: '하나, 둘, 셋: counting, hours, age.' },
   price: { title: 'Prices', hint: 'Amounts in won.' },
   time: { title: 'Time', hint: 'Native hours with Sino-Korean minutes.' },
+  date: { title: 'Dates', hint: '삼월 이일: two months change, 유월 and 시월.' },
   phone: { title: 'Phone numbers', hint: 'Digit by digit, with 공 for zero.' },
 };
 
@@ -22,6 +23,7 @@ export interface NumberQuestion {
 }
 
 type Rng = () => number;
+const DAYS_IN_MONTH = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 const int = (rng: Rng, min: number, max: number) => min + Math.floor(rng() * (max - min + 1));
 
 /** One random value as [how it is written with digits, how it is read in Korean]. */
@@ -44,6 +46,12 @@ function randomValue(mode: NumberMode, rng: Rng): [string, string] {
     const hour = int(rng, 1, 12);
     const minute = int(rng, 0, 11) * 5;
     return [`${hour}:${String(minute).padStart(2, '0')}`, clockTime(hour, minute)];
+  }
+  if (mode === 'date') {
+    // June and October are the tricky ones, so they come up more often.
+    const month = rng() < 0.4 ? (rng() < 0.5 ? 6 : 10) : int(rng, 1, 12);
+    const day = int(rng, 1, DAYS_IN_MONTH[month - 1]!);
+    return [`${month}월 ${day}일`, date(month, day)];
   }
   const digits = `010-${int(rng, 1000, 9999)}-${int(rng, 1000, 9999)}`;
   return [digits, phoneNumber(digits)];

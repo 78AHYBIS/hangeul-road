@@ -797,6 +797,108 @@
     "refs": ["grammar-10-future", "grammar-11-want"]
   },
   {
+    "id": "phrases-small-talk",
+    "title": "Small talk: family, likes and weather",
+    "situation": "Getting to know someone over lunch: family, what you like doing, food and the weather.",
+    "dialogue": [
+      {
+        "speaker": "Jiho",
+        "korean": "가족이 어떻게 돼요?",
+        "meaning": "Who is in your family?"
+      },
+      {
+        "speaker": "You",
+        "korean": "부모님하고 여동생이 있어요. 여동생은 고등학생이에요.",
+        "meaning": "I have my parents and a younger sister. My sister is in high school."
+      },
+      {
+        "speaker": "Jiho",
+        "korean": "저는 형이 한 명 있어요. 주말에 보통 뭐 해요?",
+        "meaning": "I have one older brother. What do you usually do at the weekend?"
+      },
+      {
+        "speaker": "You",
+        "korean": "친구하고 배드민턴을 쳐요. 운동 좋아해요?",
+        "meaning": "I play badminton with friends. Do you like sport?"
+      },
+      {
+        "speaker": "Jiho",
+        "korean": "네, 저도요! 그런데 요즘은 너무 추워요.",
+        "meaning": "Yes, me too! But it's too cold these days."
+      },
+      {
+        "speaker": "You",
+        "korean": "맞아요. 오늘은 바람도 많이 불어요.",
+        "meaning": "That's true. It's very windy today, too."
+      }
+    ],
+    "phrases": [
+      {
+        "id": "phrase-chat-01",
+        "korean": "가족이 어떻게 돼요?",
+        "meaning": "Who is in your family?",
+        "note": "The polite way to ask about someone's family. Answer with a list: 부모님하고 동생이 있어요."
+      },
+      {
+        "id": "phrase-chat-02",
+        "korean": "형제가 있어요?",
+        "meaning": "Do you have any brothers or sisters?"
+      },
+      {
+        "id": "phrase-chat-03",
+        "korean": "저는 외동이에요.",
+        "meaning": "I'm an only child."
+      },
+      {
+        "id": "phrase-chat-04",
+        "korean": "고향이 어디예요?",
+        "meaning": "Where are you from? (your home town)"
+      },
+      {
+        "id": "phrase-chat-05",
+        "korean": "요즘 뭐 하고 지내요?",
+        "meaning": "What have you been up to lately?"
+      },
+      {
+        "id": "phrase-chat-06",
+        "korean": "무슨 운동을 좋아해요?",
+        "meaning": "What sports do you like?"
+      },
+      {
+        "id": "phrase-chat-07",
+        "korean": "저는 노래를 잘 못해요.",
+        "meaning": "I'm not good at singing.",
+        "note": "잘해요 is 'good at', 잘 못해요 is 'not good at'."
+      },
+      {
+        "id": "phrase-chat-08",
+        "korean": "저도요.",
+        "meaning": "Me too."
+      },
+      {
+        "id": "phrase-chat-09",
+        "korean": "오늘 날씨가 어때요?",
+        "meaning": "How's the weather today?"
+      },
+      {
+        "id": "phrase-chat-10",
+        "korean": "오늘 정말 추워요.",
+        "meaning": "It's really cold today."
+      },
+      {
+        "id": "phrase-chat-11",
+        "korean": "한국 음식이 어때요?",
+        "meaning": "How do you find Korean food?"
+      },
+      {
+        "id": "phrase-chat-12",
+        "korean": "맛있어요. 그런데 조금 매워요.",
+        "meaning": "It's tasty, but a bit spicy."
+      }
+    ],
+    "refs": ["grammar-17-also", "grammar-18-and-with", "grammar-19-b-verbs"]
+  },
+  {
     "id": "phrases-emergencies",
     "title": "Emergencies",
     "situation": "Getting help fast. In Korea, call 112 for the police and 119 for fire and ambulance. Both can connect you to an interpreter.",

@@ -1,0 +1,284 @@
+[
+  {
+    "id": "vocab-home-할머니",
+    "korean": "할머니",
+    "meaning": "grandmother",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "할머니는 카자흐스탄에 계세요.",
+    "exampleMeaning": "My grandmother is in Kazakhstan.",
+    "note": "For older people, use the honorific verbs: 계세요 instead of 있어요."
+  },
+  {
+    "id": "vocab-home-할아버지",
+    "korean": "할아버지",
+    "meaning": "grandfather",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "할아버지는 매일 산책하세요.",
+    "exampleMeaning": "My grandfather takes a walk every day.",
+    "note": "For older people, verbs take 세요: 산책하세요, 가세요."
+  },
+  {
+    "id": "vocab-home-부엌",
+    "korean": "부엌",
+    "meaning": "kitchen",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "기숙사에 공용 부엌이 있어요.",
+    "exampleMeaning": "The dorm has a shared kitchen.",
+    "note": "Pronounced 부억. Signs often say 주방."
+  },
+  {
+    "id": "vocab-home-거실",
+    "korean": "거실",
+    "meaning": "living room",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "거실에서 텔레비전을 봐요.",
+    "exampleMeaning": "I watch TV in the living room."
+  },
+  {
+    "id": "vocab-home-냉장고",
+    "korean": "냉장고",
+    "meaning": "fridge",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "우유는 냉장고에 있어요.",
+    "exampleMeaning": "The milk is in the fridge."
+  },
+  {
+    "id": "vocab-home-전자레인지",
+    "korean": "전자레인지",
+    "meaning": "microwave",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "전자레인지에 밥을 데워요.",
+    "exampleMeaning": "I heat rice in the microwave."
+  },
+  {
+    "id": "vocab-home-접시",
+    "korean": "접시",
+    "meaning": "plate",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "접시를 씻었어요.",
+    "exampleMeaning": "I washed the plates."
+  },
+  {
+    "id": "vocab-home-그릇",
+    "korean": "그릇",
+    "meaning": "bowl, dish",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "그릇이 너무 뜨거워요.",
+    "exampleMeaning": "The bowl is very hot."
+  },
+  {
+    "id": "vocab-home-포크",
+    "korean": "포크",
+    "meaning": "fork",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "포크 있어요?",
+    "exampleMeaning": "Do you have a fork?"
+  },
+  {
+    "id": "vocab-home-설거지",
+    "korean": "설거지",
+    "meaning": "washing the dishes",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "밥을 먹고 설거지를 해요.",
+    "exampleMeaning": "I eat and then do the dishes.",
+    "note": "설거지하다: to do the dishes."
+  },
+  {
+    "id": "vocab-home-이불",
+    "korean": "이불",
+    "meaning": "blanket, duvet",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "이불을 새로 샀어요.",
+    "exampleMeaning": "I bought a new duvet."
+  },
+  {
+    "id": "vocab-home-베개",
+    "korean": "베개",
+    "meaning": "pillow",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "베개가 너무 높아요.",
+    "exampleMeaning": "The pillow is too high."
+  },
+  {
+    "id": "vocab-home-옷장",
+    "korean": "옷장",
+    "meaning": "wardrobe",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "옷장이 작아요.",
+    "exampleMeaning": "The wardrobe is small."
+  },
+  {
+    "id": "vocab-home-세수하다",
+    "korean": "세수하다",
+    "meaning": "to wash your face",
+    "pos": "verb",
+    "deck": "deck-home",
+    "example": "아침에 세수해요.",
+    "exampleMeaning": "I wash my face in the morning."
+  },
+  {
+    "id": "vocab-home-이를 닦다",
+    "korean": "이를 닦다",
+    "meaning": "to brush your teeth",
+    "pos": "expression",
+    "deck": "deck-home",
+    "example": "밥을 먹고 이를 닦아요.",
+    "exampleMeaning": "I brush my teeth after eating.",
+    "note": "이 is \"tooth\". 양치하다 means the same."
+  },
+  {
+    "id": "vocab-home-머리를 감다",
+    "korean": "머리를 감다",
+    "meaning": "to wash your hair",
+    "pos": "expression",
+    "deck": "deck-home",
+    "example": "저녁에 머리를 감아요.",
+    "exampleMeaning": "I wash my hair in the evening.",
+    "note": "감다 is only for hair. For your body or hands, use 씻다."
+  },
+  {
+    "id": "vocab-home-강아지",
+    "korean": "강아지",
+    "meaning": "puppy, dog",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "강아지가 정말 귀여워요.",
+    "exampleMeaning": "The puppy is really cute.",
+    "note": "People often say 강아지 for any pet dog. 개 is the general word."
+  },
+  {
+    "id": "vocab-home-고양이",
+    "korean": "고양이",
+    "meaning": "cat",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "캠퍼스에 고양이가 많아요.",
+    "exampleMeaning": "There are many cats on campus."
+  },
+  {
+    "id": "vocab-home-태권도",
+    "korean": "태권도",
+    "meaning": "taekwondo",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "태권도를 배우고 싶어요.",
+    "exampleMeaning": "I want to learn taekwondo."
+  },
+  {
+    "id": "vocab-home-배드민턴",
+    "korean": "배드민턴",
+    "meaning": "badminton",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "친구하고 배드민턴을 쳐요.",
+    "exampleMeaning": "I play badminton with a friend.",
+    "note": "Racket sports use 치다: 배드민턴을 쳐요, 테니스를 쳐요."
+  },
+  {
+    "id": "vocab-home-동물원",
+    "korean": "동물원",
+    "meaning": "zoo",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "주말에 동물원에 갔어요.",
+    "exampleMeaning": "I went to the zoo at the weekend."
+  },
+  {
+    "id": "vocab-home-놀이공원",
+    "korean": "놀이공원",
+    "meaning": "amusement park",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "놀이공원에 가고 싶어요.",
+    "exampleMeaning": "I want to go to an amusement park."
+  },
+  {
+    "id": "vocab-home-간식",
+    "korean": "간식",
+    "meaning": "snack",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "간식으로 과자를 먹어요.",
+    "exampleMeaning": "I eat crisps as a snack."
+  },
+  {
+    "id": "vocab-home-만두",
+    "korean": "만두",
+    "meaning": "dumplings",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "편의점에서 만두를 샀어요.",
+    "exampleMeaning": "I bought dumplings at the convenience store."
+  },
+  {
+    "id": "vocab-home-그리다",
+    "korean": "그리다",
+    "meaning": "to draw",
+    "pos": "verb",
+    "deck": "deck-home",
+    "example": "공원에서 그림을 그려요.",
+    "exampleMeaning": "I draw pictures in the park.",
+    "note": "그리다 → 그려요."
+  },
+  {
+    "id": "vocab-home-찍다",
+    "korean": "찍다",
+    "meaning": "to take (a photo)",
+    "pos": "verb",
+    "deck": "deck-home",
+    "example": "사진을 찍어도 돼요?",
+    "exampleMeaning": "May I take a photo?"
+  },
+  {
+    "id": "vocab-home-잘하다",
+    "korean": "잘하다",
+    "meaning": "to be good at",
+    "pos": "verb",
+    "deck": "deck-home",
+    "example": "제 친구는 한국어를 잘해요.",
+    "exampleMeaning": "My friend is good at Korean.",
+    "note": "Written as one word. \"Not good at\" is 잘 못하다: 노래를 잘 못해요."
+  },
+  {
+    "id": "vocab-home-못하다",
+    "korean": "못하다",
+    "meaning": "to be bad at",
+    "pos": "verb",
+    "deck": "deck-home",
+    "example": "저는 요리를 못해요.",
+    "exampleMeaning": "I am bad at cooking.",
+    "note": "Written as one word when it means \"be bad at\". With a space, 못 해요 means \"cannot do it (now)\": 오늘은 운동을 못 해요."
+  },
+  {
+    "id": "vocab-home-귀엽다",
+    "korean": "귀엽다",
+    "meaning": "to be cute",
+    "pos": "adjective",
+    "deck": "deck-home",
+    "example": "이 고양이는 정말 귀여워요.",
+    "exampleMeaning": "This cat is really cute.",
+    "note": "A ㅂ verb: 귀엽다 → 귀여워요."
+  },
+  {
+    "id": "vocab-home-계절",
+    "korean": "계절",
+    "meaning": "season",
+    "pos": "noun",
+    "deck": "deck-home",
+    "example": "무슨 계절을 제일 좋아해요?",
+    "exampleMeaning": "Which season do you like best?"
+  }
+]

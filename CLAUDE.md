@@ -107,8 +107,8 @@ add a line there for every new content file. TypeScript types live in
 - `letters.json` (40): `id` (`letter-ㄱ`), `korean`, `group`, `name`, `sound`, `soundEn`,
   `soundRu`, `hint`, `confusedWith` (letters), `speak` (syllable to play).
 - `lessons.json` (5): `id`, `group`, `title`, `intro`. One lesson per letter group.
-- `rules.json` (6): `id`, `title`, `summary`, `explanation[]`,
-  `examples[]` of `{ korean, pronounced, meaning }`. Batchim plus five sound-change rules.
+- `rules.json` (7): `id`, `title`, `summary`, `explanation[]`,
+  `examples[]` of `{ korean, pronounced, meaning }`. Batchim plus six sound-change rules.
 - `reading-words.json`: `id` (`read-001`), `korean`, `romanization` (Revised
   Romanization, lowercase), `meaning`, `category` (loanword, place, brand, sign, food).
 - `strokes.ts`: stroke order as SVG paths on a 100 x 100 grid, in writing order.
@@ -117,7 +117,8 @@ readingSpeed[], lessonsDone[] }`. See `src/lib/hangulProgress.ts`.
 
 ### vocab/
 
-- `decks.json` (15): `id` (`deck-food`), `title`, `description`. Order = study order.
+- `decks.json` (16): `id` (`deck-food`), `title`, `description`. Order = study order.
+  A deck holds 30 to 50 words (tested); start a new deck file when one is full.
 - `deck-NN-<slug>.json`: words. `id` (`vocab-<slug>-<korean>`), `korean`, `meaning`,
   `pos`, `deck` (deck id), `example` (polite style), `exampleMeaning`, optional `note`.
   New deck files are loaded automatically (`import.meta.glob` in `index.ts`).
@@ -145,7 +146,7 @@ custom[] }`. At most 2 active courses. A unit is `{ id: 'u1', title, doneOn }`.
 
 ### grammar/
 
-- `lessons.json` (16, in study order): `id` (`grammar-NN-<slug>`), `title`, `summary`,
+- `lessons.json` (21, in study order): `id` (`grammar-NN-<slug>`), `title`, `summary`,
   `pattern`, `explanation[]`, `examples[]` (4 to 6, `{ korean, meaning, note? }`, polite
   endings), `practice[]` (6 or more). Practice types:
   - `particle` / `blank`: `korean` with exactly one `___`, `options[]`, `answer`, `meaning`,
@@ -155,10 +156,12 @@ custom[] }`. At most 2 active courses. A unit is `{ id: 'u1', title, doneOn }`.
   - `translate`: `meaning`, `tiles[]`, `distractors[]` (wrong tiles), optional `accept[]`.
 - Saved progress (`grammar` key): `{ done[], results: { [lessonId]: { correct, total, date } } }`.
 - **Never change a lesson id** (saved progress and today's ticks use it).
+  The `NN` in an id is only a label: lessons added later continue the numbering
+  (17, 18…) and are placed in the file where they belong in the study order.
 
 ### phrases/
 
-- `packs.json` (13, in study order): `id` (`phrases-<slug>`), `title`, `situation`,
+- `packs.json` (14, in study order): `id` (`phrases-<slug>`), `title`, `situation`,
   `dialogue[]` (`{ speaker, korean, meaning }`, the learner is `"You"`), `phrases[]`
   (`{ id: 'phrase-<pack>-NN', korean, meaning, note?, casual? }`, at least 4), `refs`
   (grammar lesson ids), optional `lastVerified` (for facts like emergency numbers).
@@ -175,7 +178,7 @@ custom[] }`. At most 2 active courses. A unit is `{ id: 'u1', title, doneOn }`.
 - `topics.json` (12, display order): `id` (`culture-topic-<slug>`), `title`, `korean`,
   `intro`, `quiz[]` (3+ of `{ question, options[], answer, why }`). `culture-topic-ulsan`
   is shown as its own section at the top of the Korea tab.
-- `cards.json` (55, grouped by topic): `id` (`culture-<slug>`), `topic`, `title`, `summary`,
+- `cards.json` (56, grouped by topic): `id` (`culture-<slug>`), `topic`, `title`, `summary`,
   `body[]`, `do[]`, `avoid[]`, `words[]` (`{ korean, meaning }`), optional `varies`
   ("this varies" note), `sources[]` (`{ name, url }`, official https pages only),
   `lastVerified`.

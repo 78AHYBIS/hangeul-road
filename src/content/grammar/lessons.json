@@ -397,6 +397,154 @@
     ]
   },
   {
+    "id": "grammar-17-also",
+    "title": "Also and too: 도",
+    "summary": "Say 'me too', 'this too' and 'not ... either'.",
+    "pattern": "Noun + 도",
+    "explanation": [
+      "도 means 'also' or 'too'. It goes straight after the noun: 저도 학생이에요 (I am a student too).",
+      "도 takes the place of 은/는, 이/가 and 을/를. Never stack them: 저도, not 저는도; 커피도, not 커피를도.",
+      "Other particles stay, and 도 comes after them: 부산에도 가요 (I go to Busan too), 도서관에서도 (at the library too).",
+      "The quickest reply in Korean: 저도요. (Me too.)",
+      "With a negative it means 'not ... either': 저도 안 가요 (I'm not going either)."
+    ],
+    "examples": [
+      { "korean": "저도 교환학생이에요.", "meaning": "I am an exchange student too." },
+      { "korean": "커피도 마셔요.", "meaning": "I drink coffee too." },
+      { "korean": "주말에 부산에도 가요.", "meaning": "At the weekend I go to Busan too." },
+      { "korean": "저도 매운 음식을 좋아해요.", "meaning": "I like spicy food too." },
+      {
+        "korean": "저도요.",
+        "meaning": "Me too.",
+        "note": "A short, friendly reply. Polite enough for classmates and staff."
+      }
+    ],
+    "practice": [
+      {
+        "type": "particle",
+        "korean": "저___ 학생이에요.",
+        "options": ["도", "는도", "를도"],
+        "answer": "도",
+        "meaning": "I am a student too.",
+        "why": "도 replaces 는. Never stack them."
+      },
+      {
+        "type": "particle",
+        "korean": "비빔밥___ 주세요.",
+        "options": ["도", "을도", "를도"],
+        "answer": "도",
+        "meaning": "Bibimbap too, please.",
+        "why": "도 replaces 을/를."
+      },
+      {
+        "type": "particle",
+        "korean": "동생___ 한국어를 배워요.",
+        "options": ["도", "이도", "는도"],
+        "answer": "도",
+        "meaning": "My younger sibling learns Korean too."
+      },
+      {
+        "type": "particle",
+        "korean": "부산___ 가고 싶어요.",
+        "options": ["에도", "도에", "에서도"],
+        "answer": "에도",
+        "meaning": "I want to go to Busan too.",
+        "why": "가다 takes 에, and 도 comes after it."
+      },
+      {
+        "type": "blank",
+        "korean": "네, ___.",
+        "options": ["저도요", "저는도요", "저를요"],
+        "answer": "저도요",
+        "meaning": "Yes, me too."
+      },
+      {
+        "type": "order",
+        "tiles": ["저도", "카자흐스탄", "사람이에요."],
+        "meaning": "I am from Kazakhstan too."
+      },
+      {
+        "type": "translate",
+        "meaning": "I'm not going either.",
+        "tiles": ["저도", "안", "가요."],
+        "distractors": ["못"]
+      }
+    ]
+  },
+  {
+    "id": "grammar-18-and-with",
+    "title": "And, with, or: 하고 / (이)나",
+    "summary": "Join two nouns, and say who you do things with.",
+    "pattern": "Noun + 하고 + Noun, Noun + (이)나 + Noun",
+    "explanation": [
+      "하고 joins two nouns: 김밥하고 라면 (gimbap and ramyeon). It does not join verbs or sentences; for those, see the lesson 'And, but, so'.",
+      "하고 also means 'with': 친구하고 같이 가요 (I go with a friend). 같이 (together) often follows it.",
+      "하고 is the everyday spoken form. In writing you will see 와/과 with the same meaning (와 after a vowel, 과 after a consonant: 친구와, 선생님과). Friends also say (이)랑.",
+      "(이)나 means 'or' between nouns: 이나 after a consonant, 나 after a vowel. 빵이나 밥 (bread or rice), 커피나 차 (coffee or tea).",
+      "The particle for the whole group goes on the last noun only: 김밥하고 라면을 먹어요."
+    ],
+    "examples": [
+      { "korean": "김밥하고 라면을 먹어요.", "meaning": "I eat gimbap and ramyeon." },
+      { "korean": "친구하고 같이 부산에 가요.", "meaning": "I go to Busan with a friend." },
+      { "korean": "룸메이트하고 저녁을 먹어요.", "meaning": "I have dinner with my roommate." },
+      { "korean": "커피나 차를 마셔요.", "meaning": "I drink coffee or tea." },
+      { "korean": "토요일이나 일요일에 만나요.", "meaning": "Let's meet on Saturday or Sunday." },
+      { "korean": "연필이나 펜 있어요?", "meaning": "Do you have a pencil or a pen?" }
+    ],
+    "practice": [
+      {
+        "type": "particle",
+        "korean": "빵___ 우유를 사요.",
+        "options": ["하고", "이나", "에서"],
+        "answer": "하고",
+        "meaning": "I buy bread and milk."
+      },
+      {
+        "type": "particle",
+        "korean": "친구___ 같이 공부해요.",
+        "options": ["하고", "를", "이나"],
+        "answer": "하고",
+        "meaning": "I study with a friend.",
+        "why": "하고 also means 'with'."
+      },
+      {
+        "type": "particle",
+        "korean": "커피___ 차를 마셔요.",
+        "options": ["나", "이나", "하고"],
+        "answer": "나",
+        "meaning": "I drink coffee or tea.",
+        "why": "커피 ends in a vowel, so 나."
+      },
+      {
+        "type": "particle",
+        "korean": "수요일___ 목요일에 시간이 있어요.",
+        "options": ["이나", "나", "하고"],
+        "answer": "이나",
+        "meaning": "I have time on Wednesday or Thursday.",
+        "why": "수요일 ends in a consonant, so 이나."
+      },
+      {
+        "type": "particle",
+        "korean": "룸메이트___ 같이 살아요.",
+        "options": ["하고", "를", "에"],
+        "answer": "하고",
+        "meaning": "I live with a roommate."
+      },
+      {
+        "type": "order",
+        "tiles": ["친구하고", "같이", "밥을", "먹어요."],
+        "meaning": "I eat with a friend.",
+        "accept": ["밥을 친구하고 같이 먹어요."]
+      },
+      {
+        "type": "translate",
+        "meaning": "I buy gimbap and water.",
+        "tiles": ["김밥하고", "물을", "사요."],
+        "distractors": ["김밥이나"]
+      }
+    ]
+  },
+  {
     "id": "grammar-07-present",
     "title": "Polite present: 아요 / 어요",
     "summary": "The everyday polite form of every verb.",
@@ -475,12 +623,13 @@
     "id": "grammar-08-negative",
     "title": "Not and cannot: 안 / 못",
     "summary": "Say what you don't do, and what you can't do.",
-    "pattern": "안 / 못 + verb",
+    "pattern": "안 / 못 + verb, verb stem + 지 않아요",
     "explanation": [
       "Put 안 before a verb to say 'not': 안 가요 (I am not going), 안 먹어요 (I don't eat it).",
       "Put 못 before a verb to say 'cannot', when you would like to but are not able: 못 가요 (I can't go).",
       "With 하다 verbs, 안 and 못 go just before 해요: 공부 안 해요 (I don't study), 운동 못 해요 (I can't exercise).",
       "Adjectives take 안 too: 안 매워요 (it is not spicy). 못 is for actions.",
+      "There is also a longer negative: verb stem + 지 않아요. 가지 않아요 means the same as 안 가요; it sounds a little more careful and is common in writing and with describing words: 맵지 않아요 (it isn't spicy).",
       "Two words have their own opposite instead: 있어요 → 없어요 (there isn't), 알아요 → 몰라요 (I don't know)."
     ],
     "examples": [
@@ -529,6 +678,14 @@
         "answer": "없어요",
         "meaning": "I have no money.",
         "why": "The opposite of 있어요 is its own word, 없어요."
+      },
+      {
+        "type": "blank",
+        "korean": "이 김치는 맵지 ___.",
+        "options": ["않아요", "안 해요", "못해요"],
+        "answer": "않아요",
+        "meaning": "This kimchi isn't spicy.",
+        "why": "Stem + 지 않아요 is the long form of 안."
       },
       {
         "type": "blank",
@@ -618,6 +775,85 @@
     ]
   },
   {
+    "id": "grammar-19-b-verbs",
+    "title": "ㅂ verbs and 어때요",
+    "summary": "Talk about the weather, food and how things are.",
+    "pattern": "Stem ending in ㅂ: ㅂ → 우, then 어요 (춥다 → 추워요)",
+    "explanation": [
+      "Many describing words end in ㅂ: 춥다 (cold), 덥다 (hot), 맵다 (spicy), 어렵다 (difficult), 쉽다 (easy), 귀엽다 (cute).",
+      "In the 요 form the ㅂ turns into 우, and 우 + 어요 becomes 워요: 춥다 → 추워요, 맵다 → 매워요, 어렵다 → 어려워요.",
+      "The same happens in the past and before -어서: 추웠어요 (it was cold), 더워서 (because it is hot).",
+      "Before endings that start with a consonant the ㅂ stays: 춥지만, 맵고, 덥지 않아요.",
+      "Some common verbs keep their ㅂ everywhere: 입다 → 입어요 (wear), 좁다 → 좁아요 (narrow). And 돕다 (help) becomes 도와요, as in 도와주세요.",
+      "어때요? asks 'how is it?': 날씨가 어때요? (How is the weather?) 한국 음식이 어때요? (How do you find Korean food?)"
+    ],
+    "examples": [
+      { "korean": "오늘 날씨가 추워요.", "meaning": "It's cold today." },
+      { "korean": "이 김치는 너무 매워요.", "meaning": "This kimchi is too spicy." },
+      { "korean": "어제는 정말 더웠어요.", "meaning": "Yesterday was really hot." },
+      {
+        "korean": "한국어는 어렵지만 재미있어요.",
+        "meaning": "Korean is hard but fun.",
+        "note": "Before 지만 the ㅂ stays."
+      },
+      { "korean": "고양이가 정말 귀여워요.", "meaning": "The cat is really cute." },
+      { "korean": "울산 날씨가 어때요?", "meaning": "How is the weather in Ulsan?" }
+    ],
+    "practice": [
+      {
+        "type": "blank",
+        "korean": "오늘은 날씨가 ___.",
+        "options": ["추워요", "춥어요", "추와요"],
+        "answer": "추워요",
+        "meaning": "The weather is cold today.",
+        "why": "춥다: ㅂ becomes 우, and 우 + 어요 = 워요."
+      },
+      {
+        "type": "blank",
+        "korean": "떡볶이가 너무 ___.",
+        "options": ["매워요", "맵어요", "매와요"],
+        "answer": "매워요",
+        "meaning": "The tteokbokki is too spicy."
+      },
+      {
+        "type": "blank",
+        "korean": "어제는 정말 ___.",
+        "options": ["더웠어요", "덥었어요", "더워요"],
+        "answer": "더웠어요",
+        "meaning": "It was really hot yesterday.",
+        "why": "Past: 더웠어요."
+      },
+      {
+        "type": "blank",
+        "korean": "시험이 ___.",
+        "options": ["쉬웠어요", "쉽었어요", "쉬워요"],
+        "answer": "쉬웠어요",
+        "meaning": "The exam was easy."
+      },
+      {
+        "type": "blank",
+        "korean": "오늘은 코트를 ___.",
+        "options": ["입어요", "이워요"],
+        "answer": "입어요",
+        "meaning": "I'm wearing a coat today.",
+        "why": "입다 keeps its ㅂ: 입어요."
+      },
+      {
+        "type": "blank",
+        "korean": "한국 음식이 ___?",
+        "options": ["어때요", "뭐예요", "어디예요"],
+        "answer": "어때요",
+        "meaning": "How do you find Korean food?"
+      },
+      {
+        "type": "translate",
+        "meaning": "Korean is hard but fun.",
+        "tiles": ["한국어는", "어렵지만", "재미있어요."],
+        "distractors": ["어려워서"]
+      }
+    ]
+  },
+  {
     "id": "grammar-10-future",
     "title": "Future and plans: (으)ㄹ 거예요",
     "summary": "Say what you are going to do.",
@@ -690,6 +926,86 @@
         "meaning": "I will study tomorrow.",
         "tiles": ["내일", "공부할 거예요."],
         "distractors": ["공부했어요."]
+      }
+    ]
+  },
+  {
+    "id": "grammar-20-progressive",
+    "title": "Doing right now: 고 있어요",
+    "summary": "Say what you are in the middle of doing.",
+    "pattern": "Verb stem + 고 있어요",
+    "explanation": [
+      "Add 고 있어요 to a verb stem to say that something is going on right now: 공부하고 있어요 (I am studying).",
+      "No vowel rules here: the stem stays as it is. 먹고 있어요, 기다리고 있어요.",
+      "The plain 요 form can also mean 'I am doing'. Use 고 있어요 when 'right now' matters: 지금 가고 있어요 (I'm on my way now).",
+      "It also works for longer activities: 요즘 한국어를 배우고 있어요 (These days I am learning Korean).",
+      "Past: 고 있었어요 (I was ...ing). For a professor or an older person: 고 계세요. 교수님이 기다리고 계세요 (The professor is waiting)."
+    ],
+    "examples": [
+      {
+        "korean": "지금 도서관에서 공부하고 있어요.",
+        "meaning": "I'm studying in the library now."
+      },
+      { "korean": "버스를 기다리고 있어요.", "meaning": "I'm waiting for the bus." },
+      {
+        "korean": "지금 가고 있어요.",
+        "meaning": "I'm on my way now.",
+        "note": "Handy in a message when you are late."
+      },
+      { "korean": "요즘 한국어를 배우고 있어요.", "meaning": "These days I'm learning Korean." },
+      { "korean": "친구가 밥을 먹고 있어요.", "meaning": "My friend is eating." },
+      { "korean": "교수님이 기다리고 계세요.", "meaning": "The professor is waiting." }
+    ],
+    "practice": [
+      {
+        "type": "blank",
+        "korean": "지금 뭐 하고 ___?",
+        "options": ["있어요", "없어요", "해요"],
+        "answer": "있어요",
+        "meaning": "What are you doing now?"
+      },
+      {
+        "type": "blank",
+        "korean": "버스를 ___ 있어요.",
+        "options": ["기다리고", "기다려", "기다리"],
+        "answer": "기다리고",
+        "meaning": "I'm waiting for the bus.",
+        "why": "Stem + 고, no vowel change."
+      },
+      {
+        "type": "blank",
+        "korean": "룸메이트가 ___.",
+        "options": ["자고 있어요", "자요고 있어요", "잤고 있어요"],
+        "answer": "자고 있어요",
+        "meaning": "My roommate is sleeping."
+      },
+      {
+        "type": "blank",
+        "korean": "어제 저녁에 영화를 ___.",
+        "options": ["보고 있었어요", "보고 있어요"],
+        "answer": "보고 있었어요",
+        "meaning": "Yesterday evening I was watching a film.",
+        "why": "Past: 고 있었어요."
+      },
+      {
+        "type": "blank",
+        "korean": "교수님이 연구실에서 ___.",
+        "options": ["기다리고 계세요", "기다리고 있어요"],
+        "answer": "기다리고 계세요",
+        "meaning": "The professor is waiting in the office.",
+        "why": "For a professor, 있어요 becomes 계세요."
+      },
+      {
+        "type": "order",
+        "tiles": ["지금", "한국어를", "공부하고", "있어요."],
+        "meaning": "I am studying Korean now.",
+        "accept": ["한국어를 지금 공부하고 있어요."]
+      },
+      {
+        "type": "translate",
+        "meaning": "I'm on my way now.",
+        "tiles": ["지금", "가고", "있어요."],
+        "distractors": ["갔어요."]
       }
     ]
   },
@@ -823,6 +1139,87 @@
         "meaning": "This one, please.",
         "tiles": ["이거", "주세요."],
         "distractors": ["싶어요."]
+      }
+    ]
+  },
+  {
+    "id": "grammar-21-must",
+    "title": "Have to: 아야 / 어야 돼요",
+    "summary": "Say what you have to do, and what you don't have to do.",
+    "pattern": "Verb stem + 아야 / 어야 / 해야 돼요",
+    "explanation": [
+      "Add 아야 돼요 or 어야 돼요 to a verb to say you have to do it: 가야 돼요 (I have to go).",
+      "The vowel rule is the same as for 아요 / 어요: 가야 돼요, 와야 돼요, 먹어야 돼요, 기다려야 돼요, and 하다 → 해야 돼요.",
+      "A quick trick: take the 요 form and swap 요 for 야 돼요. 가요 → 가야 돼요, 마셔요 → 마셔야 돼요, 해요 → 해야 돼요.",
+      "돼요 is written with ㅙ, because it comes from 되다 + 어요. 해야 해요 means the same; both are common.",
+      "Ask with a rising voice: 뭐 내야 돼요? (What do I have to hand in?) To say you don't have to: 안 + verb + 아도 / 어도 돼요. 안 와도 돼요 (You don't have to come)."
+    ],
+    "examples": [
+      { "korean": "지금 가야 돼요.", "meaning": "I have to go now." },
+      {
+        "korean": "내일까지 과제를 내야 돼요.",
+        "meaning": "I have to hand in the assignment by tomorrow."
+      },
+      { "korean": "외국인등록증을 만들어야 돼요.", "meaning": "I have to get my residence card." },
+      {
+        "korean": "여기에서 신발을 벗어야 돼요?",
+        "meaning": "Do I have to take my shoes off here?"
+      },
+      { "korean": "매일 한국어를 공부해야 돼요.", "meaning": "I have to study Korean every day." },
+      { "korean": "안 와도 돼요.", "meaning": "You don't have to come." }
+    ],
+    "practice": [
+      {
+        "type": "blank",
+        "korean": "지금 ___ 돼요.",
+        "options": ["가야", "가요", "가고"],
+        "answer": "가야",
+        "meaning": "I have to go now."
+      },
+      {
+        "type": "blank",
+        "korean": "약을 ___ 돼요.",
+        "options": ["먹어야", "먹아야", "먹고"],
+        "answer": "먹어야",
+        "meaning": "I have to take medicine.",
+        "why": "먹다 has ㅓ, so 어야."
+      },
+      {
+        "type": "blank",
+        "korean": "숙제를 ___ 돼요.",
+        "options": ["해야", "하야", "하고"],
+        "answer": "해야",
+        "meaning": "I have to do my homework.",
+        "why": "하다 becomes 해야."
+      },
+      {
+        "type": "blank",
+        "korean": "여기에서 버스를 ___ 돼요.",
+        "options": ["갈아타야", "갈아타어야", "갈아타고"],
+        "answer": "갈아타야",
+        "meaning": "I have to change buses here."
+      },
+      {
+        "type": "blank",
+        "korean": "오늘은 일찍 ___.",
+        "options": ["일어나야 돼요", "일어나야 되요"],
+        "answer": "일어나야 돼요",
+        "meaning": "Today I have to get up early.",
+        "why": "돼요 with ㅙ: it comes from 되다 + 어요."
+      },
+      {
+        "type": "blank",
+        "korean": "내일은 학교에 안 가___.",
+        "options": ["도 돼요", "야 돼요"],
+        "answer": "도 돼요",
+        "meaning": "I don't have to go to school tomorrow.",
+        "why": "안 + 아도 돼요 = you don't have to."
+      },
+      {
+        "type": "translate",
+        "meaning": "I have to go to the bank.",
+        "tiles": ["은행에", "가야", "돼요."],
+        "distractors": ["가고"]
       }
     ]
   },

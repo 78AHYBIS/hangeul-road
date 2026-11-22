@@ -1,4 +1,4 @@
-/** Korean number readings: Sino-Korean, native Korean, prices, clock times, phone numbers. */
+/** Korean number readings: Sino-Korean, native Korean, prices, clock times, dates, phone numbers. */
 
 const SINO_DIGITS = ['', '일', '이', '삼', '사', '오', '육', '칠', '팔', '구'];
 const SINO_UNITS = ['천', '백', '십', ''];
@@ -46,6 +46,15 @@ export function nativeCounter(n: number): string {
 /** Clock time: native hours, Sino minutes. (3, 20) -> '세 시 이십 분'. */
 export function clockTime(hour: number, minute: number): string {
   return `${nativeCounter(hour)} 시` + (minute > 0 ? ` ${sino(minute)} 분` : '');
+}
+
+/**
+ * Date with Sino-Korean numbers. June and October drop a sound: 유월 (not 육월), 시월 (not 십월).
+ * (6, 15) -> '유월 십오일'.
+ */
+export function date(month: number, day: number): string {
+  const monthName = month === 6 ? '유월' : month === 10 ? '시월' : `${sino(month)}월`;
+  return `${monthName} ${sino(day)}일`;
 }
 
 /** Price in won, e.g. 4500 -> '사천오백 원'. */

@@ -36,8 +36,8 @@
   },
   {
     "id": "deck-places",
-    "title": "Places in a city",
-    "description": "Buildings, services and landscape words."
+    "title": "Places and countries",
+    "description": "Buildings, services and landscape words, and country names."
   },
   {
     "id": "deck-time",
@@ -73,5 +73,10 @@
     "id": "deck-social",
     "title": "Feelings, hobbies and making friends",
     "description": "Saying how you feel, what you like and making plans."
+  },
+  {
+    "id": "deck-home",
+    "title": "Home, family and free time",
+    "description": "Dorm room and kitchen, daily routine, grandparents, pets and weekend fun."
   }
 ]

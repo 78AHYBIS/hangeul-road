@@ -303,5 +303,48 @@
         "meaning": "how"
       }
     ]
+  },
+  {
+    "id": "hangul-rule-palatalization",
+    "title": "ㄷ and ㅌ before 이",
+    "summary": "Final ㄷ or ㅌ before 이 sounds like ㅈ or ㅊ: 같이 is said 가치.",
+    "explanation": [
+      "When a syllable ends in ㄷ or ㅌ and the next syllable is 이, the consonant moves over and changes: ㄷ becomes ㅈ, and ㅌ becomes ㅊ.",
+      "It happens when the 이 is an ending or a particle added to a word (같 + 이, 끝 + 이), so you meet it all the time in 같이 and in nouns that end in ㅌ.",
+      "ㄷ followed by 히 also becomes 치: 닫히다 is said 다치다.",
+      "The spelling does not change. Only the pronunciation moves."
+    ],
+    "examples": [
+      {
+        "korean": "같이",
+        "pronounced": "가치",
+        "meaning": "together"
+      },
+      {
+        "korean": "굳이",
+        "pronounced": "구지",
+        "meaning": "needlessly, insisting on it"
+      },
+      {
+        "korean": "해돋이",
+        "pronounced": "해도지",
+        "meaning": "sunrise"
+      },
+      {
+        "korean": "끝이",
+        "pronounced": "끄치",
+        "meaning": "the end (as subject)"
+      },
+      {
+        "korean": "밭이",
+        "pronounced": "바치",
+        "meaning": "the field (as subject)"
+      },
+      {
+        "korean": "닫히다",
+        "pronounced": "다치다",
+        "meaning": "to be closed"
+      }
+    ]
   }
 ]

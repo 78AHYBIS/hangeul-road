@@ -409,5 +409,53 @@
     "deck": "deck-people",
     "example": "저는 이월에 한국에 왔어요.",
     "exampleMeaning": "I came to Korea in February."
+  },
+  {
+    "id": "vocab-people-엄마",
+    "korean": "엄마",
+    "meaning": "mum, mom",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "엄마가 매일 전화해요.",
+    "exampleMeaning": "My mum calls every day.",
+    "note": "Warm and casual; adults use it too. When you speak politely about your mother, 어머니 is safer."
+  },
+  {
+    "id": "vocab-people-아빠",
+    "korean": "아빠",
+    "meaning": "dad",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "우리 아빠는 회사원이에요.",
+    "exampleMeaning": "My dad is an office worker.",
+    "note": "Warm and casual. When you speak politely about your father, 아버지 is safer."
+  },
+  {
+    "id": "vocab-people-남동생",
+    "korean": "남동생",
+    "meaning": "younger brother",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "남동생이 한 명 있어요.",
+    "exampleMeaning": "I have one younger brother."
+  },
+  {
+    "id": "vocab-people-여동생",
+    "korean": "여동생",
+    "meaning": "younger sister",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "여동생은 고등학생이에요.",
+    "exampleMeaning": "My younger sister is a high school student."
+  },
+  {
+    "id": "vocab-people-형제",
+    "korean": "형제",
+    "meaning": "siblings, brothers",
+    "pos": "noun",
+    "deck": "deck-people",
+    "example": "형제가 있어요?",
+    "exampleMeaning": "Do you have any brothers or sisters?",
+    "note": "Strictly \"brothers\", but in this question it asks about siblings in general."
   }
 ]
