@@ -15,6 +15,7 @@ import {
   type PracticeItem,
   type Tile,
 } from './practice';
+import { MixedText } from '../../components/MixedText';
 
 export function GrammarPracticePage() {
   const { id } = useParams();
@@ -303,7 +304,11 @@ function Feedback({
           </p>
           <SpeakButton text={sentence} label="Play" />
         </div>
-        {why && <p className={`mt-2 ${muted}`}>{why}</p>}
+        {why && (
+          <p className={`mt-2 ${muted}`}>
+            <MixedText text={why} />
+          </p>
+        )}
       </Card>
       <button type="button" className={`${btnPrimary} w-full`} onClick={onNext}>
         Next

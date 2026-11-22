@@ -6,6 +6,7 @@ import { LETTERS, LETTER_BY_JAMO, LETTER_LESSONS } from '../../content/hangul';
 import { useAppStore } from '../../lib/storage/store';
 import { SpeakButton, VoiceNotice } from './shared';
 import { StrokeOrder } from './StrokeOrder';
+import { MixedText } from '../../components/MixedText';
 
 export function LessonPage() {
   const { id } = useParams();
@@ -37,7 +38,11 @@ export function LessonPage() {
       back={{ to: '/learn/hangul', label: 'Hangul' }}
     >
       <VoiceNotice />
-      {index === 0 && <p className="text-sm leading-relaxed">{lesson.intro}</p>}
+      {index === 0 && (
+        <p className="text-sm leading-relaxed">
+          <MixedText text={lesson.intro} />
+        </p>
+      )}
 
       <Card>
         <div className="flex items-center justify-between gap-4">
@@ -54,9 +59,15 @@ export function LessonPage() {
         </div>
 
         <dl className="mt-4 space-y-3 text-sm leading-relaxed">
-          <Info term="Sound">{letter.soundEn}</Info>
-          <Info term="For Russian speakers">{letter.soundRu}</Info>
-          <Info term="Memory hint">{letter.hint}</Info>
+          <Info term="Sound">
+            <MixedText text={letter.soundEn} />
+          </Info>
+          <Info term="For Russian speakers">
+            <MixedText text={letter.soundRu} />
+          </Info>
+          <Info term="Memory hint">
+            <MixedText text={letter.hint} />
+          </Info>
           <Info term="Easily confused with">
             <span className="flex flex-wrap gap-2">
               {letter.confusedWith.map((jamo) => (

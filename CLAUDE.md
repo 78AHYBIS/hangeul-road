@@ -36,8 +36,9 @@ src/
                 vocabProgress.ts, activity.ts (daily log), streak.ts, roadmap.ts,
                 libraryProgress.ts (resource status, active courses, units),
                 particles.ts (은/는, 이/가, 이에요/예요… by batchim), selfIntro.ts,
-                grammarProgress.ts, phraseProgress.ts, cultureProgress.ts
-  components/   shared UI (Page, Card, ComingSoon, LinkRow), ui.ts (button classes, choiceClass)
+                grammarProgress.ts, phraseProgress.ts, cultureProgress.ts,
+                mixedText.ts (Korean runs in mixed strings)
+  components/   shared UI (Page, Card, ComingSoon, LinkRow, MixedText), ui.ts (button classes, choiceClass)
 scripts/        validate-content.ts (+ its test)
 ```
 
@@ -63,6 +64,9 @@ scripts/        validate-content.ts (+ its test)
   `<VoiceNotice />` on any screen with audio, so a missing Korean voice is explained.
   In list rows use `<SpeakButton compact />` (icon only) so the Korean keeps the width.
 - **Korean text:** mark it `lang="ko"`; `index.css` then keeps words whole when wrapping.
+  For strings that mix English and Korean (explanations, notes, titles), render
+  `<MixedText text=… />` (`src/components/MixedText.tsx`, splitting in `src/lib/mixedText.ts`),
+  which marks only the Korean runs. `Page` and `LinkRow` already do this for titles.
 - **Romanization:** render it with `<Romanization text=… />`, which obeys the setting.
   Exception: single-letter sound labels (`g / k`) in letter lessons and letter drills,
   because there they are the answer.

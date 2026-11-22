@@ -9,6 +9,7 @@ import { useAppStore } from '../../lib/storage/store';
 import { SpeakButton, VoiceNotice } from '../hangul/shared';
 import { useKoreanVoice } from '../hangul/useKoreanVoice';
 import { allWords, cardTypeFor, isTypedCorrect, studyOrder, type CardType } from './words';
+import { MixedText } from '../../components/MixedText';
 
 const BACK = { to: '/learn/vocab', label: 'Vocabulary' };
 
@@ -201,7 +202,11 @@ export function ReviewPage() {
                   <span className={muted}>{word.exampleMeaning}</span>
                 </p>
               )}
-              {word.note && <p className="text-left text-sm">{word.note}</p>}
+              {word.note && (
+                <p className="text-left text-sm">
+                  <MixedText text={word.note} />
+                </p>
+              )}
               <div className="flex justify-center gap-2">
                 <SpeakButton text={word.korean} label="Word" />
                 {word.example && <SpeakButton text={word.example} label="Sentence" />}

@@ -5,6 +5,7 @@ import { GRAMMAR_LESSONS, findGrammarLesson } from '../../content/grammar';
 import { PHRASE_PACKS } from '../../content/phrases';
 import { useAppStore } from '../../lib/storage/store';
 import { SpeakButton, VoiceNotice } from '../hangul/shared';
+import { MixedText } from '../../components/MixedText';
 
 export function GrammarLessonPage() {
   const { id } = useParams();
@@ -26,15 +27,19 @@ export function GrammarLessonPage() {
       <VoiceNotice />
       <Card tone="accent">
         <p className="text-sm text-teal-100">Pattern</p>
-        <p className="mt-1 text-xl font-semibold" lang="ko" data-testid="pattern">
-          {lesson.pattern}
+        <p className="mt-1 text-xl font-semibold" data-testid="pattern">
+          <MixedText text={lesson.pattern} />
         </p>
-        <p className="mt-1 text-sm text-teal-100">{lesson.summary}</p>
+        <p className="mt-1 text-sm text-teal-100">
+          <MixedText text={lesson.summary} />
+        </p>
       </Card>
 
       <div className="space-y-3 leading-relaxed">
         {lesson.explanation.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          <p key={paragraph}>
+            <MixedText text={paragraph} />
+          </p>
         ))}
       </div>
 
@@ -48,7 +53,11 @@ export function GrammarLessonPage() {
                   {example.korean}
                 </p>
                 <p className={muted}>{example.meaning}</p>
-                {example.note && <p className={`mt-0.5 ${muted} italic`}>{example.note}</p>}
+                {example.note && (
+                  <p className={`mt-0.5 ${muted} italic`}>
+                    <MixedText text={example.note} />
+                  </p>
+                )}
               </div>
               <SpeakButton text={example.korean} label="Play" compact />
             </li>
@@ -66,7 +75,7 @@ export function GrammarLessonPage() {
                 to={`/learn/phrases/${pack.id}`}
                 className="text-teal-700 underline underline-offset-2 dark:text-teal-400"
               >
-                {pack.title}
+                <MixedText text={pack.title} />
               </Link>
             </span>
           ))}
@@ -86,7 +95,9 @@ export function GrammarLessonPage() {
               to={`/learn/grammar/${next.id}`}
               className={`${btnSecondary} flex w-full items-center justify-center`}
             >
-              Next lesson: {next.title}
+              <span>
+                Next lesson: <MixedText text={next.title} />
+              </span>
             </Link>
           )
         ) : (
