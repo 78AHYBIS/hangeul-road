@@ -13,8 +13,8 @@ function seeded(seed: number) {
 }
 
 describe('vocabulary content', () => {
-  it('has 16 decks of 30 to 50 words and at least 600 words', () => {
-    expect(DECKS).toHaveLength(16);
+  it('has 17 decks of 30 to 50 words and at least 600 words', () => {
+    expect(DECKS).toHaveLength(17);
     expect(WORDS.length).toBeGreaterThanOrEqual(600);
     for (const deck of DECKS) {
       const size = WORDS.filter((w) => w.deck === deck.id).length;
@@ -39,7 +39,7 @@ describe('vocabulary content', () => {
 
   it('keeps the deck order from the roadmap', () => {
     expect(WORDS[0]!.deck).toBe('deck-greetings');
-    expect(WORDS[WORDS.length - 1]!.deck).toBe('deck-home');
+    expect(WORDS[WORDS.length - 1]!.deck).toBe('deck-apps');
   });
 });
 

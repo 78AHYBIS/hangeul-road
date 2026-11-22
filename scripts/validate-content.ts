@@ -21,6 +21,9 @@
  *     https sources; a card that cites sources or states a date or phone number needs
  *     `lastVerified`; Ulsan / UNIST cards must cite at least one official source
  *   - culture topics: a quiz of 3+ questions, each with its answer among the options
+ *   - Korea apps: known category and access values, verified store links (App Store /
+ *     Google Play), https sources and `lastVerified`; checklist items have unique ids and
+ *     valid `refs`; how-to answers have steps; glossary words point to a vocabulary word
  */
 import { readdirSync, readFileSync } from 'node:fs';
 import { join, relative } from 'node:path';
@@ -59,7 +62,54 @@ export const REQUIRED_FIELDS: [RegExp, string[]][] = [
   [/phrases\/packs\.json$/, ['title', 'situation', 'dialogue', 'phrases']],
   [/culture\/topics\.json$/, ['title', 'korean', 'intro', 'quiz']],
   [/culture\/cards\.json$/, ['topic', 'title', 'summary', 'body', 'do', 'avoid', 'words']],
+  [
+    /korea-apps\/apps\.json$/,
+    [
+      'name',
+      'category',
+      'what',
+      'why',
+      'english',
+      'koreanNumber',
+      'arc',
+      'foreignCards',
+      'setup',
+      'access',
+      'stores',
+      'sources',
+      'lastVerified',
+    ],
+  ],
+  [/korea-apps\/checklists\.json$/, ['title', 'when', 'intro', 'items', 'lastVerified']],
+  [/korea-apps\/howto\.json$/, ['question', 'answer', 'steps', 'lastVerified']],
+  [/korea-apps\/glossary\.json$/, ['korean', 'group', 'word']],
 ];
+
+/** Allowed values for app fields (keep in sync with src/content/korea-apps/index.ts). */
+export const APP_ENUMS: Record<string, readonly string[]> = {
+  category: [
+    'maps',
+    'translation',
+    'messaging',
+    'transport',
+    'food',
+    'shopping',
+    'money',
+    'student',
+    'travel',
+    'safety',
+  ],
+  english: ['yes', 'partial', 'no', 'unconfirmed'],
+  koreanNumber: ['no', 'some', 'yes', 'unconfirmed'],
+  arc: ['no', 'some', 'yes', 'unconfirmed'],
+  foreignCards: ['yes', 'some', 'no', 'none', 'unconfirmed'],
+  setup: ['before', 'arrival', 'arc'],
+};
+const GLOSSARY_GROUPS = ['account', 'buttons', 'ordering', 'delivery', 'transport'];
+const STORE_URL: Record<string, RegExp> = {
+  ios: /^https:\/\/apps\.apple\.com\/app\/id\d+$/,
+  android: /^https:\/\/play\.google\.com\/store\/apps\/details\?id=[\w.]+$/,
+};
 
 /** Allowed values for resource fields (keep in sync with src/content/resources/index.ts). */
 export const RESOURCE_ENUMS: Record<string, readonly string[]> = {
@@ -173,6 +223,29 @@ export function validateContent(files: ContentFile[]): ValidationResult {
       }
       if (/culture\/topics\.json$/.test(normalizedPath)) {
         checkCultureTopic(record, where, errors);
+      }
+      if (/korea-apps\/apps\.json$/.test(normalizedPath)) checkApp(record, where, errors);
+      if (/korea-apps\/checklists\.json$/.test(normalizedPath)) {
+        checkChecklist(record, where, errors, (itemId, at) => {
+          if (seenIds.has(itemId)) {
+            errors.push(`${at}: duplicate id "${itemId}" (also in ${seenIds.get(itemId)})`);
+          } else {
+            seenIds.set(itemId, at);
+          }
+        });
+        for (const item of Array.isArray(record.items) ? record.items : []) {
+          const itemRefs = (item as Record<string, unknown> | null)?.refs;
+          if (Array.isArray(itemRefs)) {
+            for (const ref of itemRefs) refs.push({ from: where, to: String(ref) });
+          }
+        }
+      }
+      if (/korea-apps\/howto\.json$/.test(normalizedPath)) checkHowTo(record, where, errors);
+      if (/korea-apps\/glossary\.json$/.test(normalizedPath)) {
+        if (!GLOSSARY_GROUPS.includes(String(record.group))) {
+          errors.push(`${where}: unknown group "${String(record.group)}"`);
+        }
+        if (typeof record.word === 'string') refs.push({ from: where, to: record.word });
       }
       if (record.needsReview === true) needsReview.push(`${where} (${String(id)})`);
       if (Array.isArray(record.refs)) {
@@ -350,6 +423,76 @@ function checkCultureTopic(record: Record<string, unknown>, where: string, error
       errors.push(`${at}: "answer" is not one of the options`);
     }
   });
+}
+
+/** Checks a list of `{ name, url }` sources: names, https links. */
+function checkSources(sources: unknown, where: string, errors: string[]) {
+  if (!Array.isArray(sources) || sources.length === 0) {
+    errors.push(`${where}: "sources" must be a non-empty list`);
+    return;
+  }
+  sources.forEach((raw: unknown, i: number) => {
+    const source = (raw ?? {}) as Record<string, unknown>;
+    if (!isText(source.name)) errors.push(`${where}.sources[${i}]: missing "name"`);
+    if (typeof source.url !== 'string' || !/^https:\/\/[^\s]+$/.test(source.url)) {
+      errors.push(`${where}.sources[${i}]: "url" must start with https://`);
+    }
+  });
+}
+
+/** App rules: known values, store links in the official stores' format, sources. */
+function checkApp(record: Record<string, unknown>, where: string, errors: string[]) {
+  for (const [field, allowed] of Object.entries(APP_ENUMS)) {
+    const value = record[field];
+    if (value !== undefined && !allowed.includes(String(value))) {
+      errors.push(`${where}: unknown ${field} "${String(value)}"`);
+    }
+  }
+  const stores = record.stores;
+  if (stores !== undefined) {
+    const entries: [string, unknown][] =
+      typeof stores === 'object' && stores !== null ? Object.entries(stores) : [['', stores]];
+    if (entries.length === 0) errors.push(`${where}: needs at least one store link`);
+    for (const [store, url] of entries) {
+      const pattern = STORE_URL[store];
+      if (!pattern) errors.push(`${where}: unknown store "${store}"`);
+      else if (typeof url !== 'string' || !pattern.test(url)) {
+        errors.push(`${where}: "${store}" link is not a store link`);
+      }
+    }
+  }
+  if (record.web !== undefined && !/^https:\/\/[^\s]+$/.test(String(record.web))) {
+    errors.push(`${where}: "web" must start with https://`);
+  }
+  if (record.sources !== undefined) checkSources(record.sources, where, errors);
+}
+
+/** Checklist rules: items with unique ids and text. */
+function checkChecklist(
+  record: Record<string, unknown>,
+  where: string,
+  errors: string[],
+  registerId: (id: string, at: string) => void,
+) {
+  if (record.when !== undefined && !APP_ENUMS.setup!.includes(String(record.when))) {
+    errors.push(`${where}: unknown when "${String(record.when)}"`);
+  }
+  const items = Array.isArray(record.items) ? record.items : [];
+  items.forEach((raw: unknown, i: number) => {
+    const at = `${where}.items[${i}]`;
+    const item = (raw ?? {}) as Record<string, unknown>;
+    if (!isText(item.id)) errors.push(`${at}: missing "id"`);
+    else registerId(String(item.id), at);
+    if (!isText(item.text)) errors.push(`${at}: missing "text"`);
+  });
+}
+
+/** How-to rules: steps as text, optional sources. */
+function checkHowTo(record: Record<string, unknown>, where: string, errors: string[]) {
+  if (record.steps !== undefined && !isTextList(record.steps, 2)) {
+    errors.push(`${where}: "steps" must be a list of at least 2 steps`);
+  }
+  if (record.sources !== undefined) checkSources(record.sources, where, errors);
 }
 
 function loadFiles(contentDir: string): { files: ContentFile[]; errors: string[] } {

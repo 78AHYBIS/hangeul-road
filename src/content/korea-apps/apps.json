@@ -1,0 +1,729 @@
+[
+  {
+    "id": "app-naver-map",
+    "name": "Naver Map",
+    "korean": "네이버 지도",
+    "category": "maps",
+    "what": "Maps, walking and public transport directions, bus arrival times, and reviews and opening hours for shops and restaurants.",
+    "why": "Google Maps cannot give walking or driving directions in Korea, and its shop data is thin. Koreans use Naver Map or KakaoMap instead.",
+    "english": "yes",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "some",
+    "setup": "before",
+    "access": "Maps and directions need no account. Since June 2026 Naver offers passport verification, so foreign users can book, order and pay in Naver Map without a Korean phone number. English search is uneven: if a place does not show up, search its Korean name or address. Shops can decide whether they accept foreign cards.",
+    "stores": {
+      "ios": "https://apps.apple.com/app/id311867728",
+      "android": "https://play.google.com/store/apps/details?id=com.nhn.android.nmap"
+    },
+    "sources": [
+      {
+        "name": "Naver press release (passport verification)",
+        "url": "https://www.navercorp.com/en/media/pressReleasesDetail?seq=10034413"
+      },
+      {
+        "name": "Korea Times (June 2026)",
+        "url": "https://www.koreatimes.co.kr/business/companies/20260609/naver-introduces-passport-verification-for-foreign-travelers-to-improve-access-to-reservations-payments"
+      },
+      {
+        "name": "Korea Times (April 2025)",
+        "url": "https://www.koreatimes.co.kr/business/tech-science/20250418/local-maps-gain-popularity-but-leave-foreigners-unsatisfied"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-kakaomap",
+    "name": "KakaoMap",
+    "korean": "카카오맵",
+    "category": "maps",
+    "what": "Maps and public transport directions, a good second opinion next to Naver Map.",
+    "why": "Same reason as Naver Map: Google Maps cannot route you in Korea. Some people find KakaoMap's bus routes and walking paths clearer.",
+    "english": "partial",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "none",
+    "setup": "before",
+    "access": "Maps need no account. The mobile app has an English setting, but guides say its English is more limited than Naver Map's, and English address search often fails. Search the Korean name instead.",
+    "stores": {
+      "ios": "https://apps.apple.com/app/id304608425",
+      "android": "https://play.google.com/store/apps/details?id=net.daum.android.map"
+    },
+    "sources": [
+      {
+        "name": "Korea Times (April 2025)",
+        "url": "https://www.koreatimes.co.kr/business/tech-science/20250418/local-maps-gain-popularity-but-leave-foreigners-unsatisfied"
+      },
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id304608425" }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-papago",
+    "name": "Papago",
+    "korean": "파파고",
+    "category": "translation",
+    "what": "Translation by text, voice, camera (menus, signs, letters) and conversation mode.",
+    "why": "Made by Naver for Korean, so it handles polite endings and everyday Korean better than most global translators.",
+    "english": "yes",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "none",
+    "setup": "before",
+    "access": "No account needed. It can translate offline once you download a language pack: download Korean and English before you fly.",
+    "stores": {
+      "ios": "https://apps.apple.com/app/id1147874819",
+      "android": "https://play.google.com/store/apps/details?id=com.naver.labs.translator"
+    },
+    "web": "https://papago.naver.com/",
+    "sources": [
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id1147874819" },
+      {
+        "name": "Trip.com guide (offline packs)",
+        "url": "https://sg.trip.com/guide/phone/papago-translate-app.html"
+      }
+    ],
+    "lastVerified": "2026-11-22",
+    "refs": ["res-papago"]
+  },
+  {
+    "id": "app-naver-dictionary",
+    "name": "Naver Dictionary",
+    "korean": "네이버 사전",
+    "category": "translation",
+    "what": "Korean-English dictionary with example sentences and audio, plus other languages.",
+    "why": "The dictionary most Korean learners and Koreans use. Better than a translator for checking one word.",
+    "english": "yes",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "none",
+    "setup": "before",
+    "access": "No account needed for looking up words.",
+    "stores": {
+      "ios": "https://apps.apple.com/app/id673085116",
+      "android": "https://play.google.com/store/apps/details?id=com.nhn.android.naverdic"
+    },
+    "web": "https://dict.naver.com/",
+    "sources": [{ "name": "App Store listing", "url": "https://apps.apple.com/app/id673085116" }],
+    "lastVerified": "2026-11-22",
+    "refs": ["res-naver-dict"]
+  },
+  {
+    "id": "app-kakaotalk",
+    "name": "KakaoTalk",
+    "korean": "카카오톡",
+    "category": "messaging",
+    "what": "Messaging, group chats, calls and open chat rooms. Many other Korean apps log in with a Kakao account.",
+    "why": "Almost everyone in Korea uses it instead of WhatsApp or Telegram: classmates, professors' group chats, landlords and shops.",
+    "english": "yes",
+    "koreanNumber": "some",
+    "arc": "some",
+    "foreignCards": "none",
+    "setup": "before",
+    "access": "You can sign up with a foreign number. Kakao's help page says numbers that carriers cannot confirm may be limited, and one guide says a new foreign-number account can take a few days before every function works. Some features (Kakao Pay, identity checks) need a Korean number in your name. Sign up before you fly, then add your Korean number later.",
+    "disputed": true,
+    "stores": {
+      "ios": "https://apps.apple.com/app/id362057947",
+      "android": "https://play.google.com/store/apps/details?id=com.kakao.talk"
+    },
+    "sources": [
+      {
+        "name": "Kakao help center",
+        "url": "https://cs.kakao.com/helps_html/1073200212?locale=en"
+      },
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id362057947" }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-kakao-t",
+    "name": "Kakao T",
+    "korean": "카카오 T",
+    "category": "transport",
+    "what": "Calls a taxi to where you stand and shows the route and fare. Also bikes and other transport.",
+    "why": "The main taxi app in Korea. Uber exists but has far fewer cars outside Seoul.",
+    "english": "unconfirmed",
+    "koreanNumber": "unconfirmed",
+    "arc": "unconfirmed",
+    "foreignCards": "some",
+    "setup": "arrival",
+    "access": "Sources disagree. Some 2026 guides say you can verify with an overseas number and pay with a foreign Visa or Mastercard; others say parts of the app still expect Korean verification, and card errors are reported. You can always choose to pay the driver directly. K.Ride, made by the same company for foreigners, is the simpler option until you have a Korean number.",
+    "disputed": true,
+    "stores": {
+      "ios": "https://apps.apple.com/app/id981110422",
+      "android": "https://play.google.com/store/apps/details?id=com.kakao.taxi"
+    },
+    "sources": [
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id981110422" },
+      { "name": "Wise guide", "url": "https://wise.com/en-jp/blog/taxi-apps-in-south-korea" }
+    ],
+    "lastVerified": "2026-11-22",
+    "refs": ["app-kride"]
+  },
+  {
+    "id": "app-kride",
+    "name": "K.Ride",
+    "category": "transport",
+    "what": "Kakao Mobility's taxi app for foreigners: the same Kakao taxis, with English screens and chat translation with the driver.",
+    "why": "Gets you the Kakao T taxi network without a Korean phone number or Kakao account.",
+    "english": "yes",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "yes",
+    "setup": "before",
+    "access": "Sign up with a phone number checked through email, Google or Apple. Kakao Mobility says it takes foreign-issued Visa and Mastercard cards; one 2026 guide claims card registration needs an ARC. Add your card before you fly to find out.",
+    "disputed": true,
+    "stores": { "ios": "https://apps.apple.com/app/id6474654222" },
+    "sources": [
+      {
+        "name": "Korea Times (June 2024)",
+        "url": "https://www.koreatimes.co.kr/business/companies/20240604/kakao-mobility-unveils-taxi-hailing-app-tailored-for-foreigners-in-south-korea"
+      },
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id6474654222" }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-kakaometro",
+    "name": "KakaoMetro",
+    "korean": "카카오지하철",
+    "category": "transport",
+    "what": "Subway maps, routes, transfers and last-train times for Seoul, Busan and other cities with a subway.",
+    "why": "Faster than a map app when you only need the subway: which car to board for a quick transfer, and when the last train leaves.",
+    "english": "partial",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "none",
+    "setup": "before",
+    "access": "No account needed. Ulsan has no subway, so you need this for trips to Busan or Seoul. Recent reviews say station search no longer accepts English, so look up the Korean station name.",
+    "stores": { "ios": "https://apps.apple.com/app/id1095533900" },
+    "sources": [{ "name": "App Store listing", "url": "https://apps.apple.com/app/id1095533900" }],
+    "lastVerified": "2026-11-22",
+    "refs": ["app-subway-korea"]
+  },
+  {
+    "id": "app-subway-korea",
+    "name": "Subway Korea",
+    "category": "transport",
+    "what": "Subway maps and routes for Seoul, Busan, Daegu, Daejeon and Gwangju, with timetables and transfer information.",
+    "why": "A long-running subway app with full English, Korean and Japanese.",
+    "english": "yes",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "none",
+    "setup": "before",
+    "access": "No account needed; some extras are paid inside the app.",
+    "stores": { "ios": "https://apps.apple.com/app/id325924444" },
+    "sources": [{ "name": "App Store listing", "url": "https://apps.apple.com/app/id325924444" }],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-korail-plus",
+    "name": "KORAIL+",
+    "category": "transport",
+    "what": "Korail's train booking app: KTX and other trains, and since September 2026 SRT trains too. Tickets live in the app.",
+    "why": "The official way to book trains. KTX Ulsan Station is your link to Seoul and Busan.",
+    "english": "unconfirmed",
+    "koreanNumber": "unconfirmed",
+    "arc": "unconfirmed",
+    "foreignCards": "some",
+    "setup": "before",
+    "access": "KORAIL+ replaced Korail Talk on 3 August 2026 (Korail Talk users simply updated the app). Korail Talk had an English mode; guides disagree on whether foreign cards work reliably in the new app. Several recommend the English Korail website when a foreign card fails in the app.",
+    "disputed": true,
+    "stores": {
+      "ios": "https://apps.apple.com/app/id1000558562",
+      "android": "https://play.google.com/store/apps/details?id=com.korail.talk"
+    },
+    "sources": [
+      {
+        "name": "Korea.net (August 2026)",
+        "url": "https://www.korea.net/NewsFocus/policies/view?articleId=297095"
+      },
+      {
+        "name": "Korea Times (August 2026)",
+        "url": "https://koreatimes.co.kr/business/companies/20260831/ktx-expands-tuesday-following-srt-absorption"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-express-bus",
+    "name": "Express Bus T-money",
+    "korean": "고속버스 티머니",
+    "category": "transport",
+    "what": "Books express (고속) bus seats between cities, for example Ulsan to Seoul, and shows a mobile ticket.",
+    "why": "The official app for express buses. Buses are often cheaper than the KTX and leave from the city centre.",
+    "english": "no",
+    "koreanNumber": "unconfirmed",
+    "arc": "unconfirmed",
+    "foreignCards": "unconfirmed",
+    "setup": "arrival",
+    "access": "Guides say the app is Korean only and works best for long-term residents. The Korea Herald reported that from August 2026 foreign tourists can book express bus tickets online with foreign cards, without signing up; it is not clear whether that applies to this app. Intercity (시외) buses, such as Ulsan to Busan, use a different booking system. You can always buy a ticket at the terminal.",
+    "disputed": true,
+    "stores": { "ios": "https://apps.apple.com/app/id957276809" },
+    "sources": [
+      { "name": "Korea Herald (July 2026)", "url": "https://www.koreaherald.com/article/10794996" },
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id957276809" }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-tmoney-go",
+    "name": "T-money GO",
+    "korean": "티머니GO",
+    "category": "transport",
+    "what": "T-money's app for a mobile transit card on the phone, plus taxi and bus booking.",
+    "why": "Locals tap their phone instead of a plastic transit card.",
+    "english": "unconfirmed",
+    "koreanNumber": "yes",
+    "arc": "yes",
+    "foreignCards": "no",
+    "setup": "arc",
+    "access": "In 2025 the mobile transit card needed a Korean resident registration number and a Korean phone number, so it did not work for visitors. The Korea Herald (2026) says T-money's app still takes only Korean-issued cards. One unofficial guide claims a foreigner login was added in 2026; this is not confirmed. Until you have an ARC and a Korean card, use a plastic T-money card bought at a convenience store.",
+    "disputed": true,
+    "stores": { "ios": "https://apps.apple.com/app/id1483433931" },
+    "sources": [
+      {
+        "name": "Korea JoongAng Daily (July 2025)",
+        "url": "https://www.koreajoongangdaily.com/news/2025-07-22/business/tech/Korea-rolled-out-Apple-Pay-for-public-transit--but-it-doesnt-work-for-tourists/2358528"
+      },
+      { "name": "Korea Herald (July 2026)", "url": "https://www.koreaherald.com/article/10794996" }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-baemin",
+    "name": "Baemin",
+    "korean": "배달의민족",
+    "category": "food",
+    "what": "The biggest food delivery app: restaurants, cafes, convenience stores and groceries delivered to your door.",
+    "why": "Most local restaurants are on it, including many that are not on any global app.",
+    "english": "yes",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "yes",
+    "setup": "before",
+    "access": "Since February 2026 the app has English, Chinese and Japanese. It takes foreign cards, Alipay+ and WeChat Pay, and since May 2026 Apple Pay with foreign cards. Most 2026 guides say you can sign up with an overseas number; one says Korean text verification is still needed. Try signing up before you fly.",
+    "disputed": true,
+    "stores": {
+      "ios": "https://apps.apple.com/app/id378084485",
+      "android": "https://play.google.com/store/apps/details?id=com.sampleapp"
+    },
+    "sources": [
+      {
+        "name": "Korea Times (February 2026)",
+        "url": "https://www.koreatimes.co.kr/business/companies/20260204/baedal-minjok-rolls-out-japanese-chinese-english-ordering-options"
+      },
+      {
+        "name": "Asia Economy (May 2026)",
+        "url": "https://view.asiae.co.kr/en/article/2026053113285274214"
+      }
+    ],
+    "lastVerified": "2026-11-22",
+    "refs": ["culture-delivery"]
+  },
+  {
+    "id": "app-coupang-eats",
+    "name": "Coupang Eats",
+    "korean": "쿠팡이츠",
+    "category": "food",
+    "what": "Food delivery from Coupang, often one order per rider so food arrives fast.",
+    "why": "The second big delivery app; free delivery for Coupang WOW members.",
+    "english": "partial",
+    "koreanNumber": "yes",
+    "arc": "unconfirmed",
+    "foreignCards": "unconfirmed",
+    "setup": "arrival",
+    "access": "Most guides say an account needs a Korean phone number; one says international numbers work. Install it after you have a Korean number and see how far sign-up goes.",
+    "disputed": true,
+    "stores": {
+      "ios": "https://apps.apple.com/app/id1445504255",
+      "android": "https://play.google.com/store/apps/details?id=com.coupang.mobile.eats"
+    },
+    "sources": [
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id1445504255" },
+      {
+        "name": "Seoul Start guide",
+        "url": "https://seoulstart.com/guides/korea-food-delivery-apps-guide"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-yogiyo",
+    "name": "Yogiyo",
+    "korean": "요기요",
+    "category": "food",
+    "what": "Food delivery and takeout, with daily discounts.",
+    "why": "The third delivery app; some restaurants have better deals here.",
+    "english": "unconfirmed",
+    "koreanNumber": "yes",
+    "arc": "some",
+    "foreignCards": "unconfirmed",
+    "setup": "arrival",
+    "access": "Guides say sign-up needs a Korean number for text verification, and paying on delivery needs identity verification. The store listing says English; guides say the app is in Korean.",
+    "disputed": true,
+    "stores": {
+      "ios": "https://apps.apple.com/app/id543831532",
+      "android": "https://play.google.com/store/apps/details?id=com.fineapp.yogiyo"
+    },
+    "sources": [
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id543831532" },
+      {
+        "name": "Seoul Start guide",
+        "url": "https://seoulstart.com/guides/korea-food-delivery-apps-guide"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-shuttle",
+    "name": "Shuttle",
+    "category": "food",
+    "what": "Food delivery app built for foreigners, with English menus and English customer support.",
+    "why": "Works without a Korean number or card, so it is a fallback in your first days.",
+    "english": "yes",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "yes",
+    "setup": "before",
+    "access": "Takes international cards and PayPal. Its own pages list Ulsan in its concierge service, but delivery coverage in Ulsan is not confirmed: enter your address in the app to check.",
+    "stores": { "ios": "https://apps.apple.com/app/id1220751968" },
+    "sources": [
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id1220751968" },
+      {
+        "name": "Shuttle concierge page",
+        "url": "https://partners.shuttledelivery.co.kr/blog-posts/shuttle-concierge-bringing-you-your-favorites-wherever-you-are-in-korea"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-catchtable",
+    "name": "CatchTable Global",
+    "category": "food",
+    "what": "Restaurant reservations in English, including popular places that only take bookings online.",
+    "why": "Many busy restaurants in Korea book through CatchTable rather than by phone.",
+    "english": "yes",
+    "koreanNumber": "unconfirmed",
+    "arc": "no",
+    "foreignCards": "yes",
+    "setup": "before",
+    "access": "The global (English) version is a separate app from the Korean one. Guides disagree on sign-up: one says email is enough, another says phone verification. Many restaurants take a deposit, paid by foreign card. Mostly Seoul and Busan restaurants.",
+    "disputed": true,
+    "stores": { "ios": "https://apps.apple.com/app/id1639046576" },
+    "sources": [
+      {
+        "name": "Korea.net (2024)",
+        "url": "https://www.korea.net/NewsFocus/Society/view?articleId=248118"
+      },
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id1639046576" }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-coupang",
+    "name": "Coupang",
+    "korean": "쿠팡",
+    "category": "shopping",
+    "what": "Online shopping for almost anything, often delivered the next morning (Rocket delivery).",
+    "why": "Korea's Amazon: the usual way to buy a pillow, cables or groceries for the dorm.",
+    "english": "partial",
+    "koreanNumber": "yes",
+    "arc": "yes",
+    "foreignCards": "some",
+    "setup": "arc",
+    "access": "An English version started in May 2025, but some menus are still Korean. Guides say a full account needs a Korean phone number and identity verification with your ARC, and foreign cards often fail. Until then, ask a friend or buy in shops.",
+    "stores": {
+      "ios": "https://apps.apple.com/app/id454434967",
+      "android": "https://play.google.com/store/apps/details?id=com.coupang.mobile"
+    },
+    "sources": [
+      {
+        "name": "Korea Times (May 2025)",
+        "url": "https://www.koreatimes.co.kr/southkorea/globalcommunity/20250506/coupang-introduces-english-app-for-foreign-customers-in-korea"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-karrot",
+    "name": "Karrot",
+    "korean": "당근",
+    "category": "shopping",
+    "what": "Buy and sell second-hand items with people in your neighbourhood; you meet in person to hand over.",
+    "why": "Everyone sells furniture, rice cookers and bikes here, especially at the end of a semester.",
+    "english": "partial",
+    "koreanNumber": "yes",
+    "arc": "yes",
+    "foreignCards": "none",
+    "setup": "arc",
+    "access": "Sign-up needs a Korean phone number. Guides say identity checks run through your carrier, so the line should be registered with your ARC. The app has an English setting, but listings are written in Korean. Chat stays inside the app, so your number stays private.",
+    "stores": {
+      "ios": "https://apps.apple.com/app/id1018769995",
+      "android": "https://play.google.com/store/apps/details?id=com.towneers.www"
+    },
+    "sources": [
+      { "name": "Seoul Start guide", "url": "https://seoulstart.com/guides/karrot-danggeun-guide" },
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id1018769995" }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-naver",
+    "name": "Naver (search and Plus Store)",
+    "korean": "네이버",
+    "category": "shopping",
+    "what": "Korea's main search portal. Naver Plus Store (shopping) and Naver Pay live inside it; Plus Store also has its own app.",
+    "why": "Koreans search Naver, not Google, for shops, prices, blog reviews and local news.",
+    "english": "unconfirmed",
+    "koreanNumber": "some",
+    "arc": "some",
+    "foreignCards": "unconfirmed",
+    "setup": "before",
+    "access": "Searching needs no account. Naver's 2026 passport verification lets foreign users verify without a Korean number, starting with Naver Map bookings and payments; Naver says more services will follow. Whether shopping with a foreign card works is not confirmed.",
+    "disputed": true,
+    "stores": { "ios": "https://apps.apple.com/app/id393499958" },
+    "sources": [
+      {
+        "name": "Naver press release (passport verification)",
+        "url": "https://www.navercorp.com/en/media/pressReleasesDetail?seq=10034413"
+      },
+      {
+        "name": "Naver press release (Plus Store)",
+        "url": "https://navercorp.com/en/media/pressReleasesDetail?seq=32379"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-toss",
+    "name": "Toss",
+    "korean": "토스",
+    "category": "money",
+    "what": "Money app: transfers, payments, a prepaid card, overseas transfers, and Toss Bank accounts.",
+    "why": "Sending money to a friend in Korea is a bank transfer, and Toss makes that a few taps.",
+    "english": "yes",
+    "koreanNumber": "some",
+    "arc": "some",
+    "foreignCards": "none",
+    "setup": "before",
+    "access": "Full English since 2025, and more languages since (including Russian). Toss says you can sign up with your passport before you have an ARC or a Korean number, with limited services (prepaid card, transfers, card payments). Add your ARC and Korean number later to unlock the rest.",
+    "stores": {
+      "ios": "https://apps.apple.com/app/id839333328",
+      "android": "https://play.google.com/store/apps/details?id=viva.republica.toss"
+    },
+    "sources": [
+      {
+        "name": "Toss guide for foreigners",
+        "url": "https://toss.im/tossfeed/article/korealifehacks-2-en"
+      },
+      {
+        "name": "Korea Times (July 2025)",
+        "url": "https://www.koreatimes.co.kr/amp/business/banking-finance/20250701/toss-sees-30-growth-in-non-korean-users-driven-by-user-friendly-services"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-kakaobank",
+    "name": "KakaoBank",
+    "korean": "카카오뱅크",
+    "category": "money",
+    "what": "Mobile-only bank: open an account and get a debit card from the app.",
+    "why": "No branch visit. Popular with students for everyday spending and splitting bills.",
+    "english": "yes",
+    "koreanNumber": "yes",
+    "arc": "unconfirmed",
+    "foreignCards": "none",
+    "setup": "arc",
+    "access": "Since October 2026 foreign residents aged 19 or over can open an account remotely in the app, with English screens and chat. You need an accepted ID and a phone registered in your name. Reports do not say whether the ID must be the ARC; older guides say it must.",
+    "disputed": true,
+    "stores": { "ios": "https://apps.apple.com/app/id1258016944" },
+    "sources": [
+      {
+        "name": "Korea Times (October 2026)",
+        "url": "https://www.koreatimes.co.kr/business/banking-finance/20261012/less-paperwork-ai-powered-banking-kakaobank-joins-race-for-foreign-customers"
+      },
+      {
+        "name": "Korea JoongAng Daily (October 2026)",
+        "url": "https://www.koreajoongangdaily.com/business/kakaobank-opens-app-to-foreign-residents-enabling-remote-account-opening/12914315"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-hana-ez",
+    "name": "Hana EZ",
+    "category": "money",
+    "what": "Hana Bank's app for foreign customers: transfers, balance, overseas remittance and certificates, in 16 languages.",
+    "why": "Hana Bank is often named the most foreigner-friendly bank, and this app is built for foreign customers (English, Russian and Uzbek included).",
+    "english": "yes",
+    "koreanNumber": "unconfirmed",
+    "arc": "unconfirmed",
+    "foreignCards": "none",
+    "setup": "arc",
+    "access": "Needs a Hana Bank account. Guides say a full bank account needs your ARC; a passport-only account, where offered, is limited. Multilingual chat runs on weekdays.",
+    "stores": { "ios": "https://apps.apple.com/app/id1472964746" },
+    "sources": [
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id1472964746" },
+      {
+        "name": "Korea JoongAng Daily",
+        "url": "https://www.koreajoongangdaily.com/business/hana-ez-app-is-one-stop-certificate-access-for-foreigners/12478196"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-wowpass",
+    "name": "WOWPASS",
+    "category": "money",
+    "what": "App for the WOWPASS prepaid card for foreigners: exchange money at WOWPASS machines, pay by card in shops, and use the built-in T-money for transit.",
+    "why": "A way to pay by card in your first weeks without a Korean bank account.",
+    "english": "yes",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "unconfirmed",
+    "setup": "before",
+    "access": "Made for visitors. You top up with cash at WOWPASS exchange machines (the app shows them on a map). The T-money part is topped up separately. Check how card validity and refunds work before loading much money.",
+    "stores": { "ios": "https://apps.apple.com/app/id1626691440" },
+    "sources": [
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id1626691440" },
+      { "name": "Trip.com guide", "url": "https://www.trip.com/guide/transport/wowpass.html" }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-kakao-pay",
+    "name": "Kakao Pay",
+    "korean": "카카오페이",
+    "category": "money",
+    "what": "Mobile payments and transfers between friends, linked to KakaoTalk.",
+    "why": "Many shops, apps and friends use it to pay or split bills.",
+    "english": "yes",
+    "koreanNumber": "yes",
+    "arc": "yes",
+    "foreignCards": "no",
+    "setup": "arc",
+    "access": "Kakao Pay registers only cards issued in Korea in your own name, and needs a Korean phone number and identity verification (ARC). Visitors can still pay at some shops by scanning a Kakao Pay QR code with a foreign wallet through Alipay+.",
+    "stores": { "ios": "https://apps.apple.com/app/id1464496236" },
+    "sources": [
+      {
+        "name": "Seoul Start comparison",
+        "url": "https://seoulstart.com/guides/korean-pay-apps-compared"
+      },
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id1464496236" }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-everytime",
+    "name": "Everytime",
+    "korean": "에브리타임",
+    "category": "student",
+    "what": "Timetable, course reviews, and an anonymous community board for each university, with a market for used textbooks.",
+    "why": "Korean students check it daily: which courses are good, what is happening on campus, who is selling a fan.",
+    "english": "yes",
+    "koreanNumber": "unconfirmed",
+    "arc": "unconfirmed",
+    "foreignCards": "none",
+    "setup": "arrival",
+    "access": "Only students who pass school verification can post. How exchange students verify is not documented: ask UNIST International Affairs or your buddy which document works.",
+    "stores": { "ios": "https://apps.apple.com/app/id642416310" },
+    "sources": [{ "name": "App Store listing", "url": "https://apps.apple.com/app/id642416310" }],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "app-unist-mportal",
+    "name": "UNIST mPortal",
+    "category": "student",
+    "what": "UNIST's mobile portal: class timetable, grades and other student services.",
+    "why": "The official UNIST app; it uses the same login as the UNIST Portal.",
+    "english": "unconfirmed",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "none",
+    "setup": "arrival",
+    "access": "Log in with your UNIST Portal ID once UNIST gives you one. The portal notice says you need the UNIST VPN to reach the portal from abroad. Only an iPhone version was found; ask UNIST for Android.",
+    "stores": { "ios": "https://apps.apple.com/app/id1579990578" },
+    "sources": [
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id1579990578" },
+      { "name": "UNIST Portal notice", "url": "https://portal.unist.ac.kr" }
+    ],
+    "lastVerified": "2026-11-22",
+    "refs": ["res-unist-inbound"]
+  },
+  {
+    "id": "app-visitkorea",
+    "name": "VISITKOREA",
+    "category": "travel",
+    "what": "The Korea Tourism Organization's official travel app: places, food, festivals, travel basics and emergency contacts.",
+    "why": "Official, in English, and good for planning weekend trips.",
+    "english": "yes",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "none",
+    "setup": "before",
+    "access": "No account needed. The 1330 travel helpline (English) is listed in the app.",
+    "stores": { "ios": "https://apps.apple.com/app/id417340885" },
+    "web": "https://english.visitkorea.or.kr/",
+    "sources": [{ "name": "App Store listing", "url": "https://apps.apple.com/app/id417340885" }],
+    "lastVerified": "2026-11-22",
+    "refs": ["res-visitkorea"]
+  },
+  {
+    "id": "app-emergency-ready",
+    "name": "Emergency Ready App",
+    "category": "safety",
+    "what": "The government's safety app for foreigners: emergency alerts in your language, shelters, safety tips, and police, fire and embassy contacts.",
+    "why": "Phone emergency alerts arrive in Korean (with a few English keywords). This app gives the same alerts in English.",
+    "english": "yes",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "none",
+    "setup": "before",
+    "access": "Run by the Ministry of the Interior and Safety. The Ministry of Justice and the US Embassy both recommend it to foreigners. Install it, set English, and allow notifications and location.",
+    "stores": { "ios": "https://apps.apple.com/app/id826120919" },
+    "sources": [
+      {
+        "name": "Ministry of Justice notice",
+        "url": "https://www.moj.go.kr/bbs/immigration_eng/229/597574/artclView.do"
+      },
+      {
+        "name": "US Embassy in Korea",
+        "url": "https://kr.usembassy.gov/services-emergency-preparedness/"
+      },
+      {
+        "name": "Korea Times (January 2025)",
+        "url": "https://koreatimes.co.kr/www/nation/2025/01/113_369702.html"
+      }
+    ],
+    "lastVerified": "2026-11-22",
+    "refs": ["culture-emergency-alerts"]
+  },
+  {
+    "id": "app-egen",
+    "name": "E-Gen (emergency medical info)",
+    "korean": "응급의료정보제공",
+    "category": "safety",
+    "what": "Government app for medical help nearby: open emergency rooms, hospitals and pharmacies on a map, including late-night pharmacies.",
+    "why": "The quickest way to find a pharmacy or clinic open at night or on a holiday.",
+    "english": "unconfirmed",
+    "koreanNumber": "no",
+    "arc": "no",
+    "foreignCards": "none",
+    "setup": "before",
+    "access": "No account needed. The app is in Korean; the same information is on the E-Gen website. Public late-night pharmacies usually close around 1 a.m.",
+    "stores": { "ios": "https://apps.apple.com/app/id385668523" },
+    "web": "https://www.e-gen.or.kr",
+    "sources": [
+      { "name": "App Store listing", "url": "https://apps.apple.com/app/id385668523" },
+      {
+        "name": "Korea Times (March 2026)",
+        "url": "https://www.koreatimes.co.kr/amp/lifestyle/travel-food/20260314/sick-in-korea-after-hours-heres-what-visitors-need-to-know"
+      }
+    ],
+    "lastVerified": "2026-11-22",
+    "refs": ["culture-pharmacy"]
+  }
+]

@@ -52,6 +52,8 @@ export interface CultureCard {
   sources?: Source[];
   /** Set when the card states a fact that can change (dates, numbers, routes). */
   lastVerified?: string;
+  /** Related items elsewhere: apps and "How do I…" answers in the Korea apps guide. */
+  refs?: string[];
   needsReview?: boolean;
 }
 

@@ -58,6 +58,12 @@ import {
   setRead,
   type CultureProgress,
 } from '../cultureProgress';
+import {
+  EMPTY_KOREA_GUIDE_PROGRESS,
+  sanitizeKoreaGuideProgress,
+  setChecked,
+  type KoreaGuideProgress,
+} from '../koreaGuideProgress';
 import { ensureCurrentSchema, getValue, setValue } from './db';
 import {
   type DailyGoal,
@@ -133,6 +139,13 @@ interface AppState {
   setCardRead: (cardId: string, read: boolean) => Promise<void>;
   /** Saves a finished topic quiz and logs it for today. */
   finishCultureQuiz: (topicId: string, correct: number, total: number) => Promise<void>;
+
+  koreaGuide: KoreaGuideProgress;
+  /**
+   * Ticks or unticks an arrival-checklist item. Not a study action, so it does not count
+   * for the streak.
+   */
+  setChecklistItem: (itemId: string, checked: boolean) => Promise<void>;
 }
 
 // Used to estimate study time: the gap between two actions, capped at one minute.
@@ -185,6 +198,10 @@ export const useAppStore = create<AppState>((set, get) => {
     set({ culture });
     await setValue(STORAGE_KEYS.culture, culture);
   };
+  const saveKoreaGuide = async (koreaGuide: KoreaGuideProgress) => {
+    set({ koreaGuide });
+    await setValue(STORAGE_KEYS.koreaGuide, koreaGuide);
+  };
   /**
    * Notes a finished lesson in today's ticked tasks, as `lesson:<id>`. The Today plan
    * then keeps showing that lesson (ticked) for the rest of the day, and it counts
@@ -208,6 +225,7 @@ export const useAppStore = create<AppState>((set, get) => {
     grammar: EMPTY_GRAMMAR_PROGRESS,
     phrases: EMPTY_PHRASE_PROGRESS,
     culture: EMPTY_CULTURE_PROGRESS,
+    koreaGuide: EMPTY_KOREA_GUIDE_PROGRESS,
 
     hydrate: async () => {
       await ensureCurrentSchema();
@@ -219,6 +237,7 @@ export const useAppStore = create<AppState>((set, get) => {
       const grammar = sanitizeGrammarProgress(await getValue(STORAGE_KEYS.grammar));
       const phrases = sanitizePhraseProgress(await getValue(STORAGE_KEYS.phrases));
       const culture = sanitizeCultureProgress(await getValue(STORAGE_KEYS.culture));
+      const koreaGuide = sanitizeKoreaGuideProgress(await getValue(STORAGE_KEYS.koreaGuide));
       set({
         settings,
         hangul,
@@ -228,6 +247,7 @@ export const useAppStore = create<AppState>((set, get) => {
         grammar,
         phrases,
         culture,
+        koreaGuide,
         hydrated: true,
       });
     },
@@ -409,5 +429,8 @@ export const useAppStore = create<AppState>((set, get) => {
       });
       await tickToday(quizMarker(topicId));
     },
+
+    setChecklistItem: (itemId, checked) =>
+      saveKoreaGuide(setChecked(get().koreaGuide, itemId, checked, todayISO())),
   };
 });

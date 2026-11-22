@@ -4,6 +4,8 @@ import { muted } from '../../components/ui';
 import { daysUntil, formatLongDate } from '../../lib/date';
 import { DAILY_GOALS, type DailyGoal } from '../../lib/storage/schema';
 import { useAppStore } from '../../lib/storage/store';
+import { checklistForToday, type ChecklistStatus } from '../korea-guide/guide';
+import { ChecklistItems } from '../korea-guide/shared';
 import { useToday } from './useToday';
 
 const SIZE_LABEL: Record<DailyGoal, string> = {
@@ -18,7 +20,9 @@ export function TodayPage() {
   const toggleCourseUnit = useAppStore((s) => s.toggleCourseUnit);
   const setCardRead = useAppStore((s) => s.setCardRead);
   const setDaySize = useAppStore((s) => s.setDaySize);
+  const koreaGuide = useAppStore((s) => s.koreaGuide);
   const days = daysUntil(settings.departureDate);
+  const checklist = checklistForToday(koreaGuide, days);
   const doneCount = tasks.filter((t) => t.done).length;
   const allDone = doneCount === tasks.length;
 
@@ -138,6 +142,8 @@ export function TodayPage() {
         )}
       </Card>
 
+      {checklist && <ChecklistCard status={checklist} />}
+
       <Link to="/roadmap" className="block">
         <Card>
           <p className={muted}>
@@ -155,5 +161,32 @@ export function TodayPage() {
         </Card>
       </Link>
     </Page>
+  );
+}
+
+/** The current arrival checklist (last 3 weeks before departure and the first weeks after). */
+function ChecklistCard({ status }: { status: ChecklistStatus }) {
+  const { checklist, done, total } = status;
+  return (
+    <Card>
+      <section aria-labelledby="today-checklist" data-testid="today-checklist">
+        <div className="flex items-baseline justify-between gap-3">
+          <h2 id="today-checklist" className="font-semibold">
+            Checklist: {checklist.title}
+          </h2>
+          <p className={`tabular-nums ${muted}`}>
+            {done} / {total}
+          </p>
+        </div>
+        <p className={`mt-1 ${muted}`}>{checklist.intro}</p>
+        <ChecklistItems checklist={checklist} limit={3} />
+        <Link
+          to="/korea/checklists"
+          className="flex min-h-10 items-center text-sm font-medium text-teal-700 dark:text-teal-400"
+        >
+          All checklists ›
+        </Link>
+      </section>
+    </Card>
   );
 }

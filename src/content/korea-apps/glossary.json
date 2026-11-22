@@ -1,0 +1,350 @@
+[
+  {
+    "id": "appword-회원가입",
+    "korean": "회원가입",
+    "group": "account",
+    "word": "vocab-tech-회원가입"
+  },
+  {
+    "id": "appword-로그인",
+    "korean": "로그인",
+    "group": "account",
+    "word": "vocab-tech-로그인"
+  },
+  {
+    "id": "appword-로그아웃",
+    "korean": "로그아웃",
+    "group": "account",
+    "word": "vocab-apps-로그아웃"
+  },
+  {
+    "id": "appword-아이디",
+    "korean": "아이디",
+    "group": "account",
+    "word": "vocab-tech-아이디"
+  },
+  {
+    "id": "appword-비밀번호",
+    "korean": "비밀번호",
+    "group": "account",
+    "word": "vocab-documents-비밀번호"
+  },
+  {
+    "id": "appword-계정",
+    "korean": "계정",
+    "group": "account",
+    "word": "vocab-apps-계정"
+  },
+  {
+    "id": "appword-전화번호",
+    "korean": "전화번호",
+    "group": "account",
+    "word": "vocab-documents-전화번호"
+  },
+  {
+    "id": "appword-인증번호",
+    "korean": "인증번호",
+    "group": "account",
+    "word": "vocab-documents-인증번호"
+  },
+  {
+    "id": "appword-본인인증",
+    "korean": "본인인증",
+    "group": "account",
+    "word": "vocab-apps-본인인증"
+  },
+  {
+    "id": "appword-동의",
+    "korean": "동의",
+    "group": "account",
+    "word": "vocab-apps-동의"
+  },
+  {
+    "id": "appword-전체",
+    "korean": "전체",
+    "group": "account",
+    "word": "vocab-apps-전체"
+  },
+  {
+    "id": "appword-비회원",
+    "korean": "비회원",
+    "group": "account",
+    "word": "vocab-apps-비회원"
+  },
+  {
+    "id": "appword-검색",
+    "korean": "검색",
+    "group": "buttons",
+    "word": "vocab-tech-검색"
+  },
+  {
+    "id": "appword-확인",
+    "korean": "확인",
+    "group": "buttons",
+    "word": "vocab-documents-확인하다"
+  },
+  {
+    "id": "appword-취소",
+    "korean": "취소",
+    "group": "buttons",
+    "word": "vocab-apps-취소"
+  },
+  {
+    "id": "appword-다음",
+    "korean": "다음",
+    "group": "buttons",
+    "word": "vocab-apps-다음"
+  },
+  {
+    "id": "appword-이전",
+    "korean": "이전",
+    "group": "buttons",
+    "word": "vocab-apps-이전"
+  },
+  {
+    "id": "appword-완료",
+    "korean": "완료",
+    "group": "buttons",
+    "word": "vocab-apps-완료"
+  },
+  {
+    "id": "appword-선택",
+    "korean": "선택",
+    "group": "buttons",
+    "word": "vocab-apps-선택"
+  },
+  {
+    "id": "appword-입력",
+    "korean": "입력",
+    "group": "buttons",
+    "word": "vocab-apps-입력"
+  },
+  {
+    "id": "appword-저장",
+    "korean": "저장",
+    "group": "buttons",
+    "word": "vocab-tech-저장하다"
+  },
+  {
+    "id": "appword-삭제",
+    "korean": "삭제",
+    "group": "buttons",
+    "word": "vocab-tech-삭제하다"
+  },
+  {
+    "id": "appword-수정",
+    "korean": "수정",
+    "group": "buttons",
+    "word": "vocab-apps-수정"
+  },
+  {
+    "id": "appword-변경",
+    "korean": "변경",
+    "group": "buttons",
+    "word": "vocab-apps-변경"
+  },
+  {
+    "id": "appword-설정",
+    "korean": "설정",
+    "group": "buttons",
+    "word": "vocab-tech-설정"
+  },
+  {
+    "id": "appword-알림",
+    "korean": "알림",
+    "group": "buttons",
+    "word": "vocab-tech-알림"
+  },
+  {
+    "id": "appword-주문",
+    "korean": "주문",
+    "group": "ordering",
+    "word": "vocab-food-주문"
+  },
+  {
+    "id": "appword-장바구니",
+    "korean": "장바구니",
+    "group": "ordering",
+    "word": "vocab-apps-장바구니"
+  },
+  {
+    "id": "appword-수량",
+    "korean": "수량",
+    "group": "ordering",
+    "word": "vocab-apps-수량"
+  },
+  {
+    "id": "appword-결제",
+    "korean": "결제",
+    "group": "ordering",
+    "word": "vocab-apps-결제"
+  },
+  {
+    "id": "appword-카드",
+    "korean": "카드",
+    "group": "ordering",
+    "word": "vocab-shopping-카드"
+  },
+  {
+    "id": "appword-현금",
+    "korean": "현금",
+    "group": "ordering",
+    "word": "vocab-shopping-현금"
+  },
+  {
+    "id": "appword-쿠폰",
+    "korean": "쿠폰",
+    "group": "ordering",
+    "word": "vocab-apps-쿠폰"
+  },
+  {
+    "id": "appword-할인",
+    "korean": "할인",
+    "group": "ordering",
+    "word": "vocab-shopping-할인"
+  },
+  {
+    "id": "appword-품절",
+    "korean": "품절",
+    "group": "ordering",
+    "word": "vocab-apps-품절"
+  },
+  {
+    "id": "appword-포장",
+    "korean": "포장",
+    "group": "ordering",
+    "word": "vocab-food-포장"
+  },
+  {
+    "id": "appword-영수증",
+    "korean": "영수증",
+    "group": "ordering",
+    "word": "vocab-shopping-영수증"
+  },
+  {
+    "id": "appword-환불",
+    "korean": "환불",
+    "group": "ordering",
+    "word": "vocab-shopping-환불"
+  },
+  {
+    "id": "appword-내역",
+    "korean": "내역",
+    "group": "ordering",
+    "word": "vocab-apps-내역"
+  },
+  {
+    "id": "appword-리뷰",
+    "korean": "리뷰",
+    "group": "ordering",
+    "word": "vocab-apps-리뷰"
+  },
+  {
+    "id": "appword-영업시간",
+    "korean": "영업시간",
+    "group": "ordering",
+    "word": "vocab-apps-영업시간"
+  },
+  {
+    "id": "appword-배달",
+    "korean": "배달",
+    "group": "delivery",
+    "word": "vocab-food-배달"
+  },
+  {
+    "id": "appword-배달비",
+    "korean": "배달비",
+    "group": "delivery",
+    "word": "vocab-apps-배달비"
+  },
+  {
+    "id": "appword-배송",
+    "korean": "배송",
+    "group": "delivery",
+    "word": "vocab-apps-배송"
+  },
+  {
+    "id": "appword-주소",
+    "korean": "주소",
+    "group": "delivery",
+    "word": "vocab-transport-주소"
+  },
+  {
+    "id": "appword-요청사항",
+    "korean": "요청사항",
+    "group": "delivery",
+    "word": "vocab-apps-요청사항"
+  },
+  {
+    "id": "appword-고객센터",
+    "korean": "고객센터",
+    "group": "delivery",
+    "word": "vocab-apps-고객센터"
+  },
+  {
+    "id": "appword-문의",
+    "korean": "문의",
+    "group": "delivery",
+    "word": "vocab-apps-문의"
+  },
+  {
+    "id": "appword-위치",
+    "korean": "위치",
+    "group": "transport",
+    "word": "vocab-apps-위치"
+  },
+  {
+    "id": "appword-주변",
+    "korean": "주변",
+    "group": "transport",
+    "word": "vocab-apps-주변"
+  },
+  {
+    "id": "appword-목적지",
+    "korean": "목적지",
+    "group": "transport",
+    "word": "vocab-apps-목적지"
+  },
+  {
+    "id": "appword-출발",
+    "korean": "출발",
+    "group": "transport",
+    "word": "vocab-transport-출발하다"
+  },
+  {
+    "id": "appword-도착",
+    "korean": "도착",
+    "group": "transport",
+    "word": "vocab-transport-도착하다"
+  },
+  {
+    "id": "appword-호출",
+    "korean": "호출",
+    "group": "transport",
+    "word": "vocab-apps-호출"
+  },
+  {
+    "id": "appword-환승",
+    "korean": "환승",
+    "group": "transport",
+    "word": "vocab-apps-환승"
+  },
+  {
+    "id": "appword-충전",
+    "korean": "충전",
+    "group": "transport",
+    "word": "vocab-documents-충전하다"
+  },
+  {
+    "id": "appword-교통카드",
+    "korean": "교통카드",
+    "group": "transport",
+    "word": "vocab-transport-교통카드"
+  },
+  {
+    "id": "appword-정류장",
+    "korean": "정류장",
+    "group": "transport",
+    "word": "vocab-transport-정류장"
+  }
+]

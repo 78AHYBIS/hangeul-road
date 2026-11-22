@@ -16,6 +16,11 @@ import { GrammarPracticePage } from '../features/grammar/GrammarPracticePage';
 import { CardPage } from '../features/culture/CardPage';
 import { TopicPage } from '../features/culture/TopicPage';
 import { TopicQuizPage } from '../features/culture/TopicQuizPage';
+import { AppPage } from '../features/korea-guide/AppPage';
+import { AppsPage } from '../features/korea-guide/AppsPage';
+import { AppWordsPage } from '../features/korea-guide/AppWordsPage';
+import { ChecklistsPage } from '../features/korea-guide/ChecklistsPage';
+import { HowToListPage, HowToPage } from '../features/korea-guide/HowToPages';
 import { KoreaPage } from '../features/korea-guide/KoreaPage';
 import { LearnPage } from '../features/learn/LearnPage';
 import { AddResourcePage } from '../features/library/AddResourcePage';
@@ -85,6 +90,12 @@ export function App() {
           <Route path="korea/topic/:id" element={<TopicPage />} />
           <Route path="korea/topic/:id/quiz" element={<TopicQuizPage />} />
           <Route path="korea/card/:id" element={<CardPage />} />
+          <Route path="korea/apps" element={<AppsPage />} />
+          <Route path="korea/apps/:id" element={<AppPage />} />
+          <Route path="korea/checklists" element={<ChecklistsPage />} />
+          <Route path="korea/howto" element={<HowToListPage />} />
+          <Route path="korea/howto/:id" element={<HowToPage />} />
+          <Route path="korea/app-words" element={<AppWordsPage />} />
           <Route path="roadmap" element={<RoadmapPage />} />
           <Route path="me" element={<MePage />} />
           <Route path="me/progress" element={<ProgressPage />} />

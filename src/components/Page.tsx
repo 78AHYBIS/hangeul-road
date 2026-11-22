@@ -59,24 +59,3 @@ export function Card({
       : 'border border-stone-200 bg-white dark:border-stone-800 dark:bg-stone-900';
   return <section className={`rounded-2xl p-4 ${colors}`}>{children}</section>;
 }
-
-/** Placeholder list of what a later phase will add to a section. */
-export function ComingSoon({ items }: { items: { title: string; text: string; phase: number }[] }) {
-  return (
-    <ul className="space-y-3">
-      {items.map((item) => (
-        <li key={item.title}>
-          <Card>
-            <div className="flex items-start justify-between gap-3">
-              <h2 className="font-semibold">{item.title}</h2>
-              <span className="shrink-0 rounded-full bg-stone-100 px-2 py-0.5 text-xs text-stone-500 dark:bg-stone-800 dark:text-stone-400">
-                Phase {item.phase}
-              </span>
-            </div>
-            <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">{item.text}</p>
-          </Card>
-        </li>
-      ))}
-    </ul>
-  );
-}

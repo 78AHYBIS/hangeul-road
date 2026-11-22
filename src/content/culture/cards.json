@@ -598,7 +598,8 @@
       { "korean": "현금", "meaning": "cash" },
       { "korean": "일시불", "meaning": "single payment (no instalments)" },
       { "korean": "결제", "meaning": "payment" }
-    ]
+    ],
+    "refs": ["howto-pay-without-korean-card", "app-wowpass"]
   },
   {
     "id": "culture-convenience-stores",
@@ -649,7 +650,7 @@
     "summary": "Almost anything can be delivered, fast.",
     "body": [
       "Food delivery is a big part of Korean life: meals arrive quickly, to homes, dorms and even parks. Groceries and online orders also arrive fast, often the next day.",
-      "Delivery apps usually need a Korean phone number and a payment method that works in Korea (see the Korea apps guide). Dorms often have a set pickup spot because drivers cannot enter."
+      "Most delivery apps need a Korean phone number and a payment method that works in Korea; Baemin and Shuttle also work for foreigners (see the Korea apps guide). Dorms often have a set pickup spot because drivers cannot enter."
     ],
     "do": [
       "Learn your dorm's delivery pickup rules.",
@@ -662,7 +663,9 @@
       { "korean": "배달비", "meaning": "delivery fee" },
       { "korean": "주소", "meaning": "address" },
       { "korean": "문 앞", "meaning": "in front of the door" }
-    ]
+    ],
+    "refs": ["app-baemin", "app-shuttle", "howto-order-food"],
+    "lastVerified": "2026-11-22"
   },
   {
     "id": "culture-making-friends",
@@ -1147,7 +1150,7 @@
     "summary": "Loud phone alerts warn about weather, disasters and other dangers.",
     "body": [
       "Korean phones receive emergency text alerts (재난문자) from the government and local authorities: heavy rain, typhoons, earthquakes, fire, very bad air quality or a missing person. Some come with a loud alarm.",
-      "Alerts may be only in Korean. Copy the text into a translator to see whether you need to act. The Korea apps guide lists a government safety app with alerts in English."
+      "Alerts are written in Korean; since 2025 they also carry a few English keywords for the type and level of alert. Copy the text into a translator to see whether you need to act. The Korea apps guide lists a government safety app with alerts in English."
     ],
     "do": [
       "Translate an alert as soon as it arrives.",
@@ -1159,7 +1162,9 @@
       { "korean": "태풍", "meaning": "typhoon" },
       { "korean": "지진", "meaning": "earthquake" },
       { "korean": "대피", "meaning": "evacuation" }
-    ]
+    ],
+    "refs": ["app-emergency-ready"],
+    "lastVerified": "2026-11-22"
   },
   {
     "id": "culture-ulsan-city",

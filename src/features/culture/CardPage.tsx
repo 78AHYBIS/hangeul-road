@@ -6,6 +6,7 @@ import { formatLongDate } from '../../lib/date';
 import { useAppStore } from '../../lib/storage/store';
 import { SpeakButton, VoiceNotice } from '../hangul/shared';
 import { MixedText } from '../../components/MixedText';
+import { RelatedLinks } from '../korea-guide/shared';
 
 function AdviceList({ title, items, mark }: { title: string; items: string[]; mark: string }) {
   return (
@@ -81,6 +82,8 @@ function CultureCardView({ card }: { card: CultureCard }) {
           ))}
         </ul>
       </Card>
+
+      <RelatedLinks ids={card.refs} title="In the Korea apps guide" />
 
       {(card.sources || card.lastVerified) && (
         <footer

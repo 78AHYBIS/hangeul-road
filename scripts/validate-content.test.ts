@@ -166,4 +166,75 @@ describe('validateContent', () => {
     expect(text).toMatch(/must cite an official source/);
     expect(errors).toHaveLength(10);
   });
+
+  it('checks Korea apps, checklists, how-to answers and app words', () => {
+    const app = {
+      id: 'app-a',
+      name: 'A',
+      category: 'maps',
+      what: 'w',
+      why: 'y',
+      english: 'yes',
+      koreanNumber: 'no',
+      arc: 'unconfirmed',
+      foreignCards: 'none',
+      setup: 'before',
+      access: 'a',
+      stores: { ios: 'https://apps.apple.com/app/id123' },
+      sources: [{ name: 's', url: 'https://example.com' }],
+      lastVerified: '2026-11-22',
+    };
+    const apps = (json: unknown[]) => file(json, 'src/content/korea-apps/apps.json');
+    expect(validateContent([apps([app])]).errors).toEqual([]);
+
+    const { errors } = validateContent([
+      apps([
+        app,
+        { ...app, id: 'app-b', english: 'maybe', stores: { ios: 'https://example.com/app' } },
+        { ...app, id: 'app-c', stores: {}, sources: [], lastVerified: undefined },
+        {
+          ...app,
+          id: 'app-d',
+          stores: { android: 'https://play.google.com/store/apps/details?id=a.b' },
+        },
+      ]),
+      file(
+        [
+          {
+            id: 'checklist-x',
+            title: 't',
+            when: 'someday',
+            intro: 'i',
+            lastVerified: '2026-11-22',
+            items: [
+              { id: 'check-1', text: 't', refs: ['app-a'] },
+              { id: 'check-1', text: '', refs: ['app-ghost'] },
+            ],
+          },
+        ],
+        'src/content/korea-apps/checklists.json',
+      ),
+      file(
+        [{ id: 'howto-x', question: 'q', answer: 'a', steps: ['one'], lastVerified: '2026-11-22' }],
+        'src/content/korea-apps/howto.json',
+      ),
+      file(
+        [{ id: 'appword-x', korean: '검색', group: 'misc', word: 'vocab-ghost' }],
+        'src/content/korea-apps/glossary.json',
+      ),
+    ]);
+    const text = errors.join('\n');
+    expect(text).toMatch(/unknown english "maybe"/);
+    expect(text).toMatch(/"ios" link is not a store link/);
+    expect(text).toMatch(/needs at least one store link/);
+    expect(text).toMatch(/"sources" must be a non-empty list/);
+    expect(text).toMatch(/missing "lastVerified"/);
+    expect(text).toMatch(/unknown when "someday"/);
+    expect(text).toMatch(/duplicate id "check-1"/);
+    expect(text).toMatch(/items\[1\]: missing "text"/);
+    expect(text).toMatch(/broken reference "app-ghost"/);
+    expect(text).toMatch(/at least 2 steps/);
+    expect(text).toMatch(/unknown group "misc"/);
+    expect(text).toMatch(/broken reference "vocab-ghost"/);
+  });
 });

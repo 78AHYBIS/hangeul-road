@@ -78,5 +78,10 @@
     "id": "deck-home",
     "title": "Home, family and free time",
     "description": "Dorm room and kitchen, daily routine, grandparents, pets and weekend fun."
+  },
+  {
+    "id": "deck-apps",
+    "title": "Words in Korean apps",
+    "description": "Buttons and screens in delivery, shopping, taxi and bank apps."
   }
 ]

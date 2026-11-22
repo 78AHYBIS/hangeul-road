@@ -247,12 +247,70 @@ the app did not, and where the two disagree (no disagreements on rules were foun
 - 252 unit tests in total. Checked in Chromium at iPhone 13 size: the new lessons, deck,
   rule, pack, card and Dates mode open with no console errors and no sideways scrolling.
 
+### Phase 7 — Korea apps and arrival guide (2026-11-22)
+
+- **Apps directory** (Korea tab → Korea apps): 30 apps in 10 categories: Naver Map,
+  KakaoMap, Papago, Naver Dictionary, KakaoTalk, Kakao T, K.Ride, KakaoMetro, Subway Korea,
+  KORAIL+, Express Bus T-money, T-money GO, Baemin, Coupang Eats, Yogiyo, Shuttle, CatchTable
+  Global, Coupang, Karrot, Naver (Plus Store), Toss, KakaoBank, Hana EZ, WOWPASS, Kakao Pay,
+  Everytime, UNIST mPortal, VISITKOREA, Emergency Ready App, E-Gen. Each has what it does, why
+  locals use it, English, Korean number, ARC, foreign cards, when to set it up, a details
+  note, store links, sources and `lastVerified`. 12 apps are marked "Sources disagree".
+  Search, a category filter and a "Works before you fly" filter.
+- **Three checklists** (12 + 10 + 9 items) with saved ticks: Before I fly, First week,
+  After I get my ARC. Items link to the apps, answers and culture cards they mention.
+- **Today:** in the last 21 days before departure a checklist card appears below the plan
+  (outside the 5 tasks): the first 3 open items with tick boxes. After departure it shows
+  First week, then After ARC, for up to 90 days.
+- **How do I…** (10 answers): the airport to Ulsan, a bus, a taxi, food delivery, a parcel,
+  second-hand things, a pharmacy, paying without a Korean card, a Korean phone number, the
+  Residence Card.
+- **Words in Korean apps:** 58 buttons and labels in 5 groups, each linked to a vocabulary
+  word. 26 were already in decks; 32 new words are in a 17th deck, "Words in Korean apps"
+  (745 → 777 words), with a "Learn this deck next" button.
+- The culture cards on delivery, cards and cash, and emergency alerts now link to the
+  guide ("In the Korea apps guide"). Two cards were updated with 2026 facts: Baemin and
+  Shuttle work for foreigners; alerts carry English keywords since 2025.
+- New saved key `koreaGuide`, included in export / import automatically. Schema version
+  stays 1.
+- The validator checks app values, store link formats, sources, `lastVerified`, unique
+  checklist item ids, refs inside checklist items, how-to steps and glossary links.
+- 282 unit tests in total.
+
+Facts checked by web search on 2026-11-22 (search results only; the session could not
+open sites or the app stores directly, as in earlier phases):
+
+- Naver passport verification for foreigners (4 June 2026): bookings, orders and payments
+  in Naver Map without a Korean number. Baemin in English, Chinese and Japanese (February
+  2026), foreign Apple Pay (May 2026). KORAIL+ replaced Korail Talk (3 August 2026) and
+  took over SRT booking (September 2026). Express bus online booking with foreign cards from
+  August 2026; T-money's app still Korean cards only. Toss full English and passport sign-up.
+  KakaoBank accounts for foreign residents (October 2026). Ulsan cashless city buses: pilot
+  from 31 October 2026, all routes planned January to March 2027.
+- Store links: App Store ids and Google Play package names were taken from search results
+  (store listings, app trackers). 13 apps have a confirmed Google Play link; for the other
+  17 the app opens a Google Play search instead of guessing a package name.
+
+Acceptance:
+
+- [x] At least 25 apps, each verified during this phase (30, all with `lastVerified`
+      2026-11-22 and at least one source).
+- [x] Every app has the phone-number/ARC field filled in or marked "unconfirmed" (tested).
+      Unconfirmed values: Korean number for Kakao T, KORAIL+, Express Bus, CatchTable,
+      Hana EZ, Everytime; ARC for Kakao T, KORAIL+, Express Bus, Coupang Eats, KakaoBank,
+      Hana EZ, Everytime.
+- [x] Checklists persist and appear on the Today page in the last 3 weeks before departure
+      (unit-tested for 22 / 21 / 1 / 0 / -89 / -90 days; checked in Chromium at iPhone 13
+      size: no card with the departure 3 months away; with the departure set 10 days ahead
+      the "Before I fly" card appears, and a tick survives a reload on Today and on the
+      checklists page). All new screens were opened at iPhone 13 size in light mode (one app page also in
+      dark mode), with no console errors and no sideways scrolling.
+
 ## Next
 
-Phase 7 — Korea apps and arrival guide (see PROMPT.md). The Korea tab already has the
-culture section; the apps directory and checklists replace the "Phase 7" placeholders in
-`src/features/korea-guide/KoreaPage.tsx`. Several culture cards point to "the Korea apps
-guide" (delivery, payments, emergency alerts).
+Phase 8 — Polish, offline and deploy (see PROMPT.md). Notes for it: the global search
+should include `KOREA_APPS` and `HOW_TOS`; "on-the-ground mode" can reuse
+`checklistForToday` and link the apps guide; code-splitting (the bundle is now 956 kB).
 
 ## Decisions
 
@@ -310,6 +368,18 @@ guide" (delivery, payments, emergency alerts).
 - **The self-introduction needs Hangul** for the 해요 particles; a Latin name falls back
   to 입니다, which fits any word, with a note.
 
+- **Apps guide sits in the Korea tab**, next to culture, not in the Library: apps are
+  for living in Korea, the Library is for learning Korean. Papago, Naver Dictionary and
+  VISITKOREA link to their Library entries.
+- **Access as fixed values plus a note** (`yes / some / no / unconfirmed`): the list can show
+  short chips, while the note says what exactly works and where sources disagree.
+- **No guessed store links:** a Google Play link is shown only when the package name was
+  confirmed; otherwise the button opens a Play search for the app name.
+- **Checklist card outside the 5 tasks:** the spec caps daily tasks at 5, and the
+  checklist is a few minutes of setup, not study. Ticks do not count for the streak.
+- **App words link to existing vocabulary** instead of repeating it: 확인 on a button links
+  to 확인하다 in the documents deck. Only missing words went into the new deck.
+
 ## Known issues
 
 - Audio depends on the device having a Korean voice. Some browser voices need an
@@ -323,6 +393,10 @@ guide" (delivery, payments, emergency alerts).
   resource page; re-verify the library before relying on a price.
 - Links open in a new tab and need internet; the library itself works offline.
 - Bundle is now 853 kB (246 kB gzipped) with the culture content. Still planned for Phase 8.
+- Bundle is now 956 kB (274 kB gzipped) with the apps guide.
+- Korea apps: access rules for foreigners changed many times in 2026 and will keep
+  changing. Every app page says so; re-check sign-up yourself before relying on an app, and
+  update `apps.json` (with a new `lastVerified`) when something differs.
 - Culture facts that change: transport times and fares, bus routes near UNIST, the Labour
   Day substitute-holiday rule, waste rules per building. Re-check close to departure.
 
@@ -357,6 +431,12 @@ polite sentences, but none of it has been checked by a native speaker. Worth a g
 - Added on 2026-11-22, worth a look: 형제 for "siblings" in 형제가 있어요?; 공용 부엌 (signs
   often say 주방); 저는 외동이에요; 요즘 뭐 하고 지내요?; 성함이 어떻게 되세요?; the note that
   해야 돼요 and 해야 해요 mean the same; spacing of 잘하다 / 잘 못하다 / 못 해요.
+- Added on 2026-11-22 (Phase 7), worth a look: the 32 words and examples in
+  `deck-17-apps.json`, especially 요청사항 written as one word (as apps show it),
+  본인인증, 비회원, and the example 요청사항에 '문 앞에 놔 주세요'라고 썼어요. Also the UNIST
+  address in the checklist (울산광역시 울주군 언양읍 유니스트길 50), 빈차 (the free-taxi
+  light), 반값택배, and the glossary pairs where a button word links to a verb (확인 → 확인하다,
+  출발 → 출발하다, 충전 → 충전하다).
 - Stroke order follows the standard school order (e.g. ㅂ 4 strokes, ㅌ 3, ㅈ 2).
   Some teachers and fonts differ slightly.
 
@@ -389,3 +469,28 @@ Details to re-check on the sites themselves:
 - **Bus routes near UNIST** (337, 327, 807, 304): UNIST pages name different routes.
 - **YouTube handles** (TTMIK by channel id, @KoreanUnnie, @seemile, @koreanenglishman,
   @asianboss, GO! Billy's /user/ link): taken from listing sites.
+
+Phase 7, Korea apps guide (not in the app, or in it only as "unconfirmed"):
+
+- **Google Play package names** for K.Ride, KakaoMetro, Subway Korea, Express Bus T-money,
+  T-money GO, Shuttle, CatchTable Global, Naver, KakaoBank, Hana EZ, WOWPASS, Kakao Pay,
+  Everytime, UNIST mPortal, VISITKOREA, Emergency Ready App and E-Gen: not confirmed, so the
+  app opens a Google Play search. The Emergency Ready App's App Store id (826120919) comes
+  from a third-party listing that matches its name and features.
+- **Kakao T with a foreign number and card:** sources disagree.
+- **Baemin sign-up with an overseas number:** most 2026 guides say yes, one says no.
+- **Coupang Eats, Yogiyo, CatchTable Global sign-up rules:** sources disagree.
+- **KORAIL+ English mode and foreign cards** after the August 2026 change.
+- **Express bus booking with foreign cards** (Korea Herald, from August 2026): which app or
+  site it applies to.
+- **T-money GO "foreigner" login** (claimed by one unofficial guide, March 2026).
+- **KakaoBank foreign-resident account:** whether the accepted ID must be the ARC.
+- **Everytime verification for exchange students:** not documented anywhere I found.
+- **Shuttle delivery in Ulsan:** coverage not confirmed.
+- **Naver Plus Store with foreign cards**, and whether passport verification covers shopping.
+- **Residence Card fee** (one university page says ₩30,000, cash): left out of the app; ask
+  UNIST.
+- **Papago offline packs:** confirmed for Korean and English by guides and the store listing;
+  the exact list of offline languages varies by source.
+- Left out entirely: Klook, Trip.com and other third-party booking apps, KakaoBank's Android
+  link, Wise and other remittance apps, Uber (not researched this phase).

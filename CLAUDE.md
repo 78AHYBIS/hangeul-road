@@ -37,8 +37,9 @@ src/
                 libraryProgress.ts (resource status, active courses, units),
                 particles.ts (은/는, 이/가, 이에요/예요… by batchim), selfIntro.ts,
                 grammarProgress.ts, phraseProgress.ts, cultureProgress.ts,
+                koreaGuideProgress.ts (arrival-checklist ticks),
                 mixedText.ts (Korean runs in mixed strings)
-  components/   shared UI (Page, Card, ComingSoon, LinkRow, MixedText), ui.ts (button classes, choiceClass)
+  components/   shared UI (Page, Card, LinkRow, MixedText), ui.ts (button classes, choiceClass)
 scripts/        validate-content.ts (+ its test)
 ```
 
@@ -77,7 +78,8 @@ scripts/        validate-content.ts (+ its test)
 - IndexedDB database `hangeul-road`, one table `kv` (`key` -> `value`), wrapped by
   `src/lib/storage/db.ts`. Nothing else imports Dexie.
 - Each feature owns one key, listed in `STORAGE_KEYS` in `schema.ts`
-  (`settings`, `hangul`, `vocab`, `activity`, `library`, `grammar`, `phrases`, `culture`). A new feature adds a key, a type, a `sanitize…` function,
+  (`settings`, `hangul`, `vocab`, `activity`, `library`, `grammar`, `phrases`, `culture`,
+  `koreaGuide`). A new feature adds a key, a type, a `sanitize…` function,
   and state + actions in `store.ts`.
 - `SCHEMA_VERSION` (now 1) describes the shape of saved data. When a saved shape
   changes: bump it and add a step to `migrate()` in `schema.ts`. It runs at startup
@@ -121,7 +123,7 @@ readingSpeed[], lessonsDone[] }`. See `src/lib/hangulProgress.ts`.
 
 ### vocab/
 
-- `decks.json` (16): `id` (`deck-food`), `title`, `description`. Order = study order.
+- `decks.json` (17): `id` (`deck-food`), `title`, `description`. Order = study order.
   A deck holds 30 to 50 words (tested); start a new deck file when one is full.
 - `deck-NN-<slug>.json`: words. `id` (`vocab-<slug>-<korean>`), `korean`, `meaning`,
   `pos`, `deck` (deck id), `example` (polite style), `exampleMeaning`, optional `note`.
@@ -193,6 +195,41 @@ custom[] }`. At most 2 active courses. A unit is `{ id: 'u1', title, doneOn }`.
 - Saved progress (`culture` key): `{ read: { [cardId]: date }, results: { [topicId]: { correct,
 total, date } } }`. Reading logs `culture:<cardId>`, a quiz `culture:quiz:<topicId>`.
 - Today: `cultureTaskForToday()` in `features/culture/culture.ts` fills `PlanInput.culture`.
+- Optional `refs` on a card link to the Korea apps guide (app or how-to ids); `CardPage`
+  shows them as "In the Korea apps guide". Use this whenever text says "see the apps guide".
+
+### korea-apps/
+
+Types, category and value lists live in `src/content/korea-apps/index.ts`; the validator's
+`APP_ENUMS` must stay in sync. Logic (Today checklist, ref links, search) is in
+`features/korea-guide/guide.ts`, display labels in `labels.ts`.
+
+- `apps.json` (30): `id` (`app-<slug>`), `name`, optional `korean`, `category` (maps,
+  translation, messaging, transport, food, shopping, money, student, travel, safety),
+  `what`, `why` (why locals use it instead of the global app), `english` (yes, partial, no,
+  unconfirmed), `koreanNumber` and `arc` (no, some, yes, unconfirmed), `foreignCards` (yes,
+  some, no, none = no payments, unconfirmed), `setup` (before, arrival, arc), `access`
+  (details; say so when sources disagree), optional `disputed: true`, `stores` (`ios` as
+  `https://apps.apple.com/app/id<n>`, `android` as `https://play.google.com/store/apps/details?id=<pkg>`;
+  at least one; a missing Android link is shown as a Play search), optional `web`,
+  `sources[]`, `lastVerified`, optional `refs`.
+- `checklists.json` (3, order before → arrival → arc): `id`, `title`, `when`, `intro`,
+  `items[]` (`{ id: 'check-<list>-<slug>', text, refs? }`), `lastVerified`. Item ids are
+  unique across all content. **Never change one**: ticks are saved by item id.
+- `howto.json` (10): `id` (`howto-<slug>`), `question` (completes "How do I…"), `answer`,
+  `steps[]` (2+), optional `refs`, optional `sources[]`, `lastVerified`.
+- `glossary.json` (58): `id` (`appword-<korean>`), `korean` (as on screen), `group`
+  (account, buttons, ordering, delivery, transport), `word` (a vocabulary word id whose
+  Korean starts with `korean`, e.g. 확인 → 확인하다). New app words go in
+  `deck-17-apps.json` (`deck-apps`); a word appears only once across all decks.
+- Every access claim is verified by web search. Rules for foreigners change fast: what
+  cannot be confirmed is `unconfirmed` in the app or listed under "Links to check".
+- Saved progress (`koreaGuide` key): `{ checked: { [itemId]: date } }`. Ticking is not a
+  study action, so it does not log to today or count for the streak.
+- Today: `checklistForToday(progress, daysToDeparture)` shows a checklist card (outside the
+  5 tasks) from 21 days before departure ("Before I fly", then a preview of "First week")
+  until 90 days after it ("First week", then "After I get my ARC"). Items ticked today stay
+  visible (`itemsForToday`).
 
 ## Spaced repetition (src/lib/srs.ts)
 

@@ -6,6 +6,7 @@ import { EMPTY_LIBRARY } from '../libraryProgress';
 import { EMPTY_GRAMMAR_PROGRESS } from '../grammarProgress';
 import { EMPTY_PHRASE_PROGRESS } from '../phraseProgress';
 import { EMPTY_CULTURE_PROGRESS } from '../cultureProgress';
+import { EMPTY_KOREA_GUIDE_PROGRESS } from '../koreaGuideProgress';
 import { todayISO } from '../date';
 import { createBackup, restoreBackup } from './backup';
 import { readAll, replaceAll, setValue } from './db';
@@ -39,6 +40,7 @@ function forgetInMemoryState() {
     grammar: EMPTY_GRAMMAR_PROGRESS,
     phrases: EMPTY_PHRASE_PROGRESS,
     culture: EMPTY_CULTURE_PROGRESS,
+    koreaGuide: EMPTY_KOREA_GUIDE_PROGRESS,
   });
 }
 
@@ -398,5 +400,41 @@ describe('culture progress', () => {
     await restoreBackup(fileText);
     await store().hydrate();
     expect(store().culture).toEqual(culture);
+  });
+});
+
+describe('Korea guide progress', () => {
+  it('saves checklist ticks, does not log them as study, and survives a backup', async () => {
+    const store = () => useAppStore.getState();
+    const today = todayISO();
+    await store().hydrate();
+
+    await store().setChecklistItem('check-before-maps', true);
+    await store().setChecklistItem('check-before-papago', true);
+    await store().setChecklistItem('check-before-papago', false);
+
+    expect(store().koreaGuide).toEqual({ checked: { 'check-before-maps': today } });
+    expect(store().activity.days[today]).toBeUndefined();
+
+    const guide = store().koreaGuide;
+    forgetInMemoryState();
+    await store().hydrate();
+    expect(store().koreaGuide).toEqual(guide);
+
+    const fileText = JSON.stringify(await createBackup());
+    await replaceAll({});
+    forgetInMemoryState();
+    await restoreBackup(fileText);
+    await store().hydrate();
+    expect(store().koreaGuide).toEqual(guide);
+  });
+
+  it('drops bad saved ticks', async () => {
+    await setValue('koreaGuide', { checked: { a: '2027-02-01', b: 'soon', '': '2027-02-01' } });
+    await useAppStore.getState().hydrate();
+    expect(useAppStore.getState().koreaGuide).toEqual({ checked: { a: '2027-02-01' } });
+    await setValue('koreaGuide', 'junk');
+    await useAppStore.getState().hydrate();
+    expect(useAppStore.getState().koreaGuide).toEqual(EMPTY_KOREA_GUIDE_PROGRESS);
   });
 });

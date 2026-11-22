@@ -13,6 +13,7 @@ import { sanitizeLibrary } from '../libraryProgress';
 import { sanitizeGrammarProgress } from '../grammarProgress';
 import { sanitizePhraseProgress } from '../phraseProgress';
 import { sanitizeCultureProgress } from '../cultureProgress';
+import { sanitizeKoreaGuideProgress } from '../koreaGuideProgress';
 
 export const APP_ID = 'hangeul-road';
 export const SCHEMA_VERSION = 1;
@@ -26,6 +27,7 @@ export const STORAGE_KEYS = {
   grammar: 'grammar',
   phrases: 'phrases',
   culture: 'culture',
+  koreaGuide: 'koreaGuide',
 } as const;
 
 export type Theme = 'system' | 'light' | 'dark';
@@ -146,6 +148,9 @@ export function parseBackup(raw: unknown): StoredData {
   }
   if (STORAGE_KEYS.culture in data) {
     data[STORAGE_KEYS.culture] = sanitizeCultureProgress(data[STORAGE_KEYS.culture]);
+  }
+  if (STORAGE_KEYS.koreaGuide in data) {
+    data[STORAGE_KEYS.koreaGuide] = sanitizeKoreaGuideProgress(data[STORAGE_KEYS.koreaGuide]);
   }
   return data;
 }

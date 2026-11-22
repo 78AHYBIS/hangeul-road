@@ -1,0 +1,176 @@
+[
+  {
+    "id": "howto-airport-to-ulsan",
+    "question": "Get from the airport to Ulsan",
+    "answer": "From Incheon: AREX to Seoul Station, then the KTX to Ulsan, or a direct bus (about 5 hours). From Gimhae: a limousine bus, about an hour.",
+    "steps": [
+      "Incheon by train: take the airport railroad (AREX) to Seoul Station, then a KTX to Ulsan Station (울산역, also signed 통도사). Book the KTX in KORAIL+ or on the Korail website.",
+      "Incheon by bus: direct buses to Ulsan leave from both terminals several times a day. No change, room for luggage.",
+      "Gimhae (Busan): an airport limousine bus reaches Ulsan in about an hour.",
+      "Leave 2 to 3 hours after landing for immigration and luggage before your train or bus.",
+      "From KTX Ulsan Station to UNIST: a taxi takes 10 to 15 minutes. Show 유니스트 and your dorm name."
+    ],
+    "refs": ["culture-airport-to-ulsan", "culture-ktx-to-campus", "app-korail-plus", "app-kride"],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "howto-bus",
+    "question": "Take a bus",
+    "answer": "Find the route in Naver Map, tap your transit card when you get on and again when you get off.",
+    "steps": [
+      "Search your destination in Naver Map or KakaoMap and pick the bus option. The app shows the bus number, the stop and when the next bus comes.",
+      "Get on at the front door and tap your T-money card (or a Korean bank card that works as one).",
+      "Press the bell (하차벨) before your stop and get off at the back door. Tap your card again on the way out, so a transfer within the time limit is free or cheaper.",
+      "Do not count on cash. Ulsan started cashless city buses on some routes in October 2026 and plans to make all routes cashless in early 2027 (card or bank transfer only)."
+    ],
+    "refs": ["culture-bus-etiquette", "culture-transit-cards", "app-naver-map"],
+    "sources": [
+      {
+        "name": "Korea Herald (October 2026)",
+        "url": "https://biz.heraldcorp.com/article/10900921"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "howto-taxi",
+    "question": "Call a taxi",
+    "answer": "Use K.Ride (no Korean number needed) or Kakao T, or wave one down on the street.",
+    "steps": [
+      "Before you have a Korean number, use K.Ride: English screens, foreign cards, and a translated chat with the driver.",
+      "Once you have a Korean number, Kakao T has the most taxis. You can choose to pay the driver directly if your card fails in the app.",
+      "On the street, wave at a taxi with a red light showing it is free (빈차).",
+      "Show the address in Korean or a map pin, and say 유니스트로 가 주세요 if you are going to campus. Most taxis take cards."
+    ],
+    "refs": ["app-kride", "app-kakao-t", "culture-taxis"],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "howto-order-food",
+    "question": "Order food delivery",
+    "answer": "Baemin has English and takes foreign cards. Coupang Eats and Yogiyo usually need a Korean number.",
+    "steps": [
+      "Open Baemin, switch it to English, and set your address exactly as it is written in Korean.",
+      "Find out where your dorm wants deliveries left: drivers often cannot enter the building.",
+      "Add a request for the rider, such as 문 앞에 놔 주세요 (leave it at the door).",
+      "If sign-up or payment fails, try Shuttle, which is built for foreigners.",
+      "Once you have a Korean number, Coupang Eats and Yogiyo are worth comparing for deals."
+    ],
+    "refs": ["app-baemin", "app-shuttle", "app-coupang-eats", "culture-delivery"],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "howto-send-parcel",
+    "question": "Send a parcel",
+    "answer": "Inside Korea, the cheapest way is a convenience store. Abroad, go to a post office (EMS).",
+    "steps": [
+      "Inside Korea: GS25 and CU convenience stores send parcels, including cheap store-to-store delivery (반값택배). Have the address ready in Korean.",
+      "Abroad: go to a post office (우체국) and send it by EMS. A passport is accepted for small international parcels.",
+      "Some CU stores also send international express parcels through DHL.",
+      "Customs may ask what is inside and its value; food must be sealed and shelf-stable."
+    ],
+    "refs": ["culture-convenience-stores"],
+    "sources": [
+      {
+        "name": "DHL Express Korea (2024)",
+        "url": "https://www.dhl.com/kr-en/home/press/press-archive/2024/dhl-express-korea-partners-with-bgf-networks-to-provide-international-shipping-services-at-cu-convenience-stores-across-korea.html"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "howto-second-hand",
+    "question": "Buy second-hand things",
+    "answer": "Karrot is where everyone buys and sells, but it needs a Korean number. Before that, ask in Everytime or your dorm chats.",
+    "steps": [
+      "Before you have a Korean number: ask your buddy, the dorm group chat or the Everytime market board. Students leaving at the end of a semester sell fans, rice cookers and bikes.",
+      "With a Korean number (and ARC): sign up for Karrot, set your neighbourhood to the campus area and search in Korean (선풍기 fan, 자전거 bicycle).",
+      "Meet in a public place in daylight, check the item before paying, and pay by bank transfer or cash.",
+      "Keep all chat inside the app."
+    ],
+    "refs": ["app-karrot", "app-everytime"],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "howto-pharmacy",
+    "question": "Find a pharmacy",
+    "answer": "Search 약국 in Naver Map. At night or on holidays, use E-Gen to see what is open.",
+    "steps": [
+      "Search 약국 (pharmacy) in Naver Map or KakaoMap. Look for the large 약 sign on the street.",
+      "At night or on a holiday, check the E-Gen app or website for open pharmacies and clinics. Ulsan has had public late-night pharmacies since 2022; they usually close around 1 a.m.",
+      "Late at night, convenience stores sell basic fever and pain medicine.",
+      "Describe the problem simply (머리가 아파요, I have a headache) or show a Papago translation.",
+      "In an emergency, call 119."
+    ],
+    "refs": ["app-egen", "culture-pharmacy", "culture-if-sick"],
+    "sources": [
+      {
+        "name": "Korea Times (March 2026)",
+        "url": "https://www.koreatimes.co.kr/amp/lifestyle/travel-food/20260314/sick-in-korea-after-hours-heres-what-visitors-need-to-know"
+      },
+      {
+        "name": "Asia Economy (Ulsan, 2022)",
+        "url": "https://www.asiae.co.kr/en/article/2022030210051420363"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "howto-pay-without-korean-card",
+    "question": "Pay without a Korean card",
+    "answer": "Foreign Visa and Mastercard cards work in most shops. Apps are harder: use the ones that accept foreign cards, and keep some cash.",
+    "steps": [
+      "In shops, cafes, taxis and kiosks, a foreign Visa or Mastercard usually works. If asked 일시불이요?, say 네.",
+      "Keep some cash in won for topping up your T-money card and for small stalls.",
+      "In apps, foreign cards work in Baemin, Shuttle, K.Ride and CatchTable Global; many other apps reject them.",
+      "WOWPASS is a prepaid card for foreigners that you top up with cash at its machines.",
+      "Toss lets you sign up with a passport and use a prepaid card before you have an ARC.",
+      "Kakao Pay needs a Korean card; some shops let visitors scan its QR code with a foreign wallet through Alipay+."
+    ],
+    "refs": ["culture-card-payments", "app-wowpass", "app-toss", "app-baemin"],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "howto-phone-number",
+    "question": "Get a Korean phone number",
+    "answer": "A prepaid SIM or eSIM with a 010 number works on your passport. Most identity checks in apps need a line registered with your ARC.",
+    "steps": [
+      "Before you fly or at the airport: buy a prepaid SIM or eSIM that includes a Korean 010 number, not a data-only plan. A passport is enough.",
+      "Know the limit: lines on a passport often cannot pass identity verification (본인인증), which banks, Coupang and Karrot use.",
+      "After you get your ARC: register the line with your ARC or move to a monthly plan. Ask whether you can keep the same number; do not assume it carries over.",
+      "Your number is tied to your stay: a line registered to a student can be suspended when the permitted stay ends."
+    ],
+    "refs": ["app-kakaotalk"],
+    "sources": [
+      {
+        "name": "LG U+ eSIM FAQ",
+        "url": "https://www.lguplus.com/korea-sim/eng/pc/support/faq?tab=esim"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "howto-residence-card",
+    "question": "Get my Residence Card (ARC)",
+    "answer": "Register within 90 days of arrival, in person at the immigration office, after booking on HiKorea. Ask UNIST International Affairs first.",
+    "steps": [
+      "Foreigners staying longer than 90 days must apply for a Residence Card (formerly the Alien Registration Card, ARC) within 90 days of entry.",
+      "You cannot apply online: book an appointment through HiKorea, then go to the immigration office in person.",
+      "Ask UNIST International Affairs which documents and fee to bring, and whether they organise the visit.",
+      "The card is not issued on the spot, so apps that need an ARC have to wait a little. Since 2025 there is also a mobile Residence Card in the Mobile ID app, which needs a phone in your own name.",
+      "Questions in English: the immigration contact centre, 1345."
+    ],
+    "refs": ["culture-emergency-numbers"],
+    "sources": [
+      {
+        "name": "Yonsei University (Residence Card)",
+        "url": "https://gld.yonsei.ac.kr/gosc/visa/maintaining02.do"
+      },
+      {
+        "name": "Seoul National University (Residence Card)",
+        "url": "https://oga.snu.ac.kr/?p=7988"
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  }
+]

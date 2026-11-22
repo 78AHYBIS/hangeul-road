@@ -1,0 +1,306 @@
+[
+  {
+    "id": "vocab-apps-결제",
+    "korean": "결제",
+    "meaning": "payment (by card or app)",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "카드로 결제할게요.",
+    "exampleMeaning": "I'll pay by card.",
+    "note": "결제하다 = to pay. At a shop counter people also say 계산하다."
+  },
+  {
+    "id": "vocab-apps-취소",
+    "korean": "취소",
+    "meaning": "cancellation",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "주문을 취소하고 싶어요.",
+    "exampleMeaning": "I want to cancel the order.",
+    "note": "취소하다 = to cancel."
+  },
+  {
+    "id": "vocab-apps-장바구니",
+    "korean": "장바구니",
+    "meaning": "shopping cart, basket",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "장바구니에 물을 넣었어요.",
+    "exampleMeaning": "I put water in the cart."
+  },
+  {
+    "id": "vocab-apps-완료",
+    "korean": "완료",
+    "meaning": "completion, done",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "결제가 완료되었습니다.",
+    "exampleMeaning": "The payment is complete.",
+    "note": "Apps show 완료 when a step is finished."
+  },
+  {
+    "id": "vocab-apps-배송",
+    "korean": "배송",
+    "meaning": "shipping (of parcels)",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "배송은 보통 하루 걸려요.",
+    "exampleMeaning": "Shipping usually takes a day.",
+    "note": "배송 is for parcels; 배달 is for food delivery."
+  },
+  {
+    "id": "vocab-apps-수정",
+    "korean": "수정",
+    "meaning": "editing, correction",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "주소를 수정했어요.",
+    "exampleMeaning": "I edited the address.",
+    "note": "수정하다 = to edit."
+  },
+  {
+    "id": "vocab-apps-선택",
+    "korean": "선택",
+    "meaning": "choice, selection",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "사이즈를 선택해 주세요.",
+    "exampleMeaning": "Please choose a size.",
+    "note": "선택하다 = to choose."
+  },
+  {
+    "id": "vocab-apps-전체",
+    "korean": "전체",
+    "meaning": "all, the whole",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "전체 동의를 눌렀어요.",
+    "exampleMeaning": "I tapped 'agree to all'."
+  },
+  {
+    "id": "vocab-apps-동의",
+    "korean": "동의",
+    "meaning": "agreement, consent",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "동의 버튼을 눌러 주세요.",
+    "exampleMeaning": "Please press the agree button.",
+    "note": "Sign-up screens ask you to 동의 to the terms."
+  },
+  {
+    "id": "vocab-apps-입력",
+    "korean": "입력",
+    "meaning": "input, entering",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "전화번호를 입력하세요.",
+    "exampleMeaning": "Enter your phone number.",
+    "note": "입력하다 = to enter (text)."
+  },
+  {
+    "id": "vocab-apps-다음",
+    "korean": "다음",
+    "meaning": "next",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "다음 정류장에서 내려요.",
+    "exampleMeaning": "I get off at the next stop.",
+    "note": "Also the 'Next' button in apps."
+  },
+  {
+    "id": "vocab-apps-이전",
+    "korean": "이전",
+    "meaning": "previous, before",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "이전 화면으로 돌아가요.",
+    "exampleMeaning": "I go back to the previous screen."
+  },
+  {
+    "id": "vocab-apps-환승",
+    "korean": "환승",
+    "meaning": "transfer (between buses or trains)",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "서울역에서 환승해요.",
+    "exampleMeaning": "I transfer at Seoul Station."
+  },
+  {
+    "id": "vocab-apps-내역",
+    "korean": "내역",
+    "meaning": "record, history",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "주문 내역을 확인했어요.",
+    "exampleMeaning": "I checked my order history.",
+    "note": "주문 내역 = order history, 결제 내역 = payment history."
+  },
+  {
+    "id": "vocab-apps-위치",
+    "korean": "위치",
+    "meaning": "location",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "지금 위치를 보내 주세요.",
+    "exampleMeaning": "Please send me your current location."
+  },
+  {
+    "id": "vocab-apps-주변",
+    "korean": "주변",
+    "meaning": "surroundings, nearby",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "학교 주변에 식당이 많아요.",
+    "exampleMeaning": "There are many restaurants around the school."
+  },
+  {
+    "id": "vocab-apps-요청사항",
+    "korean": "요청사항",
+    "meaning": "special requests (in an order)",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "요청사항에 '문 앞에 놔 주세요'라고 썼어요.",
+    "exampleMeaning": "I wrote 'please leave it at the door' in the requests.",
+    "note": "Delivery apps show this box before you pay."
+  },
+  {
+    "id": "vocab-apps-수량",
+    "korean": "수량",
+    "meaning": "quantity",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "수량을 두 개로 바꿨어요.",
+    "exampleMeaning": "I changed the quantity to two."
+  },
+  {
+    "id": "vocab-apps-품절",
+    "korean": "품절",
+    "meaning": "sold out",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "이 메뉴는 품절이에요.",
+    "exampleMeaning": "This menu item is sold out."
+  },
+  {
+    "id": "vocab-apps-쿠폰",
+    "korean": "쿠폰",
+    "meaning": "coupon",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "첫 주문 쿠폰을 받았어요.",
+    "exampleMeaning": "I got a first-order coupon."
+  },
+  {
+    "id": "vocab-apps-리뷰",
+    "korean": "리뷰",
+    "meaning": "review",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "리뷰를 보고 식당을 골라요.",
+    "exampleMeaning": "I choose restaurants by reading reviews."
+  },
+  {
+    "id": "vocab-apps-계정",
+    "korean": "계정",
+    "meaning": "account (online)",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "새 계정을 만들었어요.",
+    "exampleMeaning": "I made a new account.",
+    "note": "A bank account is 계좌."
+  },
+  {
+    "id": "vocab-apps-고객센터",
+    "korean": "고객센터",
+    "meaning": "customer service centre",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "고객센터에 전화했어요.",
+    "exampleMeaning": "I called customer service."
+  },
+  {
+    "id": "vocab-apps-문의",
+    "korean": "문의",
+    "meaning": "inquiry, question",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "문의는 채팅으로 해 주세요.",
+    "exampleMeaning": "Please send questions by chat.",
+    "note": "문의하다 = to ask, to inquire."
+  },
+  {
+    "id": "vocab-apps-변경",
+    "korean": "변경",
+    "meaning": "change",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "비밀번호를 변경했어요.",
+    "exampleMeaning": "I changed my password.",
+    "note": "변경하다 is more formal than 바꾸다."
+  },
+  {
+    "id": "vocab-apps-호출",
+    "korean": "호출",
+    "meaning": "call, hailing (a taxi in an app)",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "택시를 호출했어요.",
+    "exampleMeaning": "I called a taxi."
+  },
+  {
+    "id": "vocab-apps-목적지",
+    "korean": "목적지",
+    "meaning": "destination",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "목적지를 입력하세요.",
+    "exampleMeaning": "Enter your destination."
+  },
+  {
+    "id": "vocab-apps-본인인증",
+    "korean": "본인인증",
+    "meaning": "identity verification",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "본인인증이 안 돼요.",
+    "exampleMeaning": "The identity verification doesn't work.",
+    "note": "Usually needs a Korean phone number registered in your name."
+  },
+  {
+    "id": "vocab-apps-배달비",
+    "korean": "배달비",
+    "meaning": "delivery fee",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "배달비가 삼천 원이에요.",
+    "exampleMeaning": "The delivery fee is 3,000 won."
+  },
+  {
+    "id": "vocab-apps-영업시간",
+    "korean": "영업시간",
+    "meaning": "business hours",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "영업시간이 몇 시까지예요?",
+    "exampleMeaning": "Until what time are you open?"
+  },
+  {
+    "id": "vocab-apps-로그아웃",
+    "korean": "로그아웃",
+    "meaning": "logout",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "앱에서 로그아웃했어요.",
+    "exampleMeaning": "I logged out of the app."
+  },
+  {
+    "id": "vocab-apps-비회원",
+    "korean": "비회원",
+    "meaning": "non-member, guest",
+    "pos": "noun",
+    "deck": "deck-apps",
+    "example": "비회원으로 주문했어요.",
+    "exampleMeaning": "I ordered as a guest.",
+    "note": "Some apps let you order as a 비회원 without an account."
+  }
+]

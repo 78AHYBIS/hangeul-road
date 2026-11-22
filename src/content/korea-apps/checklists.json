@@ -1,0 +1,184 @@
+[
+  {
+    "id": "checklist-before",
+    "title": "Before I fly",
+    "when": "before",
+    "intro": "Things that work without a Korean number. Do them at home, on good Wi-Fi.",
+    "items": [
+      {
+        "id": "check-before-maps",
+        "text": "Install Naver Map and KakaoMap, and switch Naver Map to English.",
+        "refs": ["app-naver-map", "app-kakaomap"]
+      },
+      {
+        "id": "check-before-papago",
+        "text": "Install Papago and download the Korean and English offline pack.",
+        "refs": ["app-papago"]
+      },
+      {
+        "id": "check-before-kakaotalk",
+        "text": "Sign up for KakaoTalk with your current number, so it is ready when you land.",
+        "refs": ["app-kakaotalk"]
+      },
+      {
+        "id": "check-before-alerts",
+        "text": "Install the Emergency Ready App, set it to English and allow notifications.",
+        "refs": ["app-emergency-ready", "culture-emergency-alerts"]
+      },
+      {
+        "id": "check-before-taxi",
+        "text": "Install K.Ride and add your card, so you can call a taxi on day one.",
+        "refs": ["app-kride"]
+      },
+      {
+        "id": "check-before-food",
+        "text": "Install Baemin and Shuttle and try to sign up with your current number.",
+        "refs": ["app-baemin", "app-shuttle"]
+      },
+      {
+        "id": "check-before-addresses",
+        "text": "Save key addresses in Korean in your notes: UNIST (울산광역시 울주군 언양읍 유니스트길 50), your dorm, and KTX Ulsan Station (울산역).",
+        "refs": ["culture-unist-campus"]
+      },
+      {
+        "id": "check-before-sim",
+        "text": "Choose a SIM or eSIM. A prepaid plan with a Korean 010 number works on your passport; check whether it supports identity verification (본인인증) and whether you can keep the number after your ARC.",
+        "refs": ["howto-phone-number"]
+      },
+      {
+        "id": "check-before-route",
+        "text": "Plan the trip from the airport to Ulsan and book the train or bus.",
+        "refs": ["howto-airport-to-ulsan"]
+      },
+      {
+        "id": "check-before-cards",
+        "text": "Bring two cards (Visa or Mastercard) and some cash in won for the first days.",
+        "refs": ["howto-pay-without-korean-card"]
+      },
+      {
+        "id": "check-before-toss",
+        "text": "Optional: sign up for Toss with your passport.",
+        "refs": ["app-toss"]
+      },
+      {
+        "id": "check-before-visitkorea",
+        "text": "Optional: install VISITKOREA and a subway app for weekend trips to Busan or Seoul.",
+        "refs": ["app-visitkorea", "app-subway-korea"]
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "checklist-first-week",
+    "title": "First week",
+    "when": "arrival",
+    "intro": "Settle in: a working phone, a transit card, campus registration and your way around.",
+    "items": [
+      {
+        "id": "check-week-sim",
+        "text": "Get your SIM or activate your eSIM, and note your new 010 number.",
+        "refs": ["howto-phone-number"]
+      },
+      {
+        "id": "check-week-tmoney",
+        "text": "Buy a T-money card at a convenience store and top it up with cash. Ulsan city buses are going cashless.",
+        "refs": ["culture-transit-cards", "howto-bus"]
+      },
+      {
+        "id": "check-week-dorm",
+        "text": "Check in at the dorm. Learn the delivery pickup spot and the waste-sorting rules.",
+        "refs": ["culture-dorm-rules", "culture-waste-sorting"]
+      },
+      {
+        "id": "check-week-orientation",
+        "text": "Go to orientation and get your student card and UNIST Portal login. Install UNIST mPortal.",
+        "refs": ["app-unist-mportal"]
+      },
+      {
+        "id": "check-week-arc",
+        "text": "Ask UNIST International Affairs how to apply for your Residence Card (ARC). You must register within 90 days of arrival, in person, with an appointment.",
+        "refs": ["howto-residence-card"]
+      },
+      {
+        "id": "check-week-routes",
+        "text": "Walk your routes: dorm, classes, cafeteria, the nearest convenience store, pharmacy and bus stop.",
+        "refs": ["app-naver-map"]
+      },
+      {
+        "id": "check-week-kakao",
+        "text": "Add your Korean number to KakaoTalk and join your class and dorm group chats.",
+        "refs": ["app-kakaotalk"]
+      },
+      {
+        "id": "check-week-everytime",
+        "text": "Ask your buddy how exchange students verify on Everytime.",
+        "refs": ["app-everytime"]
+      },
+      {
+        "id": "check-week-numbers",
+        "text": "Save the emergency numbers: 112 police, 119 fire and ambulance, 1330 travel helpline, 1345 immigration.",
+        "refs": ["culture-emergency-numbers"]
+      },
+      {
+        "id": "check-week-delivery",
+        "text": "Order delivery once, so you know how it works before you are tired or ill.",
+        "refs": ["howto-order-food"]
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  },
+  {
+    "id": "checklist-after-arc",
+    "title": "After I get my ARC",
+    "when": "arc",
+    "intro": "Your Residence Card unlocks the bank account and identity checks most Korean apps ask for.",
+    "items": [
+      {
+        "id": "check-arc-bank",
+        "text": "Open a bank account and install its app (for example Hana Bank with Hana EZ, or KakaoBank).",
+        "refs": ["app-hana-ez", "app-kakaobank"]
+      },
+      {
+        "id": "check-arc-phone",
+        "text": "Make sure your phone line is registered with your ARC, so identity verification (본인인증) works.",
+        "refs": ["howto-phone-number"]
+      },
+      {
+        "id": "check-arc-toss",
+        "text": "Add your ARC and Korean number to Toss to unlock transfers.",
+        "refs": ["app-toss"]
+      },
+      {
+        "id": "check-arc-kakaopay",
+        "text": "Set up Kakao Pay with your Korean card.",
+        "refs": ["app-kakao-pay"]
+      },
+      {
+        "id": "check-arc-coupang",
+        "text": "Sign up for Coupang and verify your identity.",
+        "refs": ["app-coupang"]
+      },
+      {
+        "id": "check-arc-karrot",
+        "text": "Sign up for Karrot for second-hand things.",
+        "refs": ["app-karrot", "howto-second-hand"]
+      },
+      {
+        "id": "check-arc-delivery",
+        "text": "Try Coupang Eats and Yogiyo now that you have a Korean number.",
+        "refs": ["app-coupang-eats", "app-yogiyo"]
+      },
+      {
+        "id": "check-arc-transit",
+        "text": "Optional: try a mobile transit card in T-money GO with your Korean card.",
+        "refs": ["app-tmoney-go"]
+      },
+      {
+        "id": "check-arc-kakao-t",
+        "text": "Switch to Kakao T for taxis if K.Ride feels limited.",
+        "refs": ["app-kakao-t"]
+      }
+    ],
+    "lastVerified": "2026-11-22"
+  }
+]
