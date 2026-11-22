@@ -312,6 +312,31 @@ Phase 8 — Polish, offline and deploy (see PROMPT.md). Notes for it: the global
 should include `KOREA_APPS` and `HOW_TOS`; "on-the-ground mode" can reuse
 `checklistForToday` and link the apps guide; code-splitting (the bundle is now 956 kB).
 
+Feedback from Aidar after first using the app (2026-11-22), to build in Phase 8:
+
+1. **Audio quality.** Audio works on his phone but sounds low quality. The app uses the
+   device's Korean voice (Web Speech API). Add a voice picker in Me: list every Korean
+   (`ko-KR`) voice the device has, with a "Test" button, and save the choice in settings
+   (new field: needs a `sanitizeSettings` default; a missing or removed voice falls back
+   to the first Korean voice). Add a short note on getting a better voice: iPhone
+   Settings → Accessibility → Spoken Content → Voices → Korean (Enhanced / Premium);
+   Android: Text-to-speech settings → Google speech engine → Korean voice data.
+   Pre-recorded audio is out of scope for now (thousands of clips).
+2. **Backup storage.** Keep "no server, no accounts". Add a "Share backup" button in Me
+   that uses the Web Share API with the JSON file (so it can go to Google Drive, iCloud
+   Files, Telegram or email), falling back to the normal download where sharing files
+   is not supported. Save the date of the last export and show a calm line in Me, like
+   "Last backup: 12 days ago" (no warnings or red). Automatic cloud sync stays on the
+   "ideas for later" list.
+3. **Too many resources.** 37 is too many to choose from. Do not delete any (ids are
+   saved state). Show a short "Start here" list by default and the rest under "More
+   resources" (collapsed, still searchable and filterable). Proposed "Start here":
+   `res-duolingo`, `res-howtostudykorean`, one YouTube course (`res-ttmik-youtube` or
+   `res-gobilly-youtube`, ask Aidar which), `res-naver-dict`, `res-papago`,
+   `res-hellotalk`. Active courses and resources with a status always stay visible.
+   Mark the list in content (e.g. a `core: true` field, added to the validator) rather
+   than hard-coding ids in the UI.
+
 ## Decisions
 
 - **HashRouter** instead of normal URLs: GitHub Pages returns 404 on reloading a
