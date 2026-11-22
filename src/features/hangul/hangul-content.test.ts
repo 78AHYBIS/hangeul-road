@@ -58,7 +58,7 @@ describe('hangul content', () => {
     expect(STROKES['ㅙ']).toHaveLength(5);
   });
 
-  it('has one lesson per letter group and the five sound-change rules', () => {
+  it('has one lesson per letter group, batchim and the sound-change rules', () => {
     expect(LETTER_LESSONS).toHaveLength(5);
     for (const lesson of LETTER_LESSONS) expect(inGroup(lesson.group)).toBeGreaterThan(0);
     expect(RULE_LESSONS.map((r) => r.id)).toEqual([
@@ -68,6 +68,7 @@ describe('hangul content', () => {
       'hangul-rule-nasalization',
       'hangul-rule-tensing',
       'hangul-rule-aspiration',
+      'hangul-rule-palatalization',
     ]);
   });
 

@@ -386,5 +386,69 @@
     "deck": "deck-places",
     "example": "세탁소에 옷을 맡겼어요.",
     "exampleMeaning": "I left my clothes at the dry cleaner's."
+  },
+  {
+    "id": "vocab-places-미국",
+    "korean": "미국",
+    "meaning": "USA",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "미국에서 온 친구가 있어요.",
+    "exampleMeaning": "I have a friend from the USA."
+  },
+  {
+    "id": "vocab-places-중국",
+    "korean": "중국",
+    "meaning": "China",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "중국 학생이 많아요.",
+    "exampleMeaning": "There are many Chinese students."
+  },
+  {
+    "id": "vocab-places-일본",
+    "korean": "일본",
+    "meaning": "Japan",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "방학에 일본에 가고 싶어요.",
+    "exampleMeaning": "I want to go to Japan in the vacation."
+  },
+  {
+    "id": "vocab-places-러시아",
+    "korean": "러시아",
+    "meaning": "Russia",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "저는 러시아어도 해요.",
+    "exampleMeaning": "I also speak Russian.",
+    "note": "Add 어 to a country for its language: 러시아어, 중국어, 일본어. English is 영어."
+  },
+  {
+    "id": "vocab-places-영국",
+    "korean": "영국",
+    "meaning": "UK",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "영국 사람이에요?",
+    "exampleMeaning": "Are you from the UK?"
+  },
+  {
+    "id": "vocab-places-독일",
+    "korean": "독일",
+    "meaning": "Germany",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "독일 교환학생을 만났어요.",
+    "exampleMeaning": "I met an exchange student from Germany."
+  },
+  {
+    "id": "vocab-places-프랑스",
+    "korean": "프랑스",
+    "meaning": "France",
+    "pos": "noun",
+    "deck": "deck-places",
+    "example": "프랑스 친구가 빵을 만들었어요.",
+    "exampleMeaning": "My French friend made bread."
   }
 ]

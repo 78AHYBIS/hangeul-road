@@ -13,8 +13,8 @@ function seeded(seed: number) {
 }
 
 describe('vocabulary content', () => {
-  it('has 15 decks of 30 to 50 words and at least 600 words', () => {
-    expect(DECKS).toHaveLength(15);
+  it('has 16 decks of 30 to 50 words and at least 600 words', () => {
+    expect(DECKS).toHaveLength(16);
     expect(WORDS.length).toBeGreaterThanOrEqual(600);
     for (const deck of DECKS) {
       const size = WORDS.filter((w) => w.deck === deck.id).length;
@@ -39,7 +39,7 @@ describe('vocabulary content', () => {
 
   it('keeps the deck order from the roadmap', () => {
     expect(WORDS[0]!.deck).toBe('deck-greetings');
-    expect(WORDS[WORDS.length - 1]!.deck).toBe('deck-social');
+    expect(WORDS[WORDS.length - 1]!.deck).toBe('deck-home');
   });
 });
 
@@ -100,6 +100,15 @@ describe('search', () => {
 });
 
 describe('number trainer', () => {
+  it('only asks for dates that exist', () => {
+    const session = buildNumberSession('date', 200, seeded(7));
+    for (const q of session) {
+      const written = q.promptIsKorean ? q.answer : q.prompt;
+      const [, month, day] = written.match(/^(\d+)월 (\d+)일$/)!.map(Number);
+      expect(day, written).toBeLessThanOrEqual(new Date(2027, month!, 0).getDate());
+    }
+  });
+
   it('builds valid questions in every mode', () => {
     for (const mode of NUMBER_MODES) {
       const session = buildNumberSession(mode, 20, seeded(4));

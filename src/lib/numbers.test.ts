@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { clockTime, native, nativeCounter, phoneNumber, price, sino } from './numbers';
+import { clockTime, date, native, nativeCounter, phoneNumber, price, sino } from './numbers';
 
 describe('sino', () => {
   it.each([
@@ -59,6 +59,14 @@ describe('time, price, phone', () => {
     expect(clockTime(3, 20)).toBe('세 시 이십 분');
     expect(clockTime(12, 0)).toBe('열두 시');
     expect(clockTime(1, 5)).toBe('한 시 오 분');
+  });
+
+  it('reads dates, with 유월 and 시월', () => {
+    expect(date(3, 2)).toBe('삼월 이일');
+    expect(date(6, 15)).toBe('유월 십오일');
+    expect(date(10, 10)).toBe('시월 십일');
+    expect(date(11, 28)).toBe('십일월 이십팔일');
+    expect(date(12, 31)).toBe('십이월 삼십일일');
   });
 
   it('reads prices', () => {

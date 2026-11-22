@@ -43,6 +43,12 @@
         ],
         "answer": "When they suggest it",
         "why": "Stay with polite 해요 style until the other person suggests speaking casually."
+      },
+      {
+        "question": "In the name 박지훈, which part is the family name?",
+        "options": ["박", "지훈", "훈", "박지"],
+        "answer": "박",
+        "why": "Korean names start with the family name, which is usually one syllable."
       }
     ]
   },

@@ -222,6 +222,31 @@ Acceptance:
       ticking on Today works; the Ulsan quiz saved its score; no console errors, no
       sideways scrolling.
 
+### Content update (2026-11-22)
+
+A review of the beginner content against a typical first-level course: what it covers that
+the app did not, and where the two disagree (no disagreements on rules were found).
+
+- Vocabulary: 48 new words (697 → 745). Family words (엄마, 아빠, 남동생, 여동생, 형제) in
+  People; country names in Places (now "Places and countries"); 체육관, 운동장, 방학, 연필,
+  시계, 칠판 in Campus. A new 16th deck, "Home, family and free time" (30 words): kitchen and
+  room things, daily routine (세수하다, 이를 닦다, 머리를 감다), grandparents, pets, hobbies,
+  잘하다 / 못하다, 귀엽다. Existing decks were full (50 words), and these words are less
+  urgent in week one, so the new deck comes last; "Learn this deck next" moves it forward.
+- Grammar: 5 new lessons (16 → 21), placed in study order: 도 (also), 하고 / (이)나 (and,
+  with, or), ㅂ verbs and 어때요, -고 있어요 (doing now), -아야 / 어야 돼요 (have to). The
+  negative lesson now also teaches -지 않아요. Ids continue at grammar-17; no id changed.
+- Hangul: a seventh rule lesson, ㄷ and ㅌ before 이 (같이 → 가치, 해돋이 → 해도지).
+- Number trainer: a Dates mode (삼월 이일), with 유월 and 시월 coming up more often.
+- Phrases: a 14th pack, "Small talk: family, likes and weather" (12 phrases).
+- Culture: a "Korean names" card in Respect and hierarchy (family name first, names after
+  marriage, 아 / 야 between friends), and a fifth question in that topic's quiz.
+- One fix: the 칠판 example now uses the honorific 쓰셨어요 for a professor.
+- Left out on purpose: children's words (playground, toys), school-age culture, and casual
+  speech (반말) as a grammar topic, which belongs in a later, clearly marked lesson.
+- 252 unit tests in total. Checked in Chromium at iPhone 13 size: the new lessons, deck,
+  rule, pack, card and Dates mode open with no console errors and no sideways scrolling.
+
 ## Next
 
 Phase 7 — Korea apps and arrival guide (see PROMPT.md). The Korea tab already has the
@@ -306,7 +331,7 @@ guide" (delivery, payments, emergency alerts).
 No items are marked `needsReview`. I only used common textbook words and simple
 polite sentences, but none of it has been checked by a native speaker. Worth a glance:
 
-- All 697 vocabulary example sentences (`src/content/vocab/deck-*.json`).
+- All 745 vocabulary example sentences (`src/content/vocab/deck-*.json`).
 - Word choices where two forms are common: 현금인출기 (people often say ATM),
   출입국사무소 (the official name has changed over the years), 휴대폰 / 핸드폰.
 
@@ -329,6 +354,9 @@ polite sentences, but none of it has been checked by a native speaker. Worth a g
 - Cultural statements are written as general patterns with "this varies" notes; a Korean
   friend or the UNIST buddy can confirm what applies on campus (dorm rules, festivals,
   drinking events, cafeteria payment).
+- Added on 2026-11-22, worth a look: 형제 for "siblings" in 형제가 있어요?; 공용 부엌 (signs
+  often say 주방); 저는 외동이에요; 요즘 뭐 하고 지내요?; 성함이 어떻게 되세요?; the note that
+  해야 돼요 and 해야 해요 mean the same; spacing of 잘하다 / 잘 못하다 / 못 해요.
 - Stroke order follows the standard school order (e.g. ㅂ 4 strokes, ㅌ 3, ㅈ 2).
   Some teachers and fonts differ slightly.
 
