@@ -4,6 +4,7 @@ import { btnPrimary, muted } from '../../components/ui';
 import { RULE_LESSONS } from '../../content/hangul';
 import { useAppStore } from '../../lib/storage/store';
 import { SpeakButton, VoiceNotice } from './shared';
+import { MixedText } from '../../components/MixedText';
 
 export function RulePage() {
   const { id } = useParams();
@@ -21,7 +22,9 @@ export function RulePage() {
       <VoiceNotice />
       <div className="space-y-3 text-sm leading-relaxed">
         {rule.explanation.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
+          <p key={paragraph}>
+            <MixedText text={paragraph} />
+          </p>
         ))}
       </div>
 

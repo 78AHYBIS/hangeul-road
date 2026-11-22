@@ -6,6 +6,7 @@ import { findTopic, type CultureTopic } from '../../content/culture';
 import { useAppStore } from '../../lib/storage/store';
 import { quizMessage } from '../phrases/quiz';
 import { buildCultureQuiz, type CultureQuestion } from './culture';
+import { MixedText } from '../../components/MixedText';
 
 export function TopicQuizPage() {
   const { id } = useParams();
@@ -81,7 +82,7 @@ function Quiz({ topic }: { topic: CultureTopic }) {
     <Page title="Quiz" subtitle={`Question ${index + 1} of ${questions.length}`} back={back}>
       <Card>
         <p className="text-lg font-semibold leading-relaxed" data-testid="prompt">
-          {question.question}
+          <MixedText text={question.question} />
         </p>
       </Card>
       <div className="grid gap-3">
@@ -90,7 +91,6 @@ function Quiz({ topic }: { topic: CultureTopic }) {
             key={option}
             type="button"
             disabled={answered}
-            lang={/[가-힣]/.test(option) ? 'ko' : undefined}
             data-correct={option === question.answer}
             onClick={() => {
               setPicked(option);
@@ -104,7 +104,7 @@ function Quiz({ topic }: { topic: CultureTopic }) {
               option === picked,
             )}`}
           >
-            {option}
+            <MixedText text={option} />
           </button>
         ))}
       </div>
@@ -114,7 +114,7 @@ function Quiz({ topic }: { topic: CultureTopic }) {
             <span className="font-medium">
               {picked === question.answer ? 'Correct. ' : 'The right answer is highlighted. '}
             </span>
-            {question.why}
+            <MixedText text={question.why} />
           </p>
           <button type="button" className={`${btnPrimary} w-full`} onClick={next}>
             Next

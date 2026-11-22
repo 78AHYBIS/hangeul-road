@@ -2,6 +2,7 @@ import { muted } from '../../components/ui';
 import type { Word } from '../../content/vocab';
 import type { CardStage } from '../../lib/srs';
 import { SpeakButton } from '../hangul/shared';
+import { MixedText } from '../../components/MixedText';
 
 const STAGE_STYLE: Record<CardStage, string> = {
   new: 'bg-stone-100 text-stone-500 dark:bg-stone-800 dark:text-stone-400',
@@ -39,7 +40,9 @@ export function WordRow({ word, stage }: { word: Word; stage: CardStage }) {
             </p>
           )}
           {word.note && (
-            <p className="rounded-lg bg-stone-100 p-2 dark:bg-stone-800">{word.note}</p>
+            <p className="rounded-lg bg-stone-100 p-2 dark:bg-stone-800">
+              <MixedText text={word.note} />
+            </p>
           )}
           <SpeakButton text={word.example || word.korean} />
         </div>

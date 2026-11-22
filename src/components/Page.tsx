@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
+import { MixedText } from './MixedText';
 
 /** Standard page frame: title, optional subtitle, then content. */
 export function Page({
@@ -22,11 +23,19 @@ export function Page({
             to={back.to}
             className="-ml-1 mb-1 inline-flex min-h-10 items-center text-sm font-medium text-teal-700 dark:text-teal-400"
           >
-            ‹ {back.label}
+            <span>
+              ‹ <MixedText text={back.label} />
+            </span>
           </Link>
         )}
-        <h1 className="text-2xl font-bold tracking-tight">{title}</h1>
-        {subtitle && <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">{subtitle}</p>}
+        <h1 className="text-2xl font-bold tracking-tight">
+          <MixedText text={title} />
+        </h1>
+        {subtitle && (
+          <p className="mt-1 text-sm text-stone-500 dark:text-stone-400">
+            <MixedText text={subtitle} />
+          </p>
+        )}
       </header>
       {children}
     </div>

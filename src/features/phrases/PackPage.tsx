@@ -7,6 +7,7 @@ import { formatLongDate } from '../../lib/date';
 import { useAppStore } from '../../lib/storage/store';
 import { SpeakButton, VoiceNotice } from '../hangul/shared';
 import { PhraseRow } from './PhraseRow';
+import { MixedText } from '../../components/MixedText';
 
 export function PackPage() {
   const { id } = useParams();
@@ -21,7 +22,9 @@ export function PackPage() {
   return (
     <Page title={pack.title} back={{ to: '/learn/phrases', label: 'Phrases' }}>
       <VoiceNotice />
-      <p className="leading-relaxed">{pack.situation}</p>
+      <p className="leading-relaxed">
+        <MixedText text={pack.situation} />
+      </p>
       {pack.lastVerified && (
         <p className={muted}>Checked on {formatLongDate(pack.lastVerified)}.</p>
       )}
@@ -76,7 +79,7 @@ export function PackPage() {
                 to={`/learn/grammar/${lesson.id}`}
                 className="text-teal-700 underline underline-offset-2 dark:text-teal-400"
               >
-                {lesson.title}
+                <MixedText text={lesson.title} />
               </Link>
             </span>
           ))}

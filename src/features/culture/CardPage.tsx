@@ -5,6 +5,7 @@ import { cardsInTopic, findCard, findTopic, type CultureCard } from '../../conte
 import { formatLongDate } from '../../lib/date';
 import { useAppStore } from '../../lib/storage/store';
 import { SpeakButton, VoiceNotice } from '../hangul/shared';
+import { MixedText } from '../../components/MixedText';
 
 function AdviceList({ title, items, mark }: { title: string; items: string[]; mark: string }) {
   return (
@@ -16,7 +17,9 @@ function AdviceList({ title, items, mark }: { title: string; items: string[]; ma
             <span aria-hidden="true" className="shrink-0 text-teal-700 dark:text-teal-400">
               {mark}
             </span>
-            <span>{item}</span>
+            <span>
+              <MixedText text={item} />
+            </span>
           </li>
         ))}
       </ul>
@@ -40,10 +43,12 @@ function CultureCardView({ card }: { card: CultureCard }) {
 
   return (
     <Page title={card.title} back={{ to: `/korea/topic/${topic.id}`, label: topic.title }}>
-      <p className="text-lg leading-relaxed font-medium">{card.summary}</p>
+      <p className="text-lg leading-relaxed font-medium">
+        <MixedText text={card.summary} />
+      </p>
       {card.body.map((paragraph) => (
         <p key={paragraph} className="leading-relaxed">
-          {paragraph}
+          <MixedText text={paragraph} />
         </p>
       ))}
 
@@ -53,7 +58,7 @@ function CultureCardView({ card }: { card: CultureCard }) {
       {card.varies && (
         <p className="rounded-2xl bg-stone-100 p-4 text-sm leading-relaxed dark:bg-stone-800">
           <span className="font-semibold">This varies. </span>
-          {card.varies}
+          <MixedText text={card.varies} />
         </p>
       )}
 
@@ -67,7 +72,9 @@ function CultureCardView({ card }: { card: CultureCard }) {
                 <p className="text-lg" lang="ko">
                   {word.korean}
                 </p>
-                <p className={muted}>{word.meaning}</p>
+                <p className={muted}>
+                  <MixedText text={word.meaning} />
+                </p>
               </div>
               <SpeakButton text={word.korean} label="Play" compact />
             </li>
@@ -117,7 +124,9 @@ function CultureCardView({ card }: { card: CultureCard }) {
                 to={`/korea/card/${next.id}`}
                 className={`${btnPrimary} flex w-full items-center justify-center`}
               >
-                Next: {next.title}
+                <span>
+                  Next: <MixedText text={next.title} />
+                </span>
               </Link>
             )}
             {!next && (

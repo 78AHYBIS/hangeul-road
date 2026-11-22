@@ -5,6 +5,7 @@ import { btnPrimary, muted } from '../../components/ui';
 import { cardsInTopic, findTopic } from '../../content/culture';
 import { useAppStore } from '../../lib/storage/store';
 import { topicProgress } from './culture';
+import { MixedText } from '../../components/MixedText';
 
 export function TopicPage() {
   const { id } = useParams();
@@ -21,7 +22,7 @@ export function TopicPage() {
         <span className={`${muted} mr-2`} lang="ko">
           {topic.korean}
         </span>
-        {topic.intro}
+        <MixedText text={topic.intro} />
       </p>
       <Card>
         <div className="flex items-baseline justify-between gap-3">

@@ -2,6 +2,7 @@ import { muted } from '../../components/ui';
 import type { Phrase } from '../../content/phrases';
 import { useAppStore } from '../../lib/storage/store';
 import { SpeakButton } from '../hangul/shared';
+import { MixedText } from '../../components/MixedText';
 
 /** Star toggle for the phrasebook. */
 export function StarButton({ phraseId }: { phraseId: string }) {
@@ -40,7 +41,11 @@ export function PhraseRow({ phrase, extra }: { phrase: Phrase; extra?: string })
           {phrase.casual && <CasualChip />}
         </p>
         <p className={muted}>{phrase.meaning}</p>
-        {phrase.note && <p className={`mt-0.5 ${muted} italic`}>{phrase.note}</p>}
+        {phrase.note && (
+          <p className={`mt-0.5 ${muted} italic`}>
+            <MixedText text={phrase.note} />
+          </p>
+        )}
         {extra && <p className="mt-0.5 text-xs text-stone-400">{extra}</p>}
       </div>
       <SpeakButton text={phrase.korean} label="Play" compact />
