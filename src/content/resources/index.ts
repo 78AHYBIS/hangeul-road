@@ -51,6 +51,8 @@ export interface Resource {
   lastVerified: string;
   /** Not needed for the main goal (e.g. TOPIK). */
   optional?: boolean;
+  /** In the short "Start here" list at the top of the Library (keep it to about six). */
+  core?: boolean;
   /** Caveats: pricing changes, conflicting sources, honest comparisons. */
   note?: string;
 }

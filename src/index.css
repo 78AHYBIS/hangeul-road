@@ -42,3 +42,16 @@ body {
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
+
+/* Keyboard use on desktop: a clear ring on whatever has focus (not shown for taps).
+   In the base layer, so a utility like outline-none can still switch it off. */
+@layer base {
+  :focus-visible {
+    outline: 3px solid var(--color-teal-600);
+    outline-offset: 2px;
+  }
+
+  .dark :focus-visible {
+    outline-color: var(--color-teal-400);
+  }
+}

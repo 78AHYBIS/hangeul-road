@@ -33,7 +33,7 @@ const SECTIONS = [
 
 export function LearnPage() {
   return (
-    <Page title="Learn" subtitle="Hangul, words, grammar and phrases.">
+    <Page searchable title="Learn" subtitle="Hangul, words, grammar and phrases.">
       {SECTIONS.map((s) => (
         <Link key={s.to} to={s.to} className="block">
           <Card>

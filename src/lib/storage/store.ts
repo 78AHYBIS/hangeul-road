@@ -3,6 +3,7 @@
  * Every change is written to IndexedDB so it survives a reload.
  */
 import { create } from 'zustand';
+import { LETTER_LESSONS } from '../../content/hangul';
 import {
   EMPTY_HANGUL_PROGRESS,
   addReadingSpeedEntry,
@@ -70,8 +71,16 @@ import {
   DEFAULT_SETTINGS,
   STORAGE_KEYS,
   sanitizeSettings,
+  wasSavedBeforeOnboarding,
   type Settings,
 } from './schema';
+
+export interface OnboardingAnswers {
+  startDate: ISODate;
+  departureDate: ISODate;
+  dailyGoal: DailyGoal;
+  knowsHangul: boolean;
+}
 
 interface AppState {
   /** False until saved data has been loaded from IndexedDB. */
@@ -81,6 +90,10 @@ interface AppState {
   /** Loads saved data into memory. Called at startup and after an import. */
   hydrate: () => Promise<void>;
   updateSettings: (patch: Partial<Settings>) => Promise<void>;
+  /** Saves the first-launch answers. Someone who knows Hangul skips the letter lessons. */
+  completeOnboarding: (answers: OnboardingAnswers) => Promise<void>;
+  /** Notes today as the day of the last backup (shown in Me). */
+  recordBackup: () => Promise<void>;
   /** Records one drill answer for each of the given letters. */
   recordLetters: (letters: string[], correct: boolean) => Promise<void>;
   addReadingSpeed: (entry: ReadingSpeedEntry) => Promise<void>;
@@ -229,7 +242,8 @@ export const useAppStore = create<AppState>((set, get) => {
 
     hydrate: async () => {
       await ensureCurrentSchema();
-      const settings = sanitizeSettings(await getValue(STORAGE_KEYS.settings));
+      const rawSettings = await getValue(STORAGE_KEYS.settings);
+      const settings = sanitizeSettings(rawSettings);
       const hangul = sanitizeHangulProgress(await getValue(STORAGE_KEYS.hangul));
       const vocab = sanitizeVocabProgress(await getValue(STORAGE_KEYS.vocab));
       const activity = sanitizeActivity(await getValue(STORAGE_KEYS.activity));
@@ -238,6 +252,13 @@ export const useAppStore = create<AppState>((set, get) => {
       const phrases = sanitizePhraseProgress(await getValue(STORAGE_KEYS.phrases));
       const culture = sanitizeCultureProgress(await getValue(STORAGE_KEYS.culture));
       const koreaGuide = sanitizeKoreaGuideProgress(await getValue(STORAGE_KEYS.koreaGuide));
+      // Someone who used the app before the setup screen existed skips it.
+      if (
+        !settings.onboarded &&
+        (wasSavedBeforeOnboarding(rawSettings) || Object.keys(activity.days).length > 0)
+      ) {
+        settings.onboarded = true;
+      }
       set({
         settings,
         hangul,
@@ -257,6 +278,18 @@ export const useAppStore = create<AppState>((set, get) => {
       set({ settings });
       await setValue(STORAGE_KEYS.settings, settings);
     },
+
+    completeOnboarding: async ({ startDate, departureDate, dailyGoal, knowsHangul }) => {
+      await get().updateSettings({ departureDate, dailyGoal, onboarded: true });
+      await saveActivity({ ...get().activity, startDate });
+      if (knowsHangul) {
+        const hangul = get().hangul;
+        const ids = LETTER_LESSONS.map((l) => l.id);
+        await saveHangul({ ...hangul, lessonsDone: [...new Set([...hangul.lessonsDone, ...ids])] });
+      }
+    },
+
+    recordBackup: () => get().updateSettings({ lastBackupOn: todayISO() }),
 
     recordLetters: async (letters, correct) => {
       await saveHangul(recordLetterResults(get().hangul, letters, correct));

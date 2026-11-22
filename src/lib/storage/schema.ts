@@ -38,6 +38,22 @@ export const DAILY_GOALS: readonly DailyGoal[] = ['minimum', 'normal', 'intense'
 export const SPEECH_RATE_MIN = 0.5;
 export const SPEECH_RATE_MAX = 1.2;
 
+/** Text size: sets the root font size, so everything sized in rem scales with it. */
+export type TextSize = 'small' | 'normal' | 'large' | 'larger';
+export const TEXT_SIZES: readonly TextSize[] = ['small', 'normal', 'large', 'larger'];
+export const TEXT_SIZE_PERCENT: Record<TextSize, number> = {
+  small: 93.75,
+  normal: 100,
+  large: 112.5,
+  larger: 125,
+};
+
+/** On-the-ground mode: automatic from the departure date, or switched on / off by hand. */
+export type GroundMode = 'auto' | 'on' | 'off';
+export const GROUND_MODES: readonly GroundMode[] = ['auto', 'on', 'off'];
+
+const TIME_PATTERN = /^([01]\d|2[0-3]):[0-5]\d$/;
+
 export interface Settings {
   theme: Theme;
   dailyGoal: DailyGoal;
@@ -47,6 +63,19 @@ export interface Settings {
   departureDate: ISODate;
   /** Include cards where the word must be typed in Hangul (needs a Korean keyboard). */
   typingCards: boolean;
+  /** Chosen Korean voice (`SpeechSynthesisVoice.voiceURI`); '' means the first Korean voice. */
+  voiceURI: string;
+  textSize: TextSize;
+  /** Daily reminder through the Notifications API, at `reminderTime` (HH:MM, local). */
+  reminderOn: boolean;
+  reminderTime: string;
+  /** Day of the last backup export or share; null when there has been none. */
+  lastBackupOn: ISODate | null;
+  /** False until the first-launch setup has been finished or skipped. */
+  onboarded: boolean;
+  groundMode: GroundMode;
+  /** Last day of the exchange semester, shown in on-the-ground mode. */
+  semesterEnd: ISODate;
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -56,6 +85,14 @@ export const DEFAULT_SETTINGS: Settings = {
   speechRate: 0.9,
   departureDate: '2027-02-25',
   typingCards: true,
+  voiceURI: '',
+  textSize: 'normal',
+  reminderOn: false,
+  reminderTime: '19:00',
+  lastBackupOn: null,
+  onboarded: false,
+  groundMode: 'auto',
+  semesterEnd: '2027-06-18',
 };
 
 /** All saved data, keyed by storage key. */
@@ -86,7 +123,30 @@ export function sanitizeSettings(raw: unknown): Settings {
         : d.speechRate,
     departureDate: isValidISODate(input.departureDate) ? input.departureDate : d.departureDate,
     typingCards: typeof input.typingCards === 'boolean' ? input.typingCards : d.typingCards,
+    voiceURI: typeof input.voiceURI === 'string' ? input.voiceURI.slice(0, 500) : d.voiceURI,
+    textSize: TEXT_SIZES.includes(input.textSize as TextSize)
+      ? (input.textSize as TextSize)
+      : d.textSize,
+    reminderOn: typeof input.reminderOn === 'boolean' ? input.reminderOn : d.reminderOn,
+    reminderTime:
+      typeof input.reminderTime === 'string' && TIME_PATTERN.test(input.reminderTime)
+        ? input.reminderTime
+        : d.reminderTime,
+    lastBackupOn: isValidISODate(input.lastBackupOn) ? input.lastBackupOn : d.lastBackupOn,
+    onboarded: typeof input.onboarded === 'boolean' ? input.onboarded : d.onboarded,
+    groundMode: GROUND_MODES.includes(input.groundMode as GroundMode)
+      ? (input.groundMode as GroundMode)
+      : d.groundMode,
+    semesterEnd: isValidISODate(input.semesterEnd) ? input.semesterEnd : d.semesterEnd,
   };
+}
+
+/**
+ * Settings saved before the first-launch setup existed have no `onboarded` field. They
+ * belong to someone already using the app, who should not see the setup again.
+ */
+export function wasSavedBeforeOnboarding(raw: unknown): boolean {
+  return isRecord(raw) && Object.keys(raw).length > 0 && typeof raw.onboarded !== 'boolean';
 }
 
 /**
@@ -127,7 +187,12 @@ export function parseBackup(raw: unknown): StoredData {
   }
   const data = migrate({ ...raw.data }, version);
   // Settings are validated here; later phases validate their own keys the same way.
-  data[STORAGE_KEYS.settings] = sanitizeSettings(data[STORAGE_KEYS.settings]);
+  const rawSettings = data[STORAGE_KEYS.settings];
+  data[STORAGE_KEYS.settings] = {
+    ...sanitizeSettings(rawSettings),
+    // A backup from before the setup screen comes from someone already using the app.
+    ...(wasSavedBeforeOnboarding(rawSettings) && { onboarded: true }),
+  };
   if (STORAGE_KEYS.hangul in data) {
     data[STORAGE_KEYS.hangul] = sanitizeHangulProgress(data[STORAGE_KEYS.hangul]);
   }

@@ -26,6 +26,14 @@ const custom: Settings = {
   speechRate: 0.7,
   departureDate: '2027-02-20',
   typingCards: false,
+  voiceURI: 'com.apple.voice.premium.ko-KR.Yuna',
+  textSize: 'large',
+  reminderOn: true,
+  reminderTime: '07:30',
+  lastBackupOn: '2026-11-20',
+  onboarded: true,
+  groundMode: 'on',
+  semesterEnd: '2027-06-20',
 };
 
 /** Simulates closing and reopening the app: memory is wiped, IndexedDB is kept. */
@@ -62,6 +70,74 @@ describe('sanitizeSettings', () => {
     expect(sanitizeSettings(custom)).toEqual(custom);
     expect(sanitizeSettings({ speechRate: 9 }).speechRate).toBe(1.2);
     expect(sanitizeSettings({ speechRate: 0 }).speechRate).toBe(0.5);
+  });
+
+  it('falls back to defaults for bad Phase 8 fields', () => {
+    const bad = sanitizeSettings({
+      voiceURI: 42,
+      textSize: 'huge',
+      reminderTime: '25:00',
+      lastBackupOn: 'yesterday',
+      groundMode: 'maybe',
+      semesterEnd: '2027-13-01',
+    });
+    expect(bad).toEqual(DEFAULT_SETTINGS);
+    expect(sanitizeSettings({ reminderTime: '7:30' }).reminderTime).toBe('19:00');
+  });
+});
+
+describe('first-launch setup', () => {
+  it('is shown on a fresh install', async () => {
+    await useAppStore.getState().hydrate();
+    expect(useAppStore.getState().settings.onboarded).toBe(false);
+  });
+
+  it('is skipped for someone who used the app before it existed', async () => {
+    await setValue('settings', { theme: 'dark', dailyGoal: 'normal' });
+    await useAppStore.getState().hydrate();
+    expect(useAppStore.getState().settings.onboarded).toBe(true);
+  });
+
+  it('is skipped when there is study activity but no saved settings', async () => {
+    await setValue('activity', {
+      startDate: null,
+      days: { '2026-11-20': { reviews: 3 } },
+    });
+    await useAppStore.getState().hydrate();
+    expect(useAppStore.getState().settings.onboarded).toBe(true);
+  });
+
+  it('saves the answers and marks letter lessons done for someone who knows Hangul', async () => {
+    await useAppStore.getState().hydrate();
+    await useAppStore.getState().completeOnboarding({
+      startDate: '2026-11-22',
+      departureDate: '2027-02-26',
+      dailyGoal: 'intense',
+      knowsHangul: true,
+    });
+    forgetInMemoryState();
+    await useAppStore.getState().hydrate();
+    const state = useAppStore.getState();
+    expect(state.settings).toMatchObject({
+      onboarded: true,
+      departureDate: '2027-02-26',
+      dailyGoal: 'intense',
+    });
+    expect(state.activity.startDate).toBe('2026-11-22');
+    expect(state.hangul.lessonsDone.length).toBe(5);
+    // Setting up is not studying: nothing is logged for today.
+    expect(state.activity.days[todayISO()]).toBeUndefined();
+  });
+
+  it('leaves letter lessons alone for a complete beginner', async () => {
+    await useAppStore.getState().hydrate();
+    await useAppStore.getState().completeOnboarding({
+      startDate: '2026-11-22',
+      departureDate: '2027-02-25',
+      dailyGoal: 'normal',
+      knowsHangul: false,
+    });
+    expect(useAppStore.getState().hangul.lessonsDone).toEqual([]);
   });
 });
 
@@ -143,7 +219,22 @@ describe('export / import', () => {
       }),
     );
     await useAppStore.getState().hydrate();
-    expect(useAppStore.getState().settings).toEqual({ ...DEFAULT_SETTINGS, theme: 'dark' });
+    // A backup from before the setup screen existed also skips the setup.
+    expect(useAppStore.getState().settings).toEqual({
+      ...DEFAULT_SETTINGS,
+      theme: 'dark',
+      onboarded: true,
+    });
+  });
+});
+
+describe('last backup date', () => {
+  it('is saved by recordBackup and travels inside the next backup file', async () => {
+    await useAppStore.getState().hydrate();
+    await useAppStore.getState().recordBackup();
+    expect(useAppStore.getState().settings.lastBackupOn).toBe(todayISO());
+    const file = await createBackup();
+    expect((file.data.settings as Settings).lastBackupOn).toBe(todayISO());
   });
 });
 

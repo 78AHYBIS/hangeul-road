@@ -34,7 +34,7 @@ export function WeeklyPage() {
           {stats.map((stat) => (
             <div key={stat.label} className="rounded-xl bg-stone-100 py-3 dark:bg-stone-800">
               <dd className="text-2xl font-bold tabular-nums">{stat.value}</dd>
-              <dt className="text-xs text-stone-500 dark:text-stone-400">{stat.label}</dt>
+              <dt className="text-xs text-stone-600 dark:text-stone-400">{stat.label}</dt>
             </div>
           ))}
         </dl>

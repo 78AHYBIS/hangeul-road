@@ -25,7 +25,7 @@ export function KoreaPage() {
   const items = checklists.reduce((sum, c) => sum + c.total, 0);
 
   return (
-    <Page title="Korea" subtitle="Culture, daily life and the apps you will need.">
+    <Page searchable title="Korea" subtitle="Culture, daily life and the apps you will need.">
       <Card>
         <div className="flex items-baseline justify-between gap-3">
           <h2 className="font-semibold">Ulsan and UNIST</h2>

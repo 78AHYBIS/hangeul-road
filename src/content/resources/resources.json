@@ -46,6 +46,7 @@
     "skills": ["hangul", "grammar", "vocabulary"],
     "level": "all",
     "cost": "free",
+    "core": true,
     "lastVerified": "2026-11-17",
     "note": "Lessons are free; workbooks are sold separately."
   },
@@ -111,6 +112,7 @@
     "skills": ["grammar", "vocabulary", "listening"],
     "level": "beginner-intermediate",
     "cost": "free",
+    "core": true,
     "lastVerified": "2026-11-17",
     "note": "A different channel uses a similar name; check that it is Billy Go’s."
   },
@@ -173,6 +175,7 @@
     "skills": ["vocabulary"],
     "level": "all",
     "cost": "free",
+    "core": true,
     "lastVerified": "2026-11-17",
     "note": "Pick the Korean-English dictionary on the start page. Some example sentences are user-submitted and not always reliable."
   },
@@ -198,6 +201,7 @@
     "skills": ["vocabulary", "speaking"],
     "level": "all",
     "cost": "free",
+    "core": true,
     "lastVerified": "2026-11-17",
     "note": "Offline mode covers text; camera translation probably needs a connection."
   },
@@ -249,6 +253,7 @@
     "skills": ["speaking", "culture"],
     "level": "all",
     "cost": "freemium",
+    "core": true,
     "lastVerified": "2026-11-17",
     "note": "Free translations are limited per day. Treat it like any social app: be careful with personal details."
   },
@@ -275,6 +280,7 @@
     "skills": ["hangul", "vocabulary"],
     "level": "beginner",
     "cost": "freemium",
+    "core": true,
     "lastVerified": "2026-11-17",
     "note": "Reviewers agree it rarely makes you conversational on its own."
   },

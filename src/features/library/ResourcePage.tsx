@@ -204,12 +204,16 @@ function Units({ id }: { id: string }) {
                 checked={Boolean(unit.doneOn)}
                 onChange={() => void toggleCourseUnit(id, unit.id)}
               />
-              <span className={unit.doneOn ? 'text-stone-400 line-through' : ''}>{unit.title}</span>
+              <span
+                className={unit.doneOn ? 'text-stone-500 line-through dark:text-stone-400' : ''}
+              >
+                {unit.title}
+              </span>
             </label>
             <button
               type="button"
               aria-label={`Remove ${unit.title}`}
-              className="min-h-10 min-w-10 rounded-lg text-stone-400"
+              className="min-h-10 min-w-10 rounded-lg text-stone-500 dark:text-stone-400"
               onClick={() => void removeCourseUnit(id, unit.id)}
             >
               ×

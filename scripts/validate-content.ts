@@ -273,6 +273,12 @@ function checkResource(record: Record<string, unknown>, where: string, errors: s
   if (typeof record.url === 'string' && !/^https:\/\/[^\s]+$/.test(record.url)) {
     errors.push(`${where}: "url" must start with https://`);
   }
+  // `core: true` puts a resource in the Library's short "Start here" list.
+  for (const flag of ['core', 'optional']) {
+    if (record[flag] !== undefined && typeof record[flag] !== 'boolean') {
+      errors.push(`${where}: "${flag}" must be true or false`);
+    }
+  }
 }
 
 const hasHangul = (v: unknown) => typeof v === 'string' && HANGUL.test(v);

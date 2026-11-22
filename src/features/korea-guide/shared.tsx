@@ -74,7 +74,7 @@ export function ChecklistItems({ checklist, limit }: { checklist: Checklist; lim
             <div className="min-w-0 flex-1">
               <label
                 htmlFor={item.id}
-                className={`block leading-relaxed ${done ? 'text-stone-400 line-through' : ''}`}
+                className={`block leading-relaxed ${done ? 'text-stone-500 line-through dark:text-stone-400' : ''}`}
               >
                 <MixedText text={item.text} />
               </label>

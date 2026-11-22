@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Card, Page } from '../../components/Page';
 import { muted } from '../../components/ui';
 import { daysUntil, formatLongDate } from '../../lib/date';
+import { isOnTheGround, semesterStatus } from '../../lib/ground';
 import { DAILY_GOALS, type DailyGoal } from '../../lib/storage/schema';
 import { useAppStore } from '../../lib/storage/store';
 import { checklistForToday, type ChecklistStatus } from '../korea-guide/guide';
@@ -15,7 +16,7 @@ const SIZE_LABEL: Record<DailyGoal, string> = {
 };
 
 export function TodayPage() {
-  const { plan, tasks, streak, position, settings } = useToday();
+  const { plan, tasks, streak, position, settings, cardsDue } = useToday();
   const toggleTask = useAppStore((s) => s.toggleTask);
   const toggleCourseUnit = useAppStore((s) => s.toggleCourseUnit);
   const setCardRead = useAppStore((s) => s.setCardRead);
@@ -25,40 +26,24 @@ export function TodayPage() {
   const checklist = checklistForToday(koreaGuide, days);
   const doneCount = tasks.filter((t) => t.done).length;
   const allDone = doneCount === tasks.length;
+  const ground = isOnTheGround(settings.groundMode, days);
 
   return (
-    <Page title="Today" subtitle={`About ${plan.minutes} minutes`}>
-      <Card tone="accent">
-        <div className="flex items-end justify-between gap-3">
-          <div>
-            <p className="text-sm text-teal-100">Departure to Korea</p>
-            {days > 0 ? (
-              <p className="mt-1">
-                <span className="text-5xl font-bold tabular-nums" data-testid="countdown-days">
-                  {days}
-                </span>{' '}
-                <span className="text-lg">{days === 1 ? 'day to go' : 'days to go'}</span>
-              </p>
-            ) : (
-              <p className="mt-1 text-3xl font-bold" data-testid="countdown-days">
-                {days === 0 ? 'Today is the day' : 'You are in Korea'}
-              </p>
-            )}
-          </div>
-          <p className="text-right text-sm text-teal-100" data-testid="streak">
-            <span className="block text-3xl font-bold text-white tabular-nums">
-              {streak.current}
-            </span>
-            day streak
-          </p>
-        </div>
-        <p className="mt-2 text-sm text-teal-100">
-          {formatLongDate(settings.departureDate)} ·{' '}
-          <Link to="/me" className="underline underline-offset-2">
-            change date
-          </Link>
-        </p>
-      </Card>
+    <Page searchable title="Today" subtitle={`About ${plan.minutes} minutes`}>
+      {ground ? (
+        <>
+          <SemesterCard
+            days={days}
+            daysToEnd={daysUntil(settings.semesterEnd)}
+            streak={streak.current}
+          />
+          <GroundTools cardsDue={cardsDue} />
+        </>
+      ) : (
+        <Countdown days={days} streak={streak.current} departureDate={settings.departureDate} />
+      )}
+
+      {ground && checklist && <ChecklistCard status={checklist} />}
 
       {streak.comeback && (
         <Card>
@@ -117,7 +102,9 @@ export function TodayPage() {
                 aria-label={`Done: ${task.title}`}
               />
               <div className="min-w-0 flex-1">
-                <p className={`font-medium ${done ? 'text-stone-400 line-through' : ''}`}>
+                <p
+                  className={`font-medium ${done ? 'text-stone-500 line-through dark:text-stone-400' : ''}`}
+                >
                   {task.title}
                 </p>
                 <p className={muted}>
@@ -142,7 +129,7 @@ export function TodayPage() {
         )}
       </Card>
 
-      {checklist && <ChecklistCard status={checklist} />}
+      {!ground && checklist && <ChecklistCard status={checklist} />}
 
       <Link to="/roadmap" className="block">
         <Card>
@@ -188,5 +175,151 @@ function ChecklistCard({ status }: { status: ChecklistStatus }) {
         </Link>
       </section>
     </Card>
+  );
+}
+
+/** Before departure: days to go and the streak. */
+function Countdown({
+  days,
+  streak,
+  departureDate,
+}: {
+  days: number;
+  streak: number;
+  departureDate: string;
+}) {
+  return (
+    <Card tone="accent">
+      <div className="flex items-end justify-between gap-3">
+        <div>
+          <p className="text-sm text-teal-100">Departure to Korea</p>
+          {days > 0 ? (
+            <p className="mt-1">
+              <span className="text-5xl font-bold tabular-nums" data-testid="countdown-days">
+                {days}
+              </span>{' '}
+              <span className="text-lg">{days === 1 ? 'day to go' : 'days to go'}</span>
+            </p>
+          ) : (
+            <p className="mt-1 text-3xl font-bold" data-testid="countdown-days">
+              {days === 0 ? 'Today is the day' : 'You are in Korea'}
+            </p>
+          )}
+        </div>
+        <p className="text-right text-sm text-teal-100" data-testid="streak">
+          <span className="block text-3xl font-bold text-white tabular-nums">{streak}</span>
+          day streak
+        </p>
+      </div>
+      <p className="mt-2 text-sm text-teal-100">
+        {formatLongDate(departureDate)} ·{' '}
+        <Link to="/me" className="underline underline-offset-2">
+          change date
+        </Link>
+      </p>
+    </Card>
+  );
+}
+
+/** On-the-ground mode: days in Korea and days of the semester left, instead of the countdown. */
+function SemesterCard({
+  days,
+  daysToEnd,
+  streak,
+}: {
+  days: number;
+  daysToEnd: number;
+  streak: number;
+}) {
+  const { dayInKorea, daysLeft } = semesterStatus(days, daysToEnd);
+  return (
+    <Card tone="accent">
+      <div className="flex items-end justify-between gap-3">
+        <div>
+          <p className="text-sm text-teal-100">
+            {dayInKorea > 0 ? 'In Korea' : 'On-the-ground mode (preview)'}
+          </p>
+          <p className="mt-1" data-testid="semester-day">
+            {dayInKorea > 0 ? (
+              <>
+                <span className="text-5xl font-bold tabular-nums">Day {dayInKorea}</span>
+              </>
+            ) : (
+              <span className="text-2xl font-bold">
+                {days} {days === 1 ? 'day' : 'days'} to departure
+              </span>
+            )}
+          </p>
+        </div>
+        <p className="text-right text-sm text-teal-100" data-testid="streak">
+          <span className="block text-3xl font-bold text-white tabular-nums">{streak}</span>
+          day streak
+        </p>
+      </div>
+      <p className="mt-2 text-sm text-teal-100">
+        {daysLeft > 0
+          ? `${daysLeft} ${daysLeft === 1 ? 'day' : 'days'} of the semester left`
+          : daysLeft === 0
+            ? 'Last day of the semester'
+            : 'The semester is over. Well done.'}{' '}
+        ·{' '}
+        <Link to="/me" className="underline underline-offset-2">
+          settings
+        </Link>
+      </p>
+    </Card>
+  );
+}
+
+const GROUND_TOOLS = [
+  {
+    to: '/learn/phrases/book',
+    title: 'Phrasebook',
+    icon: 'M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3V4ZM5 17a3 3 0 0 1 3-3h11',
+  },
+  {
+    to: '/korea/apps',
+    title: 'Apps guide',
+    icon: 'M7 3h10a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1ZM11 18h2',
+  },
+  {
+    to: '/learn/vocab/review',
+    title: 'Reviews',
+    icon: 'M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3M18 3v4h-4M6 21v-4h4',
+  },
+] as const;
+
+/** On-the-ground mode: the three things used most in Korea, one tap away. */
+function GroundTools({ cardsDue }: { cardsDue: number }) {
+  return (
+    <nav aria-label="Korea tools">
+      <ul className="grid grid-cols-3 gap-3">
+        {GROUND_TOOLS.map((tool) => (
+          <li key={tool.to}>
+            <Link
+              to={tool.to}
+              className="flex min-h-20 flex-col items-center justify-center gap-1 rounded-2xl border border-stone-200 bg-white p-2 text-center text-sm font-medium dark:border-stone-800 dark:bg-stone-900"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                className="size-6 text-teal-700 dark:text-teal-400"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d={tool.icon} />
+              </svg>
+              {tool.title}
+              {tool.title === 'Reviews' && (
+                <span className={muted}>{cardsDue === 0 ? 'none due' : `${cardsDue} due`}</span>
+              )}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 }

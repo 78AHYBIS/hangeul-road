@@ -200,7 +200,7 @@ function Keyboard({
                 }`}
               >
                 <span lang="ko">{jamo}</span>
-                <span className="absolute top-0.5 left-1 text-[9px] text-stone-400 uppercase">
+                <span className="absolute top-0.5 left-1 text-[9px] text-stone-500 uppercase dark:text-stone-400">
                   {def.latin}
                 </span>
               </button>

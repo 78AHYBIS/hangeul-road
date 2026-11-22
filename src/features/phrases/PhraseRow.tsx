@@ -46,7 +46,7 @@ export function PhraseRow({ phrase, extra }: { phrase: Phrase; extra?: string })
             <MixedText text={phrase.note} />
           </p>
         )}
-        {extra && <p className="mt-0.5 text-xs text-stone-400">{extra}</p>}
+        {extra && <p className="mt-0.5 text-xs text-stone-500 dark:text-stone-400">{extra}</p>}
       </div>
       <SpeakButton text={phrase.korean} label="Play" compact />
       <StarButton phraseId={phrase.id} />

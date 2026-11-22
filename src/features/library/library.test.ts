@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { PATH, RESOURCES } from '../../content/resources';
-import { EMPTY_LIBRARY, setStatus } from '../../lib/libraryProgress';
-import { NO_FILTERS, allResources, filterResources, findResource } from './resources';
+import { EMPTY_LIBRARY, addCustom, setStatus, toggleActive } from '../../lib/libraryProgress';
+import {
+  NO_FILTERS,
+  allResources,
+  filterResources,
+  findResource,
+  splitStartHere,
+} from './resources';
 
 const ids = (list: { id: string }[]) => list.map((r) => r.id);
 
@@ -112,5 +118,38 @@ describe('filterResources', () => {
     };
     expect(findResource(lib, 'custom-1')).toMatchObject({ name: 'Class notes', custom: true });
     expect(allResources(lib)).toHaveLength(RESOURCES.length + 1);
+  });
+});
+
+describe('Start here', () => {
+  it('shows the six core resources by default and keeps the rest under More', () => {
+    const { startHere, more } = splitStartHere(allResources(EMPTY_LIBRARY), EMPTY_LIBRARY);
+    expect(ids(startHere)).toEqual([
+      'res-howtostudykorean',
+      'res-gobilly-youtube',
+      'res-naver-dict',
+      'res-papago',
+      'res-hellotalk',
+      'res-duolingo',
+    ]);
+    expect(startHere.length + more.length).toBe(RESOURCES.length);
+  });
+
+  it('keeps active courses (first), resources with a status and own resources visible', () => {
+    let library = toggleActive(EMPTY_LIBRARY, 'res-ttmik-youtube');
+    library = setStatus(library, 'res-anki', 'dropped');
+    library = addCustom(library, {
+      id: 'custom-1',
+      name: 'My tutor',
+      type: 'tutor',
+      url: 'https://example.com',
+      description: '',
+      skills: [],
+      cost: 'paid',
+    });
+    const { startHere, more } = splitStartHere(allResources(library), library);
+    expect(startHere[0]?.id).toBe('res-ttmik-youtube');
+    expect(ids(startHere)).toEqual(expect.arrayContaining(['res-anki', 'custom-1']));
+    expect(ids(more)).not.toContain('res-anki');
   });
 });

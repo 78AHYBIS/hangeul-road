@@ -5,7 +5,7 @@ import { SpeakButton } from '../hangul/shared';
 import { MixedText } from '../../components/MixedText';
 
 const STAGE_STYLE: Record<CardStage, string> = {
-  new: 'bg-stone-100 text-stone-500 dark:bg-stone-800 dark:text-stone-400',
+  new: 'bg-stone-100 text-stone-600 dark:bg-stone-800 dark:text-stone-400',
   learning: 'bg-amber-200 text-amber-950 dark:bg-amber-800 dark:text-amber-50',
   review: 'bg-teal-100 text-teal-900 dark:bg-teal-900 dark:text-teal-100',
   mature: 'bg-teal-700 text-white',

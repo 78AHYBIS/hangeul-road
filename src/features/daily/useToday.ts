@@ -59,5 +59,6 @@ export function useToday() {
   const plan = buildPlan(input);
   const tasks = plan.tasks.map((task) => ({ task, done: isTaskDone(task, input) }));
 
-  return { today, plan, tasks, streak, stages, position, settings };
+  const cardsDue = queue.reviews.length + queue.newCards.length;
+  return { today, plan, tasks, streak, stages, position, settings, cardsDue };
 }

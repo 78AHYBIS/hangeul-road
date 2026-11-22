@@ -306,36 +306,111 @@ Acceptance:
       checklists page). All new screens were opened at iPhone 13 size in light mode (one app page also in
       dark mode), with no console errors and no sideways scrolling.
 
+### Phase 8 — Polish, offline and deploy (2026-11-22)
+
+- **Installable and offline.** A service worker generated at build time
+  (`scripts/sw-plugin.ts` + `scripts/service-worker.js`, no Workbox) caches every file of the
+  build on the first visit and serves it from the cache, so the app opens cold in airplane
+  mode. Web app manifest, PNG icons (normal and maskable), an Apple touch icon, and splash
+  screens for ten iPhone sizes (Android draws its own from the manifest). A new version waits
+  and shows "A new version of the app is ready · Reload". "Install the app" in Me uses the
+  browser's install prompt (Chrome, Edge, Samsung Internet) or shows the three Safari steps on
+  iPhone.
+- **First launch:** start date, departure date, daily goal and level ("Starting from zero" /
+  "I can read Hangul", which marks the five letter lessons done). "Skip and use the
+  defaults" is there too. Anyone with saved settings or activity (and any older backup)
+  skips it.
+- **Daily reminder** (Me): on/off, a time, a Test button, and a note that says what this
+  browser can do. Without a server: an in-app timer while the app is open, plus Periodic
+  Background Sync in the service worker where Chrome allows it (installed app on Android).
+  Shown at most once a day, only if nothing was studied yet.
+- **Accessibility:** text size setting (Small / Normal / Large / Larger; scales the whole
+  app), a keyboard focus ring, a "Skip to content" link, contrast fixes (grey labels on grey
+  tiles, faint text in the phrasebook, done items), and the phrasebook card's name now matches
+  its visible text. The "Typing cards" switch, mentioned in Phase 2 but missing from Me, was
+  added.
+- **Performance:** every page is a lazy chunk (`React.lazy`), content splits by section
+  (vocab, culture, grammar, phrases, apps). The main bundle went from 956 kB (274 kB gzip) to
+  409 kB (130 kB gzip), which is React, React Router and Dexie.
+- **Global search** (search button on the five main tabs): words (incl. My words), phrases,
+  grammar lessons, culture cards, Korea apps, "How do I…" answers and resources. Whole-name
+  matches rank first; every search word must match. The query stays in the URL, so Back
+  returns to the results.
+- **On-the-ground mode** (Me: Auto / On / Off; Auto switches on on the departure day): Today
+  shows "Day N" in Korea and the days of the semester left (semester end editable, default 18
+  June 2027) instead of the countdown, with Phrasebook, Apps guide and Reviews (with the due
+  count) at the top, and the arrival checklist above the plan.
+- **Feedback from Aidar:**
+  1. _Korean voice picker_ in Me: every Korean voice on the device, a Test button for each
+     (안녕하세요. 저는 한국어를 배우고 있어요.), "Online voice: needs internet" where it applies,
+     and how to download a better voice on iPhone and Android. Saved as `voiceURI`; a missing
+     voice falls back to the first Korean one.
+  2. _Share backup_ in Me (Web Share API with the JSON file: Drive, Files, Telegram, email),
+     falling back to a download where files cannot be shared. "Last backup: 12 days ago",
+     calm, no warning. The date travels inside the backup.
+  3. _Start here_ in the Library: How to Study Korean, GO! Billy Korean (YouTube), Naver
+     Dictionary, Papago, HelloTalk, Duolingo (marked `core: true`, checked by the validator),
+     plus active courses, anything with a status and own resources. The other resources sit
+     under a collapsed "More resources"; search and filters still cover all 37.
+     GO! Billy was chosen over TTMIK: both YouTube channels are free, but Billy's is a
+     numbered beginner course (about 100 lessons) that works as an active course on Today,
+     while TTMIK's structured course is paid (about $7 to $13 a month, prices checked on
+     2026-11-22 by web search) and its channel is short standalone videos.
+- **Deploy:** `.github/workflows/deploy.yml` runs lint, tests, validation and the build on
+  every push to `main` and publishes to GitHub Pages. README with screenshots, features, stack
+  and design decisions; the old phase screenshots in `docs/` were replaced.
+- New settings fields (no schema version bump: missing fields fall back to defaults):
+  `voiceURI`, `textSize`, `reminderOn`, `reminderTime`, `lastBackupOn`, `onboarded`,
+  `groundMode`, `semesterEnd`.
+- 312 unit tests in total (search, reminder rules, voice fallback, on-the-ground mode, backup
+  text, first-launch rules, Start here split, the `core` validator rule).
+
+Checked in Chromium on the production build, served under `/hangeul-road/` like GitHub Pages:
+
+- iPhone 13 size: setup → Today, all five tabs, search, Library, Me, text size Larger, on-the-
+  ground mode; no console errors and no sideways scrolling.
+- Offline: after one visit, with the server stopped and the browser offline, a new tab opened
+  the app cold, and Korea, Phrasebook, Korea apps, a deck, search, Hangul, Me, Library and a
+  reload all worked.
+- Chrome reports no installability or manifest errors (`Page.getInstallabilityErrors`).
+- Lighthouse 12 on the first screen: accessibility 100, best practices 100, SEO 100,
+  performance 82 on a local server without compression or cache headers (GitHub Pages
+  compresses). Lighthouse 12 has no PWA category any more, hence the installability check.
+- axe-core (Lighthouse's accessibility engine) on 31 pages, light and dark: no violations.
+- Keyboard at desktop size: the setup can be finished by Tab and Enter; Skip to content is the
+  first stop; the focus ring is visible.
+
+Acceptance:
+
+- [ ] The app installs on a phone and works in airplane mode. **Checked in Chromium only**
+      (installable, cold start offline). Installing on a real phone needs the live link;
+      see the phone checklist below.
+- [x] Lighthouse PWA and accessibility checks pass with no major issues (accessibility 100;
+      installability via Chrome itself, see above; axe-core clean on 31 pages).
+- [ ] The deployed link works, and the README explains the project well. README done; the
+      link works once GitHub Pages is switched to "GitHub Actions" in the repository settings
+      and the workflow has run (see Next).
+
 ## Next
 
-Phase 8 — Polish, offline and deploy (see PROMPT.md). Notes for it: the global search
-should include `KOREA_APPS` and `HOW_TOS`; "on-the-ground mode" can reuse
-`checklistForToday` and link the apps guide; code-splitting (the bundle is now 956 kB).
+All eight phases are built. Left to do by hand:
 
-Feedback from Aidar after first using the app (2026-11-22), to build in Phase 8:
+1. **Turn on GitHub Pages** (once): repository Settings → Pages → Build and deployment →
+   Source: **GitHub Actions**. Then Actions → "Deploy to GitHub Pages" → Run workflow (or push
+   to `main`). The app is then at https://78ahybis.github.io/hangeul-road/.
+2. **Phone checks** (the two unticked acceptance items):
+   - Install: iPhone Safari → Share → Add to Home Screen; Android Chrome → Me → Install
+     Hangeul Road (or menu → Install app). Check the icon and the splash screen.
+   - Airplane mode: open the installed app once online, close it, switch on airplane mode,
+     open it again; try Today, a review, the phrasebook and the apps guide.
+   - Voice picker: Me → Korean voice → Test each voice; download an Enhanced / Premium
+     voice and check that it appears after reopening the app; check audio in airplane mode.
+   - Share backup: Me → Share backup → save to Drive / Files; "Last backup: today".
+   - Reminder: on Android with the app installed, set a time a few minutes ahead.
+3. Have a Korean speaker check the items under "Korean items needing review".
+4. Re-check "Links to check" and the Korea apps access rules close to departure.
 
-1. **Audio quality.** Audio works on his phone but sounds low quality. The app uses the
-   device's Korean voice (Web Speech API). Add a voice picker in Me: list every Korean
-   (`ko-KR`) voice the device has, with a "Test" button, and save the choice in settings
-   (new field: needs a `sanitizeSettings` default; a missing or removed voice falls back
-   to the first Korean voice). Add a short note on getting a better voice: iPhone
-   Settings → Accessibility → Spoken Content → Voices → Korean (Enhanced / Premium);
-   Android: Text-to-speech settings → Google speech engine → Korean voice data.
-   Pre-recorded audio is out of scope for now (thousands of clips).
-2. **Backup storage.** Keep "no server, no accounts". Add a "Share backup" button in Me
-   that uses the Web Share API with the JSON file (so it can go to Google Drive, iCloud
-   Files, Telegram or email), falling back to the normal download where sharing files
-   is not supported. Save the date of the last export and show a calm line in Me, like
-   "Last backup: 12 days ago" (no warnings or red). Automatic cloud sync stays on the
-   "ideas for later" list.
-3. **Too many resources.** 37 is too many to choose from. Do not delete any (ids are
-   saved state). Show a short "Start here" list by default and the rest under "More
-   resources" (collapsed, still searchable and filterable). Proposed "Start here":
-   `res-duolingo`, `res-howtostudykorean`, one YouTube course (`res-ttmik-youtube` or
-   `res-gobilly-youtube`, ask Aidar which), `res-naver-dict`, `res-papago`,
-   `res-hellotalk`. Active courses and resources with a status always stay visible.
-   Mark the list in content (e.g. a `core: true` field, added to the validator) rather
-   than hard-coding ids in the UI.
+Ideas for later stay in PROMPT.md section 6 (sync between devices, pronunciation scoring…).
 
 ## Decisions
 
@@ -345,7 +420,7 @@ Feedback from Aidar after first using the app (2026-11-22), to build in Phase 8:
   own key, so export/import needs no changes when features are added.
 - **Zustand store + manual persistence** (not Zustand's `persist` middleware): keeps
   loading, validation and migration explicit and testable.
-- **PWA deferred to Phase 8**, as in the spec. Only the Vite `base` is prepared.
+- **PWA in Phase 8**, as in the spec (see the Phase 8 decisions below).
 - **Defaults:** daily goal normal, romanization on, theme follows the system,
   speech rate 0.9.
 - **Speech rate range** 0.5 to 1.2. The setting is stored only; audio starts in Phase 1.
@@ -405,20 +480,34 @@ Feedback from Aidar after first using the app (2026-11-22), to build in Phase 8:
 - **App words link to existing vocabulary** instead of repeating it: 확인 on a button links
   to 확인하다 in the documents deck. Only missing words went into the new deck.
 
+- **Hand-written service worker** instead of vite-plugin-pwa / Workbox: about 100 lines,
+  no extra dependency to keep compatible with Vite 8, and readable for learning. Cache first,
+  with one version hash for the whole build.
+- **Updates wait for a tap** ("Reload"), so a new version never reloads the page in the
+  middle of a review.
+- **iPhone splash screens are not cached offline** (1 MB of images that iOS reads only when
+  installing).
+- **Reminders are honest about limits:** a web app without a push server cannot wake an
+  iPhone at a set time; the setting says so and suggests a phone alarm instead.
+- **"I can read Hangul" only marks the letter lessons done.** Letter drills still appear until
+  letters are solid, which takes a few minutes for someone who reads Hangul, and confirms it.
+- **On-the-ground mode can be forced on** before departure, as a preview and for testing.
+- **Search keeps the query in the URL** (`#/search?q=…`), so Back returns to the results.
+
 ## Known issues
 
 - Audio depends on the device having a Korean voice. Some browser voices need an
   internet connection, so audio may not work offline on every device.
 - The timed reading drill trusts taps; it cannot hear whether an item was read.
-- The bottom nav has no desktop layout yet (it is centred, max 576px wide). Fine for
-  now; revisit in Phase 8.
-- Bundle is one 665 kB JS file (191 kB gzipped); Vite warns about the size. Code-splitting
-  is planned for Phase 8.
+- On a desktop screen the app stays a centred phone-width column (max 576px). Usable with a
+  keyboard; a wider desktop layout was not needed for a phone-first app.
+- Reminders: only reliable on Android with the app installed (and even there the browser picks
+  the exact time); elsewhere only while the app is open.
+- The first visit must be online; offline works from then on. Clearing the browser's site data
+  removes both the offline copy and the progress (keep a backup).
 - Resource prices, free tiers and subscriber counts change often. The app says so on each
   resource page; re-verify the library before relying on a price.
 - Links open in a new tab and need internet; the library itself works offline.
-- Bundle is now 853 kB (246 kB gzipped) with the culture content. Still planned for Phase 8.
-- Bundle is now 956 kB (274 kB gzipped) with the apps guide.
 - Korea apps: access rules for foreigners changed many times in 2026 and will keep
   changing. Every app page says so; re-check sign-up yourself before relying on an app, and
   update `apps.json` (with a new `lastVerified`) when something differs.

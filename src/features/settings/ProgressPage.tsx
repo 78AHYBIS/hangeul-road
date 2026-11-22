@@ -107,11 +107,11 @@ export function ProgressPage() {
             <dd className="text-xl font-bold" data-testid="time-week">
               {formatTime(week.seconds)}
             </dd>
-            <dt className="text-xs text-stone-500 dark:text-stone-400">last 7 days</dt>
+            <dt className="text-xs text-stone-600 dark:text-stone-400">last 7 days</dt>
           </div>
           <div className="rounded-xl bg-stone-100 py-2 dark:bg-stone-800">
             <dd className="text-xl font-bold">{formatTime(all.seconds)}</dd>
-            <dt className="text-xs text-stone-500 dark:text-stone-400">in total</dt>
+            <dt className="text-xs text-stone-600 dark:text-stone-400">in total</dt>
           </div>
         </dl>
         <p className={`mt-2 ${muted}`}>An estimate, counted while you answer cards and drills.</p>

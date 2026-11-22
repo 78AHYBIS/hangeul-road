@@ -25,7 +25,15 @@ import {
 } from '../../lib/libraryProgress';
 import { buildRoadmap, roadmapPosition } from '../../lib/roadmap';
 import { useAppStore } from '../../lib/storage/store';
-import { NO_FILTERS, allResources, filterResources, findResource, type Filters } from './resources';
+import {
+  NO_FILTERS,
+  allResources,
+  filterResources,
+  findResource,
+  splitStartHere,
+  type Filters,
+  type LibraryItem,
+} from './resources';
 
 export function LibraryPage() {
   const library = useAppStore((s) => s.library);
@@ -33,16 +41,17 @@ export function LibraryPage() {
   const items = allResources(library);
   const shown = filterResources(items, filters, library);
   const filtering = Object.values(filters).some(Boolean);
+  const { startHere, more } = splitStartHere(items, library);
 
   return (
-    <Page title="Library" subtitle="Outside courses, channels and tools in one place.">
+    <Page searchable title="Library" subtitle="Outside courses, channels and tools in one place.">
       <ActiveCourses library={library} />
       <RecommendedPath library={library} />
 
       <section aria-labelledby="all-resources" className="space-y-3">
         <div className="flex items-baseline justify-between gap-3">
           <h2 id="all-resources" className="text-lg font-semibold">
-            All resources
+            Resources
           </h2>
           <Link
             to="/library/add"
@@ -106,43 +115,87 @@ export function LibraryPage() {
           </div>
         </Card>
 
-        <p className={muted} role="status" data-testid="resource-count">
-          {shown.length} of {items.length} resources
-        </p>
-        <ul className="space-y-3" data-testid="resources">
-          {shown.map((r) => {
-            const state = stateOf(library, r.id);
-            return (
-              <li key={r.id}>
-                <Link to={`/library/${encodeURIComponent(r.id)}`} className="block">
-                  <Card>
-                    <div className="flex items-start justify-between gap-3">
-                      <h3 className="font-semibold">{r.name}</h3>
-                      {library.active.includes(r.id) ? (
-                        <span className="shrink-0 rounded-full bg-teal-700 px-2 py-0.5 text-xs text-white">
-                          Active
-                        </span>
-                      ) : (
-                        state.status !== 'not-started' && (
-                          <span className={`shrink-0 ${chip}`}>{STATUS_LABEL[state.status]}</span>
-                        )
-                      )}
-                    </div>
-                    <p className={`mt-0.5 ${muted}`}>
-                      {TYPE_LABEL[r.type]} · {COST_LABEL[r.cost]}
-                      {r.custom ? ' · added by you' : ` · ${LEVEL_LABEL[r.level]}`}
-                      {r.optional && ' · optional'}
-                    </p>
-                    {r.description && <p className="mt-1 line-clamp-2 text-sm">{r.description}</p>}
-                  </Card>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-        {shown.length === 0 && <p className={muted}>Nothing matches. Try fewer filters.</p>}
+        {filtering ? (
+          <>
+            <p className={muted} role="status" data-testid="resource-count">
+              {shown.length} of {items.length} resources
+            </p>
+            <ResourceList items={shown} library={library} />
+          </>
+        ) : (
+          <>
+            <div>
+              <h3 className="font-semibold">Start here</h3>
+              <p className={muted}>
+                A few good ones to begin with. Search or filter above to see all {items.length}.
+              </p>
+            </div>
+            <ResourceList items={startHere} library={library} testId="start-here" />
+            <details className="group" data-testid="more-resources">
+              <summary className="flex min-h-11 cursor-pointer items-center justify-between rounded-xl border border-stone-200 bg-white px-4 font-medium dark:border-stone-800 dark:bg-stone-900">
+                More resources ({more.length})
+                <span
+                  aria-hidden="true"
+                  className="text-teal-700 transition-transform group-open:rotate-90 dark:text-teal-400"
+                >
+                  ›
+                </span>
+              </summary>
+              <div className="mt-3">
+                <ResourceList items={more} library={library} />
+              </div>
+            </details>
+          </>
+        )}
+        {filtering && shown.length === 0 && (
+          <p className={muted}>Nothing matches. Try fewer filters.</p>
+        )}
       </section>
     </Page>
+  );
+}
+
+function ResourceList({
+  items,
+  library,
+  testId = 'resources',
+}: {
+  items: LibraryItem[];
+  library: LibraryProgress;
+  testId?: string;
+}) {
+  return (
+    <ul className="space-y-3" data-testid={testId}>
+      {items.map((r) => {
+        const state = stateOf(library, r.id);
+        return (
+          <li key={r.id}>
+            <Link to={`/library/${encodeURIComponent(r.id)}`} className="block">
+              <Card>
+                <div className="flex items-start justify-between gap-3">
+                  <h3 className="font-semibold">{r.name}</h3>
+                  {library.active.includes(r.id) ? (
+                    <span className="shrink-0 rounded-full bg-teal-700 px-2 py-0.5 text-xs text-white">
+                      Active
+                    </span>
+                  ) : (
+                    state.status !== 'not-started' && (
+                      <span className={`shrink-0 ${chip}`}>{STATUS_LABEL[state.status]}</span>
+                    )
+                  )}
+                </div>
+                <p className={`mt-0.5 ${muted}`}>
+                  {TYPE_LABEL[r.type]} · {COST_LABEL[r.cost]}
+                  {r.custom ? ' · added by you' : ` · ${LEVEL_LABEL[r.level]}`}
+                  {r.optional && ' · optional'}
+                </p>
+                {r.description && <p className="mt-1 line-clamp-2 text-sm">{r.description}</p>}
+              </Card>
+            </Link>
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 

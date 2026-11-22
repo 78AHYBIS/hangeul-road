@@ -146,14 +146,16 @@ export function PhrasebookPage() {
                   type="button"
                   className="min-h-11 min-w-0 flex-1 text-left"
                   onClick={() => setShown({ cards, index: i })}
-                  aria-label={`Show large: ${phrase.korean}`}
                 >
+                  <span className="sr-only">Show large: </span>
                   <span className="block text-2xl" lang="ko">
                     {phrase.korean}
                     {phrase.casual && <CasualChip />}
                   </span>
                   <span className={`block ${muted}`}>{phrase.meaning}</span>
-                  <span className="block text-xs text-stone-400">{phrase.packTitle}</span>
+                  <span className="block text-xs text-stone-500 dark:text-stone-400">
+                    {phrase.packTitle}
+                  </span>
                 </button>
                 <SpeakButton text={phrase.korean} label="Play" compact />
                 <StarButton phraseId={phrase.id} />

@@ -83,3 +83,22 @@ export function filterResources(
     return words.every((w) => haystack.includes(w));
   });
 }
+
+/**
+ * The Library's default view: a short "Start here" list and the rest under "More
+ * resources". Start here holds active courses, the `core` resources, anything with a
+ * status (started, finished, dropped) and resources the user added.
+ */
+export function splitStartHere(
+  items: LibraryItem[],
+  library: LibraryProgress,
+): { startHere: LibraryItem[]; more: LibraryItem[] } {
+  const keep = (r: LibraryItem) =>
+    library.active.includes(r.id) ||
+    r.core === true ||
+    r.custom === true ||
+    stateOf(library, r.id).status !== 'not-started';
+  const rank = (r: LibraryItem) => (library.active.includes(r.id) ? 0 : r.core ? 1 : 2);
+  const startHere = items.filter(keep).sort((a, b) => rank(a) - rank(b));
+  return { startHere, more: items.filter((r) => !keep(r)) };
+}

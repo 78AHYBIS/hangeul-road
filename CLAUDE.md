@@ -22,13 +22,25 @@ No backend, no accounts, no tracking.
 
 Before finishing a phase, run: lint, test, validate:content, build.
 
+`npm run preview` serves the production build (with the service worker). Icons and iPhone
+splash screens are drawn by `NODE_PATH=$(npm root -g) node scripts/make-icons.mjs` (needs
+Playwright; run it only after changing the icon design).
+
+## Deploy
+
+`.github/workflows/deploy.yml` runs lint, tests, content validation and the build on every
+push to `main`, then publishes `dist/` to GitHub Pages:
+https://78ahybis.github.io/hangeul-road/ (repository setting: Pages → Source: GitHub Actions).
+
 ## Structure
 
 ```
 src/
-  app/          App.tsx (routes), Layout.tsx (bottom nav), nav.ts, useTheme.ts
+  app/          App.tsx (lazy routes, first-launch gate), Layout.tsx (bottom nav, skip link,
+                update bar), nav.ts, useTheme.ts, useSettingsEffects.ts (text size, voice),
+                pwa.ts (service worker, install prompt), reminders.ts (daily reminder)
   features/     one folder per section: daily, learn, hangul, vocab, grammar, phrases, library,
-                culture, korea-guide, settings
+                culture, korea-guide, settings, onboarding, search
   content/      learning data only (JSON), one folder per content type
   lib/          date.ts, hangul.ts (compose/decompose, romanize, keyboard),
                 hangulProgress.ts (letter stats), speech.ts, storage/,
@@ -38,9 +50,14 @@ src/
                 particles.ts (은/는, 이/가, 이에요/예요… by batchim), selfIntro.ts,
                 grammarProgress.ts, phraseProgress.ts, cultureProgress.ts,
                 koreaGuideProgress.ts (arrival-checklist ticks),
-                mixedText.ts (Korean runs in mixed strings)
-  components/   shared UI (Page, Card, LinkRow, MixedText), ui.ts (button classes, choiceClass)
-scripts/        validate-content.ts (+ its test)
+                mixedText.ts (Korean runs in mixed strings),
+                ground.ts (on-the-ground mode, semester days, last-backup text),
+                reminder.ts (when a reminder is due)
+  components/   shared UI (Page, Card, LinkRow, MixedText), Form.tsx (Field, Segmented),
+                ui.ts (button classes, choiceClass)
+scripts/        validate-content.ts (+ its test), sw-plugin.ts + service-worker.js (offline),
+                make-icons.mjs
+public/         manifest.webmanifest, icon.svg, icons/ (PNG icons, iPhone splash screens)
 ```
 
 ## Conventions
@@ -64,6 +81,8 @@ scripts/        validate-content.ts (+ its test)
 - **Audio:** only through `SpeakButton` / `speak()` in `src/lib/speech.ts`. Show
   `<VoiceNotice />` on any screen with audio, so a missing Korean voice is explained.
   In list rows use `<SpeakButton compact />` (icon only) so the Korean keeps the width.
+  `speak()` uses the voice picked in Me (`setPreferredVoice`, kept in sync by
+  `useSettingsEffects`), falling back to the first Korean voice (`pickVoice`).
 - **Korean text:** mark it `lang="ko"`; `index.css` then keeps words whole when wrapping.
   For strings that mix English and Korean (explanations, notes, titles), render
   `<MixedText text=… />` (`src/components/MixedText.tsx`, splitting in `src/lib/mixedText.ts`),
@@ -71,7 +90,30 @@ scripts/        validate-content.ts (+ its test)
 - **Romanization:** render it with `<Romanization text=… />`, which obeys the setting.
   Exception: single-letter sound labels (`g / k`) in letter lessons and letter drills,
   because there they are the answer.
+- **Pages load lazily:** every page in `App.tsx` is a `React.lazy` import, so a new page
+  gets a `lazy(() => import(...).then((m) => ({ default: m.Name })))` line there. The
+  service worker caches every chunk, so lazy pages still open offline.
+- **Main tabs** pass `searchable` to `Page`, which shows the search button.
+- **Accessibility:** small grey text on `bg-stone-100` must be `text-stone-600` (500 fails
+  contrast); never `text-stone-400` for text on white. Keyboard focus shows a ring from
+  `index.css` (base layer). Phase 8 checked every page with axe-core, light and dark.
+- **Text size:** a setting that changes the root font size, so size things in rem
+  (Tailwind's default), not px.
 - Do not put model names or AI attribution text in code comments.
+
+## Offline (PWA)
+
+- `scripts/sw-plugin.ts` (a Vite plugin) writes `dist/sw.js` at build time: the list of every
+  built and public file (except iPhone splash screens) plus a content hash as the version.
+  The worker code is `scripts/service-worker.js`.
+- Cache first for everything; navigations get the cached `index.html` (HashRouter).
+- A new version installs in the background and waits; `Layout` shows "A new version of the
+  app is ready" with Reload (`applyUpdate()` in `src/app/pwa.ts`). Only that tap may reload
+  the page, never the first install.
+- Only the production build registers the worker; `npm run dev` has none.
+- Daily reminder: no server, so the in-app timer shows it while the app is open, and the
+  worker's `periodicsync` handler (Chrome on Android, installed) shows it otherwise. The page
+  sends the worker its settings with a `REMINDER` message.
 
 ## Storage
 
@@ -84,6 +126,10 @@ scripts/        validate-content.ts (+ its test)
 - `SCHEMA_VERSION` (now 1) describes the shape of saved data. When a saved shape
   changes: bump it and add a step to `migrate()` in `schema.ts`. It runs at startup
   (`ensureCurrentSchema`) and on import (`parseBackup`).
+- Settings (Phase 8 fields): `voiceURI` ('' = first Korean voice), `textSize`, `reminderOn`,
+  `reminderTime` (HH:MM), `lastBackupOn` (set by `recordBackup` on export or share),
+  `onboarded`, `groundMode` (auto / on / off), `semesterEnd`. Settings saved before
+  `onboarded` existed count as onboarded (`wasSavedBeforeOnboarding`), also in old backups.
 - Backup file: `{ app: "hangeul-road", schemaVersion, exportedAt, data: { key: value } }`.
   Export and import cover **every** key automatically. Import validates first and
   replaces everything in one transaction; a bad file changes nothing.
@@ -140,7 +186,10 @@ readingSpeed[], lessonsDone[] }`. See `src/lib/hangulProgress.ts`.
   podcast, book, dictionary, tutor), `url` (https only), `description`, `why`, `skills[]`
   (hangul, vocabulary, grammar, listening, speaking, culture, topik), `level` (beginner,
   beginner-intermediate, all), `cost` (free, freemium, paid), `lastVerified`, optional
-  `optional` (TOPIK) and `note` (caveats, honest comparisons). The validator checks the
+  `optional` (TOPIK), `core` (in the Library's "Start here" list; keep it to about six) and
+  `note` (caveats, honest comparisons). The Library shows Start here (active courses, `core`,
+  anything with a status, own resources; `splitStartHere()`) and the rest under "More
+  resources"; any search or filter shows one flat list. The validator checks the
   allowed values (`RESOURCE_ENUMS`, keep in sync with `index.ts`).
 - `path.json` (5): recommended path, one step per roadmap stage: `id`, `stage`, `title`,
   `text`, `refs` (resource ids, checked by the validator).

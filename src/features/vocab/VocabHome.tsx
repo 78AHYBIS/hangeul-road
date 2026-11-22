@@ -62,7 +62,7 @@ export function VocabHome() {
           {(['new', 'learning', 'review', 'mature'] as const).map((stage) => (
             <div key={stage} className="rounded-xl bg-stone-100 py-2 dark:bg-stone-800">
               <dd className="text-xl font-bold tabular-nums">{stages[stage]}</dd>
-              <dt className="text-xs text-stone-500 capitalize dark:text-stone-400">{stage}</dt>
+              <dt className="text-xs text-stone-600 capitalize dark:text-stone-400">{stage}</dt>
             </div>
           ))}
         </dl>

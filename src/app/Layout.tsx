@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { Suspense, useEffect } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { NAV_ITEMS } from './nav';
+import { applyUpdate, usePwa } from './pwa';
 
 export function Layout() {
   const { pathname } = useLocation();
@@ -12,8 +13,22 @@ export function Layout() {
 
   return (
     <div className="mx-auto flex min-h-dvh max-w-xl flex-col">
-      <main className="flex-1 px-4 pt-6 pb-24">
-        <Outlet />
+      <a
+        href="#main"
+        onClick={(e) => {
+          // HashRouter owns the # in the URL, so move focus by hand instead of navigating.
+          e.preventDefault();
+          document.getElementById('main')?.focus();
+        }}
+        className="sr-only z-50 rounded-lg bg-teal-700 px-4 py-2 text-white focus:not-sr-only focus:fixed focus:top-2 focus:left-2"
+      >
+        Skip to content
+      </a>
+      <UpdateBar />
+      <main id="main" tabIndex={-1} className="flex-1 px-4 pt-6 pb-24 outline-none">
+        <Suspense fallback={<p className="sr-only">Loading…</p>}>
+          <Outlet />
+        </Suspense>
       </main>
       <nav
         aria-label="Main"
@@ -51,6 +66,27 @@ export function Layout() {
           ))}
         </ul>
       </nav>
+    </div>
+  );
+}
+
+/** Shown when a new version of the app is installed and waiting. */
+function UpdateBar() {
+  const { updateReady } = usePwa();
+  if (!updateReady) return null;
+  return (
+    <div
+      role="status"
+      className="mx-4 mt-3 flex items-center justify-between gap-3 rounded-xl border border-teal-200 bg-teal-50 px-4 py-2 text-sm text-teal-950 dark:border-teal-800 dark:bg-teal-950 dark:text-teal-50"
+    >
+      <span>A new version of the app is ready.</span>
+      <button
+        type="button"
+        onClick={applyUpdate}
+        className="min-h-10 shrink-0 rounded-lg bg-teal-700 px-3 font-medium text-white"
+      >
+        Reload
+      </button>
     </div>
   );
 }

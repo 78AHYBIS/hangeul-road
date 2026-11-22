@@ -100,6 +100,8 @@ describe('validateContent', () => {
           good,
           { ...good, id: 'res-b', type: 'blog', skills: ['cooking'], url: 'http://x.com' },
           { ...unverified, id: 'res-c' },
+          { ...good, id: 'res-d', core: true },
+          { ...good, id: 'res-e', core: 'yes' },
         ],
         'src/content/resources/resources.json',
       ),
@@ -111,8 +113,8 @@ describe('validateContent', () => {
         'src/content/resources/path.json',
       ),
     ]);
-    // res-b: type, skill, url; res-c: lastVerified; path-2: stage, broken ref.
-    expect(errors).toHaveLength(6);
+    // res-b: type, skill, url; res-c: lastVerified; res-e: core; path-2: stage, broken ref.
+    expect(errors).toHaveLength(7);
   });
 
   it('checks culture cards and topic quizzes', () => {
